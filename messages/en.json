@@ -1,15 +1,49 @@
 {
   "Navbar": {
     "home": "Home",
-    "vocabulary": "Vocabulary",
-    "about": "About"
+    "concepts": "Concepts",
+    "styles": "Visual Styles",
+    "about": "About",
+    "searchPlaceholder": "search_term..."
   },
   "Vocabulary": {
     "filter": "Filter",
     "itemsFound": "items found",
     "viewAll": "View all vocabulary",
     "noItems": "No items found in this category.",
-    "search": "ls ./vocabulary"
+    "search": "ls ./vocabulary",
+    "all": "All",
+    "categories": {
+      "Layout": "Layout",
+      "Typography": "Typography",
+      "Color": "Color",
+      "Components": "Components",
+      "Responsive": "Responsive",
+      "Animation": "Animation",
+      "Styling": "Styling"
+    },
+    "difficulty": {
+      "Easy": "Easy",
+      "Medium": "Medium",
+      "Hard": "Hard"
+    },
+    "metadata": "Metadata",
+    "updated": "Updated",
+    "onThisPage": "On this page"
+  },
+  "Playground": {
+    "flexboxTitle": "Flexbox Playground",
+    "flexboxCommand": "interactive --demo",
+    "gridTitle": "Grid Playground",
+    "gridCommand": "interactive --demo",
+    "cssOutput": "// CSS Output"
+  },
+  "Styles": {
+    "title": "Visual Styles",
+    "subtitle": "Curated collection of UI styles with ready-to-use AI prompts.",
+    "copyPrompt": "Copy AI Prompt",
+    "preview": "Live Preview",
+    "variables": "Design Tokens"
   },
   "Home": {
     "title": "Design Vocabulary",

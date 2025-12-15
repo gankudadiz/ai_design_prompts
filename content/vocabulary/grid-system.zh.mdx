@@ -1,31 +1,31 @@
 ---
-title: Grid System
-subtitle: The foundation of organized layouts
+title: Grid System (栅格系统)
+subtitle: 有序布局的基础
 category: Layout
 difficulty: Medium
 tags: [Layout, CSS, Design]
-description: A structure comprising a series of lines (vertical or horizontal) that divide a page into columns or modules.
+description: 由一系列垂直或水平线组成的结构，将页面划分为列或模块。
 createdAt: 2025-12-13
 updatedAt: 2025-12-13
 ---
 
-# Grid System
+# Grid System (栅格系统)
 
-The **Grid System** is the invisible structure that holds a design together. Think of it as the skeleton of your interface.
+**Grid System** (栅格系统) 是支撑设计的无形结构。把它想象成界面的骨架。
 
-## Why use a Grid?
+## 为什么要使用 Grid?
 
-1.  **Consistency**: Helps align elements across different pages.
-2.  **Efficiency**: Speeds up the design-to-code process.
-3.  **Responsiveness**: Makes it easier to adapt designs to different screen sizes.
+1.  **一致性**: 帮助对齐不同页面上的元素。
+2.  **效率**: 加快从设计到代码的过程。
+3.  **响应式**: 更容易使设计适应不同的屏幕尺寸。
 
-## Interactive Demo
+## 交互演示
 
 <GridPlayground />
 
-## The 12-Column Grid
+## 12列栅格
 
-The most popular grid system in web design is the **12-column grid**. Why 12? Because 12 is divisible by 1, 2, 3, 4, and 6, making it extremely flexible.
+网页设计中最流行的栅格系统是 **12列栅格**。为什么是12？因为12可以被1、2、3、4和6整除，非常灵活。
 
 ```css
 .container {
@@ -35,15 +35,15 @@ The most popular grid system in web design is the **12-column grid**. Why 12? Be
 }
 
 .col-4 {
-  grid-column: span 4; /* Takes up 4 columns (1/3 of width) */
+  grid-column: span 4; /* 占据4列 (宽度的1/3) */
 }
 
 .col-6 {
-  grid-column: span 6; /* Takes up 6 columns (1/2 of width) */
+  grid-column: span 6; /* 占据6列 (宽度的1/2) */
 }
 ```
 
-<TerminalCard title="Grid Example">
+<TerminalCard title="Grid 示例">
   <div className="grid grid-cols-12 gap-2 p-4 bg-bg-tertiary rounded">
     <div className="col-span-12 bg-mint-500/20 text-mint-500 p-2 text-center text-xs">Header (12)</div>
     <div className="col-span-4 bg-accent-pink/20 text-accent-pink p-2 text-center text-xs">Sidebar (4)</div>

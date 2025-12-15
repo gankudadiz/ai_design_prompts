@@ -163,4 +163,25 @@ export const MdxComponents = {
   strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <strong className={clsx("font-bold text-text-primary", className)} {...props} />
   ),
+  // Table components
+  table: ({ className, ...props }: React.TableHTMLAttributes<HTMLTableElement>) => (
+    <div className="overflow-x-auto my-6 border border-border-medium rounded-md">
+      <table className={clsx("w-full text-left border-collapse", className)} {...props} />
+    </div>
+  ),
+  thead: ({ className, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <thead className={clsx("bg-bg-secondary text-text-primary", className)} {...props} />
+  ),
+  tbody: ({ className, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <tbody className={clsx("divide-y divide-border-medium", className)} {...props} />
+  ),
+  tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr className={clsx("hover:bg-bg-secondary/50 transition-colors", className)} {...props} />
+  ),
+  th: ({ className, ...props }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
+    <th className={clsx("p-4 font-semibold text-sm tracking-wider border-b border-border-medium", className)} {...props} />
+  ),
+  td: ({ className, ...props }: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
+    <td className={clsx("p-4 text-sm text-text-secondary", className)} {...props} />
+  ),
 };

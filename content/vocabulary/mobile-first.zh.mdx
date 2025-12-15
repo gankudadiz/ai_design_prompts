@@ -1,0 +1,63 @@
+---
+title: Mobile First (移动优先)
+subtitle: 优先为小屏幕设计
+category: Responsive
+difficulty: Easy
+tags: [Responsive, Design, Philosophy]
+description: 一种设计策略，从最小的屏幕（移动设备）开始设计，然后逐步增强设计以适应更大的屏幕。
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Mobile First (移动优先)
+
+**Mobile First** (移动优先) 是一种设计哲学，旨在通过从最小的屏幕（移动设备）开始设计过程来创造更好的用户体验。
+
+## 为什么选择 Mobile First?
+
+1.  **内容聚焦**: 迫使你优先考虑最重要的内容。
+2.  **性能**: 移动端的代码通常更轻、更快。
+3.  **趋势**: 通过移动设备访问网络的人比通过桌面设备的人多。
+
+## CSS 实现
+
+在 CSS 中，这意味着使用 `min-width` 媒体查询。默认样式是针对移动设备的，随着屏幕变宽，你会增加复杂性。
+
+```css
+/* 默认样式 (移动端) */
+.container {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* 平板 (md) */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
+/* 桌面 (lg) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 40px;
+    font-size: 18px;
+  }
+}
+```
+
+<TerminalCard title="响应式断点">
+  <div className="space-y-2 p-4 font-mono text-xs">
+    <div className="bg-bg-tertiary p-2 border-l-4 border-red-500">
+      <span className="text-red-500 font-bold">Mobile</span>: &lt; 768px (默认)
+    </div>
+    <div className="bg-bg-tertiary p-2 border-l-4 border-yellow-500 hidden md:block">
+      <span className="text-yellow-500 font-bold">Tablet</span>: ≥ 768px (md+ 可见)
+    </div>
+    <div className="bg-bg-tertiary p-2 border-l-4 border-green-500 hidden lg:block">
+      <span className="text-green-500 font-bold">Desktop</span>: ≥ 1024px (lg+ 可见)
+    </div>
+  </div>
+  <p className="text-center text-text-muted text-xs mt-2">调整浏览器窗口大小查看变化！</p>
+</TerminalCard>

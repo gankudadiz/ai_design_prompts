@@ -1,0 +1,93 @@
+---
+title: "Rainbow Y2K"
+description: "A nostalgic blend of early internet aesthetics, neon gradients, and vaporwave vibes."
+tags: ["y2k", "vaporwave", "neon", "gradient"]
+preview:
+  backgroundColor: "#0a0a1a"
+  textColor: "#e0f0ff"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff00ff"
+  secondaryColor: "#1a1a2a"
+  borderColor: "#00d4ff"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper h1 {
+      background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 3s linear infinite;
+    }
+    
+    .style-preview-wrapper button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    
+    .style-preview-wrapper button:hover {
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    @keyframes rainbow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+prompt: |
+  Create a web interface with a "Rainbow Y2K" theme.
+  
+  **Visual Style**:
+  - Background: Deep Void Black (#0a0a1a)
+  - Gradients: Use linear gradients combining Cyan (#00d4ff), Magenta (#ff00ff), and Lime (#a3e635).
+  - Text Effects: Use `-webkit-background-clip: text` for headlines to apply rainbow gradients.
+  - Glow: Add text-shadow and box-shadow with neon colors (Magenta/Cyan) to create a glowing tube effect.
+  
+  **Typography**:
+  - Font: Monospaced (Courier New) to keep the retro-tech feel.
+  
+  **Components**:
+  - Borders: Thin, sharp borders.
+  - Interactive: Hover states should trigger color shifts or glow intensification.
+  
+  **Vibe**:
+  - Retro-futuristic, cyber-psychedelic, playful, high-energy.
+---
+
+# Rainbow Y2K
+
+Embrace the chaotic energy of the early 2000s web with a modern twist. This style combines the structure of a terminal with the vibrant colors of vaporwave.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-void` | `#0a0a1a` | Main background |
+| `--neon-cyan` | `#00d4ff` | Primary Accent |
+| `--neon-magenta` | `#ff00ff` | Secondary Accent |
+| `--neon-lime` | `#a3e635` | Highlight Accent |
+| `--text-light` | `#e0f0ff` | Body text |
+
+### CSS Effects
+**Rainbow Text**:
+```css
+background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+
+**Neon Glow**:
+```css
+text-shadow: 0 0 10px #ff00ff;
+```
+
+## Usage Example
+
+```css
+.hero-title {
+  background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
+```

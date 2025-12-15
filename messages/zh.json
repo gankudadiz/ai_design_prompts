@@ -1,20 +1,54 @@
 {
   "Navbar": {
     "home": "首页",
-    "vocabulary": "词汇表",
-    "about": "关于"
+    "concepts": "基础概念",
+    "styles": "视觉风格",
+    "about": "关于",
+    "searchPlaceholder": "搜索术语..."
   },
   "Vocabulary": {
     "filter": "筛选",
     "itemsFound": "个项目",
     "viewAll": "查看所有词汇",
     "noItems": "该分类下没有找到词汇。",
-    "search": "ls ./词汇表"
+    "search": "ls ./词汇表",
+    "all": "全部",
+    "categories": {
+      "Layout": "布局",
+      "Typography": "排版",
+      "Color": "色彩",
+      "Components": "组件",
+      "Responsive": "响应式",
+      "Animation": "动画",
+      "Styling": "样式"
+    },
+    "difficulty": {
+      "Easy": "简单",
+      "Medium": "中等",
+      "Hard": "困难"
+    },
+    "metadata": "元数据",
+    "updated": "更新于",
+    "onThisPage": "本页内容"
+  },
+  "Playground": {
+    "flexboxTitle": "Flexbox 演练场",
+    "flexboxCommand": "交互式 --演示",
+    "gridTitle": "Grid 演练场",
+    "gridCommand": "交互式 --演示",
+    "cssOutput": "// CSS 输出"
+  },
+  "Styles": {
+    "title": "视觉风格",
+    "subtitle": "精选 UI 风格合集，附带即开即用的 AI 提示词。",
+    "copyPrompt": "复制 AI 提示词",
+    "preview": "实时预览",
+    "variables": "设计变量"
   },
   "Home": {
-    "title": "Design Vocabulary",
+    "title": "设计词汇表",
     "subtitle1": "面向开发者的可视化设计词典",
-    "subtitle2": "Interactive demos & Code snippets",
+    "subtitle2": "交互式演示 & 代码片段",
     "start": "开始探索",
     "about": "关于项目",
     "version": "v1.0.0-beta"

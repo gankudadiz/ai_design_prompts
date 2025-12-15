@@ -1,0 +1,93 @@
+---
+title: "Rainbow Y2K (千禧彩虹)"
+description: "融合早期互联网审美、霓虹渐变和蒸汽波风格的怀旧设计。"
+tags: ["y2k", "vaporwave", "neon", "gradient"]
+preview:
+  backgroundColor: "#0a0a1a"
+  textColor: "#e0f0ff"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff00ff"
+  secondaryColor: "#1a1a2a"
+  borderColor: "#00d4ff"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper h1 {
+      background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 3s linear infinite;
+    }
+    
+    .style-preview-wrapper button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    
+    .style-preview-wrapper button:hover {
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+    
+    @keyframes rainbow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+prompt: |
+  请创建一个主题为 "Rainbow Y2K" (千禧彩虹) 的网页界面。
+  
+  **视觉风格**:
+  - 背景色: 深渊黑 (#0a0a1a)
+  - 渐变: 使用结合青色 (#00d4ff)、洋红 (#ff00ff) 和 酸性绿 (#a3e635) 的线性渐变。
+  - 文字特效: 标题使用 `-webkit-background-clip: text` 实现彩虹渐变。
+  - 发光: 使用霓虹色 (洋红/青色) 的 `text-shadow` 和 `box-shadow` 营造辉光管效果。
+  
+  **排版**:
+  - 字体: 等宽字体 (Courier New) 保持复古科技感。
+  
+  **组件**:
+  - 边框: 纤细锐利的边框。
+  - 交互: 悬停状态应触发颜色偏移或发光增强。
+  
+  **氛围**:
+  - 复古未来主义、赛博迷幻、俏皮、高能量。
+---
+
+# Rainbow Y2K (千禧彩虹)
+
+拥抱 2000 年代早期网络的混乱能量，并融入现代感。这种风格结合了终端的结构与蒸汽波的鲜艳色彩。
+
+## 设计变量 (Design Tokens)
+
+### 颜色
+| Token | 值 | 用途 |
+| :--- | :--- | :--- |
+| `--bg-void` | `#0a0a1a` | 主背景 |
+| `--neon-cyan` | `#00d4ff` | 主强调色 |
+| `--neon-magenta` | `#ff00ff` | 次要强调色 |
+| `--neon-lime` | `#a3e635` | 高亮色 |
+| `--text-light` | `#e0f0ff` | 正文文本 |
+
+### CSS 特效
+**彩虹文字**:
+```css
+background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+
+**霓虹辉光**:
+```css
+text-shadow: 0 0 10px #ff00ff;
+```
+
+## 使用示例
+
+```css
+.hero-title {
+  background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
+```

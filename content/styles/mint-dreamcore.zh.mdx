@@ -1,0 +1,132 @@
+---
+title: "Mint Dreamcore (薄荷梦核)"
+description: "超现实、梦幻般的美学，融合了锐利的薄荷绿与深邃的紫色虚空。"
+tags: ["dreamcore", "mint", "purple", "surreal"]
+preview:
+  backgroundColor: "#0f0a1a"
+  textColor: "#00ffcc"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#00ffcc"
+  secondaryColor: "#1a0f2e"
+  borderColor: "#00ffcc"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper h1,
+    .style-preview-wrapper .text-4xl,
+    .style-preview-wrapper .text-5xl {
+      color: #00ffcc !important;
+      text-shadow: 0 0 15px #00ffcc;
+    }
+    .style-preview-wrapper .overflow-y-auto > div:first-child {
+      position: relative;
+    }
+    .style-preview-wrapper .overflow-y-auto > div:first-child::before {
+      content: '✨';
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      font-size: 24px;
+      opacity: 0.5;
+      animation: twinkle 2s infinite;
+      pointer-events: none;
+    }
+    .style-preview-wrapper .overflow-y-auto > div:first-child::after {
+      content: '🌸';
+      position: absolute;
+      top: 30%;
+      right: 15%;
+      font-size: 20px;
+      opacity: 0.5;
+      animation: twinkle 3s infinite;
+      pointer-events: none;
+    }
+    .style-preview-wrapper button:first-of-type {
+      background: #1a0f2a !important;
+      border: 1px solid #00ffcc !important;
+      color: #00ffcc !important;
+      text-shadow: 0 0 5px #00ffcc;
+      box-shadow: none;
+    }
+    .style-preview-wrapper button:first-of-type:hover {
+      background: #00ffcc !important;
+      color: #0f0a1a !important;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    .style-preview-wrapper button:nth-of-type(2) {
+      border-color: #ff6b9d !important;
+      color: #ff6b9d !important;
+      text-shadow: 0 0 5px #ff6b9d;
+    }
+    .style-preview-wrapper button:nth-of-type(2):hover {
+      background: rgba(255, 107, 157, 0.1) !important;
+      box-shadow: 0 0 15px #ff6b9d;
+    }
+    .style-preview-wrapper div[class*="grid"] > div {
+      border: 1px solid #2a1a3a;
+      background: #1a0f2a;
+    }
+    .style-preview-wrapper div[class*="grid"] > div:hover {
+      border-color: #00ffcc !important;
+      background: #2a1a3a !important;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+      transform: translateY(-2px);
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+prompt: |
+  请创建一个主题为 "Mint Dreamcore" (薄荷梦核) 的网页界面。
+  
+  **视觉风格**:
+  - 背景色: 深紫色虚空 (#0f0a1a)
+  - 主色调: 霓虹薄荷绿 (#00ffcc)
+  - 辅助色: 亮粉色 (#ff6b9d)
+  - 文本色: 浅淡紫色 (#e0d9f5)
+  
+  **特效**:
+  - 发光: 大量使用 `text-shadow` 和 `box-shadow` 为薄荷绿和粉色元素添加辉光。
+  
+  **氛围**:
+  - 空灵、数码感、轻微致幻、干净而神秘。
+---
+
+# Mint Dreamcore (薄荷梦核)
+
+一种仿佛置身于数字空间清醒梦中的风格。深紫色背景与刺眼的薄荷绿形成强烈的视觉对比。
+
+## 设计变量 (Design Tokens)
+
+### 颜色
+| Token | 值 | 用途 |
+| :--- | :--- | :--- |
+| `--bg-dream` | `#0f0a1a` | 主背景 |
+| `--neon-mint` | `#00ffcc` | 主辉光 |
+| `--neon-pink` | `#ff6b9d` | 辅助辉光 |
+| `--text-lavender` | `#e0d9f5` | 正文文本 |
+
+### CSS 特效
+**薄荷辉光**:
+```css
+text-shadow: 0 0 15px #00ffcc;
+```
+
+**粉色辉光**:
+```css
+text-shadow: 0 0 10px #ff6b9d;
+```
+
+## 使用示例
+
+```css
+.hero-title {
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc;
+}
+
+.btn:hover {
+  background: #00ffcc;
+  color: #0f0a1a;
+  box-shadow: 0 0 20px #00ffcc;
+}
+```

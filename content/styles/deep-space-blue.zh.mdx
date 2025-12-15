@@ -1,0 +1,105 @@
+---
+title: "Deep Space Blue (深空科幻)"
+description: "灵感源自科幻仪表盘和深空探索的未来主义终端界面。"
+tags: ["dark-mode", "sci-fi", "terminal", "blue"]
+preview:
+  backgroundColor: "#0a0e1a"
+  textColor: "#00d4ff"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#00d4ff"
+  secondaryColor: "#111520"
+  borderColor: "#333333"
+  borderRadius: "2px"
+  css: |
+    .style-preview-wrapper h1 {
+      color: #00d4ff !important;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+    .style-preview-wrapper button:first-of-type {
+      background-color: #1a1e2a !important;
+      border: 1px solid #00d4ff !important;
+      color: #00d4ff !important;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    }
+    .style-preview-wrapper button:first-of-type:hover {
+      background-color: #00d4ff !important;
+      color: #0a0e1a !important;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    }
+    .style-preview-wrapper button:nth-of-type(2) {
+      border-color: #00ffcc !important;
+      color: #00ffcc !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2):hover {
+      background-color: rgba(0, 255, 204, 0.1) !important;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+    }
+    .style-preview-wrapper div[class*="grid"] > div {
+      border: 1px solid #333333;
+      transition: all 0.3s ease;
+    }
+    .style-preview-wrapper div[class*="grid"] > div:hover {
+      border-color: #00d4ff !important;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+      transform: translateY(-5px);
+    }
+prompt: |
+  请创建一个主题为 "Deep Space Blue" (深空科幻) 的网页界面。
+  
+  **视觉风格**:
+  - 背景色: 极深的蓝黑色 (#0a0e1a)
+  - 主色调: 青色/电光蓝 (#00d4ff)
+  - 辅助色: 薄荷绿 (#00ffcc) 用于强调或提示符
+  - 文字颜色: 浅灰色 (#e0e0e0) 用于正文
+  - 边框: 细实线 (#333333)
+  
+  **排版**:
+  - 字体: 等宽字体 (Courier New, Fira Code, 或类似)
+  - 标题: 粗体，使用主色调蓝色
+  
+  **组件**:
+  - 按钮: 透明背景带主色调边框。悬停效果：填充主色调，文字变暗。
+  - 卡片: 较深的背景 (#111520) 带细边框。
+  - 输入框: 深色背景，浅色边框，等宽文字。
+  
+  **氛围**:
+  - 未来感、干净、数据密集、专业的 CLI 工具感。
+---
+
+# Deep Space Blue (深空科幻)
+
+这种风格非常适合开发者工具、仪表盘和文档站点，旨在传达技术精确度和深度感。
+
+## 设计变量 (Design Tokens)
+
+### 颜色
+| Token | 值 | 用途 |
+| :--- | :--- | :--- |
+| `--bg-primary` | `#0a0e1a` | 主背景 |
+| `--bg-secondary` | `#111520` | 卡片/区块背景 |
+| `--text-primary` | `#e0e0e0` | 正文文本 |
+| `--accent-primary` | `#00d4ff` | 链接, 按钮, 高亮 |
+| `--accent-secondary` | `#00ffcc` | 提示符, 成功状态 |
+| `--border-color` | `#333333` | 分割线, 边框 |
+
+### 排版
+*   **字体族**: `'Courier New', monospace`
+*   **字号**: 14px (正文), 16px (导航), 32px (大标题)
+
+## 使用示例
+
+```css
+.btn {
+  background: transparent;
+  border: 1px solid #00d4ff;
+  color: #00d4ff;
+  font-family: 'Courier New', monospace;
+  padding: 12px 24px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: #00d4ff;
+  color: #0a0e1a;
+}
+```

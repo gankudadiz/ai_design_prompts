@@ -1,0 +1,105 @@
+---
+title: "Deep Space Blue"
+description: "A futuristic terminal interface inspired by sci-fi dashboards and deep space exploration."
+tags: ["dark-mode", "sci-fi", "terminal", "blue"]
+preview:
+  backgroundColor: "#0a0e1a"
+  textColor: "#00d4ff"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#00d4ff"
+  secondaryColor: "#111520"
+  borderColor: "#333333"
+  borderRadius: "2px"
+  css: |
+    .style-preview-wrapper h1 {
+      color: #00d4ff !important;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+    .style-preview-wrapper button:first-of-type {
+      background-color: #1a1e2a !important;
+      border: 1px solid #00d4ff !important;
+      color: #00d4ff !important;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    }
+    .style-preview-wrapper button:first-of-type:hover {
+      background-color: #00d4ff !important;
+      color: #0a0e1a !important;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    }
+    .style-preview-wrapper button:nth-of-type(2) {
+      border-color: #00ffcc !important;
+      color: #00ffcc !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2):hover {
+      background-color: rgba(0, 255, 204, 0.1) !important;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+    }
+    .style-preview-wrapper div[class*="grid"] > div {
+      border: 1px solid #333333;
+      transition: all 0.3s ease;
+    }
+    .style-preview-wrapper div[class*="grid"] > div:hover {
+      border-color: #00d4ff !important;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+      transform: translateY(-5px);
+    }
+prompt: |
+  Create a web interface with a "Deep Space Blue" theme. 
+  
+  **Visual Style**:
+  - Background: Very dark blue/black (#0a0e1a)
+  - Primary Color: Cyan/Electric Blue (#00d4ff)
+  - Secondary Color: Mint Green (#00ffcc) for accents/prompts
+  - Text Color: Light Grey (#e0e0e0) for body text
+  - Borders: Thin, solid lines (#333333)
+  
+  **Typography**:
+  - Font: Monospaced (Courier New, Fira Code, or similar)
+  - Headings: Bold, Colored in Primary Blue
+  
+  **Components**:
+  - Buttons: Transparent background with Primary Blue border. Hover effect: Fill with Primary Blue, text becomes dark.
+  - Cards: Darker background (#111520) with thin borders.
+  - Input Fields: Dark background, light border, monospaced text.
+  
+  **Vibe**:
+  - Futuristic, clean, data-heavy, professional CLI tool.
+---
+
+# Deep Space Blue
+
+This style is perfect for developer tools, dashboards, and documentation sites that want to convey a sense of technical precision and depth.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-primary` | `#0a0e1a` | Main background |
+| `--bg-secondary` | `#111520` | Card/Section background |
+| `--text-primary` | `#e0e0e0` | Body text |
+| `--accent-primary` | `#00d4ff` | Links, Buttons, Highlights |
+| `--accent-secondary` | `#00ffcc` | Prompts, Success states |
+| `--border-color` | `#333333` | Dividers, Borders |
+
+### Typography
+*   **Font Family**: `'Courier New', monospace`
+*   **Scale**: 14px (Body), 16px (Nav), 32px (Hero)
+
+## Usage Example
+
+```css
+.btn {
+  background: transparent;
+  border: 1px solid #00d4ff;
+  color: #00d4ff;
+  font-family: 'Courier New', monospace;
+  padding: 12px 24px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: #00d4ff;
+  color: #0a0e1a;
+}
+```

@@ -1,0 +1,95 @@
+---
+title: "Warm Amber (暖阳琥珀)"
+description: "一个舒适、怀旧、模拟风格的界面，使用复古计算的橙色调。"
+tags: ["retro", "crt", "amber", "warm"]
+preview:
+  backgroundColor: "#1a1200"
+  textColor: "#ffb020"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ffcc33"
+  secondaryColor: "#221805"
+  borderColor: "#2a1e0a"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper h1 {
+      color: #ffb020 !important;
+    }
+    .style-preview-wrapper button:first-of-type {
+      background: #2a1e0a !important;
+      border: 1px solid #ffb020 !important;
+      color: #ffb020 !important;
+    }
+    .style-preview-wrapper button:first-of-type:hover {
+      background: #ffb020 !important;
+      color: #1a1200 !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2) {
+      border-color: #ffcc33 !important;
+      color: #ffcc33 !important;
+      text-shadow: none !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2):hover {
+      background: rgba(255, 176, 32, 0.1) !important;
+    }
+    .style-preview-wrapper div[class*="grid"] > div {
+      background: #2a1e0a;
+      border: 1px solid #3a2e1a;
+      transition: all 0.2s;
+    }
+    .style-preview-wrapper div[class*="grid"] > div:hover {
+      border-color: #ffb020 !important;
+      background: #3a2e1a !important;
+    }
+prompt: |
+  请创建一个主题为 "Warm Amber" (暖阳琥珀) 的网页界面。
+  
+  **视觉风格**:
+  - 背景色: 深褐黑色 (#1a1200)
+  - 主色调: 琥珀色/橙色 (#ffb020)
+  - 辅助色: 浅琥珀色 (#ffcc33)
+  - 文本色: 暖米色 (#e0d5c0)
+  - 边框: 低对比度褐色 (#2a1e0a)
+  
+  **排版**:
+  - 字体: 等宽字体 (Courier New)
+  
+  **组件**:
+  - 按钮: 实心琥珀色边框，暖色悬停状态。
+  - 卡片: 非常微妙的背景区分 (#221805)。
+  
+  **氛围**:
+  - 怀旧、舒适、易读、复古计算。
+---
+
+# Warm Amber (暖阳琥珀)
+
+灵感来自 80 年代的琥珀色单色显示器。这种风格比纯高对比度主题更护眼，并唤起强烈的怀旧感。
+
+## 设计变量 (Design Tokens)
+
+### 颜色
+| Token | 值 | 用途 |
+| :--- | :--- | :--- |
+| `--bg-warm` | `#1a1200` | 主背景 |
+| `--amber-primary` | `#ffb020` | 主要文本/边框 |
+| `--amber-light` | `#ffcc33` | 高亮 |
+| `--text-beige` | `#e0d5c0` | 正文文本 |
+| `--border-warm` | `#2a1e0a` | 边框 |
+
+## 使用示例
+
+```css
+body {
+  background-color: #1a1200;
+  color: #e0d5c0;
+  font-family: 'Courier New', monospace;
+}
+
+a {
+  color: #ffb020;
+}
+
+a:hover {
+  color: #ffcc33;
+}
+```

@@ -3,14 +3,17 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { FlexPlayground } from '@/components/mdx/FlexPlayground';
+import { GridPlayground } from '@/components/mdx/GridPlayground';
 import { TerminalCard } from '@/components/ui/TerminalCard';
 import { MdxComponents } from '@/components/mdx/MdxStyles';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { getTranslations } from 'next-intl/server';
 
 const components = {
   ...MdxComponents,
   FlexPlayground,
+  GridPlayground,
   TerminalCard,
 };
 
@@ -29,6 +32,7 @@ export async function generateStaticParams() {
 export default async function VocabularyPost({ params }: { params: Promise<{ slug: string, locale: string }> }) {
   const { slug, locale } = await params;
   const { meta, content } = await getVocabularyBySlug(slug, locale);
+  const t = await getTranslations({locale, namespace: 'Vocabulary'});
 
   const options: any = {
     mdxOptions: {
@@ -82,12 +86,12 @@ export default async function VocabularyPost({ params }: { params: Promise<{ slu
           {/* Meta Info Card */}
           <div className="bg-bg-card border border-border-medium p-4">
             <h3 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-3">
-              Metadata
+              {t('metadata')}
             </h3>
             <div className="space-y-3 text-xs md:text-sm">
               <div className="flex items-center text-text-secondary">
                 <Calendar className="w-4 h-4 mr-3 text-text-muted" />
-                <span>Updated: {meta.updatedAt}</span>
+                <span>{t('updated')}: {new Date(meta.updatedAt).toLocaleDateString(locale)}</span>
               </div>
               <div className="flex items-start text-text-secondary">
                 <Tag className="w-4 h-4 mr-3 mt-1 text-text-muted" />
@@ -102,26 +106,19 @@ export default async function VocabularyPost({ params }: { params: Promise<{ slu
             </div>
           </div>
 
-          {/* TOC Placeholder */}
+          {/* TOC Placeholder - Hidden for now until dynamic TOC is implemented */}
+          {/* 
           <div className="bg-bg-card border border-border-medium p-4 sticky top-24">
             <h3 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-3">
-              On this page
+              {t('onThisPage')}
             </h3>
             <ul className="space-y-1.5 text-xs md:text-sm text-text-secondary">
               <li className="pl-2 border-l-2 border-mint-500 text-mint-500">
                 <a href="#什么是-flexbox" className="hover:underline">什么是 Flexbox?</a>
               </li>
-              <li className="pl-2 border-l-2 border-transparent hover:border-text-muted cursor-pointer transition-colors">
-                <a href="#核心概念" className="hover:underline">核心概念</a>
-              </li>
-              <li className="pl-2 border-l-2 border-transparent hover:border-text-muted cursor-pointer transition-colors">
-                <a href="#常用属性" className="hover:underline">常用属性</a>
-              </li>
-              <li className="pl-2 border-l-2 border-transparent hover:border-text-muted cursor-pointer transition-colors">
-                <a href="#使用场景" className="hover:underline">使用场景</a>
-              </li>
             </ul>
           </div>
+          */}
         </div>
       </div>
     </div>

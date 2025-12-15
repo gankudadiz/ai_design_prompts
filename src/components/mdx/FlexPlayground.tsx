@@ -3,18 +3,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalCard } from '@/components/ui/TerminalCard';
+import { useTranslations } from 'next-intl';
 
 const flexDirectionOptions = ['row', 'row-reverse', 'column', 'column-reverse'];
 const justifyContentOptions = ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'];
 const alignItemsOptions = ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'];
 
 export function FlexPlayground() {
+  const t = useTranslations('Playground');
   const [flexDirection, setFlexDirection] = useState('row');
   const [justifyContent, setJustifyContent] = useState('center');
   const [alignItems, setAlignItems] = useState('center');
 
   return (
-    <TerminalCard title="Flexbox Playground" command="interactive --demo" className="my-8">
+    <TerminalCard title={t('flexboxTitle')} command={t('flexboxCommand')} className="my-8">
       <div className="flex flex-col gap-6">
         {/* Controls */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-bg-secondary border border-border-medium rounded-sm">
@@ -85,7 +87,7 @@ export function FlexPlayground() {
 
         {/* CSS Output */}
         <div className="bg-bg-primary p-4 border border-border-medium font-mono text-sm">
-          <div className="text-text-muted mb-2">// CSS Output</div>
+          <div className="text-text-muted mb-2">{t('cssOutput')}</div>
           <div className="text-accent-purple">.container <span className="text-text-primary">{`{`}</span></div>
           <div className="pl-4 text-text-primary">
             <span className="text-accent-pink">display</span>: <span className="text-mint-500">flex</span>;

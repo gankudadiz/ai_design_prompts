@@ -8,7 +8,8 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 
 const navItems = [
   { key: 'home', path: '/' },
-  { key: 'vocabulary', path: '/vocabulary' },
+  { key: 'concepts', path: '/vocabulary' },
+  { key: 'styles', path: '/styles' },
   { key: 'about', path: '/about' },
 ];
 
@@ -69,7 +70,7 @@ export function Navbar() {
               </div>
               <input
                 type="text"
-                placeholder="search_term..."
+                placeholder={t('searchPlaceholder')}
                 className="w-48 bg-bg-secondary border border-border-medium text-sm text-text-primary py-1.5 pl-9 pr-3 focus:outline-none focus:border-mint-500 focus:ring-1 focus:ring-mint-500/50 transition-all placeholder:text-text-muted/50"
               />
               <div className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-text-muted border border-border-medium px-1.5 py-0.5 bg-bg-primary">

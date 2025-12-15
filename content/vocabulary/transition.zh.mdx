@@ -1,0 +1,38 @@
+---
+title: Transition (过渡)
+subtitle: 平滑的状态变化
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Motion]
+description: CSS Transitions 允许你在给定的时间内平滑地改变属性值。
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Transition (过渡)
+
+**Transitions** (过渡) 提供了一种控制 CSS 属性变化时动画速度的方法。你可以让属性的变化在一段时间内发生，而不是立即生效。
+
+## 核心属性
+
+1.  `transition-property`: 要动画化的属性 (例如 `opacity`, `transform`, `all`)。
+2.  `transition-duration`: 持续时间 (例如 `0.3s`, `300ms`)。
+3.  `transition-timing-function`: 速度曲线 (例如 `ease`, `linear`, `cubic-bezier`)。
+4.  `transition-delay`: 开始前的延迟时间。
+
+## 简写
+
+```css
+/* 属性 持续时间 速度曲线 延迟 */
+.box {
+  transition: all 0.3s ease-in-out;
+}
+```
+
+<TerminalCard title="过渡演示">
+  <div className="p-8 flex justify-center">
+    <div className="w-24 h-24 bg-accent-pink rounded cursor-pointer transition-all duration-500 hover:scale-125 hover:rotate-12 hover:bg-mint-500 hover:shadow-[0_0_30px_rgba(0,255,204,0.5)] flex items-center justify-center text-bg-card font-bold">
+      Hover Me
+    </div>
+  </div>
+</TerminalCard>

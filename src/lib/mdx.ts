@@ -14,7 +14,17 @@ export interface VocabularyMeta {
   description: string;
   createdAt: string;
   updatedAt: string;
+  priority?: number;
 }
+
+const CATEGORY_PRIORITY: Record<string, number> = {
+  'Layout': 1,
+  'Components': 2,
+  'Typography': 3,
+  'Color': 4,
+  'Animation': 5,
+  'Responsive': 6
+};
 
 export interface VocabularyPost {
   meta: VocabularyMeta;
@@ -62,14 +72,38 @@ export function getAllVocabularyMeta(locale: string = 'en'): VocabularyMeta[] {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
 
-    return {
+    const meta = {
       slug,
       ...data,
     } as VocabularyMeta;
+
+    // Ensure dates are strings to avoid serialization issues
+    if (meta.createdAt instanceof Date) {
+      meta.createdAt = (meta.createdAt as Date).toISOString();
+    }
+    if (meta.updatedAt instanceof Date) {
+      meta.updatedAt = (meta.updatedAt as Date).toISOString();
+    }
+
+    return meta;
   }).filter(Boolean) as VocabularyMeta[];
 
-  // Sort posts by date
+  // Sort posts by priority first, then by date
   return allVocabularyData.sort((a, b) => {
+    // 1. Sort by explicit priority if available
+    if (a.priority !== undefined && b.priority !== undefined) {
+      return a.priority - b.priority;
+    }
+    
+    // 2. Sort by Category Priority
+    const priorityA = CATEGORY_PRIORITY[a.category] || 99;
+    const priorityB = CATEGORY_PRIORITY[b.category] || 99;
+    
+    if (priorityA !== priorityB) {
+      return priorityA - priorityB;
+    }
+
+    // 3. Fallback to date (newest first)
     if (a.createdAt < b.createdAt) {
       return 1;
     } else {
@@ -99,11 +133,21 @@ export async function getVocabularyBySlug(slug: string, locale: string = 'en'): 
   
   const { data, content } = matter(fileContents);
 
+  const meta = {
+    slug,
+    ...data,
+  } as VocabularyMeta;
+
+  // Ensure dates are strings
+  if (meta.createdAt instanceof Date) {
+    meta.createdAt = (meta.createdAt as Date).toISOString();
+  }
+  if (meta.updatedAt instanceof Date) {
+    meta.updatedAt = (meta.updatedAt as Date).toISOString();
+  }
+
   return {
-    meta: {
-      slug,
-      ...data,
-    } as VocabularyMeta,
+    meta,
     content,
   };
 }

@@ -1,0 +1,95 @@
+---
+title: "Warm Amber"
+description: "A cozy, retro-terminal style reminiscent of old monochrome CRT monitors."
+tags: ["retro", "crt", "amber", "warm"]
+preview:
+  backgroundColor: "#1a1200"
+  textColor: "#ffb020"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ffcc33"
+  secondaryColor: "#221805"
+  borderColor: "#2a1e0a"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper h1 {
+      color: #ffb020 !important;
+    }
+    .style-preview-wrapper button:first-of-type {
+      background: #2a1e0a !important;
+      border: 1px solid #ffb020 !important;
+      color: #ffb020 !important;
+    }
+    .style-preview-wrapper button:first-of-type:hover {
+      background: #ffb020 !important;
+      color: #1a1200 !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2) {
+      border-color: #ffcc33 !important;
+      color: #ffcc33 !important;
+      text-shadow: none !important;
+    }
+    .style-preview-wrapper button:nth-of-type(2):hover {
+      background: rgba(255, 176, 32, 0.1) !important;
+    }
+    .style-preview-wrapper div[class*="grid"] > div {
+      background: #2a1e0a;
+      border: 1px solid #3a2e1a;
+      transition: all 0.2s;
+    }
+    .style-preview-wrapper div[class*="grid"] > div:hover {
+      border-color: #ffb020 !important;
+      background: #3a2e1a !important;
+    }
+prompt: |
+  Create a web interface with a "Warm Amber" theme.
+  
+  **Visual Style**:
+  - Background: Dark Brown/Black (#1a1200)
+  - Primary Color: Amber/Orange (#ffb020)
+  - Secondary Color: Light Amber (#ffcc33)
+  - Text Color: Warm Beige (#e0d5c0)
+  - Borders: Low contrast brown (#2a1e0a)
+  
+  **Typography**:
+  - Font: Monospaced (Courier New)
+  
+  **Components**:
+  - Buttons: Solid Amber borders, warm hover states.
+  - Cards: Very subtle background distinction (#221805).
+  
+  **Vibe**:
+  - Nostalgic, comfortable, readable, vintage computing.
+---
+
+# Warm Amber
+
+Inspired by the amber monochrome monitors of the 1980s. This style is easier on the eyes than pure high-contrast themes and evokes a strong sense of nostalgia.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-warm` | `#1a1200` | Main background |
+| `--amber-primary` | `#ffb020` | Primary text/border |
+| `--amber-light` | `#ffcc33` | Highlights |
+| `--text-beige` | `#e0d5c0` | Body text |
+| `--border-warm` | `#2a1e0a` | Borders |
+
+## Usage Example
+
+```css
+body {
+  background-color: #1a1200;
+  color: #e0d5c0;
+  font-family: 'Courier New', monospace;
+}
+
+a {
+  color: #ffb020;
+}
+
+a:hover {
+  color: #ffcc33;
+}
+```

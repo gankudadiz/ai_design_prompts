@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors - Mint Dreamcore */
+  --color-bg-primary: #0f0a1a;
+  --color-bg-secondary: #1a0f2e;
+  --color-bg-tertiary: #25143f;
+  --color-bg-card: #1a0f2e;
+  --color-bg-hover: #25143f;
+  --color-bg-active: #3a1a5a;
+  
+  --color-mint-50: #f0fff9;
+  --color-mint-100: #dcfff7;
+  --color-mint-200: #bbffee;
+  --color-mint-300: #8eeedd;
+  --color-mint-400: #5cd4cc;
+  --color-mint-500: #00ffcc;
+  --color-mint-600: #00ccaa;
+  --color-mint-700: #00aa99;
+  
+  --color-accent-pink: #ff6b9d;
+  --color-accent-pink-hover: #ff85b3;
+  --color-accent-purple: #c77dff;
+  --color-accent-purple-hover: #d4a5ff;
+  
+  --color-text-primary: #e0d9f5;
+  --color-text-secondary: #b8a9d9;
+  --color-text-tertiary: #8a7ab9;
+  --color-text-muted: #6a5a99;
+  --color-text-accent: #00ffcc;
+  
+  --color-border-light: #3a1a5a;
+  --color-border-medium: #25143f;
+  --color-border-dark: #1a0f2e;
+  --color-border-accent: #00ffcc;
+  
+  /* Semantic Colors */
+  --color-success: #00ffcc;
+  --color-warning: #ffcc66;
+  --color-error: #ff6b9d;
+  --color-info: #c77dff;
+
+  /* Code Colors */
+  --color-code-bg: #1a0f2a;
+  --color-code-border: #2a1a3a;
+  
+  /* Fonts */
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+  
+  /* Borders */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-bg-primary);
+  --foreground: var(--color-text-primary);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+  border-left: 1px solid var(--color-border-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-light);
+}
+
+/* Terminal Effects */
+.text-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.terminal-border {
+  border: 1px solid var(--color-border-medium);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-mint-500);
+  color: var(--color-bg-primary);
+}
+
+/* MDX Code Styles */
+/* Inline Code - Target code elements that are NOT inside pre */
+:not(pre) > code {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-accent-pink);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-border-medium);
+}
+
+/* Block Code - Ensure it doesn't get inline styles */
+pre > code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: inherit;
 }

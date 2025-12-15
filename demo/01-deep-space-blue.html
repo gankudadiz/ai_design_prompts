@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Space Blue - Terminal Style Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: #0a0e1a;
+            border-bottom: 1px solid #333333;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #00d4ff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-items span {
+            color: #b0b8c0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .nav-items span:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero区域 */
+        .hero {
+            background: #0a0e1a;
+            padding: 80px 24px;
+            text-align: center;
+            border-bottom: 1px solid #1a1e2a;
+        }
+
+        .hero-title {
+            color: #00d4ff;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .hero-prompt {
+            color: #00ffcc;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            color: #b0b8c0;
+            font-size: 16px;
+        }
+
+        /* CTA按钮 */
+        .cta-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: #1a1e2a;
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #00d4ff;
+            color: #0a0e1a;
+        }
+
+        /* 卡片网格 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #1a1e2a;
+            border: 1px solid #2a2e3a;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: #00d4ff;
+            background: #242a3a;
+        }
+
+        .card-title {
+            color: #00ffcc;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .card-prompt {
+            color: #8088a0;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card-desc {
+            color: #b0b8c0;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #0a0e1a;
+            color: #00d4ff;
+            padding: 4px 12px;
+            font-size: 12px;
+            border: 1px solid #333333;
+        }
+
+        .card-meta {
+            color: #8088a0;
+            font-size: 12px;
+            margin-top: 16px;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #0a0e1a;
+            border-top: 1px solid #1a1e2a;
+            padding: 24px;
+            text-align: center;
+            color: #8088a0;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">$ design-vocab</div>
+        <ul class="nav-items">
+            <span>$ home</span>
+            <span>$ categories</span>
+            <span>$ about</span>
+            <span>$ github</span>
+        </ul>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <h1 class="hero-title">$ ./interactive-design-vocabulary</h1>
+        <p class="hero-prompt">> Deep Space Blue Theme</p>
+        <p class="hero-subtitle">点击词汇 → 看到效果 · 专业术语 → 实际应用</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn">$ start</a>
+            <a href="#" class="btn">$ random</a>
+            <a href="#" class="btn">$ help</a>
+        </div>
+    </section>
+
+    <!-- 卡片网格 -->
+    <div class="container">
+        <h2 class="section-title">$ terms --category=all</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-prompt">$ term-001</div>
+                <h3 class="card-title">Material Design</h3>
+                <p class="card-desc">Google的设计语言，强调层次感和物理世界的隐喻</p>
+                <div class="card-tags">
+                    <span class="tag">[google]</span>
+                    <span class="tag">[card]</span>
+                    <span class="tag">[shadow]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED]</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-002</div>
+                <h3 class="card-title">Grid System</h3>
+                <p class="card-desc">基于网格的布局系统，提供规整的页面结构</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[responsive]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE]</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-003</div>
+                <h3 class="card-title">Flexbox</h3>
+                <p class="card-desc">弹性盒子布局，一维布局模型的强大工具</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[css]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE]</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-004</div>
+                <h3 class="card-title">Dark Mode</h3>
+                <p class="card-desc">深色主题，减少眼部疲劳，节约能源</p>
+                <div class="card-tags">
+                    <span class="tag">[theme]</span>
+                    <span class="tag">[ui]</span>
+                </div>
+                <div class="card-meta">DIFF: * [BASIC]</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-005</div>
+                <h3 class="card-title">Color Palette</h3>
+                <p class="card-desc">色彩组合系统，建立视觉一致性</p>
+                <div class="card-tags">
+                    <span class="tag">[color]</span>
+                    <span class="tag">[design]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE]</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-006</div>
+                <h3 class="card-title">Typography</h3>
+                <p class="card-desc">字体排版系统，影响内容的可读性和美观度</p>
+                <div class="card-tags">
+                    <span class="tag">[font]</span>
+                    <span class="tag">[text]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <p>$ echo "Deep Space Blue Terminal Theme" | color=cyan</p>
+        <p>© 2025 Interactive Design Vocabulary Dictionary</p>
+    </footer>
+</body>
+</html>

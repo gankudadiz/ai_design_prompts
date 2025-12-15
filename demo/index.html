@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal UI 配色方案预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #39c739;
+            font-size: 36px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .theme-card {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .theme-card:hover {
+            border-color: #39c739;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(57, 199, 57, 0.2);
+        }
+
+        .theme-name {
+            color: #39c739;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .theme-description {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .color-preview {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333333;
+        }
+
+        .color-box.primary {
+            background: #39c739;
+        }
+
+        .color-box.secondary {
+            background: #00d4ff;
+        }
+
+        .color-box.accent {
+            background: #ff6b9d;
+        }
+
+        .color-box.bg-dark {
+            background: #0a0a0a;
+        }
+
+        .color-box.bg-medium {
+            background: #1a1a1a;
+        }
+
+        .color-box.bg-light {
+            background: #2a2a2a;
+        }
+
+        .theme-link {
+            display: inline-block;
+            background: #1a1a1a;
+            border: 1px solid #39c739;
+            color: #39c739;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .theme-link:hover {
+            background: #39c739;
+            color: #0a0a0a;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid #1a1a1a;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .theme-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>$ ./terminal-ui-themes</h1>
+        <p class="subtitle">选择您喜欢的配色方案</p>
+
+        <div class="theme-grid">
+            <!-- 01. Deep Space Blue -->
+            <div class="theme-card">
+                <h2 class="theme-name">01. Deep Space Blue</h2>
+                <p class="theme-description">
+                    深邃的太空蓝配色，科技感强，不刺眼。蓝色更符合程序员日常使用的IDE主题，长时间使用舒适。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #00d4ff"></div>
+                    <div class="color-box secondary" title="辅色: #00ffcc"></div>
+                    <div class="color-box bg-dark" title="背景: #0a0e1a"></div>
+                    <div class="color-box bg-medium" title="卡片: #1a1e2a"></div>
+                    <div class="color-box bg-light" title="悬停: #242a3a"></div>
+                </div>
+                <a href="01-deep-space-blue.html" class="theme-link">$ view demo</a>
+            </div>
+
+            <!-- 02. Amber Warm -->
+            <div class="theme-card">
+                <h2 class="theme-name">02. Amber Warm</h2>
+                <p class="theme-description">
+                    温暖的琥珀色调，复古Terminal感。适合喜欢经典命令行界面的用户，温暖不刺眼。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #ffb020"></div>
+                    <div class="color-box secondary" title="辅色: #ffcc33"></div>
+                    <div class="color-box bg-dark" title="背景: #1a1200"></div>
+                    <div class="color-box bg-medium" title="卡片: #2a1e0a"></div>
+                    <div class="color-box bg-light" title="悬停: #3a2e1a"></div>
+                </div>
+                <a href="02-amber-warm.html" class="theme-link">$ view demo</a>
+            </div>
+
+            <!-- 03. Mint Dreamcore -->
+            <div class="theme-card">
+                <h2 class="theme-name">03. Mint Dreamcore</h2>
+                <p class="theme-description">
+                    Y2K薄荷梦核风，柔和霓虹配粉色点缀。千禧年怀旧未来感，梦幻而温馨，适合喜欢Y2K美学的用户。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #00ffcc"></div>
+                    <div class="color-box accent" title="辅色: #ff6b9d"></div>
+                    <div class="color-box bg-dark" title="背景: #0f0a1a"></div>
+                    <div class="color-box bg-medium" title="卡片: #1a0f2a"></div>
+                    <div class="color-box bg-light" title="悬停: #2a1a3a"></div>
+                </div>
+                <a href="03-mint-dreamcore.html" class="theme-link">$ view demo</a>
+            </div>
+
+            <!-- 04. Lavender Dreams -->
+            <div class="theme-card">
+                <h2 class="theme-name">04. Lavender Dreams</h2>
+                <p class="theme-description">
+                    Y2K薰衣草梦境，紫藤配粉紫。梦幻浪漫的千禧年美学，神秘而优雅，适合喜欢梦幻风格的用户。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #a78bfa"></div>
+                    <div class="color-box accent" title="辅色: #f472b6"></div>
+                    <div class="color-box bg-dark" title="背景: #0a0a15"></div>
+                    <div class="color-box bg-medium" title="卡片: #1a1a2a"></div>
+                    <div class="color-box bg-light" title="悬停: #2a2a3a"></div>
+                </div>
+                <a href="04-lavender-dreams.html" class="theme-link">$ view demo</a>
+            </div>
+
+            <!-- 05. Rainbow Y2K -->
+            <div class="theme-card">
+                <h2 class="theme-name">05. Rainbow Y2K</h2>
+                <p class="theme-description">
+                    Y2K彩虹极繁风，彩虹渐变配霓虹色。经典vaporwave美学，极繁主义，适合喜欢强烈视觉冲击的用户。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #00d4ff"></div>
+                    <div class="color-box accent" title="辅色: #ff00ff"></div>
+                    <div class="color-box bg-dark" title="背景: #0a0a1a"></div>
+                    <div class="color-box bg-medium" title="卡片: #1a1a2a"></div>
+                    <div class="color-box bg-light" title="悬停: #2a2a3a"></div>
+                </div>
+                <a href="05-rainbow-y2k.html" class="theme-link">$ view demo</a>
+            </div>
+
+            <!-- 06. Amber Dreamcore -->
+            <div class="theme-card">
+                <h2 class="theme-name">06. Amber Dreamcore</h2>
+                <p class="theme-description">
+                    Y2K琥珀梦核风，温暖桃色配薰衣草。柔和的千禧年怀旧感，温暖梦幻，适合喜欢怀旧美学的用户。
+                </p>
+                <div class="color-preview">
+                    <div class="color-box primary" title="主色: #ff9e80"></div>
+                    <div class="color-box accent" title="辅色: #c77dff"></div>
+                    <div class="color-box bg-dark" title="背景: #1a0a12"></div>
+                    <div class="color-box bg-medium" title="卡片: #2a1a22"></div>
+                    <div class="color-box bg-light" title="悬停: #3a2a32"></div>
+                </div>
+                <a href="06-amber-dreamcore.html" class="theme-link">$ view demo</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>$ echo "Terminal UI Color Schemes" | for-programmers</p>
+            <p>© 2025 Interactive Design Vocabulary Dictionary</p>
+        </div>
+    </div>
+</body>
+</html>

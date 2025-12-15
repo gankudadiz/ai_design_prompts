@@ -1,0 +1,65 @@
+---
+title: Button
+subtitle: The primary interactive element
+category: Components
+difficulty: Easy
+tags: [UI, Components, Interaction]
+description: An interactive element that triggers an action when clicked or tapped.
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Button
+
+Buttons are the most common way users interact with a web application. They communicate actions that users can take.
+
+## Types of Buttons
+
+1.  **Primary**: The main action on a screen (e.g., "Submit", "Save").
+2.  **Secondary**: Alternative actions (e.g., "Cancel", "Back").
+3.  **Tertiary/Ghost**: Less important actions, often transparent with a border or just text.
+
+## States
+
+A button isn't just a static rectangle. It has multiple states:
+
+*   **Default**: The normal state.
+*   **Hover**: When the mouse is over it.
+*   **Active/Pressed**: When clicked.
+*   **Disabled**: When the action is unavailable.
+*   **Focus**: When selected via keyboard.
+
+```css
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #0070f3;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0051a2;
+}
+```
+
+<TerminalCard title="Button Examples">
+  <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
+    <button className="px-4 py-2 bg-mint-500 text-bg-card font-bold rounded hover:bg-mint-400 transition-colors">
+      Primary Action
+    </button>
+    <button className="px-4 py-2 border border-mint-500 text-mint-500 font-bold rounded hover:bg-mint-500/10 transition-colors">
+      Secondary Action
+    </button>
+    <button className="px-4 py-2 text-text-muted hover:text-text-primary transition-colors">
+      Ghost Button
+    </button>
+    <button disabled className="px-4 py-2 bg-bg-tertiary text-text-muted rounded cursor-not-allowed opacity-50">
+      Disabled
+    </button>
+  </div>
+</TerminalCard>

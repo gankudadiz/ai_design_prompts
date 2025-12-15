@@ -1,0 +1,63 @@
+---
+title: Mobile First
+subtitle: Designing for small screens first
+category: Responsive
+difficulty: Easy
+tags: [Responsive, Design, Philosophy]
+description: A design strategy where you start designing for the smallest screen size (mobile) and then progressively enhance the design for larger screens.
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Mobile First
+
+**Mobile First** is a design philosophy that aims to create better user experiences by starting the design process from the smallest screen: mobile devices.
+
+## Why Mobile First?
+
+1.  **Content Focus**: Forces you to prioritize the most important content.
+2.  **Performance**: Mobile code is usually lighter and faster.
+3.  **Trend**: More people access the web via mobile than desktop.
+
+## CSS Implementation
+
+In CSS, this means using `min-width` media queries. The default styles are for mobile, and you add complexity as the screen gets wider.
+
+```css
+/* Default styles (Mobile) */
+.container {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Tablet (md) */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
+/* Desktop (lg) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 40px;
+    font-size: 18px;
+  }
+}
+```
+
+<TerminalCard title="Responsive Breakpoints">
+  <div className="space-y-2 p-4 font-mono text-xs">
+    <div className="bg-bg-tertiary p-2 border-l-4 border-red-500">
+      <span className="text-red-500 font-bold">Mobile</span>: &lt; 768px (Default)
+    </div>
+    <div className="bg-bg-tertiary p-2 border-l-4 border-yellow-500 hidden md:block">
+      <span className="text-yellow-500 font-bold">Tablet</span>: ≥ 768px (visible on md+)
+    </div>
+    <div className="bg-bg-tertiary p-2 border-l-4 border-green-500 hidden lg:block">
+      <span className="text-green-500 font-bold">Desktop</span>: ≥ 1024px (visible on lg+)
+    </div>
+  </div>
+  <p className="text-center text-text-muted text-xs mt-2">Resize your browser to see changes!</p>
+</TerminalCard>

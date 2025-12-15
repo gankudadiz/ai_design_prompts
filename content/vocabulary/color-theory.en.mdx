@@ -1,0 +1,47 @@
+---
+title: Color Theory
+subtitle: The science and art of using color
+category: Styling
+difficulty: Easy
+tags: [Color, UI, Design]
+description: Understanding how colors interact, combine, and impact user perception and emotion.
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Color Theory
+
+**Color Theory** is a set of rules and guidelines for communicating with color. In UI design, it's crucial for establishing brand identity and guiding user attention.
+
+## Key Concepts
+
+### 1. The Color Wheel
+*   **Primary Colors**: Red, Blue, Yellow.
+*   **Secondary Colors**: Green, Orange, Purple (mixed from primary).
+*   **Tertiary Colors**: Mixed from primary and secondary.
+
+### 2. Color Harmonies
+*   **Monochromatic**: Variations of a single hue.
+*   **Analogous**: Colors next to each other on the wheel.
+*   **Complementary**: Colors opposite each other (high contrast).
+
+## CSS Implementation
+
+In modern CSS, we often use HSL (Hue, Saturation, Lightness) for easier color manipulation.
+
+```css
+:root {
+  --primary-hue: 200;
+  --primary: hsl(var(--primary-hue), 100%, 50%);
+  --primary-light: hsl(var(--primary-hue), 100%, 70%);
+  --primary-dark: hsl(var(--primary-hue), 100%, 30%);
+}
+```
+
+<TerminalCard title="Color Palette">
+  <div className="flex gap-4 p-4 justify-center">
+    <div className="w-16 h-16 rounded-full bg-red-500 shadow-lg flex items-center justify-center text-xs text-white">Red</div>
+    <div className="w-16 h-16 rounded-full bg-green-500 shadow-lg flex items-center justify-center text-xs text-white">Green</div>
+    <div className="w-16 h-16 rounded-full bg-blue-500 shadow-lg flex items-center justify-center text-xs text-white">Blue</div>
+  </div>
+</TerminalCard>

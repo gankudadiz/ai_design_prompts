@@ -1,0 +1,54 @@
+---
+title: "Flexbox"
+subtitle: "弹性盒子布局"
+category: "Layout"
+difficulty: "Easy"
+tags: ["css", "layout", "responsive"]
+description: "CSS 弹性盒子布局模块（Flexible Box Layout Module）提供了一种更加高效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。"
+createdAt: "2025-12-12"
+updatedAt: "2025-12-12"
+---
+
+# 什么是 Flexbox？
+
+**Flexbox** (Flexible Box) 是一种一维的布局模型。它给 flexbox 的子元素之间提供了强大的空间分布和对齐能力。
+
+## 核心概念
+
+Flexbox 布局由两部分组成：
+1. **Flex Container** (容器)：设置了 `display: flex` 的父元素
+2. **Flex Items** (项目)：容器的直接子元素
+
+## 交互演示
+
+<FlexPlayground />
+
+## 常用属性
+
+### 容器属性 (Flex Container)
+
+```css
+.container {
+  display: flex; /* 启用 flex 布局 */
+  flex-direction: row; /* 主轴方向: row | row-reverse | column | column-reverse */
+  justify-content: center; /* 主轴对齐: flex-start | flex-end | center | space-between | space-around */
+  align-items: center; /* 交叉轴对齐: stretch | flex-start | flex-end | center | baseline */
+}
+```
+
+### 项目属性 (Flex Items)
+
+```css
+.item {
+  flex: 1; /* 简写属性，相当于 flex-grow: 1; flex-shrink: 1; flex-basis: 0% */
+  align-self: flex-end; /* 覆盖容器的 align-items */
+}
+```
+
+## 使用场景
+
+*   **垂直居中**：以前需要用 `position` + `transform`，现在只需要 `justify-content: center` + `align-items: center`。
+*   **网格系统**：虽然 Grid 更适合二维布局，但 Flexbox 非常适合简单的行或列布局。
+*   **圣杯布局**：固定头部、底部，中间自适应。
+
+> **提示**: 始终记得 Flexbox 是**一维**的。如果你需要同时控制行和列（二维），请考虑使用 **CSS Grid**。

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber Dreamcore - Y2K Warm Style Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a0a12;
+            color: #fff2e0;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: #1a0a12;
+            border-bottom: 1px solid #2a1a22;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ff9e80;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff9e80;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-items span {
+            color: #ffd5a3;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-items span:hover {
+            color: #c77dff;
+            text-shadow: 0 0 5px #c77dff;
+        }
+
+        /* Hero区域 */
+        .hero {
+            background: #1a0a12;
+            padding: 80px 24px;
+            text-align: center;
+            border-bottom: 1px solid #2a1a22;
+        }
+
+        .hero-title {
+            color: #ff9e80;
+            font-size: 32px;
+            margin-bottom: 16px;
+            text-shadow: 0 0 15px #ff9e80;
+        }
+
+        .hero-prompt {
+            color: #c77dff;
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #c77dff;
+        }
+
+        .hero-subtitle {
+            color: #ffd5a3;
+            font-size: 16px;
+        }
+
+        /* CTA按钮 */
+        .cta-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: #2a1a22;
+            border: 1px solid #ff9e80;
+            color: #ff9e80;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-shadow: 0 0 5px #ff9e80;
+        }
+
+        .btn:hover {
+            background: #ff9e80;
+            color: #1a0a12;
+            box-shadow: 0 0 20px rgba(255, 158, 128, 0.5);
+        }
+
+        /* 卡片网格 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .section-title {
+            color: #ffd5a3;
+            font-size: 20px;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #ffd5a3;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #2a1a22;
+            border: 1px solid #3a2a32;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: #ff9e80;
+            background: #3a2a32;
+            box-shadow: 0 0 15px rgba(255, 158, 128, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            color: #c77dff;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 5px #c77dff;
+        }
+
+        .card-prompt {
+            color: #e0c5b0;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card-desc {
+            color: #ffd5a3;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #1a0a12;
+            color: #ff9e80;
+            padding: 4px 12px;
+            font-size: 12px;
+            border: 1px solid #3a2a32;
+            text-shadow: 0 0 3px #ff9e80;
+        }
+
+        .tag:nth-child(2n) {
+            color: #c77dff;
+            border-color: #c77dff;
+        }
+
+        .card-meta {
+            color: #e0c5b0;
+            font-size: 12px;
+            margin-top: 16px;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #1a0a12;
+            border-top: 1px solid #2a1a22;
+            padding: 24px;
+            text-align: center;
+            color: #e0c5b0;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+
+        /* Y2K装饰效果 */
+        .hero::before {
+            content: '🍑';
+            position: absolute;
+            top: 22%;
+            left: 12%;
+            font-size: 26px;
+            opacity: 0.7;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '🌸';
+            position: absolute;
+            top: 32%;
+            right: 16%;
+            font-size: 24px;
+            opacity: 0.7;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-8px) scale(1.1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">$ design-vocab</div>
+        <ul class="nav-items">
+            <span>$ home</span>
+            <span>$ categories</span>
+            <span>$ about</span>
+            <span>$ github</span>
+        </ul>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <h1 class="hero-title">$ ./interactive-design-vocabulary</h1>
+        <p class="hero-prompt">> Amber Dreamcore Y2K Theme</p>
+        <p class="hero-subtitle">点击词汇 → 看到效果 · 专业术语 → 实际应用 🍑</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn">$ start</a>
+            <a href="#" class="btn">$ random</a>
+            <a href="#" class="btn">$ help</a>
+        </div>
+    </section>
+
+    <!-- 卡片网格 -->
+    <div class="container">
+        <h2 class="section-title">$ terms --category=all --dream=warm --nostalgia=true</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-prompt">$ term-001 🍑</div>
+                <h3 class="card-title">Material Design</h3>
+                <p class="card-desc">Google的设计语言，强调层次感和物理世界的隐喻 🌸</p>
+                <div class="card-tags">
+                    <span class="tag">[google]</span>
+                    <span class="tag">[card]</span>
+                    <span class="tag">[shadow]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED] 🍑</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-002 🍑</div>
+                <h3 class="card-title">Grid System</h3>
+                <p class="card-desc">基于网格的布局系统，提供规整的页面结构 ✨</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[responsive]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🍑</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-003 🍑</div>
+                <h3 class="card-title">Flexbox</h3>
+                <p class="card-desc">弹性盒子布局，一维布局模型的强大工具 💫</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[css]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🍑</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-004 🍑</div>
+                <h3 class="card-title">Dark Mode</h3>
+                <p class="card-desc">深色主题，减少眼部疲劳，节约能源 🌙</p>
+                <div class="card-tags">
+                    <span class="tag">[theme]</span>
+                    <span class="tag">[ui]</span>
+                </div>
+                <div class="card-meta">DIFF: * [BASIC] 🍑</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-005 🍑</div>
+                <h3 class="card-title">Color Palette</h3>
+                <p class="card-desc">色彩组合系统，建立视觉一致性 🎨</p>
+                <div class="card-tags">
+                    <span class="tag">[color]</span>
+                    <span class="tag">[design]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🍑</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-006 🍑</div>
+                <h3 class="card-title">Typography</h3>
+                <p class="card-desc">字体排版系统，影响内容的可读性和美观度 🍑</p>
+                <div class="card-tags">
+                    <span class="tag">[font]</span>
+                    <span class="tag">[text]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED] 🍑</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <p>$ echo "Amber Dreamcore Y2K Terminal Theme" | glow=peach 🍑</p>
+        <p>© 2025 Interactive Design Vocabulary Dictionary 🍑</p>
+    </footer>
+</body>
+</html>

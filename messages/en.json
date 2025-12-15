@@ -1,0 +1,25 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "vocabulary": "Vocabulary",
+    "about": "About"
+  },
+  "Vocabulary": {
+    "filter": "Filter",
+    "itemsFound": "items found",
+    "viewAll": "View all vocabulary",
+    "noItems": "No items found in this category.",
+    "search": "ls ./vocabulary"
+  },
+  "Home": {
+    "title": "Design Vocabulary",
+    "subtitle1": "Visual Design Dictionary for Developers",
+    "subtitle2": "Interactive demos & Code snippets",
+    "start": "Start Exploring",
+    "about": "About Project",
+    "version": "v1.0.0-beta"
+  },
+  "Common": {
+    "loading": "Loading..."
+  }
+}

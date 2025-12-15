@@ -1,0 +1,25 @@
+{
+  "Navbar": {
+    "home": "首页",
+    "vocabulary": "词汇表",
+    "about": "关于"
+  },
+  "Vocabulary": {
+    "filter": "筛选",
+    "itemsFound": "个项目",
+    "viewAll": "查看所有词汇",
+    "noItems": "该分类下没有找到词汇。",
+    "search": "ls ./词汇表"
+  },
+  "Home": {
+    "title": "Design Vocabulary",
+    "subtitle1": "面向开发者的可视化设计词典",
+    "subtitle2": "Interactive demos & Code snippets",
+    "start": "开始探索",
+    "about": "关于项目",
+    "version": "v1.0.0-beta"
+  },
+  "Common": {
+    "loading": "加载中..."
+  }
+}

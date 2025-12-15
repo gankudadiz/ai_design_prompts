@@ -1,0 +1,54 @@
+---
+title: "Flexbox"
+subtitle: "Flexible Box Layout"
+category: "Layout"
+difficulty: "Easy"
+tags: ["css", "layout", "responsive"]
+description: "The CSS Flexible Box Layout Module provides a more efficient way to lay out, align and distribute space among items in a container."
+createdAt: "2025-12-12"
+updatedAt: "2025-12-12"
+---
+
+# What is Flexbox?
+
+**Flexbox** (Flexible Box) is a one-dimensional layout model. It offers powerful capabilities for space distribution and alignment between items in a container.
+
+## Key Concepts
+
+Flexbox layout consists of two parts:
+1. **Flex Container**: The parent element with `display: flex`
+2. **Flex Items**: The direct children of the container
+
+## Interactive Demo
+
+<FlexPlayground />
+
+## Common Properties
+
+### Container Properties (Flex Container)
+
+```css
+.container {
+  display: flex; /* Enable flex layout */
+  flex-direction: row; /* Main axis direction: row | row-reverse | column | column-reverse */
+  justify-content: center; /* Main axis alignment: flex-start | flex-end | center | space-between | space-around */
+  align-items: center; /* Cross axis alignment: stretch | flex-start | flex-end | center | baseline */
+}
+```
+
+### Item Properties (Flex Items)
+
+```css
+.item {
+  flex: 1; /* Shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0% */
+  align-self: flex-end; /* Overrides align-items of the container */
+}
+```
+
+## Use Cases
+
+*   **Vertical Centering**: Previously required `position` + `transform`, now just `justify-content: center` + `align-items: center`.
+*   **Grid Systems**: While Grid is better for 2D, Flexbox is great for simple rows or columns.
+*   **Holy Grail Layout**: Fixed header, footer, and fluid center.
+
+> **Tip**: Always remember Flexbox is **one-dimensional**. If you need to control both rows and columns (two-dimensional), consider using **CSS Grid**.

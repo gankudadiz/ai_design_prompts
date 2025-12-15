@@ -1,0 +1,47 @@
+---
+title: "Color Theory"
+subtitle: "色彩理论"
+category: "Styling"
+difficulty: "Easy"
+tags: ["Color", "UI", "Design"]
+description: "理解颜色如何相互作用、组合，以及如何影响用户的感知和情绪。"
+createdAt: "2025-12-13"
+updatedAt: "2025-12-13"
+---
+
+# Color Theory (色彩理论)
+
+**Color Theory** 是一套关于色彩交流的规则和指南。在 UI 设计中，它对于建立品牌形象和引导用户注意力至关重要。
+
+## 核心概念 (Key Concepts)
+
+### 1. The Color Wheel (色轮)
+*   **Primary Colors** (原色): 红 (Red)、蓝 (Blue)、黄 (Yellow)。
+*   **Secondary Colors** (间色): 绿 (Green)、橙 (Orange)、紫 (Purple) (由原色混合而成)。
+*   **Tertiary Colors** (复色): 由原色和间色混合而成。
+
+### 2. Color Harmonies (色彩和谐)
+*   **Monochromatic** (单色): 单一色相的变化。
+*   **Analogous** (邻近色): 色轮上相邻的颜色。
+*   **Complementary** (互补色): 色轮上相对的颜色 (高对比度)。
+
+## CSS 实现 (CSS Implementation)
+
+在现代 CSS 中，我们经常使用 **HSL** (Hue, Saturation, Lightness) 以便于颜色操作。
+
+```css
+:root {
+  --primary-hue: 200;
+  --primary: hsl(var(--primary-hue), 100%, 50%);
+  --primary-light: hsl(var(--primary-hue), 100%, 70%);
+  --primary-dark: hsl(var(--primary-hue), 100%, 30%);
+}
+```
+
+<TerminalCard title="Color Palette">
+  <div className="flex gap-4 p-4 justify-center">
+    <div className="w-16 h-16 rounded-full bg-red-500 shadow-lg flex items-center justify-center text-xs text-white">Red</div>
+    <div className="w-16 h-16 rounded-full bg-green-500 shadow-lg flex items-center justify-center text-xs text-white">Green</div>
+    <div className="w-16 h-16 rounded-full bg-blue-500 shadow-lg flex items-center justify-center text-xs text-white">Blue</div>
+  </div>
+</TerminalCard>

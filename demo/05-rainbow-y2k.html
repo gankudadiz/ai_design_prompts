@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Y2K - Vaporwave Style Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a1a;
+            color: #e0f0ff;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: #0a0a1a;
+            border-bottom: 1px solid #2a2a3a;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-items span {
+            color: #c0d0e0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-items span:hover {
+            background: linear-gradient(90deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero区域 */
+        .hero {
+            background: #0a0a1a;
+            padding: 80px 24px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a3a;
+        }
+
+        .hero-title {
+            background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            margin-bottom: 16px;
+            animation: rainbow 3s linear infinite;
+        }
+
+        .hero-prompt {
+            color: #ff00ff;
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .hero-subtitle {
+            color: #c0d0e0;
+            font-size: 16px;
+        }
+
+        /* CTA按钮 */
+        .cta-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: #1a1a2a;
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        /* 卡片网格 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .section-title {
+            background: linear-gradient(90deg, #ff00ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 20px;
+            margin-bottom: 24px;
+            animation: rainbow 4s linear infinite;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #1a1a2a;
+            border: 1px solid #2a2a3a;
+            padding: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #ff00ff, #a3e635);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            border-color: #00d4ff;
+            background: #2a2a3a;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            color: #ff00ff;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        .card-prompt {
+            color: #a0b0c0;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card-desc {
+            color: #d0e0f0;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #0a0a1a;
+            color: #00d4ff;
+            padding: 4px 12px;
+            font-size: 12px;
+            border: 1px solid #2a2a3a;
+            position: relative;
+        }
+
+        .tag:nth-child(2n) {
+            color: #ff00ff;
+            border-color: #ff00ff;
+        }
+
+        .tag:nth-child(3n) {
+            color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .card-meta {
+            color: #a0b0c0;
+            font-size: 12px;
+            margin-top: 16px;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #0a0a1a;
+            border-top: 1px solid #2a2a3a;
+            padding: 24px;
+            text-align: center;
+            color: #a0b0c0;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+
+        /* Y2K装饰效果 */
+        .hero::before {
+            content: '🌈';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            font-size: 32px;
+            opacity: 0.7;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '✨';
+            position: absolute;
+            top: 30%;
+            right: 15%;
+            font-size: 28px;
+            opacity: 0.7;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-15px) rotate(5deg); opacity: 1; }
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">$ design-vocab</div>
+        <ul class="nav-items">
+            <span>$ home</span>
+            <span>$ categories</span>
+            <span>$ about</span>
+            <span>$ github</span>
+        </ul>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <h1 class="hero-title">$ ./interactive-design-vocabulary</h1>
+        <p class="hero-prompt">> Rainbow Y2K Vaporwave Theme</p>
+        <p class="hero-subtitle">点击词汇 → 看到效果 · 专业术语 → 实际应用 🌈</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn">$ start</a>
+            <a href="#" class="btn">$ random</a>
+            <a href="#" class="btn">$ help</a>
+        </div>
+    </section>
+
+    <!-- 卡片网格 -->
+    <div class="container">
+        <h2 class="section-title">$ terms --category=all --mode=vaporwave --rainbow=true</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-prompt">$ term-001 🌈</div>
+                <h3 class="card-title">Material Design</h3>
+                <p class="card-desc">Google的设计语言，强调层次感和物理世界的隐喻 ✨</p>
+                <div class="card-tags">
+                    <span class="tag">[google]</span>
+                    <span class="tag">[card]</span>
+                    <span class="tag">[shadow]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED] 🌈</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-002 🌈</div>
+                <h3 class="card-title">Grid System</h3>
+                <p class="card-desc">基于网格的布局系统，提供规整的页面结构 🌟</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[responsive]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🌈</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-003 🌈</div>
+                <h3 class="card-title">Flexbox</h3>
+                <p class="card-desc">弹性盒子布局，一维布局模型的强大工具 💫</p>
+                <div class="card-tags">
+                    <span class="tag">[layout]</span>
+                    <span class="tag">[css]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🌈</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-004 🌈</div>
+                <h3 class="card-title">Dark Mode</h3>
+                <p class="card-desc">深色主题，减少眼部疲劳，节约能源 🌙</p>
+                <div class="card-tags">
+                    <span class="tag">[theme]</span>
+                    <span class="tag">[ui]</span>
+                </div>
+                <div class="card-meta">DIFF: * [BASIC] 🌈</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-005 🌈</div>
+                <h3 class="card-title">Color Palette</h3>
+                <p class="card-desc">色彩组合系统，建立视觉一致性 🎨</p>
+                <div class="card-tags">
+                    <span class="tag">[color]</span>
+                    <span class="tag">[design]</span>
+                </div>
+                <div class="card-meta">DIFF: ** [INTERMEDIATE] 🌈</div>
+            </div>
+
+            <div class="card">
+                <div class="card-prompt">$ term-006 🌈</div>
+                <h3 class="card-title">Typography</h3>
+                <p class="card-desc">字体排版系统，影响内容的可读性和美观度 🌈</p>
+                <div class="card-tags">
+                    <span class="tag">[font]</span>
+                    <span class="tag">[text]</span>
+                </div>
+                <div class="card-meta">DIFF: *** [ADVANCED] 🌈</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <p>$ echo "Rainbow Y2K Vaporwave Terminal Theme" | glow=rainbow 🌈✨</p>
+        <p>© 2025 Interactive Design Vocabulary Dictionary 🌈</p>
+    </footer>
+</body>
+</html>

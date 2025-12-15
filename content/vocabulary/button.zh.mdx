@@ -1,0 +1,65 @@
+---
+title: Button
+subtitle: 主要交互元素
+category: Components
+difficulty: Easy
+tags: [UI, Components, Interaction]
+description: 一个交互元素，点击或轻触时触发动作。
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Button (按钮)
+
+**Button** 是用户与 Web 应用程序交互的最常见方式。它们传达用户可以采取的操作。
+
+## 按钮类型
+
+1.  **Primary** (主要按钮): 屏幕上的主要操作 (例如 "提交", "保存")。
+2.  **Secondary** (次要按钮): 替代操作 (例如 "取消", "返回")。
+3.  **Tertiary/Ghost** (幽灵按钮): 不太重要的操作，通常是透明的，带有边框或仅有文字。
+
+## 状态 (States)
+
+按钮不仅仅是一个静态矩形。它有多种状态：
+
+*   **Default** (默认): 正常状态。
+*   **Hover** (悬停): 当鼠标悬停在其上时。
+*   **Active/Pressed** (激活/按下): 当被点击时。
+*   **Disabled** (禁用): 当操作不可用时。
+*   **Focus** (聚焦): 当通过键盘选中时。
+
+```css
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #0070f3;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0051a2;
+}
+```
+
+<TerminalCard title="按钮示例">
+  <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
+    <button className="px-4 py-2 bg-mint-500 text-bg-card font-bold rounded hover:bg-mint-400 transition-colors">
+      Primary Action
+    </button>
+    <button className="px-4 py-2 border border-mint-500 text-mint-500 font-bold rounded hover:bg-mint-500/10 transition-colors">
+      Secondary Action
+    </button>
+    <button className="px-4 py-2 text-text-muted hover:text-text-primary transition-colors">
+      Ghost Button
+    </button>
+    <button disabled className="px-4 py-2 bg-bg-tertiary text-text-muted rounded cursor-not-allowed opacity-50">
+      Disabled
+    </button>
+  </div>
+</TerminalCard>

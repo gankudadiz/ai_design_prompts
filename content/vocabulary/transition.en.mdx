@@ -1,0 +1,38 @@
+---
+title: Transition
+subtitle: Smooth state changes
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Motion]
+description: CSS Transitions allow you to change property values smoothly, over a given duration.
+createdAt: 2025-12-13
+updatedAt: 2025-12-13
+---
+
+# Transition
+
+**Transitions** provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time.
+
+## Core Properties
+
+1.  `transition-property`: What to animate (e.g., `opacity`, `transform`, `all`).
+2.  `transition-duration`: How long it takes (e.g., `0.3s`, `300ms`).
+3.  `transition-timing-function`: The speed curve (e.g., `ease`, `linear`, `cubic-bezier`).
+4.  `transition-delay`: Time to wait before starting.
+
+## Shorthand
+
+```css
+/* property duration timing-function delay */
+.box {
+  transition: all 0.3s ease-in-out;
+}
+```
+
+<TerminalCard title="Transition Demo">
+  <div className="p-8 flex justify-center">
+    <div className="w-24 h-24 bg-accent-pink rounded cursor-pointer transition-all duration-500 hover:scale-125 hover:rotate-12 hover:bg-mint-500 hover:shadow-[0_0_30px_rgba(0,255,204,0.5)] flex items-center justify-center text-bg-card font-bold">
+      Hover Me
+    </div>
+  </div>
+</TerminalCard>

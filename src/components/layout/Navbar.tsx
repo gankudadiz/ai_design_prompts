@@ -82,7 +82,7 @@ export function Navbar() {
 
             {/* GitHub Link */}
             <a
-              href="https://github.com"
+              href="https://github.com/gankudadiz/ai_design_prompts"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-text-secondary hover:text-text-primary transition-colors hover:bg-bg-secondary border border-transparent hover:border-border-medium"

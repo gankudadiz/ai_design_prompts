@@ -1,0 +1,78 @@
+---
+title: "Multi-Column"
+subtitle: "Newspaper-style text layout"
+category: "Layout"
+priority: 30
+difficulty: "Easy"
+tags: ["css", "layout", "typography"]
+description: "CSS Multi-column Layout allows content to flow into multiple columns, just like a newspaper, optimizing readability for long text."
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# Read Like a Newspaper
+
+Reading a single line of text that spans a wide monitor is exhausting. CSS Multi-column Layout allows content to automatically split into multiple columns, mimicking traditional newspaper or magazine layouts.
+
+## Core Properties
+
+### 1. column-count
+Specifies the number of columns. The browser calculates the width of each column automatically.
+
+```css
+.newspaper {
+  column-count: 3; /* Split into 3 columns */
+}
+```
+
+### 2. column-width
+Specifies the ideal width for columns. The browser automatically determines how many columns fit in the container. This is often more responsive than fixing the count.
+
+```css
+.newspaper {
+  column-width: 300px; /* Each column is at least 300px wide */
+}
+```
+
+### 3. column-gap
+Controls the space between columns.
+
+```css
+.newspaper {
+  column-gap: 40px;
+}
+```
+
+### 4. column-rule
+Adds a dividing line between columns, similar to the `border` syntax.
+
+```css
+.newspaper {
+  column-rule: 1px solid #ccc;
+}
+```
+
+### 5. column-span
+Allows an element (like a headline) to span across all columns.
+
+```css
+h2 {
+  column-span: all;
+}
+```
+
+## Difference from Grid/Flexbox
+
+- **Grid/Flexbox**: Primarily for **Layout Structure** (e.g., Sidebar + Main Content). They control the position of "boxes".
+- **Multi-column**: Primarily for **Content Typography**. It controls how "text flow" moves inside a container. When one column is full, content naturally spills into the next.
+
+## Use Cases
+
+- Blog post bodies
+- Legal terms and conditions
+- Dictionaries or index lists
+- Pure CSS Masonry layouts (simple version)
+
+## Interactive Demo
+
+*(Visualizing long text reflowing into columns as container width changes)*

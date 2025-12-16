@@ -51,6 +51,10 @@
     "layoutPatternCommand": "build --structure",
     "colorPaletteTitle": "Color Palette Generator",
     "colorPaletteCommand": "mix --colors",
+    "displayTitle": "Display Playground",
+    "displayCommand": "set --display-mode",
+    "floatTitle": "Float & Clear Playground",
+    "floatCommand": "float --position",
     "cssOutput": "// CSS Output"
   },
   "Styles": {

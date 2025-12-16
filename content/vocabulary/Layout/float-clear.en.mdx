@@ -1,0 +1,58 @@
+---
+title: "Float & Clear"
+subtitle: "Text wrapping and clearing floats"
+category: "Layout"
+priority: 25
+difficulty: "Medium"
+tags: ["css", "layout", "legacy"]
+description: "Float was originally designed for wrapping text around images. Understanding how to clear floats is key to mastering it."
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# Floating Boxes
+
+Imagine a newspaper layout: an image sits on the left, and text wraps tightly around its right side and bottom. This is exactly what `float` was created for.
+
+## Core Concepts
+
+### 1. Float
+When an element is floated, it shifts to the left or right until it touches the edge of its container or another floated element.
+- `float: left`: Floats to the left.
+- `float: right`: Floats to the right.
+- `float: none`: Default, no floating.
+
+**Key Behavior**: A floated element is removed from the normal document flow (partially). Text content is aware of it and wraps around it, but block-level parent containers "ignore" it, often leading to collapsed height.
+
+### 2. Clear
+The `clear` property specifies whether an element can have floating elements beside it.
+- `clear: left`: No floating elements allowed on the left side.
+- `clear: right`: No floating elements allowed on the right side.
+- `clear: both`: No floating elements allowed on either side (most common).
+
+## The Classic Problem: Height Collapse
+
+If a parent container contains *only* floated children, its height collapses to 0. This is because the children are "floating" and don't push the parent open.
+
+### The Solution: Clearfix
+
+This is one of the most famous hacks in web development history, used to fix height collapse:
+
+```css
+/* Modern Clearfix Hack */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+```
+
+## When to Use?
+
+- **✅ Recommended**: For wrapping text around images (magazine style).
+- **❌ Not Recommended**: For main page layout structures (use Flexbox or Grid instead).
+
+## Interactive Demo
+
+<FloatPlayground />
+

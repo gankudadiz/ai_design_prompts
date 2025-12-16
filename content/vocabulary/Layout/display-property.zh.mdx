@@ -1,0 +1,77 @@
+---
+title: "Display (显示属性)"
+subtitle: "元素在页面中如何显示"
+category: "Layout"
+priority: 20
+difficulty: "Easy"
+tags: ["css", "layout", "fundamental"]
+description: "Display 属性定义了元素在页面上的显示方式，决定了它是独占一行还是与他人共存。"
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# 元素的“性格”
+
+如果把 HTML 元素比作人，那么 `display` 属性就是决定他们性格的关键基因。它决定了元素是喜欢**独处**，还是喜欢**群居**。
+
+## 核心性格 (Core Values)
+
+### 1. Block (块级元素) - 独行侠
+`display: block` 的元素就像霸道的“独行侠”。
+- **独占一行**：无论宽度多少，它总是强制换行，不允许左右有其他元素。
+- **可设宽高**：你可以随意指定它的宽度和高度。
+- **默认代表**：`<div>`, `<p>`, `<h1>`, `<section>`
+
+```css
+.box {
+  display: block;
+  width: 100%; /* 默认占满父容器 */
+}
+```
+
+### 2. Inline (行内元素) - 随波逐流
+`display: inline` 的元素就像流水中的“落叶”。
+- **并排显示**：它只占据内容所需的空间，与其他行内元素在同一行。
+- **宽高无效**：设置 `width` 和 `height` 对它**不起作用**。
+- **垂直边距受限**：垂直方向的 `margin` 和 `padding` 通常不会推开周围元素。
+- **默认代表**：`<span>`, `<a>`, `<em>`
+
+```css
+.text {
+  display: inline;
+  /* width: 100px;  <-- 无效 */
+  /* height: 50px; <-- 无效 */
+}
+```
+
+### 3. Inline-Block (行内块) - 完美平衡
+`display: inline-block` 结合了前两者的优点。
+- **对外**：像 Inline 一样可以并排显示。
+- **对内**：像 Block 一样可以设置宽高。
+- **常见应用**：按钮、导航菜单项、卡片网格。
+
+```css
+.button {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+}
+```
+
+### 4. None (隐藏) - 隐身术
+`display: none` 会让元素完全从页面流中消失。
+- **不占空间**：它原本占据的位置会被其他元素填补，就像它从未存在过一样。
+- **区别**：`visibility: hidden` 也会隐藏元素，但会保留原本占用的空间（变成透明的）。
+
+## 现代布局模式
+
+除了上述基础值，`display` 还是开启现代布局的钥匙：
+
+- `display: flex`：开启弹性盒子布局。
+- `display: grid`：开启网格布局。
+
+## 交互演示
+
+<DisplayPlayground />
+
+

@@ -1,0 +1,62 @@
+---
+title: "Layout Units"
+subtitle: "Pixels, Percentages, and Viewport Units"
+category: "Layout"
+priority: 35
+difficulty: "Medium"
+tags: ["css", "layout", "fundamental"]
+description: "CSS offers various length units. Knowing when to use absolute (px) vs. relative (%, rem, vw) units is key to responsive design."
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# The Scales of the Web
+
+In the real world, we measure with meters or inches. In the CSS world, we have more choices, and choosing the right "ruler" determines whether your layout is rigid or flexible.
+
+## 1. Absolute Units: px (Pixel)
+- **Definition**: A single point on the screen (logical pixel).
+- **Trait**: Fixed. If you set `200px`, it stays `200px` forever.
+- **Use Case**: Borders, dimensions that must be fixed due to design constraints, minimum sizes (`min-width`).
+
+## 2. Font-Relative Units: em & rem
+These units are based on font size, allowing the layout to scale with text.
+
+- **em**: Relative to the **parent element's** font size.
+  - Pitfall: Compounding effect in nested structures (1.2 * 1.2 * 1.2...), making it hard to predict.
+- **rem (Root em)**: Relative to the **root element's (html)** font size.
+  - **Recommended**: Most modern responsive typography uses `rem`. If a user changes their browser's default font size, the whole page scales proportionally.
+
+```css
+html { font-size: 16px; }
+.box {
+  width: 10rem; /* = 160px */
+  padding: 1rem; /* = 16px */
+}
+```
+
+## 3. Viewport Units: vw, vh
+Based on the size of the **browser window (Viewport)**.
+
+- **vw (Viewport Width)**: 1% of the viewport width. `100vw` = Full width.
+- **vh (Viewport Height)**: 1% of the viewport height. `100vh` = Full height.
+- **Use Case**: Full-screen Hero Sections (`height: 100vh`), responsive typography.
+
+## 4. Container-Relative Units: %
+- **Definition**: Relative to the **immediate parent element**.
+- **Trait**: `width: 50%` means half the width of the parent.
+- **Note**: `height: 50%` often requires the parent to have an explicit height to work.
+
+## Best Practices
+
+| Scenario | Recommended | Reason |
+| :--- | :--- | :--- |
+| **Layout Width** | `%`, `max-width` | Adapts to screens |
+| **Spacing (Padding/Margin)** | `rem` | Breathes with font size |
+| **Font Size** | `rem` | Respects user settings |
+| **Borders** | `px` | Fine control needed |
+| **Full-screen Backgrounds** | `vh`, `vw` | Fills the viewport |
+
+## Interactive Demo
+
+*(Visualizing how rem changes with root font size, and how %/vw reacts to window resizing)*

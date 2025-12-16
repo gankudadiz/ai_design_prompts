@@ -1,0 +1,76 @@
+---
+title: "Display"
+subtitle: "How elements behave in the flow"
+category: "Layout"
+priority: 20
+difficulty: "Easy"
+tags: ["css", "layout", "fundamental"]
+description: "The display property defines how an element is displayed on the page, determining whether it takes up the full width or shares space with others."
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# The Personality of Elements
+
+If HTML elements were people, the `display` property would be the gene determining their social behavior. It decides whether an element likes to **stand alone** or **mingle with others**.
+
+## Core Values
+
+### 1. Block - The Loner
+Elements with `display: block` are like "loners".
+- **New Line**: They always start on a new line and take up the full width available.
+- **Resizable**: You can set their `width` and `height` freely.
+- **Examples**: `<div>`, `<p>`, `<h1>`, `<section>`
+
+```css
+.box {
+  display: block;
+  width: 100%; /* Defaults to full width */
+}
+```
+
+### 2. Inline - The Follower
+Elements with `display: inline` go with the flow.
+- **Same Line**: They only take up as much width as necessary and sit inline with other content.
+- **Fixed Size**: Setting `width` and `height` has **no effect**.
+- **Vertical Constraints**: Vertical margins and padding usually don't push other elements away.
+- **Examples**: `<span>`, `<a>`, `<em>`
+
+```css
+.text {
+  display: inline;
+  /* width: 100px;  <-- Ignored */
+  /* height: 50px; <-- Ignored */
+}
+```
+
+### 3. Inline-Block - The Hybrid
+`display: inline-block` offers the best of both worlds.
+- **Externally**: It sits on the same line like an `inline` element.
+- **Internally**: It respects `width` and `height` like a `block` element.
+- **Use Cases**: Buttons, navigation items, grid cards.
+
+```css
+.button {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+}
+```
+
+### 4. None - The Ghost
+`display: none` removes the element from the document flow entirely.
+- **No Space**: It takes up no space, as if it never existed.
+- **vs Visibility**: `visibility: hidden` hides the element but keeps the empty space it occupied.
+
+## Modern Layout Modes
+
+Beyond the basics, `display` is also the gateway to modern layout systems:
+
+- `display: flex`: Enables Flexbox layout.
+- `display: grid`: Enables Grid layout.
+
+## Interactive Demo
+
+<DisplayPlayground />
+

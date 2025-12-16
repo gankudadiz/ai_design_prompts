@@ -1,0 +1,61 @@
+---
+title: "Overflow"
+subtitle: "Handling content spillover"
+category: "Layout"
+priority: 40
+difficulty: "Easy"
+tags: ["css", "layout", "fundamental"]
+description: "The overflow property controls what happens to content that is too big to fit into an area."
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# When the Box is Too Small
+
+If you try to stuff a large winter coat into a small suitcase, parts of it will stick out. In web layout, this is called **Overflow**. The `overflow` property decides how to handle this "sticking out" content.
+
+## Core Values
+
+### 1. visible (Default)
+**"Let it flow."**
+- Content spills outside the container box, potentially overlapping other elements.
+- This is the default behavior to ensure content is never hidden by accident.
+
+### 2. hidden
+**"Cut it off."**
+- Content that overflows is **clipped** (hidden).
+- Users cannot scroll to see the clipped content.
+- Use cases: Circular avatars (with `border-radius`), clearing floats, hiding edges of decorative elements.
+
+### 3. scroll
+**"Always scroll."**
+- Scrollbars are added whether content overflows or not.
+- Rarely used, as scrollbars are ugly when not needed.
+
+### 4. auto (Recommended)
+**"Scroll if needed."**
+- Scrollbars appear only if the content overflows.
+- This is the standard way to create scrollable areas (like sidebars or chat windows).
+
+```css
+.sidebar {
+  height: 100vh;
+  overflow-y: auto; /* Scroll vertically only if needed */
+}
+```
+
+## Text Overflow
+
+For single-line text, we often want to show an ellipsis (...) when text is too long. This requires a trio of properties:
+
+```css
+.truncate {
+  white-space: nowrap;      /* 1. Force single line */
+  overflow: hidden;         /* 2. Hide overflow */
+  text-overflow: ellipsis;  /* 3. Show '...' */
+}
+```
+
+## Interactive Demo
+
+*(Visualizing different overflow values with long text in a fixed-size box)*

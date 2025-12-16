@@ -10,6 +10,8 @@ import { ZIndexPlayground } from '@/components/mdx/ZIndexPlayground';
 import { MasonryPlayground } from '@/components/mdx/MasonryPlayground';
 import { LayoutPatternDemo } from '@/components/mdx/LayoutPatternDemo';
 import { ColorPalettePlayground } from '@/components/mdx/ColorPalettePlayground';
+import { DisplayPlayground } from '@/components/mdx/DisplayPlayground';
+import { FloatPlayground } from '@/components/mdx/FloatPlayground';
 import { TerminalCard } from '@/components/ui/TerminalCard';
 import { MdxComponents } from '@/components/mdx/MdxStyles';
 import rehypeSlug from 'rehype-slug';
@@ -26,6 +28,8 @@ const components = {
   MasonryPlayground,
   LayoutPatternDemo,
   ColorPalettePlayground,
+  DisplayPlayground,
+  FloatPlayground,
   TerminalCard,
 };
 

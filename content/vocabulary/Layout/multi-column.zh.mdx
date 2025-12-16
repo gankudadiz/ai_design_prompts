@@ -1,0 +1,78 @@
+---
+title: "Multi-Column (多列布局)"
+subtitle: "报纸风格的文本排版"
+category: "Layout"
+priority: 30
+difficulty: "Easy"
+tags: ["css", "layout", "typography"]
+description: "CSS Multi-column Layout 允许内容像报纸一样自动流入多列中，非常适合长篇文本的阅读优化。"
+createdAt: "2025-12-16"
+updatedAt: "2025-12-16"
+---
+
+# 像报纸一样阅读
+
+在宽屏显示器上阅读一行超长的文字是非常累人的。CSS 多列布局（Multi-column Layout）允许内容自动分割成多列，就像传统的报纸或杂志排版一样。
+
+## 核心属性
+
+### 1. column-count (列数)
+直接指定你想要的列数，浏览器会自动计算每列的宽度。
+
+```css
+.newspaper {
+  column-count: 3; /* 分为3列 */
+}
+```
+
+### 2. column-width (列宽)
+指定每列的理想宽度。浏览器会根据容器宽度自动计算能容纳多少列。这比固定列数更具响应式特性。
+
+```css
+.newspaper {
+  column-width: 300px; /* 每列至少300px宽 */
+}
+```
+
+### 3. column-gap (列间距)
+控制列与列之间的缝隙大小。
+
+```css
+.newspaper {
+  column-gap: 40px;
+}
+```
+
+### 4. column-rule (分隔线)
+在列之间添加分隔线，语法类似 `border`。
+
+```css
+.newspaper {
+  column-rule: 1px solid #ccc;
+}
+```
+
+### 5. column-span (跨列)
+让某个元素（如标题）横跨所有列。
+
+```css
+h2 {
+  column-span: all;
+}
+```
+
+## 与 Grid/Flexbox 的区别
+
+- **Grid/Flexbox**：主要用于**布局结构**（如侧边栏+主内容）。它们控制的是“盒子”的位置。
+- **Multi-column**：主要用于**内容排版**。它控制的是“文本流”如何在容器内流动。当一列填满后，内容会自动溢出到下一列。
+
+## 适用场景
+
+- 博客文章正文
+- 法律条款说明
+- 字典或索引列表
+- 瀑布流布局的纯 CSS 实现（虽然不如 JS 库精确，但很简单）
+
+## 交互演示
+
+*(演示一段长文本随着容器宽度变化自动调整列数)*

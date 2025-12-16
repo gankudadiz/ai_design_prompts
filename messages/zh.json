@@ -51,6 +51,10 @@
     "layoutPatternCommand": "构建 --结构",
     "colorPaletteTitle": "调色盘生成器",
     "colorPaletteCommand": "混合 --颜色",
+    "displayTitle": "Display 属性演练场",
+    "displayCommand": "设置 --显示模式",
+    "floatTitle": "浮动 & 清除演练场",
+    "floatCommand": "浮动 --位置",
     "cssOutput": "// CSS 输出"
   },
   "Styles": {

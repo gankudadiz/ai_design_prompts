@@ -102,11 +102,11 @@ export function getAllVocabularyMeta(locale: string = 'en'): VocabularyMeta[] {
     } as VocabularyMeta;
 
     // Ensure dates are strings to avoid serialization issues
-    if (meta.createdAt instanceof Date) {
-      meta.createdAt = (meta.createdAt as Date).toISOString();
+    if ((meta.createdAt as unknown) instanceof Date) {
+      meta.createdAt = (meta.createdAt as unknown as Date).toISOString();
     }
-    if (meta.updatedAt instanceof Date) {
-      meta.updatedAt = (meta.updatedAt as Date).toISOString();
+    if ((meta.updatedAt as unknown) instanceof Date) {
+      meta.updatedAt = (meta.updatedAt as unknown as Date).toISOString();
     }
 
     return meta;
@@ -185,11 +185,11 @@ export async function getVocabularyBySlug(slug: string, locale: string = 'en'): 
   } as VocabularyMeta;
 
   // Ensure dates are strings
-  if (meta.createdAt instanceof Date) {
-    meta.createdAt = (meta.createdAt as Date).toISOString();
+  if ((meta.createdAt as unknown) instanceof Date) {
+    meta.createdAt = (meta.createdAt as unknown as Date).toISOString();
   }
-  if (meta.updatedAt instanceof Date) {
-    meta.updatedAt = (meta.updatedAt as Date).toISOString();
+  if ((meta.updatedAt as unknown) instanceof Date) {
+    meta.updatedAt = (meta.updatedAt as unknown as Date).toISOString();
   }
 
   return {

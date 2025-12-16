@@ -32,11 +32,23 @@ export interface VocabularyPost {
 }
 
 export function getAllVocabularySlugs() {
-  const fileNames = fs.readdirSync(contentDirectory);
+  // Helper to get all files recursively
+  const getFiles = (dir: string): string[] => {
+    const dirents = fs.readdirSync(dir, { withFileTypes: true });
+    const files = dirents.map((dirent) => {
+      const res = path.join(dir, dirent.name);
+      return dirent.isDirectory() ? getFiles(res) : [res];
+    });
+    return Array.prototype.concat(...files);
+  };
+
+  const allFiles = getFiles(contentDirectory);
+  
   // Get unique slugs by removing extensions and language suffixes
-  const slugs = new Set(fileNames
-    .filter(name => name.endsWith('.mdx'))
-    .map(name => name.replace(/(\.zh|\.en)?\.mdx$/, ''))
+  // Note: We use the filename as the slug, ignoring the directory structure for the URL
+  const slugs = new Set(allFiles
+    .filter(filePath => filePath.endsWith('.mdx'))
+    .map(filePath => path.basename(filePath).replace(/(\.zh|\.en)?\.mdx$/, ''))
   );
   
   return Array.from(slugs).map((slug) => {
@@ -49,23 +61,35 @@ export function getAllVocabularySlugs() {
 }
 
 export function getAllVocabularyMeta(locale: string = 'en'): VocabularyMeta[] {
+  // Helper to get all files recursively (same as in getAllVocabularySlugs, but we can't easily share without exporting)
+  const getFiles = (dir: string): string[] => {
+    if (!fs.existsSync(dir)) return [];
+    const dirents = fs.readdirSync(dir, { withFileTypes: true });
+    const files = dirents.map((dirent) => {
+      const res = path.join(dir, dirent.name);
+      return dirent.isDirectory() ? getFiles(res) : [res];
+    });
+    return Array.prototype.concat(...files);
+  };
+
+  const allFiles = getFiles(contentDirectory);
   const slugs = getAllVocabularySlugs().map(item => item.params.slug);
   
   const allVocabularyData = slugs.map((slug) => {
-    let fullPath = path.join(contentDirectory, `${slug}.${locale}.mdx`);
+    // Try exact locale match first
+    let fullPath = allFiles.find(file => path.basename(file) === `${slug}.${locale}.mdx`);
     
-    // Fallback to default .mdx if specific locale file doesn't exist
-    if (!fs.existsSync(fullPath)) {
-      fullPath = path.join(contentDirectory, `${slug}.mdx`);
+    // Try default .mdx
+    if (!fullPath) {
+      fullPath = allFiles.find(file => path.basename(file) === `${slug}.mdx`);
+    }
+    
+    // Fallback to .en.mdx
+    if (!fullPath) {
+      fullPath = allFiles.find(file => path.basename(file) === `${slug}.en.mdx`);
     }
 
-    // If still not found (e.g. requested 'zh' but only 'en.mdx' exists and no default 'mdx'), try 'en' explicitly
-    if (!fs.existsSync(fullPath)) {
-         fullPath = path.join(contentDirectory, `${slug}.en.mdx`);
-    }
-
-    if (!fs.existsSync(fullPath)) {
-        // Should not happen if getAllVocabularySlugs works correctly based on existing files
+    if (!fullPath) {
         return null;
     }
 
@@ -88,22 +112,30 @@ export function getAllVocabularyMeta(locale: string = 'en'): VocabularyMeta[] {
     return meta;
   }).filter(Boolean) as VocabularyMeta[];
 
-  // Sort posts by priority first, then by date
+  // Sort posts by Category Priority first, then by priority, then by date
   return allVocabularyData.sort((a, b) => {
-    // 1. Sort by explicit priority if available
+    // 1. Sort by Category Priority
+    const catPriorityA = CATEGORY_PRIORITY[a.category] || 99;
+    const catPriorityB = CATEGORY_PRIORITY[b.category] || 99;
+    
+    if (catPriorityA !== catPriorityB) {
+      return catPriorityA - catPriorityB;
+    }
+
+    // 2. Sort by explicit priority if available (inside the same category)
     if (a.priority !== undefined && b.priority !== undefined) {
       return a.priority - b.priority;
     }
     
-    // 2. Sort by Category Priority
-    const priorityA = CATEGORY_PRIORITY[a.category] || 99;
-    const priorityB = CATEGORY_PRIORITY[b.category] || 99;
-    
-    if (priorityA !== priorityB) {
-      return priorityA - priorityB;
+    // If one has priority and the other doesn't, prioritize the one with priority
+    if (a.priority !== undefined && b.priority === undefined) {
+      return -1;
     }
-
-    // 3. Fallback to date (newest first)
+    if (a.priority === undefined && b.priority !== undefined) {
+      return 1;
+    }
+    
+    // 3. Sort by date (newest first)
     if (a.createdAt < b.createdAt) {
       return 1;
     } else {
@@ -113,19 +145,33 @@ export function getAllVocabularyMeta(locale: string = 'en'): VocabularyMeta[] {
 }
 
 export async function getVocabularyBySlug(slug: string, locale: string = 'en'): Promise<VocabularyPost> {
-  let fullPath = path.join(contentDirectory, `${slug}.${locale}.mdx`);
+  // Helper to get all files recursively (we need this again here)
+  const getFiles = (dir: string): string[] => {
+    if (!fs.existsSync(dir)) return [];
+    const dirents = fs.readdirSync(dir, { withFileTypes: true });
+    const files = dirents.map((dirent) => {
+      const res = path.join(dir, dirent.name);
+      return dirent.isDirectory() ? getFiles(res) : [res];
+    });
+    return Array.prototype.concat(...files);
+  };
+
+  const allFiles = getFiles(contentDirectory);
   
-  // Fallback to default .mdx
-  if (!fs.existsSync(fullPath)) {
-    fullPath = path.join(contentDirectory, `${slug}.mdx`);
+  // Try exact locale match first
+  let fullPath = allFiles.find(file => path.basename(file) === `${slug}.${locale}.mdx`);
+  
+  // Try default .mdx
+  if (!fullPath) {
+    fullPath = allFiles.find(file => path.basename(file) === `${slug}.mdx`);
   }
   
   // Fallback to .en.mdx
-  if (!fs.existsSync(fullPath)) {
-      fullPath = path.join(contentDirectory, `${slug}.en.mdx`);
+  if (!fullPath) {
+    fullPath = allFiles.find(file => path.basename(file) === `${slug}.en.mdx`);
   }
 
-  if (!fs.existsSync(fullPath)) {
+  if (!fullPath || !fs.existsSync(fullPath)) {
     throw new Error(`Vocabulary not found: ${slug} (locale: ${locale})`);
   }
 

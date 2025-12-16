@@ -1,0 +1,31 @@
+---
+title: Z型布局 (Zigzag Layout)
+description: 图片与文本交替左右排列的布局，引导视线呈Z字形移动。
+category: LayoutPatterns
+difficulty: Easy
+priority: 10
+tags: [布局, Z型, 图文]
+---
+
+# Z型布局 (Zigzag Layout)
+
+**Z型布局**通过交替排列图片和文本（左图右文，下一行右图左文），引导用户的视线在页面上呈“Z”字形移动。这种布局打破了单调的垂直流动，增加了视觉节奏感，特别适合用于特性介绍或步骤说明。
+
+<LayoutPatternDemo type="zigzag" />
+
+## 代码实现
+
+可以使用 Flexbox 的 `flex-direction: row-reverse` 或者 CSS Grid 来实现交替排列。
+
+```css
+.zigzag-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* 偶数项反转方向 */
+.zigzag-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+```

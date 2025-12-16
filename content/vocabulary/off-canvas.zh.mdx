@@ -1,0 +1,34 @@
+---
+title: 抽屉式菜单 (Off-Canvas Menu)
+description: 菜单隐藏在屏幕之外，点击按钮后滑入显示，节省屏幕空间。
+category: LayoutPatterns
+difficulty: Medium
+priority: 15
+tags: [布局, 导航, 移动端]
+---
+
+# 抽屉式菜单 (Off-Canvas Menu)
+
+**抽屉式菜单**（又称侧滑菜单）将导航链接隐藏在视口之外，直到用户触发它。这种模式在移动设备上极为常见，能有效利用有限的屏幕空间。
+
+<LayoutPatternDemo type="off-canvas" />
+
+## 代码实现
+
+使用固定定位 `position: fixed` 将菜单放置在屏幕外，通过 `transform` 属性来控制显示和隐藏。
+
+```css
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  transform: translateX(-100%); /* 初始隐藏 */
+  transition: transform 0.3s ease;
+}
+
+.off-canvas-menu.is-open {
+  transform: translateX(0); /* 滑入显示 */
+}
+```

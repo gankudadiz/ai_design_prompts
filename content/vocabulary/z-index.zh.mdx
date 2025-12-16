@@ -1,0 +1,39 @@
+---
+title: "Z-Index (层叠顺序)"
+subtitle: "层叠顺序"
+category: "Layout"
+difficulty: "Intermediate"
+tags: ["css", "layout", "stacking"]
+description: "Z-Index 属性控制元素的堆叠顺序。拥有更高堆叠顺序的元素总会处于堆叠顺序较低的元素的前面。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 谁在上面？
+
+想象你在桌子上叠**煎饼**或者**纸牌**。
+`z-index` 就是决定哪张牌在上面的数字。
+
+*   `z-index: 1`：在底层。
+*   `z-index: 999`：在顶层。
+
+## 交互演示
+
+<ZIndexPlayground />
+
+## 两个必须记住的规则
+
+### 1. 只有“定位元素”才配有 Z-Index
+最常见的错误是给一个普通的 `div` 写了 `z-index: 9999`，结果发现没用。
+**原因**：你必须先设置 `position: relative` (或者 absolute/fixed/sticky)，`z-index` 才会生效。
+
+### 2. “拼爹”原则 (层叠上下文)
+如果你的父元素层级很低，你作为子元素，哪怕 `z-index` 是一亿，也翻不出父元素所在的那一层。
+
+**比喻**：
+*   **A组** (Z-Index: 1)
+    *   小明 (Z-Index: 999)
+*   **B组** (Z-Index: 2)
+    *   小红 (Z-Index: 1)
+
+因为 B组 > A组，所以**小红**会覆盖在**小明**上面。小明在 A 组里称王称霸（999），但因为由于所在的 A 组层级太低，还是被 B 组的小红压在下面。

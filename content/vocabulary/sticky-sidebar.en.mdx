@@ -1,0 +1,31 @@
+---
+title: Sticky Sidebar
+description: A sidebar that remains fixed in the viewport while scrolling.
+category: LayoutPatterns
+difficulty: Easy
+priority: 11
+tags: [Layout, Sidebar, Sticky]
+---
+
+# Sticky Sidebar
+
+The **Sticky Sidebar** pattern keeps sidebar content fixed within the viewport as the user scrolls through the main content. This is highly effective for tables of contents, filter options, or advertisements in long articles.
+
+<LayoutPatternDemo type="sticky-sidebar" />
+
+## Implementation
+
+The core technique relies on `position: sticky` and the `top` property.
+
+```css
+.container {
+  display: flex;
+  align-items: flex-start; /* Critical: prevents height stretching */
+}
+
+.sidebar {
+  position: sticky;
+  top: 20px; /* Offset from the top */
+  height: auto;
+}
+```

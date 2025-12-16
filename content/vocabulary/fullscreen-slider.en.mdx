@@ -1,0 +1,32 @@
+---
+title: Fullscreen Slider
+description: A sliding layout where each section occupies the full viewport height.
+category: LayoutPatterns
+difficulty: Medium
+priority: 9
+tags: [Layout, Slider, Fullscreen]
+---
+
+# Fullscreen Slider
+
+A **Fullscreen Slider** is an immersive layout where each content block occupies the entire height of the browser viewport. Users navigate between screens by scrolling or clicking indicators, making it ideal for product showcases, storytelling, or portfolios.
+
+<LayoutPatternDemo type="fullscreen-slider" />
+
+## Implementation
+
+It is commonly implemented using `height: 100vh` and CSS Scroll Snap properties for a smooth, native scrolling experience.
+
+```css
+.slider-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* Enable vertical snapping */
+}
+
+.slide {
+  height: 100vh;
+  scroll-snap-align: start; /* Align to top when scrolling stops */
+  width: 100%;
+}
+```

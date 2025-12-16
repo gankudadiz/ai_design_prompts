@@ -20,12 +20,15 @@
       "Components": "组件",
       "Responsive": "响应式",
       "Animation": "动画",
-      "Styling": "样式"
+      "Styling": "样式",
+      "LayoutPatterns": "布局模式"
     },
     "difficulty": {
       "Easy": "简单",
       "Medium": "中等",
-      "Hard": "困难"
+      "Intermediate": "进阶",
+      "Hard": "困难",
+      "Advanced": "高级"
     },
     "metadata": "元数据",
     "updated": "更新于",
@@ -36,6 +39,18 @@
     "flexboxCommand": "交互式 --演示",
     "gridTitle": "Grid 演练场",
     "gridCommand": "交互式 --演示",
+    "boxModelTitle": "盒模型演练场",
+    "boxModelCommand": "检查 --盒模型",
+    "positionTitle": "定位演练场",
+    "positionCommand": "移动 --元素",
+    "zIndexTitle": "层叠顺序演练场",
+    "zIndexCommand": "堆叠 --层级",
+    "masonryTitle": "瀑布流演示",
+    "masonryCommand": "布局 --瀑布流",
+    "layoutPatternTitle": "布局模式演示",
+    "layoutPatternCommand": "构建 --结构",
+    "colorPaletteTitle": "调色盘生成器",
+    "colorPaletteCommand": "混合 --颜色",
     "cssOutput": "// CSS 输出"
   },
   "Styles": {

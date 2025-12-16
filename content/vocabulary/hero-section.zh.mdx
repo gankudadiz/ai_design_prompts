@@ -1,0 +1,43 @@
+---
+title: "Hero Section (首屏/英雄区)"
+subtitle: "First Impression"
+category: "LayoutPatterns"
+difficulty: "Easy"
+priority: 8
+tags: ["css", "layout", "landing"]
+description: "Hero Section 是用户进入网站后看到的第一屏内容，通常包含大标题、简短介绍和主要行动按钮（CTA）。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是 Hero Section？
+
+在网页设计中，**Hero Section** 指的是首页最顶部的区域。
+它是用户的“第一印象区”，决定了用户是继续浏览还是直接关闭。
+
+一个标准的 Hero Section 通常包含：
+1.  **Value Proposition**：一句话讲清楚产品价值的大标题。
+2.  **Supporting Text**：简短的副标题补充说明。
+3.  **CTA (Call to Action)**：醒目的按钮（如“立即开始”、“免费试用”）。
+4.  **Visual**：吸引眼球的背景图、插画或 3D 模型。
+
+## 交互演示
+
+<LayoutPatternDemo type="hero" />
+
+## 代码实现
+
+通常使用 Flexbox 进行居中布局：
+
+```css
+.hero {
+  height: 80vh; /* 占据大部分视口高度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  text-align: center;
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+}
+```

@@ -1,0 +1,41 @@
+---
+title: "Card Grid"
+subtitle: "Responsive Cards"
+category: "LayoutPatterns"
+difficulty: "Medium"
+priority: 5
+tags: ["css", "layout", "grid", "responsive"]
+description: "Card Grid is the most versatile way to display content, featuring neatly arranged cards that adapt to screen width."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is Card Grid?
+
+From e-commerce product lists to blog post archives, **Card Grid** is everywhere.
+Its core requirements are:
+1.  Consistent card size (or aspect ratio).
+2.  **Responsive**: Show more columns on big screens (e.g., 4 cols), fewer on small screens (e.g., 1-2 cols).
+3.  Even spacing.
+
+## Interactive Demo
+
+<LayoutPatternDemo type="card-grid" />
+
+## The Killer Feature: auto-fit + minmax
+
+With CSS Grid, you can implement a perfect responsive layout with **one line of code**, often without needing any `@media` queries!
+
+```css
+.grid-container {
+  display: grid;
+  /* The Magic Line */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+```
+
+**Translation**:
+*   `repeat(auto-fit, ...)`: Fit as many columns as possible in one row.
+*   `minmax(250px, 1fr)`: Each column must be at least 250px wide. If there's extra space, distribute it equally (`1fr`).
+*   If the screen is too narrow for another 250px column, it automatically wraps to the next line.

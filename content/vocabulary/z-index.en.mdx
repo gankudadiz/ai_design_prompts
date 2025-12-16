@@ -1,0 +1,39 @@
+---
+title: "Z-Index"
+subtitle: "Stacking Order"
+category: "Layout"
+difficulty: "Intermediate"
+tags: ["css", "layout", "stacking"]
+description: "The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# Who's on Top?
+
+Imagine stacking **pancakes** or **playing cards** on a table.
+`z-index` is simply the number that decides which card is on top.
+
+*   `z-index: 1`: Bottom layer.
+*   `z-index: 999`: Top layer.
+
+## Interactive Demo
+
+<ZIndexPlayground />
+
+## Two Rules to Remember
+
+### 1. Only "Positioned" Elements get a Z-Index
+A common mistake is giving a normal `div` a `z-index: 9999` and seeing no change.
+**Reason**: You must set `position: relative` (or absolute/fixed/sticky) for `z-index` to work.
+
+### 2. The "Parent Rule" (Stacking Context)
+If your parent element is on a low layer, you (the child) cannot escape that layer, even if your `z-index` is one million.
+
+**Analogy**:
+*   **Group A** (Z-Index: 1)
+    *   Mike (Z-Index: 999)
+*   **Group B** (Z-Index: 2)
+    *   Sarah (Z-Index: 1)
+
+Because Group B > Group A, **Sarah** will sit on top of **Mike**. Mike is the king of Group A (999), but because his group is at the bottom of the pile, he stays at the bottom.

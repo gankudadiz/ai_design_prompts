@@ -1,0 +1,31 @@
+---
+title: Hero Section
+description: A prominent section at the top of a webpage, often featuring a large image, headline, and call-to-action.
+category: LayoutPatterns
+difficulty: Easy
+priority: 8
+tags: [Layout, Hero, Landing Page]
+---
+
+# Hero Section
+
+A **Hero Section** is the first visual element a visitor encounters on a webpage. It typically occupies a large portion of the viewport and serves to grab attention, convey the core value proposition, and guide user action.
+
+<LayoutPatternDemo type="hero" />
+
+## Implementation
+
+The Hero Section is usually implemented using Flexbox or CSS Grid to center content vertically and horizontally over a background image or color.
+
+```css
+.hero {
+  height: 80vh; /* Occupies most of the viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontal centering */
+  justify-content: center; /* Vertical centering */
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+```

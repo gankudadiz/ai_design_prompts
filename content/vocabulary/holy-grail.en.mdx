@@ -1,0 +1,65 @@
+---
+title: "Holy Grail Layout"
+subtitle: "The Classic 3-Column Structure"
+category: "LayoutPatterns"
+difficulty: "Intermediate"
+priority: 1
+tags: ["css", "layout", "classic"]
+description: "The Holy Grail Layout is a web page layout that consists of a header, a footer, and a three-column center section (nav, main, aside)."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is the Holy Grail Layout?
+
+The "Holy Grail Layout" is named so because it was once considered elusive and hard to implement perfectly (especially before Flexbox and Grid).
+
+It consists of:
+1.  **Header**: Top section (usually 100% width).
+2.  **Center**: Middle section with three columns:
+    *   **Main Content**: The primary content (usually in the middle, and appears first in HTML for SEO).
+    *   **Nav**: Left navigation.
+    *   **Aside**: Right sidebar.
+3.  **Footer**: Bottom section (usually 100% width).
+
+**Key Requirements**:
+*   All three middle columns should have equal height.
+*   The center (main) column should be fluid (responsive), while side columns are fixed width.
+*   The footer should always stick to the bottom.
+
+## Interactive Demo
+
+<LayoutPatternDemo type="holy-grail" />
+
+## Modern Implementation (Flexbox)
+
+With modern CSS, implementing this is trivial using Flexbox.
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  height: 60px; /* Fixed height */
+}
+
+.main-body {
+  display: flex;
+  flex: 1; /* Fill remaining space */
+}
+
+nav, aside {
+  width: 200px; /* Fixed width */
+}
+
+main {
+  flex: 1; /* Fluid width */
+}
+```
+
+## Historical Context
+
+Before Flexbox, developers used complex hacks involving `float`, negative `margin`, and `padding` to achieve this (often called "Double Wing" layout variants in some communities). Now, we can forget those hacks and embrace Flexbox and Grid.

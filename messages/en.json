@@ -20,12 +20,15 @@
       "Components": "Components",
       "Responsive": "Responsive",
       "Animation": "Animation",
-      "Styling": "Styling"
+      "Styling": "Styling",
+      "LayoutPatterns": "Layout Patterns"
     },
     "difficulty": {
       "Easy": "Easy",
       "Medium": "Medium",
-      "Hard": "Hard"
+      "Intermediate": "Intermediate",
+      "Hard": "Hard",
+      "Advanced": "Advanced"
     },
     "metadata": "Metadata",
     "updated": "Updated",
@@ -36,6 +39,18 @@
     "flexboxCommand": "interactive --demo",
     "gridTitle": "Grid Playground",
     "gridCommand": "interactive --demo",
+    "boxModelTitle": "Box Model Playground",
+    "boxModelCommand": "inspect --box-model",
+    "positionTitle": "Positioning Playground",
+    "positionCommand": "move --element",
+    "zIndexTitle": "Z-Index Playground",
+    "zIndexCommand": "stack --layers",
+    "masonryTitle": "Masonry Demo",
+    "masonryCommand": "layout --masonry",
+    "layoutPatternTitle": "Layout Pattern Demo",
+    "layoutPatternCommand": "build --structure",
+    "colorPaletteTitle": "Color Palette Generator",
+    "colorPaletteCommand": "mix --colors",
     "cssOutput": "// CSS Output"
   },
   "Styles": {

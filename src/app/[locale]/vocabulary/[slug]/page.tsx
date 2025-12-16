@@ -4,6 +4,12 @@ import { Link } from '@/i18n/routing';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { FlexPlayground } from '@/components/mdx/FlexPlayground';
 import { GridPlayground } from '@/components/mdx/GridPlayground';
+import { BoxModelPlayground } from '@/components/mdx/BoxModelPlayground';
+import { PositionPlayground } from '@/components/mdx/PositionPlayground';
+import { ZIndexPlayground } from '@/components/mdx/ZIndexPlayground';
+import { MasonryPlayground } from '@/components/mdx/MasonryPlayground';
+import { LayoutPatternDemo } from '@/components/mdx/LayoutPatternDemo';
+import { ColorPalettePlayground } from '@/components/mdx/ColorPalettePlayground';
 import { TerminalCard } from '@/components/ui/TerminalCard';
 import { MdxComponents } from '@/components/mdx/MdxStyles';
 import rehypeSlug from 'rehype-slug';
@@ -14,6 +20,12 @@ const components = {
   ...MdxComponents,
   FlexPlayground,
   GridPlayground,
+  BoxModelPlayground,
+  PositionPlayground,
+  ZIndexPlayground,
+  MasonryPlayground,
+  LayoutPatternDemo,
+  ColorPalettePlayground,
   TerminalCard,
 };
 

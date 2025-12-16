@@ -1,0 +1,32 @@
+---
+title: 全屏轮播 (Fullscreen Slider)
+description: 每一屏占据整个视口高度的滑动布局，常用于沉浸式展示。
+category: LayoutPatterns
+difficulty: Medium
+priority: 9
+tags: [布局, 轮播, 全屏]
+---
+
+# 全屏轮播 (Fullscreen Slider)
+
+**全屏轮播**是一种沉浸式的布局方式，每个内容块占据整个浏览器窗口的高度。用户通过滚动或点击导航点来切换不同的屏幕，非常适合用于产品展示、故事叙述或作品集。
+
+<LayoutPatternDemo type="fullscreen-slider" />
+
+## 代码实现
+
+通常结合 `height: 100vh` 和 `scroll-snap` 属性来实现原生流畅的滚动体验。
+
+```css
+.slider-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* 开启垂直方向的捕捉 */
+}
+
+.slide {
+  height: 100vh;
+  scroll-snap-align: start; /* 滚动停止时对齐顶部 */
+  width: 100%;
+}
+```

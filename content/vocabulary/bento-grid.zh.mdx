@@ -1,0 +1,43 @@
+---
+title: 便当盒布局 (Bento Grid)
+subtitle: 像便当盒一样整齐又多样的网格
+category: LayoutPatterns
+difficulty: Medium
+priority: 6
+tags: [布局, 网格, 趋势]
+description: 便当盒布局（Bento Grid）是一种受日式便当启发的网格布局，通过不同大小的矩形块组合，形成既整齐又富有变化的视觉效果。
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 便当盒布局 (Bento Grid)
+
+**便当盒布局**（Bento Grid）近年来非常流行（尤其是 Apple 的宣传页）。它将内容分割成不同大小的矩形格子，就像日式便当盒一样。这种布局非常适合展示多个功能点、作品集或者仪表盘数据。
+
+<LayoutPatternDemo type="bento-grid" />
+
+## 代码实现
+
+CSS Grid 是实现便当盒布局的最佳工具。通过 `grid-column: span X` 和 `grid-row: span Y` 来控制每个格子占据的空间。
+
+```css
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列布局 */
+  grid-auto-rows: 100px; /* 每行基础高度 */
+  gap: 16px;
+}
+
+.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-wide {
+  grid-column: span 2;
+}
+
+.item-tall {
+  grid-row: span 2;
+}
+```

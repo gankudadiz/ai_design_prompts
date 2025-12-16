@@ -1,0 +1,50 @@
+---
+title: 视差滚动 (Parallax Scrolling)
+subtitle: 具有3D纵深感的滚动效果
+category: LayoutPatterns
+difficulty: Advanced
+priority: 7
+tags: [布局, 滚动, 3D]
+description: "视差滚动（Parallax Scrolling）是一种通过让背景移动速度慢于前景，从而产生 3D 纵深感的视觉技术。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是视差滚动？
+
+**视差滚动 (Parallax Scrolling)** 是一种经典的网页特效。
+当用户滚动页面时，背景层移动得比前景层慢，这种速度差欺骗了大脑，让我们在二维屏幕上感觉到了三维的深度。
+
+它常用于：
+*   沉浸式的故事讲述页面。
+*   高端品牌展示页。
+
+## 交互演示
+
+<LayoutPatternDemo type="parallax" />
+
+## 纯 CSS 实现
+
+虽然以前常需要 JS 监听滚动事件，但现在我们可以用纯 CSS 实现高性能视差：
+
+```css
+.parallax-container {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 1px; /* 关键：开启 3D 透视 */
+}
+
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 关键：推远并放大 */
+  transform: translateZ(-1px) scale(2); 
+  z-index: -1;
+}
+```
+
+原理：离“摄像机”越远的物体（Z轴为负），在滚动时移动得看起来越慢。

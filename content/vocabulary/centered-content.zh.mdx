@@ -1,0 +1,37 @@
+---
+title: 居中内容 (Centered Content)
+description: 无论屏幕尺寸如何，内容始终保持在页面水平和垂直居中的布局。
+category: LayoutPatterns
+difficulty: Easy
+priority: 12
+tags: [布局, 居中, 极简]
+---
+
+# 居中内容 (Centered Content)
+
+**居中内容**布局将主要元素置于屏幕的正中央，无论是在水平还是垂直方向。这种布局常用于登录页、错误页面（404）或极简风格的着陆页。
+
+<LayoutPatternDemo type="centered-content" />
+
+## 代码实现
+
+最现代且简洁的方法是使用 CSS Grid 或 Flexbox。
+
+```css
+.container {
+  display: grid;
+  place-items: center; /* 水平和垂直同时居中 */
+  height: 100vh;
+}
+```
+
+或者使用 Flexbox：
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+```

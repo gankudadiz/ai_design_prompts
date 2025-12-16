@@ -1,0 +1,35 @@
+---
+title: Media Object
+description: A classic pattern where an image is positioned to the left or right of text content.
+category: LayoutPatterns
+difficulty: Easy
+priority: 13
+tags: [Layout, Media Object, List]
+---
+
+# Media Object
+
+The **Media Object** is a classic and versatile layout pattern consisting of a fixed-width media element (image, avatar, icon) positioned alongside content. It is the building block for comment threads, tweets, and news feeds.
+
+<LayoutPatternDemo type="media-object" />
+
+## Implementation
+
+Flexbox is the best tool for the job, handling alignment and spacing with ease.
+
+```css
+.media {
+  display: flex;
+  align-items: flex-start; /* Align to top */
+  gap: 1rem;
+}
+
+.media-figure {
+  flex: none; /* Prevent image shrinking */
+  width: 64px;
+}
+
+.media-body {
+  flex: 1; /* Take up remaining space */
+}
+```

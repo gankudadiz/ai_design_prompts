@@ -1,0 +1,36 @@
+---
+title: "Masonry Layout"
+subtitle: "Brick-like layout"
+category: "Layout"
+difficulty: "Advanced"
+tags: ["css", "layout", "grid", "design"]
+description: "Masonry is a grid layout based on columns. Unlike other grid layouts, it doesn't have fixed height rows."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is Masonry?
+
+Think of **Pinterest**. You'll notice images aren't in strict, even rows. Instead, they fit together like **bricks** in a wall, minimizing vertical gaps.
+
+This is **Masonry Layout**. It's great for handling content of varying heights (like photos).
+
+## Interactive Demo
+
+<MasonryPlayground />
+
+## How to build it?
+
+It looks simple, but standard CSS Grids struggle with it.
+
+### 1. The Easy Way (CSS Columns)
+Like a newspaper. Content fills the first column top-to-bottom, then moves to the second.
+*   **Downside**: Reading order is vertical, not horizontal.
+
+### 2. The Best Way (JavaScript)
+Most sites use JavaScript to calculate positions:
+1.  Set up columns (e.g., 3 columns).
+2.  Take the next item.
+3.  Find the **shortest** column.
+4.  Place the item there.
+5.  Repeat.

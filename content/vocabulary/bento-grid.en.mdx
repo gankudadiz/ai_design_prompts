@@ -1,0 +1,48 @@
+---
+title: "Bento Grid"
+subtitle: "Apple-style Grid"
+category: "LayoutPatterns"
+difficulty: "Medium"
+priority: 6
+tags: ["css", "layout", "grid", "modern"]
+description: "Bento Grid is a modern layout trend popularized by Apple, featuring content organized into varied-sized rectangular boxes."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is Bento Grid?
+
+**Bento Grid** is one of the hottest UI trends (popularized by Apple and Linear).
+The core philosophy is: **Everything is a box.**
+
+It's perfect for Dashboards or Feature Sections on landing pages.
+The aesthetic comes from the fact that while boxes vary in size, the overall structure is tightly packed and organized.
+
+## Interactive Demo
+
+<LayoutPatternDemo type="bento-grid" />
+
+## Implementation
+
+CSS Grid is the best tool for this. Use `grid-column: span X` and `grid-row: span Y` to control the size of each cell.
+
+```css
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-auto-rows: 100px; /* Base row height */
+  gap: 16px;
+}
+
+/* A large 2x2 box */
+.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* A tall 1x2 box */
+.item-tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+```

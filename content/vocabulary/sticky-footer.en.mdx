@@ -1,0 +1,41 @@
+---
+title: "Sticky Footer"
+subtitle: "Footer Always at Bottom"
+category: "LayoutPatterns"
+difficulty: "Easy"
+priority: 3
+tags: ["css", "layout", "footer"]
+description: "Sticky Footer ensures the footer stays at the bottom of the viewport even when there is little content."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is a Sticky Footer?
+
+Have you ever seen a page with very little content, where the footer floats awkwardly in the middle of the screen, leaving a huge blank space below it?
+
+**Sticky Footer** solves this. It ensures:
+1.  If content is long, the footer is pushed down and appears after scrolling.
+2.  If content is short, the footer "sticks" to the very bottom of the screen.
+
+## Interactive Demo
+
+<LayoutPatternDemo type="sticky-footer" />
+
+## How to implement?
+
+The easiest way is using Flexbox.
+
+```css
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Key: Minimum height equals viewport height */
+}
+
+main {
+  flex: 1; /* Key: Main content stretches to fill available space */
+}
+```
+
+With just these lines, the `main` area acts like a spring, pushing the `footer` to the bottom.

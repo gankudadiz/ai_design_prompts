@@ -1,0 +1,47 @@
+---
+title: "Split Screen"
+subtitle: "Dual Focus Layout"
+category: "LayoutPatterns"
+difficulty: "Easy"
+priority: 4
+tags: ["css", "layout", "landing"]
+description: "Split Screen layout divides the screen into two equal parts, usually one side for visuals and the other for text/forms. Common in login or landing pages."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# What is Split Screen Layout?
+
+Split Screen divides the viewport into two distinct areas (usually 50/50).
+It's a modern, high-impact design choice often used for:
+*   **Login/Signup Pages**: Brand image on one side, form on the other.
+*   **Landing Pages**: Product close-up on one side, copy text on the other.
+
+## Interactive Demo
+
+<LayoutPatternDemo type="split-screen" />
+
+## Implementation
+
+Flexbox is the best tool for this:
+
+```css
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left, .right {
+  flex: 1; /* Equal width */
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center;
+}
+
+/* Mobile Adaptation: Stack vertically */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+```

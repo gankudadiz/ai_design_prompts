@@ -1,0 +1,47 @@
+---
+title: 分屏布局 (Split Screen)
+subtitle: 左右对半分的布局
+category: LayoutPatterns
+difficulty: Easy
+priority: 4
+tags: [布局, 分屏, 创意]
+description: "分屏布局将屏幕一分为二，通常一边是图片/视觉重心，另一边是文本/操作表单。常用于登录页或着陆页。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是分屏布局？
+
+分屏布局（Split Screen）将视口均分为两个部分（通常是 50/50）。
+这是一种非常现代且极具视觉冲击力的设计，常用于：
+*   **登录/注册页**：一边是品牌图，一边是表单。
+*   **产品着陆页**：一边是产品特写，一边是介绍文案。
+
+## 交互演示
+
+<LayoutPatternDemo type="split-screen" />
+
+## 代码实现
+
+Flexbox 是最佳选择：
+
+```css
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left, .right {
+  flex: 1; /* 均分空间 */
+  display: flex;
+  justify-content: center; /* 内容居中 */
+  align-items: center;
+}
+
+/* 移动端适配：改为上下排列 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+```

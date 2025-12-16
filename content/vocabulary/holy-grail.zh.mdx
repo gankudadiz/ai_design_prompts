@@ -1,0 +1,65 @@
+---
+title: 圣杯布局 (Holy Grail Layout)
+subtitle: 经典的三栏布局结构
+category: LayoutPatterns
+difficulty: Intermediate
+priority: 1
+tags: [布局, 经典, 三栏]
+description: "圣杯布局是 Web 页面布局中最经典的模式：包括页眉、页脚，以及中间的三栏（导航、主内容、侧边栏）。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是圣杯布局？
+
+“圣杯布局” (Holy Grail Layout) 是网页设计中的“圣杯”，因为它曾被认为是很难完美实现的（特别是在 CSS Flexbox 和 Grid 出现之前）。
+
+它由以下部分组成：
+1.  **Header**：顶部页眉（通常宽度 100%）。
+2.  **Center**：中间主体部分，包含三栏：
+    *   **Main Content**：主要内容（通常在中间，且在 HTML 源码中优先出现，利于 SEO）。
+    *   **Nav**：左侧导航。
+    *   **Aside**：右侧侧边栏。
+3.  **Footer**：底部页脚（通常宽度 100%）。
+
+**核心要求**：
+*   中间三栏高度相等（等高布局）。
+*   中间的主内容栏宽度自适应，左右两栏宽度固定。
+*   页脚永远在底部。
+
+## 交互演示
+
+<LayoutPatternDemo type="holy-grail" />
+
+## 现代实现方式 (Flexbox)
+
+在现代 CSS 中，使用 Flexbox 实现圣杯布局非常简单。
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  height: 60px; /* 固定高度 */
+}
+
+.main-body {
+  display: flex;
+  flex: 1; /* 占据剩余空间 */
+}
+
+nav, aside {
+  width: 200px; /* 固定宽度 */
+}
+
+main {
+  flex: 1; /* 自适应宽度 */
+}
+```
+
+## 历史背景
+
+在 Flexbox 之前，开发者需要使用 `float`、负 `margin` 和 `padding` 等复杂的技巧来实现这一布局（也就是著名的“双飞燕布局”变体）。现在，我们可以忘掉那些 hack，拥抱 Flexbox 和 Grid。

@@ -1,0 +1,41 @@
+---
+title: "Card Grid (卡片网格)"
+subtitle: "卡片网格"
+category: "LayoutPatterns"
+difficulty: "Medium"
+priority: 5
+tags: ["css", "layout", "grid", "responsive"]
+description: "卡片网格是最通用的内容展示方式，能够自动适应屏幕宽度，排列整齐的卡片。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是卡片网格？
+
+无论是电商网站的商品列表，还是博客的文章列表，**卡片网格 (Card Grid)** 几乎无处不在。
+它的核心需求是：
+1.  卡片大小一致（或宽高比一致）。
+2.  **响应式**：大屏幕显示多列（如4列），小屏幕显示少列（如1-2列）。
+3.  间距均匀。
+
+## 交互演示
+
+<LayoutPatternDemo type="card-grid" />
+
+## 杀手锏：auto-fit + minmax
+
+使用 CSS Grid，你可以用**一行代码**实现完美的响应式布局，甚至不需要写 `@media` 查询！
+
+```css
+.grid-container {
+  display: grid;
+  /* 魔法代码 */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+```
+
+**原理翻译**：
+*   `repeat(auto-fit, ...)`: 尽可能多地在一行里塞入卡片。
+*   `minmax(250px, 1fr)`: 每张卡片最小 250px。如果有剩余空间，大家平分 (`1fr`)。
+*   如果屏幕太窄，塞不下 250px 的卡片，它会自动换行。

@@ -1,0 +1,41 @@
+---
+title: 粘性页脚 (Sticky Footer)
+subtitle: 永远在底部的页脚
+category: LayoutPatterns
+difficulty: Easy
+priority: 3
+tags: [布局, 页脚, 技巧]
+description: "粘性页脚（Sticky Footer）确保页脚始终位于视口底部，即使页面内容很少。"
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# 什么是粘性页脚？
+
+你有没有遇到过这种情况：页面内容很少，只有几行字，结果页脚（Footer）直接“浮”到了屏幕中间，下面留出一大片难看的空白？
+
+**粘性页脚 (Sticky Footer)** 就是为了解决这个问题。它能保证：
+1.  如果内容很多，页脚会被推到最下面，随页面滚动出现。
+2.  如果内容很少，页脚会“粘”在屏幕的最底部。
+
+## 交互演示
+
+<LayoutPatternDemo type="sticky-footer" />
+
+## 怎么实现？
+
+最简单的方法是使用 Flexbox。
+
+```css
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 关键：最小高度设为视口高度 */
+}
+
+main {
+  flex: 1; /* 关键：让主内容区域自动伸展，填满剩余空间 */
+}
+```
+
+只需这几行代码，`main` 区域就会像弹簧一样，把 `footer` 顶到最底部。

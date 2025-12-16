@@ -1,0 +1,43 @@
+---
+title: "Box Model"
+subtitle: "The foundation of layout"
+category: "Layout"
+difficulty: "Easy"
+tags: ["css", "layout", "fundamental"]
+description: "The CSS Box Model is the foundation of web layout. In web design, every HTML element is essentially a box."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# Think of it like a Picture Frame
+
+Imagine every element on a webpage is a **picture frame** hanging on a wall.
+
+1.  **Content**: The photo itself.
+2.  **Padding**: The matting (space) between the photo and the frame.
+3.  **Border**: The physical frame itself.
+4.  **Margin**: The space between this frame and other frames on the wall.
+
+## Interactive Demo
+
+<BoxModelPlayground />
+
+## Why does my layout break?
+
+A common headache for beginners is: *"I set the width to 100px, but after adding a border, it got bigger!"*
+
+This is because by default, CSS uses the **Standard Box Model**:
+> Width = Content Width only
+
+It's like ordering a frame based on the photo size. If you add a thick frame around it, the total size increases, and it might not fit in the space you planned.
+
+### The Modern Solution: border-box
+
+Modern developers usually use `box-sizing: border-box`. This is like telling the shop: "I want the **total** frame width to be 100px." No matter how thick the frame or matting is, the total size stays locked at 100px.
+
+```css
+/* Recommended Setup */
+* {
+  box-sizing: border-box;
+}
+```

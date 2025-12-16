@@ -1,0 +1,33 @@
+---
+title: Feature List
+description: Displays multiple features of a product or service, typically in a grid or list format.
+category: LayoutPatterns
+difficulty: Easy
+priority: 14
+tags: [Layout, List, Features]
+---
+
+# Feature List
+
+The **Feature List** is used to clearly showcase the key selling points of a product or service. It often uses a grid layout (2-4 items per row) or an alternating list, with each feature containing an icon, title, and short description.
+
+<LayoutPatternDemo type="feature-list" />
+
+## Implementation
+
+CSS Grid is perfect for creating responsive feature grids that wrap automatically without media queries.
+
+```css
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+```

@@ -1,0 +1,31 @@
+---
+title: 粘性侧边栏 (Sticky Sidebar)
+description: 侧边栏在滚动时固定在视口中，常用于目录或导航。
+category: LayoutPatterns
+difficulty: Easy
+priority: 11
+tags: [布局, 侧边栏, 粘性]
+---
+
+# 粘性侧边栏 (Sticky Sidebar)
+
+**粘性侧边栏**允许侧边栏内容在用户滚动主内容时保持在视口中的固定位置。这对于长文章的目录、过滤选项或广告位非常有用。
+
+<LayoutPatternDemo type="sticky-sidebar" />
+
+## 代码实现
+
+核心是使用 `position: sticky` 和 `top` 属性。
+
+```css
+.container {
+  display: flex;
+  align-items: flex-start; /* 关键：确保高度不被拉伸 */
+}
+
+.sidebar {
+  position: sticky;
+  top: 20px; /* 距离顶部的偏移量 */
+  height: auto;
+}
+```

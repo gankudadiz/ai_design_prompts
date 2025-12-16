@@ -1,0 +1,34 @@
+---
+title: Off-Canvas Menu
+description: A navigation menu hidden off-screen that slides in when triggered.
+category: LayoutPatterns
+difficulty: Medium
+priority: 15
+tags: [Layout, Navigation, Mobile]
+---
+
+# Off-Canvas Menu
+
+The **Off-Canvas Menu** (or Drawer) hides navigation links outside the viewport until triggered by the user. This pattern is ubiquitous on mobile devices for saving screen space.
+
+<LayoutPatternDemo type="off-canvas" />
+
+## Implementation
+
+Use `position: fixed` to place the menu off-screen, and control its visibility with the `transform` property.
+
+```css
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  transform: translateX(-100%); /* Initially hidden */
+  transition: transform 0.3s ease;
+}
+
+.off-canvas-menu.is-open {
+  transform: translateX(0); /* Slide in to show */
+}
+```

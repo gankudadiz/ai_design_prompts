@@ -1,0 +1,37 @@
+---
+title: Centered Content
+description: A layout where content remains horizontally and vertically centered regardless of screen size.
+category: LayoutPatterns
+difficulty: Easy
+priority: 12
+tags: [Layout, Centered, Minimalist]
+---
+
+# Centered Content
+
+The **Centered Content** layout places the main element exactly in the center of the screen, both horizontally and vertically. This pattern is commonly used for login pages, error pages (404), or minimalist landing pages.
+
+<LayoutPatternDemo type="centered-content" />
+
+## Implementation
+
+The most modern and concise method uses CSS Grid or Flexbox.
+
+```css
+.container {
+  display: grid;
+  place-items: center; /* Centers both horizontally and vertically */
+  height: 100vh;
+}
+```
+
+Or using Flexbox:
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+```

@@ -1,0 +1,35 @@
+---
+title: 媒体对象 (Media Object)
+description: 经典的图文混排模式，图片在左/右，文本在另一侧，常用于评论、列表项或社交媒体帖子。
+category: LayoutPatterns
+difficulty: Easy
+priority: 13
+tags: [布局, 媒体对象, 列表]
+---
+
+# 媒体对象 (Media Object)
+
+**媒体对象**是一种非常经典且多功能的布局模式，核心结构是：一个固定宽度的媒体元素（图片、头像、图标）排列在内容的旁边。它是构建评论列表、推文或新闻摘要的基石。
+
+<LayoutPatternDemo type="media-object" />
+
+## 代码实现
+
+Flexbox 是实现媒体对象的最佳选择，因为它能轻松处理对齐和间距。
+
+```css
+.media {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 1rem;
+}
+
+.media-figure {
+  flex: none; /* 防止图片被压缩 */
+  width: 64px;
+}
+
+.media-body {
+  flex: 1; /* 占据剩余空间 */
+}
+```

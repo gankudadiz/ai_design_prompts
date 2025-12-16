@@ -1,0 +1,44 @@
+---
+title: "Positioning"
+subtitle: "Controlling element placement"
+category: "Layout"
+difficulty: "Intermediate"
+tags: ["css", "layout", "position"]
+description: "The CSS position property specifies how an element is positioned in the document, including relative, absolute, fixed, and sticky positioning."
+createdAt: "2025-12-15"
+updatedAt: "2025-12-15"
+---
+
+# Where did my element go?
+
+By default, HTML elements appear one after another, like people in a queue (Document Flow). But sometimes you want to "pin" an element to the corner, or float it on top of others. That's where `position` comes in.
+
+## Interactive Demo
+
+<PositionPlayground />
+
+## The 5 Modes Explained Simply
+
+### 1. static (Default)
+**"Follow the Rules"**
+The element sits in the normal flow. You cannot move it with `top` or `left`.
+
+### 2. relative
+**"Ghost Shift"**
+The element keeps its original seat (space reserved), but its "ghost" (visual appearance) shifts a bit.
+*   **Use for**: Nudging things, or creating a reference point for `absolute` children.
+
+### 3. absolute
+**"Cut Ties"**
+The element leaves the queue entirely. It occupies no space. It positions itself relative to its nearest "positioned" ancestor.
+*   **Use for**: Dropdown menus, notification badges, overlays.
+
+### 4. fixed
+**"Stuck to Screen"**
+It stays glued to the browser window, no matter how much you scroll.
+*   **Use for**: Back-to-top buttons, fixed headers.
+
+### 5. sticky
+**"Hybrid"**
+It acts like `relative` until you scroll past it, then it becomes `fixed` (stuck) to the edge.
+*   **Use for**: Table headers, alphabet index in contact lists.

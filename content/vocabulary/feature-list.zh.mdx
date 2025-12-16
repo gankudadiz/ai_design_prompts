@@ -1,0 +1,33 @@
+---
+title: 特性列表 (Feature List)
+description: 展示产品或服务的多个特性，通常采用网格或列表形式。
+category: LayoutPatterns
+difficulty: Easy
+priority: 14
+tags: [布局, 列表, 特性]
+---
+
+# 特性列表 (Feature List)
+
+**特性列表**用于清晰地展示产品或服务的关键卖点。通常采用网格布局（每行2-4个）或交替列表形式，每个特性包含一个图标、标题和简短描述。
+
+<LayoutPatternDemo type="feature-list" />
+
+## 代码实现
+
+CSS Grid 非常适合创建响应式的特性网格，无需媒体查询即可自动换行。
+
+```css
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+```

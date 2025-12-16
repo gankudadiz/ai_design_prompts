@@ -1,0 +1,31 @@
+---
+title: Zigzag Layout
+description: A layout where images and text alternate left and right, guiding the eye in a Z-pattern.
+category: LayoutPatterns
+difficulty: Easy
+priority: 10
+tags: [Layout, Zigzag, Content]
+---
+
+# Zigzag Layout
+
+The **Zigzag Layout** alternates the position of images and text (image left/text right, then image right/text left), guiding the user's eye in a "Z" pattern across the page. This layout breaks the monotony of vertical scrolling and adds visual rhythm, making it excellent for feature lists or step-by-step guides.
+
+<LayoutPatternDemo type="zigzag" />
+
+## Implementation
+
+You can use Flexbox with `flex-direction: row-reverse` or CSS Grid to achieve the alternating arrangement.
+
+```css
+.zigzag-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Reverse direction for even items */
+.zigzag-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+```

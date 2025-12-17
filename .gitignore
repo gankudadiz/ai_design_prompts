@@ -44,3 +44,5 @@ next-env.d.ts
 doc/
 plan/
 CLAUDE.md
+.claude/
+demo/

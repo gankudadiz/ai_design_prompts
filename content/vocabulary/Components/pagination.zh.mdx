@@ -1,0 +1,53 @@
+---
+title: "Pagination (分页)"
+subtitle: "内容导航"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "用于将内容分成几页。"
+priority: 19
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Pagination (分页)
+
+分页允许用户浏览大量内容。
+
+## 用法
+
+*   搜索结果列表。
+*   包含许多行的表格数据。
+
+```html
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#" class="active">2</a>
+  <a href="#">3</a>
+  <a href="#">&raquo;</a>
+</div>
+```
+
+
+
+<ComponentPlayground title="Pagination">
+  <nav>
+    <ul className="flex items-center -space-x-px h-8 text-sm">
+      <li>
+        <a href="#" className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-text-muted bg-bg-card border border-border-medium rounded-l hover:bg-bg-tertiary hover:text-text-primary">Previous</a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-text-muted bg-bg-card border border-border-medium hover:bg-bg-tertiary hover:text-text-primary">1</a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center justify-center px-3 h-8 text-bg-primary border border-mint-500 bg-mint-500 hover:bg-mint-400 hover:text-bg-primary">2</a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-text-muted bg-bg-card border border-border-medium hover:bg-bg-tertiary hover:text-text-primary">3</a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center justify-center px-3 h-8 leading-tight text-text-muted bg-bg-card border border-border-medium rounded-r hover:bg-bg-tertiary hover:text-text-primary">Next</a>
+      </li>
+    </ul>
+  </nav>
+</ComponentPlayground>

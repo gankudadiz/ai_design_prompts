@@ -1,0 +1,35 @@
+---
+title: "Input"
+subtitle: "Text entry field"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A form field that allows users to enter text."
+priority: 2
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Input
+
+Inputs allow users to enter text into a UI. They typically appear in forms and dialogs.
+
+## Types
+
+1.  **Text**: Standard single-line text.
+2.  **Password**: Masked characters for security.
+3.  **Email**: Optimized for email addresses.
+4.  **Number**: Restricted to numeric input.
+
+```html
+<input type="text" placeholder="Enter your name" />
+```
+
+
+
+<ComponentPlayground title="Input Types">
+  <div className="flex flex-col gap-4 w-full max-w-sm">
+    <input type="text" placeholder="Text Input" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+    <input type="password" placeholder="Password" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+    <input type="number" placeholder="123" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+  </div>
+</ComponentPlayground>

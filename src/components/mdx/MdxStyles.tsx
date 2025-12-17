@@ -1,10 +1,15 @@
 import React from 'react';
 import { TerminalCard } from '@/components/ui/TerminalCard';
+import { ComponentPlayground } from './ComponentPlayground';
+import { InteractiveSlider } from './InteractiveSlider';
 import { Quote } from 'lucide-react';
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
 export const MdxComponents = {
+  ComponentPlayground,
+  TerminalCard,
+  InteractiveSlider,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={clsx(

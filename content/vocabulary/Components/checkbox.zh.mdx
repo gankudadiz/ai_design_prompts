@@ -1,0 +1,43 @@
+---
+title: "Checkbox (复选框)"
+subtitle: "多选控件"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户从一组选项中选择一个或多个项目。"
+priority: 3
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Checkbox (复选框)
+
+复选框允许用户从一组选项中选择一个或多个项目。
+
+## 用法
+
+*   当用户可以选择多个选项时使用。
+*   用于二进制的是/否选择（例如，“我同意条款”）。
+
+```html
+<input type="checkbox" id="subscribe" name="subscribe" />
+<label for="subscribe">订阅时事通讯</label>
+```
+
+
+
+<ComponentPlayground title="Checkbox Examples">
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <input type="checkbox" id="c1" className="accent-mint-500 w-4 h-4" defaultChecked />
+      <label htmlFor="c1" className="text-text-secondary cursor-pointer">Checked Option</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="checkbox" id="c2" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="c2" className="text-text-secondary cursor-pointer">Unchecked Option</label>
+    </div>
+    <div className="flex items-center gap-2 opacity-50">
+      <input type="checkbox" id="c3" className="accent-mint-500 w-4 h-4" disabled />
+      <label htmlFor="c3" className="text-text-secondary cursor-not-allowed">Disabled Option</label>
+    </div>
+  </div>
+</ComponentPlayground>

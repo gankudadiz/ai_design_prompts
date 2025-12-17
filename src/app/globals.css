@@ -117,3 +117,8 @@ pre > code {
   border: none;
   color: inherit;
 }
+
+/* Reset default margins for consistent spacing */
+p {
+  margin: 0;
+}

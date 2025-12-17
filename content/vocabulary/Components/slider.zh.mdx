@@ -1,0 +1,29 @@
+---
+title: "Slider (滑块)"
+subtitle: "范围选择"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户从一组固定值中选择一个值（或范围）。"
+priority: 20
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Slider (滑块)
+
+滑块反映了条形图上的一系列值，用户可以从中选择单个值。
+
+## 用法
+
+*   调整音量或亮度等设置。
+*   选择价格范围。
+
+```html
+<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+```
+
+
+
+<ComponentPlayground title="Range Slider">
+  <InteractiveSlider label="Volume" defaultValue={50} min={0} max={100} />
+</ComponentPlayground>

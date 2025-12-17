@@ -1,0 +1,47 @@
+---
+title: "Switch (开关)"
+subtitle: "切换控件"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户在选中和未选中状态之间切换的控件。"
+priority: 5
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Switch (开关)
+
+开关用于切换单个设置的开启或关闭状态。
+
+## 用法
+
+*   用于不需要保存按钮的即时操作。
+*   作为“开启/关闭”状态下复选框的替代方案。
+
+```css
+/* 简单的 CSS 开关概念 */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+```
+
+
+
+<ComponentPlayground title="Toggle Switch">
+  <div className="flex items-center gap-4">
+    <label className="relative inline-flex items-center cursor-pointer">
+      <input type="checkbox" className="sr-only peer" defaultChecked />
+      <div className="w-11 h-6 bg-bg-tertiary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-mint-500"></div>
+      <span className="ml-3 text-sm font-medium text-text-secondary">WiFi</span>
+    </label>
+    
+    <label className="relative inline-flex items-center cursor-pointer">
+      <input type="checkbox" className="sr-only peer" />
+      <div className="w-11 h-6 bg-bg-tertiary peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-mint-500"></div>
+      <span className="ml-3 text-sm font-medium text-text-secondary">Bluetooth</span>
+    </label>
+  </div>
+</ComponentPlayground>

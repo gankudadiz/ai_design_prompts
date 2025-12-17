@@ -1,0 +1,39 @@
+---
+title: "Toast (吐司提示)"
+subtitle: "临时通知"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "向用户显示的简短消息。"
+priority: 15
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Toast (吐司提示)
+
+吐司提示通过屏幕底部的消息提供有关操作的简短反馈。
+
+## 用法
+
+*   显示成功或错误消息（例如，“文件已保存”）。
+*   几秒钟后自动消失。
+
+```javascript
+// 概念
+showToast("保存成功！");
+```
+
+
+
+<ComponentPlayground title="Toast Notification">
+  <div className="bg-bg-card border border-l-4 border-l-mint-500 border-y-border-medium border-r-border-medium shadow-lg rounded p-4 flex items-center gap-3 max-w-sm">
+    <div className="text-mint-500">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <div>
+      <h4 className="font-bold text-text-primary text-sm">Success!</h4>
+      <p className="text-text-secondary text-xs">Your changes have been saved.</p>
+    </div>
+    <button className="ml-auto text-text-muted hover:text-text-primary">✕</button>
+  </div>
+</ComponentPlayground>

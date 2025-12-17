@@ -1,0 +1,43 @@
+---
+title: "Tabs (选项卡)"
+subtitle: "导航组件"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户在同一上下文中在视图之间导航。"
+priority: 17
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Tabs (选项卡)
+
+选项卡将内容组织成单独的视图，一次只能看到一个视图。
+
+## 用法
+
+*   对相关内容进行分组（例如，“帐户”，“设置”，“个人资料”）。
+*   在数据集的不同方面之间切换。
+
+```html
+<div class="tab">
+  <button class="tablinks">伦敦</button>
+  <button class="tablinks">巴黎</button>
+  <button class="tablinks">东京</button>
+</div>
+```
+
+
+
+<ComponentPlayground title="Tabs">
+  <div className="w-full max-w-md bg-bg-secondary rounded border border-border-medium p-4">
+    <div className="flex border-b border-border-medium mb-4">
+      <button className="px-4 py-2 text-mint-500 border-b-2 border-mint-500 font-medium text-sm">Account</button>
+      <button className="px-4 py-2 text-text-muted hover:text-text-secondary font-medium text-sm">Password</button>
+      <button className="px-4 py-2 text-text-muted hover:text-text-secondary font-medium text-sm">Settings</button>
+    </div>
+    <div className="text-text-secondary text-sm">
+      <h3 className="text-text-primary font-bold mb-2">Account Settings</h3>
+      <p>Manage your account details and preferences here.</p>
+    </div>
+  </div>
+</ComponentPlayground>

@@ -1,0 +1,39 @@
+---
+title: "Avatar"
+subtitle: "User profile image"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A graphical representation of a user or entity."
+priority: 12
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Avatar
+
+Avatars are used to represent a user or an entity (like a team).
+
+## Usage
+
+*   Display user profile pictures.
+*   Show initials if no image is available.
+
+```css
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+```
+
+
+
+<ComponentPlayground title="Avatars">
+  <div className="flex -space-x-4">
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-mint-500 to-blue-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">JD</div>
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-pink to-orange-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">AL</div>
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-purple to-indigo-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">TS</div>
+    <div className="w-12 h-12 rounded-full bg-bg-tertiary border-2 border-bg-primary flex items-center justify-center text-text-muted text-xs font-bold">+3</div>
+  </div>
+</ComponentPlayground>

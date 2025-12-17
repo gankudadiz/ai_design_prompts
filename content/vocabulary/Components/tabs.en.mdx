@@ -1,0 +1,43 @@
+---
+title: "Tabs"
+subtitle: "Navigation components"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Allow users to navigate between views within the same context."
+priority: 17
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Tabs
+
+Tabs organize content into separate views where only one view can be visible at a time.
+
+## Usage
+
+*   Group related content (e.g., "Account", "Settings", "Profile").
+*   Switch between different aspects of a dataset.
+
+```html
+<div class="tab">
+  <button class="tablinks">London</button>
+  <button class="tablinks">Paris</button>
+  <button class="tablinks">Tokyo</button>
+</div>
+```
+
+
+
+<ComponentPlayground title="Tabs">
+  <div className="w-full max-w-md bg-bg-secondary rounded border border-border-medium p-4">
+    <div className="flex border-b border-border-medium mb-4">
+      <button className="px-4 py-2 text-mint-500 border-b-2 border-mint-500 font-medium text-sm">Account</button>
+      <button className="px-4 py-2 text-text-muted hover:text-text-secondary font-medium text-sm">Password</button>
+      <button className="px-4 py-2 text-text-muted hover:text-text-secondary font-medium text-sm">Settings</button>
+    </div>
+    <div className="text-text-secondary text-sm">
+      <h3 className="text-text-primary font-bold mb-2">Account Settings</h3>
+      <p>Manage your account details and preferences here.</p>
+    </div>
+  </div>
+</ComponentPlayground>

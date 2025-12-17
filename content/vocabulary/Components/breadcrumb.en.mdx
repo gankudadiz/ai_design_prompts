@@ -1,0 +1,52 @@
+---
+title: "Breadcrumb"
+subtitle: "Navigation aid"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Indicates the current page's location within a navigational hierarchy."
+priority: 18
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Breadcrumb
+
+Breadcrumbs allow users to keep track of their locations within programs, documents, or websites.
+
+## Usage
+
+*   Show hierarchy (e.g., Home > Products > Electronics).
+*   Allow quick navigation to parent categories.
+
+```html
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+  </ol>
+</nav>
+```
+
+
+
+<ComponentPlayground title="Breadcrumbs">
+  <nav className="flex" aria-label="Breadcrumb">
+    <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <li className="inline-flex items-center">
+        <a href="#" className="text-text-muted hover:text-mint-500 text-sm font-medium">Home</a>
+      </li>
+      <li>
+        <div className="flex items-center">
+          <span className="text-text-muted">/</span>
+          <a href="#" className="ml-1 text-text-muted hover:text-mint-500 text-sm font-medium md:ml-2">Projects</a>
+        </div>
+      </li>
+      <li aria-current="page">
+        <div className="flex items-center">
+          <span className="text-text-muted">/</span>
+          <span className="ml-1 text-mint-500 text-sm font-medium md:ml-2">Flowbite</span>
+        </div>
+      </li>
+    </ol>
+  </nav>
+</ComponentPlayground>

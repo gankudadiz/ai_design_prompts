@@ -1,0 +1,45 @@
+---
+title: "Radio Button (单选按钮)"
+subtitle: "单选控件"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户从一组选项中恰好选择一个项目。"
+priority: 4
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Radio Button (单选按钮)
+
+单选按钮允许用户从一组选项中恰好选择一个选项。
+
+## 用法
+
+*   当用户必须只选择一个选项时使用。
+*   所有选项应并排可见。
+
+```html
+<input type="radio" id="option1" name="group" value="1" />
+<label for="option1">选项 1</label>
+<input type="radio" id="option2" name="group" value="2" />
+<label for="option2">选项 2</label>
+```
+
+
+
+<ComponentPlayground title="Radio Group">
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1a" className="accent-mint-500 w-4 h-4" defaultChecked />
+      <label htmlFor="r1a" className="text-text-secondary cursor-pointer">Option A</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1b" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="r1b" className="text-text-secondary cursor-pointer">Option B</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1c" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="r1c" className="text-text-secondary cursor-pointer">Option C</label>
+    </div>
+  </div>
+</ComponentPlayground>

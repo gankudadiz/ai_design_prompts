@@ -1,0 +1,45 @@
+---
+title: "Radio Button"
+subtitle: "Single selection control"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Allows users to select exactly one item from a set."
+priority: 4
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Radio Button
+
+Radio buttons allow the user to select exactly one option from a set.
+
+## Usage
+
+*   Use when users must choose only one option.
+*   All options should be visible side-by-side.
+
+```html
+<input type="radio" id="option1" name="group" value="1" />
+<label for="option1">Option 1</label>
+<input type="radio" id="option2" name="group" value="2" />
+<label for="option2">Option 2</label>
+```
+
+
+
+<ComponentPlayground title="Radio Group">
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1a" className="accent-mint-500 w-4 h-4" defaultChecked />
+      <label htmlFor="r1a" className="text-text-secondary cursor-pointer">Option A</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1b" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="r1b" className="text-text-secondary cursor-pointer">Option B</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="radio" name="r1" id="r1c" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="r1c" className="text-text-secondary cursor-pointer">Option C</label>
+    </div>
+  </div>
+</ComponentPlayground>

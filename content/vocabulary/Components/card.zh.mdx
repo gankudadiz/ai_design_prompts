@@ -1,0 +1,49 @@
+---
+title: "Card (卡片)"
+subtitle: "内容容器"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "将相关内容和操作分组的容器。"
+priority: 8
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Card (卡片)
+
+卡片包含关于单个主题的内容和操作。
+
+## 结构
+
+*   **头部**: 标题和标识信息。
+*   **媒体**: 图片或视频。
+*   **主体**: 辅助文本。
+*   **操作**: 按钮或链接。
+
+```html
+<div class="card">
+  <img src="avatar.jpg" alt="Avatar" />
+  <div class="container">
+    <h4><b>John Doe</b></h4>
+    <p>Architect & Engineer</p>
+  </div>
+</div>
+```
+
+
+
+<ComponentPlayground title="Card Component">
+  <div className="max-w-sm rounded overflow-hidden shadow-lg bg-bg-secondary border border-border-medium">
+    <div className="h-32 bg-gradient-to-r from-mint-500/20 to-accent-purple/20"></div>
+    <div className="px-6 py-4">
+      <div className="font-bold text-xl mb-2 text-text-primary">The Coldest Sunset</div>
+      <span className="text-text-secondary text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!
+      </span>
+    </div>
+    <div className="px-6 pt-4 pb-2">
+      <span className="inline-block bg-bg-tertiary rounded-full px-3 py-1 text-sm font-semibold text-text-muted mr-2 mb-2">#photography</span>
+      <span className="inline-block bg-bg-tertiary rounded-full px-3 py-1 text-sm font-semibold text-text-muted mr-2 mb-2">#travel</span>
+    </div>
+  </div>
+</ComponentPlayground>

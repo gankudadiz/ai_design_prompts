@@ -1,0 +1,43 @@
+---
+title: "Badge (徽章)"
+subtitle: "状态指示器"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "用于显示状态或计数的小型视觉元素。"
+priority: 11
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Badge (徽章)
+
+徽章用于突出显示项目的状态，以便快速识别。
+
+## 用法
+
+*   显示通知计数（例如，未读消息）。
+*   指示状态（例如，“新”，“待处理”）。
+
+```html
+<span class="badge">New</span>
+<span class="badge badge-primary">4</span>
+```
+
+
+
+<ComponentPlayground title="Badges">
+  <div className="flex gap-4 items-center">
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-mint-500/25 text-mint-500">
+      Badge
+    </span>
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-accent-pink/25 text-accent-pink">
+      Error
+    </span>
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-accent-purple/25 text-accent-purple">
+      New
+    </span>
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bg-tertiary/25 text-text-muted border border-border-medium">
+      Default
+    </span>
+  </div>
+</ComponentPlayground>

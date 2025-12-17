@@ -1,0 +1,39 @@
+---
+title: "Progress Bar (进度条)"
+subtitle: "操作状态"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "显示任务完成进度的指示器。"
+priority: 13
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Progress Bar (进度条)
+
+进度条可视化扩展计算机操作的进度。
+
+## 用法
+
+*   显示文件上传的加载状态。
+*   指示向导中的步骤。
+
+```html
+<progress value="70" max="100">70 %</progress>
+```
+
+
+
+<ComponentPlayground title="Progress Bar">
+  <div className="w-full max-w-md flex flex-col gap-4">
+    <div className="w-full bg-bg-tertiary rounded-full h-2.5">
+      <div className="bg-mint-500 h-2.5 rounded-full" style={{ width: '45%' }}></div>
+    </div>
+    <div className="w-full bg-bg-tertiary rounded-full h-2.5">
+      <div className="bg-accent-purple h-2.5 rounded-full" style={{ width: '70%' }}></div>
+    </div>
+    <div className="w-full bg-bg-tertiary rounded-full h-2.5">
+      <div className="bg-accent-pink h-2.5 rounded-full" style={{ width: '90%' }}></div>
+    </div>
+  </div>
+</ComponentPlayground>

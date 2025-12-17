@@ -1,0 +1,55 @@
+---
+title: "Accordion"
+subtitle: "Collapsible content"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A vertically stacked list of items, such as labels or thumbnails."
+priority: 16
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Accordion
+
+Accordions allow users to toggle the display of sections of content.
+
+## Usage
+
+*   Organize large amounts of content.
+*   FAQ sections.
+
+```html
+<details>
+  <summary>Section 1</summary>
+  <p>Content for section 1.</p>
+</details>
+```
+
+
+
+<ComponentPlayground title="Accordion">
+  <div className="w-full max-w-md border border-border-medium rounded divide-y divide-border-medium bg-bg-secondary">
+    <details className="group" open>
+      <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-text-primary">
+        <span>What is Next.js?</span>
+        <span className="transition group-open:rotate-180">
+          <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+      </summary>
+      <div className="text-text-secondary p-4 pt-0">
+        Next.js is a React framework for building full-stack web applications.
+      </div>
+    </details>
+    <details className="group">
+      <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-text-primary">
+        <span>Why use Tailwind CSS?</span>
+        <span className="transition group-open:rotate-180">
+          <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+      </summary>
+      <div className="text-text-secondary p-4 pt-0">
+        Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
+      </div>
+    </details>
+  </div>
+</ComponentPlayground>

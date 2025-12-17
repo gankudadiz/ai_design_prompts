@@ -1,0 +1,47 @@
+---
+title: "Modal"
+subtitle: "Dialog box"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A dialog that sits on top of the main content."
+priority: 9
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Modal
+
+Modals disable the main content and require the user to interact with the dialog before returning.
+
+## Usage
+
+*   Use for critical confirmations (e.g., "Delete this item?").
+*   Use for complex forms that need focus.
+
+```css
+/* Overlay style */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+```
+
+
+
+<ComponentPlayground title="Modal Dialog">
+  <div className="relative w-full max-w-md bg-bg-card border border-border-medium rounded-lg shadow-2xl p-6">
+    <div className="flex justify-between items-center mb-4">
+      <h3 className="text-lg font-bold text-text-primary">Confirm Action</h3>
+      <button className="text-text-muted hover:text-text-primary">✕</button>
+    </div>
+    <p className="text-text-secondary mb-6">Are you sure you want to proceed with this action? This cannot be undone.</p>
+    <div className="flex justify-end gap-3">
+      <button className="px-4 py-2 border border-border-medium text-text-secondary rounded hover:bg-bg-tertiary transition-colors">Cancel</button>
+      <button className="px-4 py-2 bg-mint-500 text-bg-primary font-bold rounded hover:bg-mint-400 transition-colors">Confirm</button>
+    </div>
+  </div>
+</ComponentPlayground>

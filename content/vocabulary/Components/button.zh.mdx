@@ -5,6 +5,7 @@ category: Components
 difficulty: Easy
 tags: [UI, Components, Interaction]
 description: 一个交互元素，点击或轻触时触发动作。
+priority: 1
 createdAt: 2025-12-13
 updatedAt: 2025-12-13
 ---
@@ -47,19 +48,19 @@ updatedAt: 2025-12-13
 }
 ```
 
-<TerminalCard title="按钮示例">
-  <div className="flex flex-wrap gap-4 p-4 items-center justify-center">
-    <button className="px-4 py-2 bg-mint-500 text-bg-card font-bold rounded hover:bg-mint-400 transition-colors">
-      Primary Action
+<ComponentPlayground title="按钮示例">
+  <div className="flex flex-wrap gap-4 items-center justify-center">
+    <button className="px-4 py-2 bg-mint-500 text-bg-primary font-bold rounded hover:bg-mint-400 transition-colors">
+      主要按钮
     </button>
     <button className="px-4 py-2 border border-mint-500 text-mint-500 font-bold rounded hover:bg-mint-500/10 transition-colors">
-      Secondary Action
+      次要按钮
     </button>
     <button className="px-4 py-2 text-text-muted hover:text-text-primary transition-colors">
-      Ghost Button
+      幽灵按钮
     </button>
     <button disabled className="px-4 py-2 bg-bg-tertiary text-text-muted rounded cursor-not-allowed opacity-50">
-      Disabled
+      禁用状态
     </button>
   </div>
-</TerminalCard>
+</ComponentPlayground>

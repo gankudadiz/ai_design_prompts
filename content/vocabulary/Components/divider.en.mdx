@@ -1,0 +1,39 @@
+---
+title: "Divider"
+subtitle: "Visual separator"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A line that groups content in lists and layouts."
+priority: 21
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Divider
+
+Dividers separate content into clear groups.
+
+## Usage
+
+*   Separate paragraphs or sections.
+*   Divide list items.
+
+```html
+<hr class="solid">
+```
+
+
+
+<ComponentPlayground title="Dividers">
+  <div className="w-full max-w-xs flex flex-col gap-4 text-text-secondary text-sm">
+    <p>Content Above</p>
+    <hr className="border-border-medium" />
+    <p>Content Below</p>
+    
+    <div className="relative flex py-2 items-center">
+      <div className="flex-grow border-t border-border-medium"></div>
+      <span className="flex-shrink mx-4 text-text-muted">OR</span>
+      <div className="flex-grow border-t border-border-medium"></div>
+    </div>
+  </div>
+</ComponentPlayground>

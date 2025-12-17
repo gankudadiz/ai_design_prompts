@@ -1,0 +1,35 @@
+---
+title: "Input (输入框)"
+subtitle: "文本输入字段"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户输入文本的表单字段。"
+priority: 2
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Input (输入框)
+
+输入框允许用户在 UI 中输入文本。它们通常出现在表单和对话框中。
+
+## 类型
+
+1.  **文本 (Text)**: 标准单行文本。
+2.  **密码 (Password)**: 用于安全目的的掩码字符。
+3.  **邮箱 (Email)**: 针对电子邮件地址进行了优化。
+4.  **数字 (Number)**: 仅限数字输入。
+
+```html
+<input type="text" placeholder="输入你的名字" />
+```
+
+
+
+<ComponentPlayground title="Input Types">
+  <div className="flex flex-col gap-4 w-full max-w-sm">
+    <input type="text" placeholder="Text Input" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+    <input type="password" placeholder="Password" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+    <input type="number" placeholder="123" className="px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary" />
+  </div>
+</ComponentPlayground>

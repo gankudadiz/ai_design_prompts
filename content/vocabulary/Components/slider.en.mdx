@@ -1,0 +1,29 @@
+---
+title: "Slider"
+subtitle: "Range selection"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Allows users to select a value (or range) from a fixed set of values."
+priority: 20
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Slider
+
+Sliders reflect a range of values along a bar, from which users may select a single value.
+
+## Usage
+
+*   Adjust settings like volume or brightness.
+*   Select a price range.
+
+```html
+<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+```
+
+
+
+<ComponentPlayground title="Range Slider">
+  <InteractiveSlider label="Volume" defaultValue={50} min={0} max={100} />
+</ComponentPlayground>

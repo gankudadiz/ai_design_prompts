@@ -1,0 +1,43 @@
+---
+title: "Checkbox"
+subtitle: "Multi-selection control"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Allows users to select one or more items from a set."
+priority: 3
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Checkbox
+
+Checkboxes allow the user to select one or more items from a set.
+
+## Usage
+
+*   Use when users can choose multiple options.
+*   Use for binary yes/no choices (e.g., "I agree to terms").
+
+```html
+<input type="checkbox" id="subscribe" name="subscribe" />
+<label for="subscribe">Subscribe to newsletter</label>
+```
+
+
+
+<ComponentPlayground title="Checkbox Examples">
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <input type="checkbox" id="c1" className="accent-mint-500 w-4 h-4" defaultChecked />
+      <label htmlFor="c1" className="text-text-secondary cursor-pointer">Checked Option</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <input type="checkbox" id="c2" className="accent-mint-500 w-4 h-4" />
+      <label htmlFor="c2" className="text-text-secondary cursor-pointer">Unchecked Option</label>
+    </div>
+    <div className="flex items-center gap-2 opacity-50">
+      <input type="checkbox" id="c3" className="accent-mint-500 w-4 h-4" disabled />
+      <label htmlFor="c3" className="text-text-secondary cursor-not-allowed">Disabled Option</label>
+    </div>
+  </div>
+</ComponentPlayground>

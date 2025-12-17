@@ -1,0 +1,40 @@
+---
+title: "Select (选择器)"
+subtitle: "下拉菜单"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "允许用户从折叠列表中选择一个项目。"
+priority: 6
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Select (选择器)
+
+选择器组件用于从选项列表中收集用户提供的信息。
+
+## 用法
+
+*   当选项太多而无法显示为单选按钮时使用。
+*   节省屏幕空间。
+
+```html
+<select>
+  <option value="apple">苹果</option>
+  <option value="banana">香蕉</option>
+  <option value="cherry">樱桃</option>
+</select>
+```
+
+
+
+<ComponentPlayground title="Select Dropdown">
+  <div className="w-full max-w-xs">
+    <select className="block w-full px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary appearance-none cursor-pointer">
+      <option>Select an option...</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </div>
+</ComponentPlayground>

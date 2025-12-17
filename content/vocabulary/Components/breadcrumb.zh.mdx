@@ -1,0 +1,52 @@
+---
+title: "Breadcrumb (面包屑)"
+subtitle: "导航辅助"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "指示当前页面在导航层次结构中的位置。"
+priority: 18
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Breadcrumb (面包屑)
+
+面包屑允许用户跟踪他们在程序、文档或网站中的位置。
+
+## 用法
+
+*   显示层次结构（例如，首页 > 产品 > 电子产品）。
+*   允许快速导航到父类别。
+
+```html
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">首页</a></li>
+    <li class="breadcrumb-item active" aria-current="page">库</li>
+  </ol>
+</nav>
+```
+
+
+
+<ComponentPlayground title="Breadcrumbs">
+  <nav className="flex" aria-label="Breadcrumb">
+    <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <li className="inline-flex items-center">
+        <a href="#" className="text-text-muted hover:text-mint-500 text-sm font-medium">Home</a>
+      </li>
+      <li>
+        <div className="flex items-center">
+          <span className="text-text-muted">/</span>
+          <a href="#" className="ml-1 text-text-muted hover:text-mint-500 text-sm font-medium md:ml-2">Projects</a>
+        </div>
+      </li>
+      <li aria-current="page">
+        <div className="flex items-center">
+          <span className="text-text-muted">/</span>
+          <span className="ml-1 text-mint-500 text-sm font-medium md:ml-2">Flowbite</span>
+        </div>
+      </li>
+    </ol>
+  </nav>
+</ComponentPlayground>

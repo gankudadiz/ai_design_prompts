@@ -1,0 +1,39 @@
+---
+title: "Avatar (头像)"
+subtitle: "用户个人资料图片"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "用户或实体的图形表示。"
+priority: 12
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Avatar (头像)
+
+头像用于代表用户或实体（如团队）。
+
+## 用法
+
+*   显示用户个人资料图片。
+*   如果不可用图像，显示首字母。
+
+```css
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+```
+
+
+
+<ComponentPlayground title="Avatars">
+  <div className="flex -space-x-4">
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-mint-500 to-blue-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">JD</div>
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-pink to-orange-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">AL</div>
+    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-purple to-indigo-500 border-2 border-bg-primary flex items-center justify-center text-bg-primary font-bold">TS</div>
+    <div className="w-12 h-12 rounded-full bg-bg-tertiary border-2 border-bg-primary flex items-center justify-center text-text-muted text-xs font-bold">+3</div>
+  </div>
+</ComponentPlayground>

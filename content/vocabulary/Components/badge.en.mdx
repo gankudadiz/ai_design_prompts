@@ -1,0 +1,43 @@
+---
+title: "Badge"
+subtitle: "Status indicator"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A small visual element to display status or count."
+priority: 11
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Badge
+
+Badges are used to highlight an item's status for quick recognition.
+
+## Usage
+
+*   Show notification counts (e.g., unread messages).
+*   Indicate status (e.g., "New", "Pending").
+
+```html
+<span class="badge">New</span>
+<span class="badge badge-primary">4</span>
+```
+
+
+
+<ComponentPlayground title="Badges">
+  <div className="flex gap-4 items-center">
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-mint-500/25 text-mint-500">
+      Badge
+    </span>
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-accent-pink/25 text-accent-pink">
+      Error
+    </span>
+    <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-accent-purple/25 text-accent-purple">
+      New
+    </span>
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bg-tertiary/25 text-text-muted border border-border-medium">
+      Default
+    </span>
+  </div>
+</ComponentPlayground>

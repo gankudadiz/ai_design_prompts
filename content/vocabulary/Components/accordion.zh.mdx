@@ -1,0 +1,55 @@
+---
+title: "Accordion (手风琴)"
+subtitle: "可折叠内容"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "垂直堆叠的项目列表，如标签或缩略图。"
+priority: 16
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Accordion (手风琴)
+
+手风琴允许用户切换内容部分的显示。
+
+## 用法
+
+*   组织大量内容。
+*   常见问题解答 (FAQ) 部分。
+
+```html
+<details>
+  <summary>第一部分</summary>
+  <p>第一部分的内容。</p>
+</details>
+```
+
+
+
+<ComponentPlayground title="Accordion">
+  <div className="w-full max-w-md border border-border-medium rounded divide-y divide-border-medium bg-bg-secondary">
+    <details className="group" open>
+      <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-text-primary">
+        <span>What is Next.js?</span>
+        <span className="transition group-open:rotate-180">
+          <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+      </summary>
+      <div className="text-text-secondary p-4 pt-0">
+        Next.js is a React framework for building full-stack web applications.
+      </div>
+    </details>
+    <details className="group">
+      <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-text-primary">
+        <span>Why use Tailwind CSS?</span>
+        <span className="transition group-open:rotate-180">
+          <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+        </span>
+      </summary>
+      <div className="text-text-secondary p-4 pt-0">
+        Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
+      </div>
+    </details>
+  </div>
+</ComponentPlayground>

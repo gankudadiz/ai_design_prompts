@@ -1,0 +1,40 @@
+---
+title: "Select"
+subtitle: "Dropdown menu"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "Allows users to select an item from a collapsible list."
+priority: 6
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Select
+
+Select components are used for collecting user provided information from a list of options.
+
+## Usage
+
+*   Use when there are too many options to display as radio buttons.
+*   Conserves screen space.
+
+```html
+<select>
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="cherry">Cherry</option>
+</select>
+```
+
+
+
+<ComponentPlayground title="Select Dropdown">
+  <div className="w-full max-w-xs">
+    <select className="block w-full px-4 py-2 bg-bg-secondary border border-border-medium rounded focus:border-mint-500 focus:outline-none text-text-primary appearance-none cursor-pointer">
+      <option>Select an option...</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </div>
+</ComponentPlayground>

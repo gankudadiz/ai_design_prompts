@@ -1,0 +1,37 @@
+---
+title: "Tooltip"
+subtitle: "Informational overlay"
+category: Components
+difficulty: Easy
+tags: [UI, Components]
+description: "A brief message that appears when a user interacts with an element."
+priority: 10
+createdAt: 2025-12-16
+updatedAt: 2025-12-16
+---
+# Tooltip
+
+Tooltips display informative text when users hover over, focus on, or tap an element.
+
+## Usage
+
+*   Provide extra context for icons or buttons.
+*   Keep text short and concise.
+
+```html
+<button title="This is a tooltip">Hover me</button>
+```
+
+
+
+<ComponentPlayground title="Tooltip">
+  <div className="group relative inline-block">
+    <button className="px-4 py-2 bg-bg-tertiary text-text-primary rounded border border-border-medium hover:border-mint-500 transition-colors">
+      Hover me
+    </button>
+    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      This is a tooltip
+      <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-black"></div>
+    </div>
+  </div>
+</ComponentPlayground>

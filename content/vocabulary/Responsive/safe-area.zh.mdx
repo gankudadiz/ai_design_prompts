@@ -1,0 +1,52 @@
+---
+title: "Safe Area (安全区域)"
+subtitle: "适配刘海屏与圆角"
+category: Responsive
+difficulty: Easy
+tags: [Mobile, CSS, iOS]
+description: 使用 viewport-fit 和 env() 环境变量，确保内容不会被手机的“刘海”、圆角或底部手势条遮挡。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# 全面屏时代的挑战
+
+在现代智能手机（尤其是 iPhone X 之后）上，屏幕不再是一个完美的矩形。顶部有“刘海”或“灵动岛”，底部有横条手势区，四角是圆的。如果网页铺满整个屏幕，关键按钮可能会被遮挡。
+
+**Safe Area (安全区域)** 是指屏幕中不受这些物理限制影响的矩形可视窗口。
+
+## 1. 开启全屏覆盖
+
+首先，告诉浏览器你的页面可以安全地扩展到整个屏幕（包括刘海区域）：
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+```
+
+关键在于 `viewport-fit=cover`。如果不加这一句，浏览器会默认在两侧留出白边（Letterboxing）来避开刘海。
+
+## 2. 使用环境变量避让
+
+CSS 提供了 `env()` 函数来获取安全区域的边距值：
+
+- `safe-area-inset-top`: 顶部安全距离（避开刘海/状态栏）
+- `safe-area-inset-bottom`: 底部安全距离（避开手势条）
+- `safe-area-inset-left` / `right`: 横屏时的左右安全距离
+
+### 示例：固定底部的按钮
+
+```css
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  /* 增加内边距，防止内容紧贴屏幕底部或被手势条遮挡 */
+  padding-bottom: env(safe-area-inset-bottom);
+  
+  /* 为了兼容旧版本 iOS */
+  padding-bottom: constant(safe-area-inset-bottom); 
+}
+```
+
+通过这种方式，你的页面既能享受沉浸式的全屏体验，又能保证交互元素的安全可用。

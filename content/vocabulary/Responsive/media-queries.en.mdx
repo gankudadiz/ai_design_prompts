@@ -1,0 +1,84 @@
+---
+title: "Media Queries"
+subtitle: The engine of responsive CSS
+category: Responsive
+difficulty: Medium
+tags: [CSS, Responsive, Syntax]
+description: A CSS3 module that allows you to apply different styles based on the conditions of the content's presentation (e.g., screen width, resolution, orientation).
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Media Queries
+
+**Media Queries** are a key technology introduced in CSS3 and serve as the core engine of responsive web design. They allow you to conditionally apply CSS rules based on device characteristics (such as viewport width, aspect ratio, device orientation, etc.).
+
+## Basic Syntax
+
+The standard media query syntax is as follows:
+
+```css
+@media media-type and (media-feature-rule) {
+  /* CSS Rules */
+}
+```
+
+*   **media-type**: The type of media, commonly `screen`, `print`, or `all`.
+*   **media-feature-rule**: Condition rules, such as `min-width`, `max-width`, `orientation`.
+
+## Common Patterns
+
+### 1. Mobile First (Recommended)
+Uses `min-width`. Base styles target mobile phones, and styles are overridden as the screen gets wider.
+
+```css
+/* Default mobile styles */
+body { font-size: 14px; }
+
+/* Tablet and up */
+@media screen and (min-width: 768px) {
+  body { font-size: 16px; }
+}
+```
+
+### 2. Desktop First
+Uses `max-width`. Base styles target desktops, and styles are overridden as the screen gets narrower.
+
+```css
+/* Default desktop styles */
+.sidebar { display: block; }
+
+/* Hide sidebar on mobile */
+@media screen and (max-width: 767px) {
+  .sidebar { display: none; }
+}
+```
+
+### 3. Orientation
+Detects whether the user is in landscape or portrait mode.
+
+```css
+@media (orientation: landscape) {
+  /* Landscape styles */
+}
+```
+
+## Logical Operators
+
+*   **and**: All conditions must be met.
+*   **, (comma)**: Equivalent to OR; the rule applies if any condition is met.
+*   **not**: Negates the query result.
+
+<TerminalCard title="Media Query Test Bench">
+  <div className="p-4 space-y-4">
+    <div className="bg-bg-tertiary p-4 rounded border border-border-medium font-mono text-sm">
+      <div className="mb-2 text-text-muted">// Current Status Detection:</div>
+      <div className="text-accent-pink block md:hidden">Width &lt; 768px (Mobile)</div>
+      <div className="text-mint-500 hidden md:block lg:hidden">768px &le; Width &lt; 1024px (Tablet)</div>
+      <div className="text-blue-400 hidden lg:block">Width &ge; 1024px (Desktop)</div>
+    </div>
+    <div className="text-xs text-text-muted">
+      Resize your browser window to see the text color and content above change. This is achieved using `display: block/none` and media queries.
+    </div>
+  </div>
+</TerminalCard>

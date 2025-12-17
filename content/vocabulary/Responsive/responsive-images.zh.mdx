@@ -1,0 +1,68 @@
+---
+title: "Responsive Images (响应式图片)"
+subtitle: "在不同设备上加载最佳图片"
+category: Responsive
+difficulty: Medium
+tags: [Images, Performance, HTML]
+description: 使用 srcset、sizes 和 picture 元素，根据屏幕尺寸和分辨率加载不同大小或裁剪的图片，优化性能与视觉体验。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# 一图走天下的时代结束了
+
+在手机上加载一张 4K 分辨率的桌面壁纸不仅浪费流量，还会拖慢页面加载速度。**响应式图片**技术允许浏览器根据当前设备的屏幕宽度和像素密度（DPR），自动选择最合适的图片资源。
+
+## 1. 分辨率切换 (Resolution Switching)
+
+当图片内容不变，只是需要不同尺寸时，使用 `srcset` 和 `sizes`。
+
+```html
+<img
+  src="small.jpg"
+  srcset="small.jpg 500w,
+          medium.jpg 1000w,
+          large.jpg 1500w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+  alt="响应式展示图"
+/>
+```
+
+- **srcset**: 告诉浏览器有哪些图片可供选择，以及它们的真实宽度（w 描述符）。
+- **sizes**: 告诉浏览器图片在不同断点下将占据多大的屏幕宽度（不是图片本身的宽度）。
+- **浏览器决策**: 浏览器会计算：`所需像素 = slot宽度 * DPR`，然后从 `srcset` 中选出最接近且足够清晰的那张。
+
+## 2. 艺术方向 (Art Direction)
+
+当需要在不同屏幕上展示**不同裁剪**或**不同比例**的图片时（例如：桌面端显示宽全景图，移动端显示方形特写图），使用 `<picture>` 元素。
+
+```html
+<picture>
+  <!-- 移动端：显示方形特写 -->
+  <source media="(max-width: 799px)" srcset="product-square.jpg" />
+  <!-- 桌面端：显示宽幅全景 -->
+  <source media="(min-width: 800px)" srcset="product-wide.jpg" />
+  <!-- 回退兼容 -->
+  <img src="product-wide.jpg" alt="产品展示" />
+</picture>
+```
+
+## 3. 像素密度适配 (Retina Displays)
+
+针对高分屏（如 MacBook Retina, iPhone），提供 2x 或 3x 图。
+
+```html
+<img 
+  src="logo-1x.png" 
+  srcset="logo-1x.png 1x, logo-2x.png 2x" 
+  alt="高清 Logo" 
+/>
+```
+
+## 最佳实践
+
+1.  **始终保留 `src`**: 作为不支持 `srcset` 的旧浏览器的回退。
+2.  **不要过度优化**: 通常 3-4 种尺寸（如 640w, 1024w, 1920w）足矣。
+3.  **使用现代格式**: 结合 `<source type="image/webp">` 提供 WebP/AVIF 格式以进一步减小体积。

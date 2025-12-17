@@ -1,0 +1,76 @@
+---
+title: "Breakpoints (断点)"
+subtitle: 响应式设计的临界值
+category: Responsive
+difficulty: Easy
+tags: [Responsive, Layout, CSS]
+description: 布局发生变化的特定屏幕宽度点，通常对应常见设备的屏幕尺寸（如手机、平板、桌面）。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Breakpoints (断点)
+
+**Breakpoints** (断点) 是响应式设计中的特定宽度值（像素）。当视口宽度达到这些值时，网页布局会发生改变，以适应不同的屏幕尺寸。
+
+## 常见断点系统 (以 Tailwind CSS 为例)
+
+现代框架通常使用一套预定义的断点系统：
+
+*   **sm (Small)**: `640px` - 大型手机 / 横屏手机
+*   **md (Medium)**: `768px` - 平板电脑 (iPad)
+*   **lg (Large)**: `1024px` - 小型笔记本 / 横屏平板
+*   **xl (Extra Large)**: `1280px` - 标准桌面显示器
+*   **2xl**: `1536px` - 大型显示器
+
+## 如何选择断点？
+
+你不应该针对*特定设备*（如 iPhone 14 Pro）设计断点，而应该针对*内容*或*常见尺寸范围*设计。
+
+1.  **内容优先**: 当你的布局在某个宽度看起来“崩坏”或过于拥挤时，就在那里添加一个断点。
+2.  **从小到大**: 遵循移动优先原则，先处理小屏幕，再通过 `min-width` 断点扩展到大屏幕。
+
+## 代码示例
+
+```css
+/* 基础样式 (移动端) */
+.card {
+  width: 100%;
+}
+
+/* 当屏幕宽度大于 768px (md) 时 */
+@media (min-width: 768px) {
+  .card {
+    width: 50%; /* 变为两列 */
+  }
+}
+
+/* 当屏幕宽度大于 1024px (lg) 时 */
+@media (min-width: 1024px) {
+  .card {
+    width: 33.33%; /* 变为三列 */
+  }
+}
+```
+
+<TerminalCard title="断点可视化">
+  <div className="space-y-4 p-4">
+    <div className="w-full bg-bg-tertiary rounded p-2 text-center text-xs text-text-secondary relative overflow-hidden">
+      <div className="absolute top-0 left-0 h-full bg-mint-500/20 w-[640px] border-r border-mint-500 flex items-center justify-end pr-2">
+        <span className="text-mint-500 font-bold">sm (640px)</span>
+      </div>
+       <div className="absolute top-0 left-0 h-full bg-blue-500/10 w-[768px] border-r border-blue-500 flex items-center justify-end pr-2">
+        <span className="text-blue-500 font-bold">md (768px)</span>
+      </div>
+      <div className="relative z-10 py-4">
+        Resize your window to see layout changes
+      </div>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 1</div>
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 2</div>
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 3</div>
+    </div>
+     <p className="text-center text-text-muted text-xs">当前布局: <span className="md:hidden">1 列 (Mobile)</span><span className="hidden md:block lg:hidden">2 列 (Tablet)</span><span className="hidden lg:block">3 列 (Desktop)</span></p>
+  </div>
+</TerminalCard>

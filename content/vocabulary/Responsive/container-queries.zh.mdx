@@ -1,0 +1,59 @@
+---
+title: "Container Queries (容器查询)"
+subtitle: "组件级别的响应式设计"
+category: Responsive
+difficulty: Hard
+tags: [CSS, Modern, Components]
+description: 允许元素根据其父容器（而不是整个视口）的大小来调整样式，是实现真正的模块化组件设计的关键。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# 超越视口 (Beyond the Viewport)
+
+传统的媒体查询 (`@media`) 只能检测**浏览器窗口**的大小。但在现代组件化开发中，同一个组件（如“产品卡片”）可能被放在宽阔的主栏中，也可能被挤在狭窄的侧边栏中。
+
+**容器查询 (`@container`)** 允许组件根据其**所在容器**的宽度来改变样式，这让组件真正实现了“一次编写，到处运行”。
+
+## 核心语法
+
+### 1. 定义容器
+
+首先，必须告诉 CSS 哪个元素是“容器”。通常使用 `container-type` 和 `container-name`。
+
+```css
+.card-container {
+  /* 定义这是一个查询容器，主要关注内联方向（宽度）的尺寸 */
+  container-type: inline-size;
+  
+  /* 可选：给容器起个名字，防止冲突 */
+  container-name: product-wrapper;
+}
+```
+
+### 2. 查询容器
+
+然后，子元素可以根据容器的宽度调整自身样式。
+
+```css
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 当容器宽度大于 400px 时，切换为水平布局 */
+@container (min-width: 400px) {
+  .card {
+    flex-direction: row;
+  }
+}
+```
+
+## 与媒体查询的区别
+
+- **Media Queries**: “如果**屏幕**很宽，则改变样式。” -> 宏观布局。
+- **Container Queries**: “如果**我的父元素**很宽，则改变样式。” -> 微观组件。
+
+## 浏览器支持
+
+容器查询是现代 CSS 特性，目前已在主流浏览器（Chrome 105+, Safari 16+, Firefox 110+）中得到良好支持。它是构建 Design Systems 的未来标准。

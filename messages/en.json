@@ -27,9 +27,7 @@
     "difficulty": {
       "Easy": "Easy",
       "Medium": "Medium",
-      "Intermediate": "Intermediate",
-      "Hard": "Hard",
-      "Advanced": "Advanced"
+      "Hard": "Hard"
     },
     "metadata": "Metadata",
     "updated": "Updated",

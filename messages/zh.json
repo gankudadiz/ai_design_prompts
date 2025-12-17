@@ -27,9 +27,7 @@
     "difficulty": {
       "Easy": "简单",
       "Medium": "中等",
-      "Intermediate": "进阶",
-      "Hard": "困难",
-      "Advanced": "高级"
+      "Hard": "困难"
     },
     "metadata": "元数据",
     "updated": "更新于",

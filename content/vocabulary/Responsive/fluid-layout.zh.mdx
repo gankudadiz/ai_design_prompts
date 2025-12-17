@@ -1,0 +1,74 @@
+---
+title: "Fluid Layout (流式布局)"
+subtitle: 像水一样适应容器
+category: Responsive
+difficulty: Medium
+tags: [Layout, CSS, Responsive]
+description: 使用百分比等相对单位代替固定像素，使布局元素能随视口宽度平滑伸缩。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Fluid Layout (流式布局)
+
+**Fluid Layout** (流式布局，也称 Liquid Layout) 是一种布局技术，其中元素的尺寸使用相对单位（如百分比 `%`、视口单位 `vw/vh` 或 `fr`）定义，而不是固定的像素单位（`px`）。这使得页面能够像水一样，填满任何大小的容器。
+
+## 核心概念
+
+### 1. 相对单位 vs 固定单位
+
+*   **固定 (Fixed)**: `width: 300px` - 无论屏幕多宽，它始终占据 300px。在小屏幕上会导致滚动条，在大屏幕上会留下过多空白。
+*   **流式 (Fluid)**: `width: 50%` - 始终占据父容器的一半宽度。
+
+### 2. 最大与最小宽度
+
+为了防止流式元素变得过宽（在大屏幕上难以阅读）或过窄（内容溢出），通常结合 `max-width` 和 `min-width` 使用。
+
+```css
+.container {
+  width: 90%;        /* 流式：占据 90% 宽度 */
+  max-width: 1200px; /* 限制：最大不超过 1200px */
+  margin: 0 auto;    /* 居中 */
+}
+```
+
+## 现代流式布局技术
+
+### Flexbox
+Flexbox 本质上是流式的。`flex-grow` 和 `flex-shrink` 属性控制元素如何填充空间。
+
+```css
+.item {
+  flex: 1; /* 自动平分剩余空间 */
+}
+```
+
+### CSS Grid
+Grid 提供了强大的 `fr` (fraction) 单位。
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 第一列占 1/3，第二列占 2/3 */
+}
+```
+
+<TerminalCard title="固定 vs 流式对比">
+  <div className="space-y-6 p-4">
+    <div className="space-y-2">
+      <div className="text-xs text-text-muted">固定宽度 (width: 200px)</div>
+      <div className="bg-bg-tertiary h-8 w-[200px] border border-red-500 flex items-center justify-center text-xs text-red-500">
+        Fixed 200px
+      </div>
+    </div>
+    <div className="space-y-2">
+      <div className="text-xs text-text-muted">流式宽度 (width: 50%)</div>
+      <div className="bg-bg-tertiary h-8 w-1/2 border border-mint-500 flex items-center justify-center text-xs text-mint-500 transition-all duration-300">
+        Fluid 50%
+      </div>
+    </div>
+     <div className="text-xs text-text-muted mt-2">
+      尝试调整浏览器宽度，观察下方绿色条的变化，而上方红色条保持不变。
+    </div>
+  </div>
+</TerminalCard>

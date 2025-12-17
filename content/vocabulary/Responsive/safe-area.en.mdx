@@ -1,0 +1,52 @@
+---
+title: "Safe Area"
+subtitle: "Handling notches and home bars"
+category: Responsive
+difficulty: Easy
+tags: [Mobile, CSS, iOS]
+description: Using viewport-fit and env() variables to ensure content isn't obscured by device notches, rounded corners, or home indicator bars.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# The Notch Era
+
+On modern smartphones (especially since iPhone X), the screen is no longer a perfect rectangle. There are notches, "Dynamic Islands," rounded corners, and home indicator bars. If your webpage fills the entire screen, key buttons might be obscured.
+
+The **Safe Area** is the rectangular portion of the screen that is guaranteed to be unobstructed by these physical constraints.
+
+## 1. Enable Full-Screen Coverage
+
+First, tell the browser your page is ready to expand to the full screen (including under the notch):
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+```
+
+The key is `viewport-fit=cover`. Without this, browsers will default to adding white bars (letterboxing) to avoid the notch.
+
+## 2. Respect the Insets
+
+CSS provides `env()` variables to get the safe area inset values:
+
+- `safe-area-inset-top`: Top inset (avoids notch/status bar)
+- `safe-area-inset-bottom`: Bottom inset (avoids home indicator)
+- `safe-area-inset-left` / `right`: Side insets for landscape mode
+
+### Example: Fixed Bottom Bar
+
+```css
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  /* Add padding so content doesn't touch the edge or sit under the home bar */
+  padding-bottom: env(safe-area-inset-bottom);
+  
+  /* Fallback for older iOS */
+  padding-bottom: constant(safe-area-inset-bottom); 
+}
+```
+
+This way, your page delivers an immersive full-screen experience while keeping interactive elements safe and usable.

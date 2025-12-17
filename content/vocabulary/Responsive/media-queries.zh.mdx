@@ -1,0 +1,84 @@
+---
+title: "Media Queries (媒体查询)"
+subtitle: CSS 响应式设计的引擎
+category: Responsive
+difficulty: Medium
+tags: [CSS, Responsive, Syntax]
+description: CSS3 模块，允许根据内容的呈现条件（如屏幕宽度、分辨率、设备方向）应用不同的样式。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Media Queries (媒体查询)
+
+**Media Queries** 是 CSS3 引入的一项关键技术，它是响应式网页设计的核心引擎。它允许你根据设备的特性（如视口宽度、屏幕比例、设备方向等）有条件地应用 CSS 规则。
+
+## 基本语法
+
+标准的媒体查询语法如下：
+
+```css
+@media media-type and (media-feature-rule) {
+  /* CSS 规则 */
+}
+```
+
+*   **media-type**: 媒体类型，常用 `screen` (屏幕), `print` (打印), `all` (所有)。
+*   **media-feature-rule**: 条件规则，如 `min-width`, `max-width`, `orientation`。
+
+## 常用模式
+
+### 1. 移动优先 (Mobile First) - 推荐
+使用 `min-width`。基础样式针对手机，随着屏幕变宽覆盖样式。
+
+```css
+/* 默认手机样式 */
+body { font-size: 14px; }
+
+/* 平板及以上 */
+@media screen and (min-width: 768px) {
+  body { font-size: 16px; }
+}
+```
+
+### 2. 桌面优先 (Desktop First)
+使用 `max-width`。基础样式针对桌面，随着屏幕变窄覆盖样式。
+
+```css
+/* 默认桌面样式 */
+.sidebar { display: block; }
+
+/* 手机端隐藏侧边栏 */
+@media screen and (max-width: 767px) {
+  .sidebar { display: none; }
+}
+```
+
+### 3. 设备方向
+检测用户是横屏还是竖屏使用。
+
+```css
+@media (orientation: landscape) {
+  /* 横屏样式 */
+}
+```
+
+## 逻辑操作符
+
+*   **and**: 必须满足所有条件。
+*   **, (逗号)**: 相当于 OR，满足任一条件即可。
+*   **not**: 对查询结果取反。
+
+<TerminalCard title="媒体查询测试台">
+  <div className="p-4 space-y-4">
+    <div className="bg-bg-tertiary p-4 rounded border border-border-medium font-mono text-sm">
+      <div className="mb-2 text-text-muted">// 当前状态检测：</div>
+      <div className="text-accent-pink block md:hidden">屏幕宽度 &lt; 768px (Mobile)</div>
+      <div className="text-mint-500 hidden md:block lg:hidden">768px &le; 屏幕宽度 &lt; 1024px (Tablet)</div>
+      <div className="text-blue-400 hidden lg:block">屏幕宽度 &ge; 1024px (Desktop)</div>
+    </div>
+    <div className="text-xs text-text-muted">
+      调整浏览器窗口大小，观察上方文字颜色和内容的变化。这正是通过 `display: block/none` 和媒体查询实现的。
+    </div>
+  </div>
+</TerminalCard>

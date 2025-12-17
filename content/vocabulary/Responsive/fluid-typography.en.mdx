@@ -1,0 +1,51 @@
+---
+title: "Fluid Typography"
+subtitle: "Text that scales smoothly"
+category: Responsive
+difficulty: Medium
+tags: [Typography, CSS, Scale]
+description: Using viewport units (vw) and the clamp() function to smoothly transition font sizes across different screen widths, eliminating jarring breakpoint jumps.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# No More Jumps
+
+In traditional responsive design, we often set font sizes like this:
+- Mobile: 16px
+- Tablet: 18px
+- Desktop: 24px
+
+This causes the font size to "jump" instantly at breakpoints. **Fluid Typography** makes text size scale smoothly like water as the screen width changes.
+
+## The Ultimate Weapon: `clamp()`
+
+The `clamp()` function takes three arguments: a minimum value, a preferred value, and a maximum value.
+
+```css
+h1 {
+  /* 
+    Minimum: 2rem (32px)
+    Preferred: 5vw (5% of viewport width)
+    Maximum: 4rem (64px)
+  */
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+```
+
+- **On narrow screens**: Font size won't go below `2rem`, ensuring readability.
+- **On wide screens**: Font size won't exceed `4rem`.
+- **In between**: Font size equals `5vw`, growing linearly with the screen.
+
+## Precision Control
+
+If you want the font size to scale exactly from 16px to 24px between screen widths of 320px and 1200px, you can use `calc()` mixed units:
+
+```css
+/* This complex calculation is usually done via SCSS functions or online generators */
+body {
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+}
+```
+
+Fluid typography works not just for `font-size`, but also for `padding`, `margin`, and `gap`, allowing the layout's "breathing room" to expand and contract naturally.

@@ -1,0 +1,74 @@
+---
+title: "Fluid Layout"
+subtitle: Adapting to containers like water
+category: Responsive
+difficulty: Medium
+tags: [Layout, CSS, Responsive]
+description: Using relative units like percentages instead of fixed pixels, allowing layout elements to scale smoothly with viewport width.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Fluid Layout
+
+**Fluid Layout** (also known as Liquid Layout) is a layout technique where element dimensions are defined using relative units (such as percentages `%`, viewport units `vw/vh`, or `fr`) instead of fixed pixel units (`px`). This allows the page to fill any container size, behaving like water.
+
+## Core Concepts
+
+### 1. Relative vs. Fixed Units
+
+*   **Fixed**: `width: 300px` - It always occupies 300px, regardless of screen width. This causes scrollbars on small screens and excessive whitespace on large screens.
+*   **Fluid**: `width: 50%` - Always occupies half the width of its parent container.
+
+### 2. Max and Min Width
+
+To prevent fluid elements from becoming too wide (hard to read on large screens) or too narrow (content overflow), `max-width` and `min-width` are often used in conjunction.
+
+```css
+.container {
+  width: 90%;        /* Fluid: takes up 90% width */
+  max-width: 1200px; /* Limit: max 1200px */
+  margin: 0 auto;    /* Center */
+}
+```
+
+## Modern Fluid Layout Technologies
+
+### Flexbox
+Flexbox is inherently fluid. The `flex-grow` and `flex-shrink` properties control how elements fill space.
+
+```css
+.item {
+  flex: 1; /* Automatically divides remaining space */
+}
+```
+
+### CSS Grid
+Grid provides the powerful `fr` (fraction) unit.
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1st column takes 1/3, 2nd takes 2/3 */
+}
+```
+
+<TerminalCard title="Fixed vs. Fluid Comparison">
+  <div className="space-y-6 p-4">
+    <div className="space-y-2">
+      <div className="text-xs text-text-muted">Fixed Width (width: 200px)</div>
+      <div className="bg-bg-tertiary h-8 w-[200px] border border-red-500 flex items-center justify-center text-xs text-red-500">
+        Fixed 200px
+      </div>
+    </div>
+    <div className="space-y-2">
+      <div className="text-xs text-text-muted">Fluid Width (width: 50%)</div>
+      <div className="bg-bg-tertiary h-8 w-1/2 border border-mint-500 flex items-center justify-center text-xs text-mint-500 transition-all duration-300">
+        Fluid 50%
+      </div>
+    </div>
+     <div className="text-xs text-text-muted mt-2">
+      Try resizing your browser width to see the green bar below change, while the red bar above stays the same.
+    </div>
+  </div>
+</TerminalCard>

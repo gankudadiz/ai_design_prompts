@@ -1,0 +1,63 @@
+---
+title: "Viewport"
+subtitle: The gateway to mobile windows
+category: Responsive
+difficulty: Easy
+tags: [HTML, Mobile, Responsive]
+description: The user's visible area of a web page. On mobile, correctly configuring the Viewport Meta tag is the first step to responsive design.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Viewport
+
+The **Viewport** is the user's visible area of a web page. On desktops, it is typically equal to the browser window size; however, on mobile devices, it is more complex.
+
+## Why Do We Need the Viewport Meta Tag?
+
+In the early days of smartphones, to display wide webpages designed for desktops on small screens, mobile browsers would default to a wide viewport width (usually 980px) and then shrink the page to fit the screen. This required users to zoom in to read text.
+
+To tell the browser "This is a responsive site, please use the device's actual width," we need to use the `<meta name="viewport">` tag.
+
+## Standard Configuration
+
+This is essential code for all responsive websites, usually placed in the `<head>`:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+### Parameters Explained
+
+*   **width=device-width**: Sets the viewport width to the device's physical width (e.g., iPhone 12 is 390px, instead of the default 980px).
+*   **initial-scale=1.0**: Sets the initial zoom level to 1:1 (no zooming).
+
+## Other Parameters (Use with Caution)
+
+*   `maximum-scale`: The maximum zoom level allowed.
+*   `user-scalable=no`: **Strongly discouraged**. Disabling user zooming severely harms accessibility, preventing visually impaired users from reading content.
+
+<TerminalCard title="Viewport Simulation">
+  <div className="space-y-4 p-4">
+    <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+            <div className="text-[10px] text-text-muted text-center">Without Viewport Tag</div>
+            <div className="h-32 border border-red-500 relative overflow-hidden bg-white text-black">
+                 <div className="origin-top-left transform scale-[0.3] w-[300%] p-4">
+                    <h1 className="text-4xl font-bold">Desktop Site</h1>
+                    <p className="text-2xl mt-2">Text is tiny and unreadable without zooming.</p>
+                 </div>
+            </div>
+        </div>
+        <div className="space-y-2">
+            <div className="text-[10px] text-text-muted text-center">With Viewport Tag</div>
+            <div className="h-32 border border-mint-500 relative overflow-hidden bg-bg-card">
+                 <div className="p-2">
+                    <h1 className="text-sm font-bold text-mint-500">Responsive Site</h1>
+                    <p className="text-[10px] mt-1 text-text-secondary">Text is readable and fits the screen perfectly.</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</TerminalCard>

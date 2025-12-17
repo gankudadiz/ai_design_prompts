@@ -1,0 +1,76 @@
+---
+title: "Breakpoints"
+subtitle: The critical points of responsive design
+category: Responsive
+difficulty: Easy
+tags: [Responsive, Layout, CSS]
+description: Specific screen width points where the layout changes, usually corresponding to common device screen sizes (e.g., mobile, tablet, desktop).
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Breakpoints
+
+**Breakpoints** are specific pixel width values in responsive design. When the viewport width reaches these values, the webpage layout changes to adapt to different screen sizes.
+
+## Common Breakpoint Systems (Tailwind CSS Example)
+
+Modern frameworks typically use a set of predefined breakpoints:
+
+*   **sm (Small)**: `640px` - Large phones / Landscape phones
+*   **md (Medium)**: `768px` - Tablets (iPad)
+*   **lg (Large)**: `1024px` - Small laptops / Landscape tablets
+*   **xl (Extra Large)**: `1280px` - Standard desktop monitors
+*   **2xl**: `1536px` - Large monitors
+
+## How to Choose Breakpoints?
+
+You shouldn't design breakpoints for *specific devices* (like iPhone 14 Pro), but rather for *content* or *common size ranges*.
+
+1.  **Content First**: When your layout looks "broken" or too crowded at a certain width, add a breakpoint there.
+2.  **Mobile First**: Follow the mobile-first principle; handle small screens first, then expand to larger screens using `min-width` breakpoints.
+
+## Code Example
+
+```css
+/* Base styles (Mobile) */
+.card {
+  width: 100%;
+}
+
+/* When screen width is greater than 768px (md) */
+@media (min-width: 768px) {
+  .card {
+    width: 50%; /* Becomes 2 columns */
+  }
+}
+
+/* When screen width is greater than 1024px (lg) */
+@media (min-width: 1024px) {
+  .card {
+    width: 33.33%; /* Becomes 3 columns */
+  }
+}
+```
+
+<TerminalCard title="Breakpoint Visualization">
+  <div className="space-y-4 p-4">
+    <div className="w-full bg-bg-tertiary rounded p-2 text-center text-xs text-text-secondary relative overflow-hidden">
+      <div className="absolute top-0 left-0 h-full bg-mint-500/20 w-[640px] border-r border-mint-500 flex items-center justify-end pr-2">
+        <span className="text-mint-500 font-bold">sm (640px)</span>
+      </div>
+       <div className="absolute top-0 left-0 h-full bg-blue-500/10 w-[768px] border-r border-blue-500 flex items-center justify-end pr-2">
+        <span className="text-blue-500 font-bold">md (768px)</span>
+      </div>
+      <div className="relative z-10 py-4">
+        Resize your window to see layout changes
+      </div>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 1</div>
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 2</div>
+        <div className="bg-bg-secondary p-4 rounded border border-border-medium text-center">Item 3</div>
+    </div>
+     <p className="text-center text-text-muted text-xs">Current Layout: <span className="md:hidden">1 Col (Mobile)</span><span className="hidden md:block lg:hidden">2 Cols (Tablet)</span><span className="hidden lg:block">3 Cols (Desktop)</span></p>
+  </div>
+</TerminalCard>

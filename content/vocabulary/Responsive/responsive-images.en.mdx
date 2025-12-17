@@ -1,0 +1,68 @@
+---
+title: "Responsive Images"
+subtitle: "Serving the right image for every device"
+category: Responsive
+difficulty: Medium
+tags: [Images, Performance, HTML]
+description: Use srcset, sizes, and picture elements to load images of different sizes or crops based on screen dimensions and resolution, optimizing performance and visuals.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# One Size Does Not Fit All
+
+Loading a 4K desktop wallpaper on a mobile phone wastes data and slows down your page. **Responsive Images** allow browsers to automatically select the most appropriate image resource based on the current device's screen width and pixel density (DPR).
+
+## 1. Resolution Switching
+
+Use `srcset` and `sizes` when the image content is the same, but you need different sizes.
+
+```html
+<img
+  src="small.jpg"
+  srcset="small.jpg 500w,
+          medium.jpg 1000w,
+          large.jpg 1500w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+  alt="Responsive demo"
+/>
+```
+
+- **srcset**: Tells the browser what images are available and their intrinsic width (w descriptor).
+- **sizes**: Tells the browser how wide the image will be on the screen at different breakpoints.
+- **Browser Decision**: The browser calculates `Required Pixels = Slot Width * DPR` and picks the closest sufficient match from `srcset`.
+
+## 2. Art Direction
+
+Use the `<picture>` element when you need to show **different crops** or **aspect ratios** on different screens (e.g., a wide panorama on desktop, a square close-up on mobile).
+
+```html
+<picture>
+  <!-- Mobile: Show square close-up -->
+  <source media="(max-width: 799px)" srcset="product-square.jpg" />
+  <!-- Desktop: Show wide panorama -->
+  <source media="(min-width: 800px)" srcset="product-wide.jpg" />
+  <!-- Fallback -->
+  <img src="product-wide.jpg" alt="Product shot" />
+</picture>
+```
+
+## 3. Pixel Density (Retina Displays)
+
+Serve 2x or 3x images for high-resolution screens (like MacBook Retina, iPhone).
+
+```html
+<img 
+  src="logo-1x.png" 
+  srcset="logo-1x.png 1x, logo-2x.png 2x" 
+  alt="High-res Logo" 
+/>
+```
+
+## Best Practices
+
+1.  **Always keep `src`**: As a fallback for older browsers that don't support `srcset`.
+2.  **Don't over-optimize**: Usually 3-4 sizes (e.g., 640w, 1024w, 1920w) are enough.
+3.  **Use modern formats**: Combine with `<source type="image/webp">` to serve WebP/AVIF for smaller file sizes.

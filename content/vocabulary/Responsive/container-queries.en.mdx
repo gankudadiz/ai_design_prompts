@@ -1,0 +1,59 @@
+---
+title: "Container Queries"
+subtitle: "Component-level responsiveness"
+category: Responsive
+difficulty: Hard
+tags: [CSS, Modern, Components]
+description: Allows elements to adapt their styles based on the size of their parent container rather than the viewport, enabling truly modular component design.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Beyond the Viewport
+
+Traditional Media Queries (`@media`) can only detect the size of the **browser window**. However, in modern component-based development, the same component (like a "Product Card") might be placed in a wide main column or a narrow sidebar.
+
+**Container Queries (`@container`)** allow a component to adapt its style based on the width of **its container**. This makes components truly "write once, run anywhere."
+
+## Core Syntax
+
+### 1. Define the Container
+
+First, you must tell CSS which element is the "container". Usually done with `container-type`.
+
+```css
+.card-container {
+  /* Define this as a query container, looking at inline-size (width) */
+  container-type: inline-size;
+  
+  /* Optional: Name the container */
+  container-name: product-wrapper;
+}
+```
+
+### 2. Query the Container
+
+Then, child elements can adjust their styles based on the container's width.
+
+```css
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Switch to row layout when container is wider than 400px */
+@container (min-width: 400px) {
+  .card {
+    flex-direction: row;
+  }
+}
+```
+
+## Vs Media Queries
+
+- **Media Queries**: "If the **screen** is wide, change styles." -> Macro Layout.
+- **Container Queries**: "If **my parent** is wide, change styles." -> Micro Components.
+
+## Browser Support
+
+Container Queries are a modern CSS feature, now well-supported in major browsers (Chrome 105+, Safari 16+, Firefox 110+). They are the future standard for building Design Systems.

@@ -1,0 +1,51 @@
+---
+title: "Parallax"
+subtitle: Creating depth
+category: Animation
+difficulty: Advanced
+tags: [Design, Animation, UX]
+description: Parallax scrolling is a web design technique where background content moves at a different speed than foreground content, creating an illusion of depth.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Parallax
+
+**Parallax Scrolling** is a visual effect where the background image moves slower than the foreground content, creating a sense of 3D depth and immersion on a 2D screen.
+
+## Implementation Principles
+
+1.  **CSS**: Using `background-attachment: fixed` allows for the simplest parallax effect.
+2.  **JavaScript**: Listening to the `scroll` event and dynamically calculating the `transform: translateY()` value of elements based on scroll distance.
+3.  **Libraries**: Using libraries like `Framer Motion`, `GSAP`, or `React Spring` can achieve smoother results.
+
+```css
+/* Simple CSS Parallax */
+.parallax-bg {
+  background-image: url('stars.jpg');
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+```
+
+## Design Considerations
+
+*   **Performance**: Overusing parallax can cause page jank. Always use `transform` instead of `top/left`.
+*   **Accessibility**: For users prone to Motion Sickness, provide an option to disable animations (`prefers-reduced-motion`).
+
+<TerminalCard title="Parallax Concept">
+  <div className="p-8 relative h-40 overflow-hidden bg-bg-primary border border-border-medium rounded">
+    <div className="absolute top-2 left-10 text-text-secondary text-xs">Scroll Down (Simulated)</div>
+    <div className="absolute top-10 left-10 w-8 h-8 bg-bg-tertiary rounded animate-[moveUp_3s_linear_infinite]" style={{ animationDuration: '4s' }}></div>
+    <div className="absolute top-16 left-24 w-12 h-12 bg-mint-500/50 rounded z-10 animate-[moveUp_3s_linear_infinite]" style={{ animationDuration: '2s' }}></div>
+  </div>
+  <style>{`
+    @keyframes moveUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50px); }
+    }
+  `}</style>
+</TerminalCard>

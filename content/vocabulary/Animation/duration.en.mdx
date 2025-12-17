@@ -1,0 +1,53 @@
+---
+title: "Animation Duration"
+subtitle: Controlling animation speed
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Properties]
+description: The animation-duration property defines how long an animation takes to complete one cycle.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Duration
+
+The **animation-duration** property specifies the length of time that an animation takes to complete one cycle. The default value is `0s`, which means no animation.
+
+## Property Values
+
+*   **Time**: A time value in seconds (`s`) or milliseconds (`ms`). For example, `2s`, `500ms`.
+
+```css
+.slow {
+  animation-duration: 3s;
+}
+
+.fast {
+  animation-duration: 0.5s;
+}
+```
+
+## Notes
+
+*   If negative, it is treated as 0s.
+*   This property is required; otherwise, the animation will not play (since duration defaults to 0).
+
+<TerminalCard title="Speed Comparison">
+  <div className="p-8 flex flex-col gap-6 items-center">
+    <div className="w-full h-8 bg-bg-tertiary rounded-full overflow-hidden relative">
+      <div className="absolute top-0 left-0 h-full w-1/3 bg-mint-500 animate-[slide_3s_linear_infinite]" style={{ animationName: 'slide', animationDuration: '3s' }}></div>
+      <div className="absolute top-0 left-2 text-xs text-white leading-8">Slow (3s)</div>
+    </div>
+    <div className="w-full h-8 bg-bg-tertiary rounded-full overflow-hidden relative">
+      <div className="absolute top-0 left-0 h-full w-1/3 bg-accent-pink animate-[slide_1s_linear_infinite]" style={{ animationName: 'slide', animationDuration: '1s' }}></div>
+      <div className="absolute top-0 left-2 text-xs text-white leading-8">Fast (1s)</div>
+    </div>
+  </div>
+  <style>{`
+    @keyframes slide {
+      0% { left: 0; }
+      50% { left: 66%; }
+      100% { left: 0; }
+    }
+  `}</style>
+</TerminalCard>

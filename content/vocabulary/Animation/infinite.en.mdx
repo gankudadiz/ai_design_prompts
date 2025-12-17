@@ -1,0 +1,39 @@
+---
+title: "Infinite Animation"
+subtitle: Never-ending motion
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Loop]
+description: Use animation-iteration-count: infinite to make an animation play endlessly.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Infinite Animation
+
+The **animation-iteration-count** property defines how many times an animation should be played.
+
+## Property Values
+
+*   **Number**: The number of times to play, e.g., `1`, `2.5`.
+*   **infinite**: Specifies that the animation should play infinitely.
+
+```css
+.loop {
+  animation-iteration-count: infinite;
+}
+```
+
+## Use Cases
+
+Infinite loops are commonly used for:
+*   Loading indicators (Spinners)
+*   Pulse effects
+*   Background scrolling
+*   Attention seekers
+
+<TerminalCard title="Loading Spinner">
+  <div className="p-8 flex justify-center">
+    <div className="w-12 h-12 border-4 border-bg-tertiary border-t-mint-500 rounded-full animate-spin"></div>
+  </div>
+</TerminalCard>

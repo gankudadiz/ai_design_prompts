@@ -1,0 +1,45 @@
+---
+title: "Animation Delay"
+subtitle: Waiting to start
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Properties]
+description: The animation-delay property specifies a delay for the start of an animation.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Delay
+
+The **animation-delay** property defines the waiting time before the animation starts.
+
+## Property Values
+
+*   **Time**: Positive values (e.g., `2s`) mean waiting 2 seconds before starting.
+*   **Negative Values**: Negative values (e.g., `-1s`) cause the animation to start immediately, but begin from the 1-second mark of the animation sequence (as if it had already been playing for 1 second).
+
+```css
+.wait {
+  animation-delay: 2s;
+}
+
+.jump-start {
+  animation-delay: -1s;
+}
+```
+
+## Sequential Animation
+
+By setting incremental `animation-delay` values for a group of elements, you can create elegant entrance sequences.
+
+<TerminalCard title="Sequential Animation Demo">
+  <div className="p-8 flex justify-center gap-4">
+    {[0, 1, 2].map((i) => (
+      <div 
+        key={i}
+        className="w-12 h-12 bg-mint-500 rounded-full animate-bounce"
+        style={{ animationDuration: '1s', animationDelay: `${i * 0.2}s` }}
+      />
+    ))}
+  </div>
+</TerminalCard>

@@ -1,0 +1,48 @@
+---
+title: "Micro-Interaction (微交互)"
+subtitle: 细节决定体验
+category: Animation
+difficulty: Easy
+tags: [Design, UX, Interaction]
+description: 微交互是发生在用户与界面之间的微小交互事件，用于提供反馈。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Micro-Interaction (微交互)
+
+**Micro-interactions**（微交互）是单一用途的事件，存在于整个产品中。它们是让产品感觉“鲜活”和“人性化”的关键细节。
+
+## 核心功能
+
+1.  **反馈状态**: 确认操作已发生（如按钮点击涟漪效果）。
+2.  **显示系统状态**: 下载进度条、加载圈。
+3.  **引导用户**: 突出显示交互元素。
+4.  **防止错误**: 密码强度指示器、震动反馈。
+
+## 设计原则
+
+*   **快速**: 微交互应该在 0.1s - 0.4s 内完成。
+*   **微妙**: 不要喧宾夺主，要是自然的补充。
+*   **一致**: 在整个应用中保持相同的交互逻辑。
+
+```css
+/* 简单的按钮微交互 */
+.btn {
+  transition: transform 0.1s;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+```
+
+<TerminalCard title="点赞微交互">
+  <div className="p-8 flex justify-center">
+    <button className="group flex items-center gap-2 text-text-secondary hover:text-accent-pink transition-colors">
+      <div className="group-hover:scale-125 group-active:scale-90 transition-transform duration-200">
+        ♥
+      </div>
+      <span>Like</span>
+    </button>
+  </div>
+</TerminalCard>

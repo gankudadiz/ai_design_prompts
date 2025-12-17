@@ -1,0 +1,48 @@
+---
+title: "Micro-Interaction"
+subtitle: Details determine experience
+category: Animation
+difficulty: Easy
+tags: [Design, UX, Interaction]
+description: Micro-interactions are small interactive events between the user and the interface, used to provide feedback.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Micro-Interaction
+
+**Micro-interactions** are single-purpose events found throughout a product. They are the key details that make a product feel "alive" and "human".
+
+## Core Functions
+
+1.  **Feedback Status**: Confirming that an action has occurred (e.g., button click ripple effect).
+2.  **System Status**: Download progress bars, loading spinners.
+3.  **Guiding Users**: Highlighting interactive elements.
+4.  **Preventing Errors**: Password strength indicators, vibration feedback.
+
+## Design Principles
+
+*   **Fast**: Micro-interactions should complete within 0.1s - 0.4s.
+*   **Subtle**: Don't be overwhelming; they should be natural supplements.
+*   **Consistent**: Maintain the same interaction logic throughout the application.
+
+```css
+/* Simple Button Micro-interaction */
+.btn {
+  transition: transform 0.1s;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+```
+
+<TerminalCard title="Like Micro-interaction">
+  <div className="p-8 flex justify-center">
+    <button className="group flex items-center gap-2 text-text-secondary hover:text-accent-pink transition-colors">
+      <div className="group-hover:scale-125 group-active:scale-90 transition-transform duration-200">
+        ♥
+      </div>
+      <span>Like</span>
+    </button>
+  </div>
+</TerminalCard>

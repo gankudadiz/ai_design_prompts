@@ -21,7 +21,8 @@
       "Responsive": "响应式",
       "Animation": "动画",
       "Styling": "样式",
-      "LayoutPatterns": "布局模式"
+      "LayoutPatterns": "布局模式",
+      "Others": "其他"
     },
     "difficulty": {
       "Easy": "简单",

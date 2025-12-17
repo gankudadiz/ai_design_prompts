@@ -1,0 +1,48 @@
+---
+title: "Animation Fill Mode"
+subtitle: State before and after
+category: Animation
+difficulty: Hard
+tags: [CSS, Animation, Properties]
+description: The animation-fill-mode property specifies a style for the element when the animation is not playing (before it starts, after it ends, or both).
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Fill Mode
+
+The **animation-fill-mode** property specifies what styles are applied to the element when the animation is not playing (when it is finished, or when it has a delay and hasn't started yet).
+
+## Property Values
+
+1.  `none`: Default. The animation will not apply any styles to the element before or after it is executing.
+2.  `forwards`: The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count).
+3.  `backwards`: The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period.
+4.  `both`: The animation will follow the rules for both forwards and backwards.
+
+```css
+.stay-there {
+  animation-fill-mode: forwards;
+}
+```
+
+This is very important for "entrance animations" where you typically want the element to remain in its "entered" state after the animation ends, rather than jumping back to its initial state.
+
+<TerminalCard title="Forwards Demo">
+  <div className="p-8 flex justify-center items-center gap-4">
+    <div className="text-center">
+      <div className="w-12 h-12 bg-bg-tertiary rounded mb-2 mx-auto animate-[rotate_1s_ease-in-out_1_forwards]" style={{ animationName: 'rotateTo45' }}></div>
+      <span className="text-xs text-text-secondary">forwards</span>
+    </div>
+    <div className="text-center">
+      <div className="w-12 h-12 bg-bg-tertiary rounded mb-2 mx-auto animate-[rotate_1s_ease-in-out_1]" style={{ animationName: 'rotateTo45' }}></div>
+      <span className="text-xs text-text-secondary">none</span>
+    </div>
+  </div>
+  <style>{`
+    @keyframes rotateTo45 {
+      from { transform: rotate(0deg); bg-color: #25143f; }
+      to { transform: rotate(45deg); background-color: #00ffcc; }
+    }
+  `}</style>
+</TerminalCard>

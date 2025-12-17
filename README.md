@@ -32,8 +32,8 @@ A collection of trending and classic design styles.
 ### 🛠 Tech Stack
 
 This project is built with modern web technologies:
-- **Next.js 14**: For server-side rendering and static generation.
-- **Tailwind CSS**: For utility-first styling.
+- **Next.js 16**: For server-side rendering and static generation.
+- **Tailwind CSS 4**: For utility-first styling.
 - **MDX**: For writing content mixed with React components.
 - **TypeScript**: For type safety.
 - **Next-Intl**: For internationalization (i18n).
@@ -94,8 +94,8 @@ UI/UX 术语的综合词典。每个词汇都包含：
 ### 🛠 技术栈
 
 本项目使用现代 Web 技术构建：
-- **Next.js 14**: 用于服务端渲染和静态生成。
-- **Tailwind CSS**: 用于原子化样式开发。
+- **Next.js 16**: 用于服务端渲染和静态生成。
+- **Tailwind CSS 4**: 用于原子化样式开发。
 - **MDX**: 用于编写混合 React 组件的内容。
 - **TypeScript**: 提供类型安全。
 - **Next-Intl**: 用于国际化 (i18n)。

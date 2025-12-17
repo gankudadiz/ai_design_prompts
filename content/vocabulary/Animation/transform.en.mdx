@@ -1,0 +1,39 @@
+---
+title: "Transform"
+subtitle: Changing spatial form
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Transform]
+description: The CSS transform property allows you to rotate, scale, skew, or translate an element.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Transform
+
+The **Transform** property allows you to apply 2D or 3D transformations to elements. While not an animation property itself, it is key to creating high-performance animations (especially movement and scaling) because `transform` does not trigger Reflow, only Repaint or Composite.
+
+## Common Functions
+
+1.  `translate(x, y)`: Moves the element.
+2.  `scale(x, y)`: Resizes the element.
+3.  `rotate(angle)`: Rotates the element.
+4.  `skew(x-angle, y-angle)`: Skews the element.
+
+```css
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+```
+
+## Hardware Acceleration
+
+Using `transform: translate3d(0,0,0)` or `will-change: transform` can enable GPU hardware acceleration, making animations smoother.
+
+<TerminalCard title="Transform Combo">
+  <div className="p-8 flex justify-center perspective-[500px]">
+    <div className="w-24 h-24 bg-gradient-to-br from-mint-500 to-accent-pink rounded-lg shadow-lg transform transition-transform duration-500 hover:rotate-y-180 hover:scale-110 cursor-pointer flex items-center justify-center">
+      <span className="text-bg-primary font-bold">Hover Me</span>
+    </div>
+  </div>
+</TerminalCard>

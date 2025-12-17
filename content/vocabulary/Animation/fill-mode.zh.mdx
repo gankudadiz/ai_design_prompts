@@ -1,0 +1,48 @@
+---
+title: "Animation Fill Mode (填充模式)"
+subtitle: 动画前后的状态
+category: Animation
+difficulty: Hard
+tags: [CSS, Animation, Properties]
+description: animation-fill-mode 属性规定动画在播放之前或之后，其动画效果是否可见。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Fill Mode (填充模式)
+
+**animation-fill-mode** 属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），元素应用什么样式。
+
+## 属性值
+
+1.  `none`: 默认值。动画在执行之前或之后不会对元素应用任何样式。
+2.  `forwards`: 动画结束后，元素将保留最后一个关键帧的样式（取决于 direction 和 iteration-count）。
+3.  `backwards`: 在 animation-delay 所指定的一段时间内，在动画显示之前，元素将获得第一个关键帧的样式。
+4.  `both`: 动画会同时遵循 forwards 和 backwards 的规则。
+
+```css
+.stay-there {
+  animation-fill-mode: forwards;
+}
+```
+
+这在“入场动画”中非常重要，你通常希望元素在动画结束后保持在“入场后”的状态，而不是跳回初始状态。
+
+<TerminalCard title="Forwards 演示">
+  <div className="p-8 flex justify-center items-center gap-4">
+    <div className="text-center">
+      <div className="w-12 h-12 bg-bg-tertiary rounded mb-2 mx-auto animate-[rotate_1s_ease-in-out_1_forwards]" style={{ animationName: 'rotateTo45' }}></div>
+      <span className="text-xs text-text-secondary">forwards</span>
+    </div>
+    <div className="text-center">
+      <div className="w-12 h-12 bg-bg-tertiary rounded mb-2 mx-auto animate-[rotate_1s_ease-in-out_1]" style={{ animationName: 'rotateTo45' }}></div>
+      <span className="text-xs text-text-secondary">none</span>
+    </div>
+  </div>
+  <style>{`
+    @keyframes rotateTo45 {
+      from { transform: rotate(0deg); bg-color: #25143f; }
+      to { transform: rotate(45deg); background-color: #00ffcc; }
+    }
+  `}</style>
+</TerminalCard>

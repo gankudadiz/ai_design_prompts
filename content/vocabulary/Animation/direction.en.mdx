@@ -1,0 +1,35 @@
+---
+title: "Animation Direction"
+subtitle: Forward and reverse
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Properties]
+description: The animation-direction property defines whether an animation should be played forwards, backwards or in alternate cycles.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Direction
+
+The **animation-direction** property defines the direction of the animation playback.
+
+## Property Values
+
+1.  `normal`: Default. The animation plays normally.
+2.  `reverse`: The animation plays in reverse.
+3.  `alternate`: The animation is played forwards first, then backwards.
+4.  `alternate-reverse`: The animation is played backwards first, then forwards.
+
+```css
+.yo-yo {
+  animation-direction: alternate;
+}
+```
+
+`alternate` is commonly used to create smooth looping effects (like breathing lights), avoiding abrupt jumps back to the start when the animation ends.
+
+<TerminalCard title="Alternate Effect">
+  <div className="p-8 flex justify-center">
+    <div className="w-16 h-16 bg-accent-pink rounded-full animate-[ping_1.5s_ease-in-out_infinite] opacity-75" style={{ animationDirection: 'alternate' }}></div>
+  </div>
+</TerminalCard>

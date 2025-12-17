@@ -1,0 +1,53 @@
+---
+title: "Animation Duration (持续时间)"
+subtitle: 控制动画快慢
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Properties]
+description: animation-duration 属性定义动画完成一个周期所需的时间。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Duration (持续时间)
+
+**animation-duration** 属性指定动画完成一个周期所需的时间长度。默认值为 `0s`，表示无动画。
+
+## 属性值
+
+*   **Time**: 以秒 (`s`) 或毫秒 (`ms`) 为单位的时间值。例如 `2s`, `500ms`。
+
+```css
+.slow {
+  animation-duration: 3s;
+}
+
+.fast {
+  animation-duration: 0.5s;
+}
+```
+
+## 注意事项
+
+*   如果是负值，该值会被视为 0s。
+*   该属性是必须的，否则动画不会播放（因为持续时间默认为 0）。
+
+<TerminalCard title="速度对比">
+  <div className="p-8 flex flex-col gap-6 items-center">
+    <div className="w-full h-8 bg-bg-tertiary rounded-full overflow-hidden relative">
+      <div className="absolute top-0 left-0 h-full w-1/3 bg-mint-500 animate-[slide_3s_linear_infinite]" style={{ animationName: 'slide', animationDuration: '3s' }}></div>
+      <div className="absolute top-0 left-2 text-xs text-white leading-8">Slow (3s)</div>
+    </div>
+    <div className="w-full h-8 bg-bg-tertiary rounded-full overflow-hidden relative">
+      <div className="absolute top-0 left-0 h-full w-1/3 bg-accent-pink animate-[slide_1s_linear_infinite]" style={{ animationName: 'slide', animationDuration: '1s' }}></div>
+      <div className="absolute top-0 left-2 text-xs text-white leading-8">Fast (1s)</div>
+    </div>
+  </div>
+  <style>{`
+    @keyframes slide {
+      0% { left: 0; }
+      50% { left: 66%; }
+      100% { left: 0; }
+    }
+  `}</style>
+</TerminalCard>

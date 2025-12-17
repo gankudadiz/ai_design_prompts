@@ -1,0 +1,45 @@
+---
+title: "Animation Delay (延迟)"
+subtitle: 等待开始
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Properties]
+description: animation-delay 属性规定在动画开始之前的延迟时间。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Delay (延迟)
+
+**animation-delay** 属性定义动画启动前的等待时间。
+
+## 属性值
+
+*   **Time**: 正值（如 `2s`）表示等待 2 秒后开始。
+*   **负值**: 负值（如 `-1s`）会让动画立即开始，但是会从动画序列的第 1 秒位置开始播放（仿佛已经播放了 1 秒）。
+
+```css
+.wait {
+  animation-delay: 2s;
+}
+
+.jump-start {
+  animation-delay: -1s;
+}
+```
+
+## 序列动画
+
+通过为一组元素设置递增的 `animation-delay`，可以创建优雅的序列入场效果。
+
+<TerminalCard title="序列动画演示">
+  <div className="p-8 flex justify-center gap-4">
+    {[0, 1, 2].map((i) => (
+      <div 
+        key={i}
+        className="w-12 h-12 bg-mint-500 rounded-full animate-bounce"
+        style={{ animationDuration: '1s', animationDelay: `${i * 0.2}s` }}
+      />
+    ))}
+  </div>
+</TerminalCard>

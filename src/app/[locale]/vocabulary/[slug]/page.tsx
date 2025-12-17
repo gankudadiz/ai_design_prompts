@@ -63,7 +63,7 @@ export default async function VocabularyPost({ params }: { params: Promise<{ slu
     <div className="max-w-5xl mx-auto">
       {/* Back Link */}
       <Link
-        href={locale === 'zh' ? `/vocabulary?category=${meta.category}` : `/en/vocabulary?category=${meta.category}`}
+        href={`/vocabulary?category=${meta.category}`}
         className="inline-flex items-center text-xs md:text-sm text-text-muted hover:text-mint-500 mb-6 transition-colors group"
       >
         <ArrowLeft className="w-3 h-3 md:w-4 md:h-4 mr-2 group-hover:-translate-x-1 transition-transform" />

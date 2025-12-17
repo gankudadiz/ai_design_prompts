@@ -1,0 +1,51 @@
+---
+title: "Parallax (视差滚动)"
+subtitle: 深度感的营造
+category: Animation
+difficulty: Advanced
+tags: [Design, Animation, UX]
+description: 视差滚动是一种网页设计技术，背景移动速度慢于前景，产生深度感。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Parallax (视差滚动)
+
+**Parallax Scrolling**（视差滚动）是一种视觉效果，背景图像的移动速度慢于前景内容，从而在 2D 屏幕上营造出 3D 的深度感和沉浸感。
+
+## 实现原理
+
+1.  **CSS**: 使用 `background-attachment: fixed` 可以实现最简单的视差效果。
+2.  **JavaScript**: 监听滚动事件 (`scroll`)，根据滚动距离动态计算元素的 `transform: translateY()` 值。
+3.  **库**: 使用 `Framer Motion`, `GSAP` 或 `React Spring` 等库可以更平滑地实现。
+
+```css
+/* 简易 CSS 视差 */
+.parallax-bg {
+  background-image: url('stars.jpg');
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+```
+
+## 设计考量
+
+*   **性能**: 滥用视差可能会导致页面卡顿，务必使用 `transform` 而非 `top/left`。
+*   **可访问性**: 对于容易产生晕动症（Motion Sickness）的用户，应提供关闭动画的选项（`prefers-reduced-motion`）。
+
+<TerminalCard title="视差概念">
+  <div className="p-8 relative h-40 overflow-hidden bg-bg-primary border border-border-medium rounded">
+    <div className="absolute top-2 left-10 text-text-secondary text-xs">Scroll Down (Simulated)</div>
+    <div className="absolute top-10 left-10 w-8 h-8 bg-bg-tertiary rounded animate-[moveUp_3s_linear_infinite]" style={{ animationDuration: '4s' }}></div>
+    <div className="absolute top-16 left-24 w-12 h-12 bg-mint-500/50 rounded z-10 animate-[moveUp_3s_linear_infinite]" style={{ animationDuration: '2s' }}></div>
+  </div>
+  <style>{`
+    @keyframes moveUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50px); }
+    }
+  `}</style>
+</TerminalCard>

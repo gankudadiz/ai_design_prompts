@@ -11,8 +11,8 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
   const currentCategory = searchParams.get('category');
   const t = useTranslations('Vocabulary');
   
-  // Get unique categories
-  const categories = ['All', ...Array.from(new Set(posts.map(p => p.category)))];
+  // Get unique categories and filter out undefined/null
+  const categories = ['All', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
 
   // Filter posts
   const filteredPosts = currentCategory && currentCategory !== 'All'
@@ -30,8 +30,10 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
           <ul className="space-y-1">
             {categories.map((category) => {
               const isActive = (currentCategory === category) || (!currentCategory && category === 'All');
+              // Ensure we have a valid key string
+              const itemKey = typeof category === 'string' ? category : `cat-${Math.random()}`;
               return (
-                <li key={category}>
+                <li key={itemKey}>
                   <Link
                     href={category === 'All' ? '/vocabulary' : `/vocabulary?category=${category}`}
                     className={clsx(
@@ -75,7 +77,9 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
               <div className="h-full bg-bg-card border border-border-medium p-5 transition-all duration-200 hover:border-mint-500 hover:shadow-[0_0_15px_rgba(0,255,204,0.1)] relative overflow-hidden flex flex-col">
                 {/* Terminal Header */}
                 <div className="flex items-center justify-between mb-3 border-b border-border-medium/30 pb-2">
-                  <span className="text-[10px] text-text-muted font-mono uppercase tracking-wider">{t(`categories.${post.category}`)}</span>
+                  <span className="text-[10px] text-text-muted font-mono uppercase tracking-wider">
+                    {post.category ? t(`categories.${post.category}`) : t('categories.Others')}
+                  </span>
                   <div className="flex gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-border-light group-hover:bg-red-500/50 transition-colors"></div>
                     <div className="w-1.5 h-1.5 rounded-full bg-border-light group-hover:bg-yellow-500/50 transition-colors"></div>
@@ -98,7 +102,7 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
                 {/* Footer */}
                 <div className="flex items-center justify-between mt-auto pt-3 border-t border-border-medium/30">
                   <div className="flex flex-wrap gap-1.5">
-                    {post.tags.slice(0, 2).map((tag: string) => (
+                    {Array.isArray(post.tags) && post.tags.slice(0, 2).map((tag: string) => (
                       <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-bg-tertiary text-text-muted rounded-sm">
                         #{tag}
                       </span>
@@ -106,11 +110,11 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
                   </div>
                   <span className={clsx(
                     "text-[10px] px-1.5 py-0.5 border rounded-sm",
-                    post.difficulty === 'Easy' ? "border-green-500/20 text-green-400 bg-green-500/5" :
-                    post.difficulty === 'Medium' ? "border-yellow-500/20 text-yellow-400 bg-yellow-500/5" :
+                    (post.difficulty === 'Easy') ? "border-green-500/20 text-green-400 bg-green-500/5" :
+                    (post.difficulty === 'Medium' || !post.difficulty) ? "border-yellow-500/20 text-yellow-400 bg-yellow-500/5" :
                     "border-red-500/20 text-red-400 bg-red-500/5"
                   )}>
-                    {t(`difficulty.${post.difficulty}`)}
+                    {t(`difficulty.${post.difficulty || 'Medium'}`)}
                   </span>
                 </div>
               </div>

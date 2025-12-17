@@ -1,0 +1,49 @@
+---
+title: "Easing (缓动)"
+subtitle: 速度的变化曲线
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Easing]
+description: animation-timing-function 规定动画的速度曲线。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Easing (缓动)
+
+**animation-timing-function** 属性规定动画的速度曲线。它决定了动画在播放期间是匀速、加速还是减速。
+
+## 常用值
+
+1.  `linear`: 匀速。
+2.  `ease`: 默认。低速开始，然后加快，在结束前变慢。
+3.  `ease-in`: 低速开始。
+4.  `ease-out`: 低速结束。
+5.  `ease-in-out`: 低速开始和结束。
+6.  `cubic-bezier(n,n,n,n)`: 自定义贝塞尔曲线。
+
+```css
+.smooth {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+```
+
+<TerminalCard title="缓动函数对比">
+  <div className="p-8 space-y-4">
+    <div className="relative h-8 bg-bg-tertiary rounded overflow-hidden">
+      <div className="absolute top-0 left-0 w-8 h-8 bg-mint-500 rounded animate-[moveRight_2s_linear_infinite]"></div>
+      <span className="absolute left-2 top-1 text-xs text-white/50">linear</span>
+    </div>
+    <div className="relative h-8 bg-bg-tertiary rounded overflow-hidden">
+      <div className="absolute top-0 left-0 w-8 h-8 bg-accent-pink rounded animate-[moveRight_2s_ease-in-out_infinite]"></div>
+      <span className="absolute left-2 top-1 text-xs text-white/50">ease-in-out</span>
+    </div>
+  </div>
+  <style>{`
+    @keyframes moveRight {
+      0% { left: 0; }
+      50% { left: calc(100% - 2rem); }
+      100% { left: 0; }
+    }
+  `}</style>
+</TerminalCard>

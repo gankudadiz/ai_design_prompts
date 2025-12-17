@@ -1,0 +1,49 @@
+---
+title: "Easing"
+subtitle: Rate of change curves
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Easing]
+description: The animation-timing-function specifies the speed curve of the animation.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Easing
+
+The **animation-timing-function** property specifies the speed curve of an animation. It determines whether the animation is constant speed, accelerating, or decelerating during playback.
+
+## Common Values
+
+1.  `linear`: Constant speed.
+2.  `ease`: Default. Starts slow, becomes faster, then slows down at the end.
+3.  `ease-in`: Starts slow.
+4.  `ease-out`: Ends slow.
+5.  `ease-in-out`: Starts and ends slow.
+6.  `cubic-bezier(n,n,n,n)`: Custom Bezier curve.
+
+```css
+.smooth {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+```
+
+<TerminalCard title="Easing Comparison">
+  <div className="p-8 space-y-4">
+    <div className="relative h-8 bg-bg-tertiary rounded overflow-hidden">
+      <div className="absolute top-0 left-0 w-8 h-8 bg-mint-500 rounded animate-[moveRight_2s_linear_infinite]"></div>
+      <span className="absolute left-2 top-1 text-xs text-white/50">linear</span>
+    </div>
+    <div className="relative h-8 bg-bg-tertiary rounded overflow-hidden">
+      <div className="absolute top-0 left-0 w-8 h-8 bg-accent-pink rounded animate-[moveRight_2s_ease-in-out_infinite]"></div>
+      <span className="absolute left-2 top-1 text-xs text-white/50">ease-in-out</span>
+    </div>
+  </div>
+  <style>{`
+    @keyframes moveRight {
+      0% { left: 0; }
+      50% { left: calc(100% - 2rem); }
+      100% { left: 0; }
+    }
+  `}</style>
+</TerminalCard>

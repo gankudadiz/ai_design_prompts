@@ -1,0 +1,51 @@
+---
+title: "Keyframes"
+subtitle: Defining animation sequences
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Keyframes]
+description: The @keyframes rule is used to create animations. In an animation sequence, you can specify CSS styles and the points in time they change.
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Keyframes
+
+The **@keyframes** rule is the core of CSS animations. It allows you to create animations by specifying the state of CSS styles at specific points in the animation sequence.
+
+## Syntax Structure
+
+You can use percentages to specify when changes happen, or use the keywords `from` (equivalent to 0%) and `to` (equivalent to 100%).
+
+```css
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+```
+
+## Core Concepts
+
+1.  **Identifier**: The name of the animation (e.g., `slideIn`, `pulse` above), referenced in `animation-name`.
+2.  **Keyframe Selectors**: Percentage values from `0%` to `100%` indicating progress through the animation cycle.
+3.  **CSS Properties**: The style properties contained within each keyframe block.
+
+<TerminalCard title="Keyframes Demo">
+  <div className="p-8 flex justify-center">
+    <div className="w-24 h-24 bg-mint-500 rounded animate-[pulse_2s_ease-in-out_infinite] flex items-center justify-center text-bg-primary font-bold shadow-[0_0_20px_rgba(0,255,204,0.5)]">
+      Pulse
+    </div>
+  </div>
+</TerminalCard>

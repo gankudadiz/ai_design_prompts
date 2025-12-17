@@ -1,0 +1,35 @@
+---
+title: "Animation Direction (方向)"
+subtitle: 正向与反向
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Properties]
+description: animation-direction 属性定义是否应该轮流反向播放动画。
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Animation Direction (方向)
+
+**animation-direction** 属性定义动画播放的方向。
+
+## 属性值
+
+1.  `normal`: 默认值。动画按正常播放。
+2.  `reverse`: 动画反向播放。
+3.  `alternate`: 动画在奇数次（1、3、5...）正向播放，在偶数次（2、4、6...）反向播放。
+4.  `alternate-reverse`: 动画在奇数次反向播放，在偶数次正向播放。
+
+```css
+.yo-yo {
+  animation-direction: alternate;
+}
+```
+
+`alternate` 通常用于创建平滑的循环效果（如呼吸灯），避免动画结束时突兀地跳回起点。
+
+<TerminalCard title="Alternate 效果">
+  <div className="p-8 flex justify-center">
+    <div className="w-16 h-16 bg-accent-pink rounded-full animate-[ping_1.5s_ease-in-out_infinite] opacity-75" style={{ animationDirection: 'alternate' }}></div>
+  </div>
+</TerminalCard>

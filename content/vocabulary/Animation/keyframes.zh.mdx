@@ -1,0 +1,51 @@
+---
+title: "Keyframes (关键帧)"
+subtitle: 定义动画序列
+category: Animation
+difficulty: Medium
+tags: [CSS, Animation, Keyframes]
+description: "@keyframes 规则用于创建动画。在动画序列中，你可以指定 CSS 样式及其变化的时间点。"
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Keyframes (关键帧)
+
+**@keyframes** 规则是 CSS 动画的核心。它允许你通过指定 CSS 样式在动画序列中特定时间点的状态来创建动画。
+
+## 语法结构
+
+你可以使用百分比来规定变化发生的时间，或者使用关键字 `from` (等同于 0%) 和 `to` (等同于 100%)。
+
+```css
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+```
+
+## 核心概念
+
+1.  **标识符 (Identifier)**: 动画的名称（如上例中的 `slideIn`, `pulse`），在 `animation-name` 中引用。
+2.  **关键帧选择器**: `0%` 到 `100%` 的百分比值，表示动画周期的进度。
+3.  **CSS 属性**: 每个关键帧块中包含的样式属性。
+
+<TerminalCard title="Keyframes 演示">
+  <div className="p-8 flex justify-center">
+    <div className="w-24 h-24 bg-mint-500 rounded animate-[pulse_2s_ease-in-out_infinite] flex items-center justify-center text-bg-primary font-bold shadow-[0_0_20px_rgba(0,255,204,0.5)]">
+      Pulse
+    </div>
+  </div>
+</TerminalCard>

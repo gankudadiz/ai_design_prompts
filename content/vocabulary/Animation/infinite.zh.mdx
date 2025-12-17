@@ -1,0 +1,39 @@
+---
+title: "Infinite Animation (无限循环)"
+subtitle: 永不停止的动效
+category: Animation
+difficulty: Easy
+tags: [CSS, Animation, Loop]
+description: "使用 animation-iteration-count: infinite 让动画无限次播放。"
+createdAt: 2025-12-17
+updatedAt: 2025-12-17
+---
+
+# Infinite Animation (无限循环)
+
+**animation-iteration-count** 属性定义动画应该播放多少次。
+
+## 属性值
+
+*   **Number**: 播放次数，如 `1`, `2.5`。
+*   **infinite**: 指定动画应该无限次播放。
+
+```css
+.loop {
+  animation-iteration-count: infinite;
+}
+```
+
+## 应用场景
+
+无限循环常用于：
+*   加载指示器 (Spinners)
+*   脉冲效果 (Pulse effects)
+*   背景滚动
+*   注意力引导 (Attention seekers)
+
+<TerminalCard title="Loading Spinner">
+  <div className="p-8 flex justify-center">
+    <div className="w-12 h-12 border-4 border-bg-tertiary border-t-mint-500 rounded-full animate-spin"></div>
+  </div>
+</TerminalCard>

@@ -54,6 +54,12 @@
     "displayCommand": "设置 --显示模式",
     "floatTitle": "浮动 & 清除演练场",
     "floatCommand": "浮动 --位置",
+    "typographyTitle": "排版实验室",
+    "typographyCommand": "调整 --字体",
+    "shadowsTitle": "阴影与层级",
+    "shadowsCommand": "提升 --深度",
+    "spacingTitle": "间距调试器",
+    "spacingCommand": "测量 --距离",
     "cssOutput": "// CSS 输出"
   },
   "Styles": {

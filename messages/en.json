@@ -54,6 +54,12 @@
     "displayCommand": "set --display-mode",
     "floatTitle": "Float & Clear Playground",
     "floatCommand": "float --position",
+    "typographyTitle": "Typography Lab",
+    "typographyCommand": "adjust --type",
+    "shadowsTitle": "Shadows & Elevation",
+    "shadowsCommand": "lift --depth",
+    "spacingTitle": "Spacing Debugger",
+    "spacingCommand": "measure --distance",
     "cssOutput": "// CSS Output"
   },
   "Styles": {

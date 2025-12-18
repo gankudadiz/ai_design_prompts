@@ -1,0 +1,51 @@
+---
+title: "Shadows & Elevation"
+subtitle: "Depth & Layering"
+category: "Styling"
+difficulty: "Medium"
+tags: ["Shadows", "Elevation", "Depth", "UI"]
+description: "Using light and shadow to simulate depth in the physical world and establish hierarchy in UI elements."
+createdAt: "2025-12-18"
+updatedAt: "2025-12-18"
+---
+
+# Shadows & Elevation
+
+**Shadows** are essential for creating a sense of **Depth** and **Elevation** in UI design. They simulate how light interacts with objects in the physical world.
+
+## Key Concepts
+
+### 1. Elevation
+The "height" of an element relative to the background surface.
+*   **Low Elevation**: Buttons, Cards (Subtle shadows).
+*   **High Elevation**: Modals, Dropdowns (Deep shadows, implying they float above other content).
+
+### 2. Light Source
+Typically, the light source is assumed to be coming from the Top or Top-Left, casting shadows to the Bottom or Bottom-Right.
+
+## CSS Implementation
+
+The `box-shadow` property in CSS consists of 5 parts: X offset, Y offset, Blur radius, Spread radius, and Color.
+
+```css
+/* Syntax: offset-x | offset-y | blur-radius | spread-radius | color */
+
+.card-low {
+  /* Subtle lift */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-high {
+  /* High floating (e.g., Modal) */
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.glow-effect {
+  /* Neon glow effect */
+  box-shadow: 0 0 10px var(--color-mint-500);
+}
+```
+
+<ShadowsPlayground />

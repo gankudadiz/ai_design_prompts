@@ -1,0 +1,46 @@
+---
+title: "Spacing"
+subtitle: "The Art of White Space"
+category: "Styling"
+difficulty: "Easy"
+tags: ["Spacing", "Layout", "White Space"]
+description: "Spacing defines the relationships between elements and gives content room to breathe."
+createdAt: "2025-12-18"
+updatedAt: "2025-12-18"
+---
+
+# Spacing
+
+**Spacing**, or **White Space**, is fundamental to UI design. Good spacing improves readability, clarifies grouping, and creates visual balance.
+
+## Key Concepts
+
+### 1. Padding vs Margin
+*   **Padding**: The space between the content and the border inside an element.
+*   **Margin**: The space outside the border, separating the element from others.
+
+### 2. The 8pt Grid
+Most modern design systems use multiples of 4pt or 8pt for spacing (e.g., 4px, 8px, 16px, 24px, 32px...). This ensures visual consistency.
+
+### 3. Proximity
+Related elements should be closer together; unrelated elements should be further apart.
+
+## CSS Implementation
+
+```css
+.card {
+  /* Inner space */
+  padding: 1.5rem; /* 24px */
+  
+  /* Outer space */
+  margin-bottom: 2rem; /* 32px */
+}
+
+/* Flexbox Gap (Modern approach) */
+.container {
+  display: flex;
+  gap: 1rem; /* 16px - Automatically handles spacing between items */
+}
+```
+
+<SpacingPlayground />

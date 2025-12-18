@@ -1,0 +1,46 @@
+---
+title: "Spacing (间距)"
+subtitle: "留白的艺术"
+category: "Styling"
+difficulty: "Easy"
+tags: ["Spacing", "Layout", "White Space"]
+description: "间距是 UI 设计中最重要的元素之一，它定义了元素之间的关系，并给予内容呼吸的空间。"
+createdAt: "2025-12-18"
+updatedAt: "2025-12-18"
+---
+
+# Spacing (间距)
+
+**Spacing** (间距) 或 **White Space** (留白) 是 UI 设计的基础。良好的间距可以提升可读性，明确元素分组，并创造视觉上的平衡。
+
+## 核心概念 (Key Concepts)
+
+### 1. Padding vs Margin (内边距 vs 外边距)
+*   **Padding**: 元素内部内容与边框之间的距离。
+*   **Margin**: 元素与其他元素之间的外部距离。
+
+### 2. The 8pt Grid (8点网格系统)
+大多数现代设计系统使用 4pt 或 8pt 的倍数来定义间距（如 4px, 8px, 16px, 24px, 32px...）。这保证了视觉上的一致性。
+
+### 3. Proximity (亲密性原则)
+相关的元素应该靠得更近，不相关的元素应该离得更远。
+
+## CSS 实现 (CSS Implementation)
+
+```css
+.card {
+  /* 内部空间 */
+  padding: 1.5rem; /* 24px */
+  
+  /* 外部空间 */
+  margin-bottom: 2rem; /* 32px */
+}
+
+/* Flexbox Gap (现代推荐) */
+.container {
+  display: flex;
+  gap: 1rem; /* 16px - 自动处理子元素间距 */
+}
+```
+
+<SpacingPlayground />

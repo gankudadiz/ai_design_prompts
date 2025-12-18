@@ -1,0 +1,52 @@
+---
+title: "Typography (排版)"
+subtitle: "字体与排版"
+category: "Styling"
+difficulty: "Easy"
+tags: ["Typography", "Fonts", "Design", "CSS"]
+description: "排版是安排文字的艺术，通过字体、大小、行高和间距的调整，使内容既易读又美观。"
+createdAt: "2025-12-18"
+updatedAt: "2025-12-18"
+---
+
+# Typography (排版)
+
+**Typography** (排版) 不仅仅是选择字体，它是关于如何有效地组织文本，建立信息层级，并传达正确的语气。
+
+## 核心概念 (Key Concepts)
+
+### 1. Typeface vs Font (字体家族 vs 字体文件)
+虽然常混用，但在专业领域：
+*   **Typeface**: 指字体的设计风格 (如 Roboto, Helvetica)。
+*   **Font**: 指特定的字重或样式文件 (如 Roboto Bold, Helvetica Italic)。
+
+### 2. Hierarchy (层级)
+通过大小、粗细和颜色来区分内容的重要性。
+*   **Headings**: 大而醒目，用于吸引注意力。
+*   **Body Text**: 易读性优先，用于主要内容。
+*   **Captions**: 小字号，用于辅助说明。
+
+### 3. Leading & Kerning (行高与字距)
+*   **Leading** (line-height): 行与行之间的垂直距离。
+*   **Tracking** (letter-spacing): 字母之间的水平间距。
+
+## CSS 实现 (CSS Implementation)
+
+```css
+.typography-example {
+  /* 字体家族 */
+  font-family: 'Inter', sans-serif;
+  
+  /* 字体大小与行高 */
+  font-size: 1rem;      /* 16px */
+  line-height: 1.5;     /* 150% - 适合正文 */
+  
+  /* 字重 */
+  font-weight: 500;     /* Medium */
+  
+  /* 字间距 */
+  letter-spacing: -0.02em; /* 微调紧凑感 */
+}
+```
+
+<TypographyPlayground />

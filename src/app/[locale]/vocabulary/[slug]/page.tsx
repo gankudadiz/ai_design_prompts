@@ -12,6 +12,9 @@ import { LayoutPatternDemo } from '@/components/mdx/LayoutPatternDemo';
 import { ColorPalettePlayground } from '@/components/mdx/ColorPalettePlayground';
 import { DisplayPlayground } from '@/components/mdx/DisplayPlayground';
 import { FloatPlayground } from '@/components/mdx/FloatPlayground';
+import { TypographyPlayground } from '@/components/mdx/TypographyPlayground';
+import { ShadowsPlayground } from '@/components/mdx/ShadowsPlayground';
+import { SpacingPlayground } from '@/components/mdx/SpacingPlayground';
 import { TerminalCard } from '@/components/ui/TerminalCard';
 import { MdxComponents } from '@/components/mdx/MdxStyles';
 import rehypeSlug from 'rehype-slug';
@@ -30,6 +33,9 @@ const components = {
   ColorPalettePlayground,
   DisplayPlayground,
   FloatPlayground,
+  TypographyPlayground,
+  ShadowsPlayground,
+  SpacingPlayground,
   TerminalCard,
 };
 

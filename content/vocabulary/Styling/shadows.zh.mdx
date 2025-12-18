@@ -1,0 +1,51 @@
+---
+title: "Shadows & Elevation (阴影与层级)"
+subtitle: "深度与立体感"
+category: "Styling"
+difficulty: "Medium"
+tags: ["Shadows", "Elevation", "Depth", "UI"]
+description: "使用光影效果模拟物理世界的深度，构建 UI 元素的层级关系。"
+createdAt: "2025-12-18"
+updatedAt: "2025-12-18"
+---
+
+# Shadows & Elevation (阴影与层级)
+
+在扁平化设计之外，**Shadows** (阴影) 是构建 UI 深度感 (Depth) 和层级 (Elevation) 的最重要手段。它模拟了光源照射在物体上的效果。
+
+## 核心概念 (Key Concepts)
+
+### 1. Elevation (海拔/层级)
+元素距离背景的“高度”。
+*   **Low Elevation**: 按钮、卡片 (轻微阴影)。
+*   **High Elevation**: 模态框、下拉菜单 (深重阴影，意味着它们漂浮在其他内容之上)。
+
+### 2. Light Source (光源)
+通常假设光源来自左上方 (Top-Left) 或正上方 (Top)，因此阴影投射在右下方或正下方。
+
+## CSS 实现 (CSS Implementation)
+
+CSS 中的 `box-shadow` 属性由 5 个部分组成：X 偏移、Y 偏移、模糊半径、扩散半径、颜色。
+
+```css
+/* 语法: offset-x | offset-y | blur-radius | spread-radius | color */
+
+.card-low {
+  /* 轻微浮起 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-high {
+  /* 高度悬浮 (如 Modal) */
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.glow-effect {
+  /* 霓虹发光效果 */
+  box-shadow: 0 0 10px var(--color-mint-500);
+}
+```
+
+<ShadowsPlayground />

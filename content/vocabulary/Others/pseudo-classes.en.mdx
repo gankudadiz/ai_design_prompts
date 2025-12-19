@@ -1,0 +1,32 @@
+---
+title: "Pseudo-classes"
+subtitle: "伪类"
+category: "Others"
+difficulty: "Medium"
+tags: ["CSS", "Selectors", "States"]
+description: "Keywords added to a selector that specify a special state of the selected element(s)."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A **Pseudo-class** is a keyword added to a selector that specifies a special state of the selected element(s).
+
+## Syntax
+```css
+selector:pseudo-class {
+  property: value;
+}
+```
+
+## Common Pseudo-classes
+-   `:hover`: Applies when the user interacts with an element with a pointing device.
+-   `:active`: Applies while an element is being activated (e.g., clicked).
+-   `:focus`: Applies when an element has received focus.
+-   `:first-child`: Matches an element that is the first child of its parent.
+-   `:nth-child()`: Matches elements based on their position in a group of siblings.
+-   `:not()`: Matches elements that do not match a list of selectors.
+
+## Use Cases
+-   Styling links and buttons on interaction.
+-   Alternating row colors in tables.
+-   Form validation styling (`:valid`, `:invalid`).

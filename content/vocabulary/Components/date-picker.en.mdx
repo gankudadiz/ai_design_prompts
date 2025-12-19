@@ -1,0 +1,50 @@
+---
+title: "Date Picker"
+subtitle: "日期选择器"
+category: "Components"
+difficulty: "Hard"
+tags: ["UI Components", "Data Entry", "Forms"]
+description: "A component that allows users to select a date or date range from a calendar interface."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A component that allows users to select a date or date range from a calendar interface.
+
+## Usage
+
+Date pickers provide a visual way to select dates, ensuring the correct format is used. They are essential for:
+
+- Scheduling appointments
+- Booking flights or hotels
+- Filtering data by date range
+- Entering birthdates
+
+## Examples
+
+### Basic Date Picker
+
+```html
+<label for="start">Start date:</label>
+<input type="date" id="start" name="trip-start"
+       value="2024-07-22"
+       min="2024-01-01" max="2024-12-31">
+```
+
+### Range Picker Concept
+
+```javascript
+// Pseudocode for a range picker component usage
+<DateRangePicker
+  startDate={startDate}
+  endDate={endDate}
+  onChange={handleDateChange}
+/>
+```
+
+## Best Practices
+
+- **Defaults**: Provide sensible default values (e.g., today's date).
+- **Constraints**: Disable invalid dates (e.g., past dates for future appointments).
+- **Format**: Display the selected date in a clear, localized format.
+- **Keyboard Support**: Allow users to type the date manually if they prefer.

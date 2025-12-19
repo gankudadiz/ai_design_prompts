@@ -1,0 +1,49 @@
+---
+title: "Calendar"
+subtitle: "日历"
+category: "Components"
+difficulty: "Hard"
+tags: ["UI Components", "Data Display", "Scheduling"]
+description: "用于显示日期和安排事件的组件。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 用于显示日期和安排事件的组件。
+
+## 用法
+
+日历用于可视化随时间变化的数据、安排事件和管理时间线。常见的用例包括：
+
+- 事件管理系统
+- 预订界面
+- 项目时间线
+- 个人日程安排
+
+## 示例
+
+### 月视图
+
+```html
+<div class="calendar-month">
+  <div class="header">
+    <button>上个月</button>
+    <h2>2024年7月</h2>
+    <button>下个月</button>
+  </div>
+  <div class="days-grid">
+    <div class="day-name">日</div>
+    <!-- ... 其他星期名称 ... -->
+    <div class="day">1</div>
+    <div class="day">2</div>
+    <!-- ... 其他日期 ... -->
+    <div class="day has-event">15</div>
+  </div>
+</div>
+```
+
+## 最佳实践
+
+- **导航**：提供简单的控件以便在月、周或年之间切换。
+- **指示器**：清晰标记当前日期和有事件的日期。
+- **详情视图**：允许用户点击日期或事件以查看更多详细信息。

@@ -1,0 +1,55 @@
+---
+title: "hsl"
+subtitle: "Hue Saturation Lightness"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "CSS", "Functions"]
+description: "一种基于人类感知的颜色表示法，由色相、饱和度和亮度组成。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# HSL (Hue, Saturation, Lightness)
+
+HSL 是 Web 开发中最人性化的色彩模型之一，非常适合用于创建配色方案和悬停效果。
+
+## 语法
+`hsl(hue, saturation, lightness)`
+或者现代语法（无逗号）：
+`hsl(hue saturation lightness / alpha)`
+
+## 参数详解
+
+### 1. Hue (色相)
+*   **单位**: 角度 (deg) 或无单位数值 (0-360)。
+*   **含义**: 0=红, 120=绿, 240=蓝。
+
+### 2. Saturation (饱和度)
+*   **单位**: 百分比 (%)。
+*   **含义**: 0% = 灰色 (无色), 100% = 全色 (最鲜艳)。
+
+### 3. Lightness (亮度)
+*   **单位**: 百分比 (%)。
+*   **含义**: 0% = 黑色, 50% = 正常, 100% = 白色。
+
+## 实战技巧：创建同色系配色
+
+只需固定色相 (H)，调整饱和度 (S) 和亮度 (L)，即可获得协调的配色。
+
+```css
+:root {
+  --brand-hue: 210; /* 蓝色 */
+  
+  /* 基础色 */
+  --brand-color: hsl(var(--brand-hue), 80%, 50%);
+  
+  /* 悬停态 (更亮) */
+  --brand-hover: hsl(var(--brand-hue), 80%, 60%);
+  
+  /* 激活态 (更暗) */
+  --brand-active: hsl(var(--brand-hue), 80%, 40%);
+  
+  /* 浅色背景 */
+  --brand-bg: hsl(var(--brand-hue), 30%, 95%);
+}
+```

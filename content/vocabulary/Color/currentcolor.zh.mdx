@@ -1,0 +1,47 @@
+---
+title: "currentcolor"
+subtitle: "Current Color"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "CSS", "Keyword"]
+description: "CSS 中的第一个变量。它代表元素当前的 `color` 属性值。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# currentColor
+
+`currentColor` 是一个 CSS 关键字，它的值等于当前元素（或父元素继承的）`color` 属性的计算值。它非常适合用于让边框、阴影或 SVG 图标自动跟随文本颜色。
+
+## 核心用途
+
+### 1. 边框跟随文本
+让按钮的边框颜色自动与文字颜色一致。
+
+```css
+.button {
+  color: blue;
+  border: 1px solid currentColor; /* 边框也是蓝色 */
+}
+.button:hover {
+  color: red; /* 悬停时，文字和边框同时变红 */
+}
+```
+
+### 2. SVG 图标填充
+这是 `currentColor` 最强大的用例。
+
+```css
+.icon {
+  fill: currentColor;
+}
+```
+```html
+<div style="color: green">
+  <!-- 这个图标会自动变成绿色 -->
+  <svg class="icon">...</svg>
+</div>
+```
+
+### 3. 继承与组件化
+在使用组件库时，通过 `currentColor` 可以让组件更灵活地适应不同的上下文背景色。

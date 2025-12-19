@@ -1,0 +1,52 @@
+---
+title: "Staggered Animation"
+subtitle: "交错动画"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Timing", "Sequence"]
+description: "一组元素以轻微延迟依次进行动画的技术。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 一组元素以轻微延迟依次进行动画的技术。
+
+## 用法
+
+交错动画用于以令人愉悦和自然的方式显示列表、网格或元素组。
+
+## 示例
+
+### CSS 交错
+
+```css
+.item {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.item:nth-child(1) { animation-delay: 0.1s; }
+.item:nth-child(2) { animation-delay: 0.2s; }
+.item:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+```
+
+### JavaScript 交错 (GSAP)
+
+```javascript
+gsap.from(".box", {
+  duration: 1,
+  y: 100,
+  opacity: 0,
+  stagger: 0.1 // 每个元素开始时间之间间隔 0.1s
+});
+```
+
+## 最佳实践
+
+- **延迟**：保持延迟较小（例如，0.05s - 0.1s），以防止动画拖沓。
+- **方向**：遵循自然阅读模式，从上到下或从左到右交错。
+- **分组**：将交错应用于逻辑项目组。

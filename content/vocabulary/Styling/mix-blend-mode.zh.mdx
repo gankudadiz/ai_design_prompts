@@ -1,0 +1,28 @@
+---
+title: "mix-blend-mode"
+subtitle: "混合混合模式"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Blending"]
+description: "设置元素的内容应如何与该元素的父级内容和背景进行混合。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`mix-blend-mode`** CSS 属性设置元素的内容应如何与该元素的父级内容和背景进行混合。
+
+## 语法
+```css
+mix-blend-mode: normal;
+mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;
+mix-blend-mode: difference;
+```
+
+## 关键概念
+-   **层叠上下文**：为了将混合限制在特定元素（而不是整个页面背景），通常需要在包装器上使用 `isolation: isolate` 创建一个新的层叠上下文。
+
+## 用例
+-   **文本效果**：使文本颜色根据其后面的背景图像发生变化（例如 `difference` 模式）。
+-   **图形**：直接在 CSS 中创建复杂的视觉组合。

@@ -1,0 +1,45 @@
+---
+title: "rgb"
+subtitle: "Red Green Blue"
+category: "Color"
+difficulty: "Easy"
+tags: ["Color", "CSS", "Functions"]
+description: "通过混合红、绿、蓝三种原色的强度来定义颜色。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# RGB (Red, Green, Blue)
+
+RGB 是屏幕显示颜色的标准方式。CSS 提供了 `rgb()` 函数来定义颜色。
+
+## 语法
+`rgb(red, green, blue)`
+现代语法支持透明度：
+`rgb(red green blue / alpha)`
+
+## 参数
+每个通道的值可以是：
+*   **数值**: 0 - 255 (整数)。
+*   **百分比**: 0% - 100%。
+
+## 示例
+
+```css
+.element {
+  /* 纯红 */
+  color: rgb(255, 0, 0);
+  
+  /* 黑色 */
+  color: rgb(0, 0, 0);
+  
+  /* 白色 */
+  color: rgb(255, 255, 255);
+  
+  /* 半透明蓝色 (现代语法) */
+  background-color: rgb(0 0 255 / 0.5);
+}
+```
+
+## 何时使用？
+虽然 HSL 对人类更友好，但 RGB 是图像处理和硬件交互的基础。当你从设计工具（如 Figma）复制颜色值时，RGB（或其十六进制形式 Hex）通常是最通用的格式。

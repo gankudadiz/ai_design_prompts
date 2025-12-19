@@ -1,0 +1,49 @@
+---
+title: "text-align"
+subtitle: "Text Align"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Alignment"]
+description: "Sets the horizontal alignment of the inline-level content inside a block element or table-cell box."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-align
+
+The `text-align` property sets the horizontal alignment of content within a block element or table-cell box. It does not control the alignment of block elements themselves, only their inline content.
+
+## Key Concepts
+
+### 1. Common Values
+*   **left**: Aligns the text to the left edge (default for LTR languages).
+*   **right**: Aligns the text to the right edge.
+*   **center**: Centers the text.
+*   **justify**: Stretches the lines so that each line has equal width (like in newspapers).
+
+### 2. start and end (Recommended)
+For better internationalization support (e.g., Right-to-Left languages):
+*   **start**: Same as `left` in LTR, `right` in RTL.
+*   **end**: Same as `right` in LTR, `left` in RTL.
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Basic Alignment */
+  text-align: left;
+  text-align: center;
+  text-align: right;
+
+  /* Justified (Newspaper style) */
+  text-align: justify;
+  
+  /* Internationalization Friendly (Recommended) */
+  text-align: start;
+  text-align: end;
+}
+```
+
+## Notes
+*   `text-align` is an inherited property.
+*   It affects inline content (text, images, spans) but not block-level children (unless they are `inline-block`).

@@ -1,0 +1,41 @@
+---
+title: "Form"
+subtitle: "表单"
+category: "Components"
+difficulty: "Medium"
+tags: ["UI Components", "Data Entry", "Layout"]
+description: "允许用户提交数据的一组输入控件。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 允许用户提交数据的一组输入控件。
+
+## 用法
+
+表单是用户与应用程序交互并提交数据的主要方式。它们结合了各种输入，如文本字段、复选框和按钮。
+
+## 示例
+
+### 登录表单
+
+```html
+<form action="/login" method="post">
+  <div class="form-group">
+    <label for="username">用户名</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <div class="form-group">
+    <label for="password">密码</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit">登录</button>
+</form>
+```
+
+## 最佳实践
+
+- **布局**：逻辑地分组相关字段。
+- **标签**：始终为输入使用清晰的标签。
+- **验证**：提供实时验证反馈。
+- **可访问性**：确保所有表单控件都可以通过键盘和屏幕阅读器访问。

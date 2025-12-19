@@ -1,0 +1,48 @@
+---
+title: "letter-spacing"
+subtitle: "Letter Spacing"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Spacing"]
+description: "Sets the horizontal spacing behavior between text characters (also known as tracking)."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# letter-spacing
+
+The `letter-spacing` property controls the amount of space between characters in a block of text. It is used to fine-tune the density and texture of typography.
+
+## Key Concepts
+
+### 1. Usage cases
+*   **Uppercase Text**: All-caps text is often harder to read; adding letter spacing improves legibility significantly.
+*   **Large Headings**: Very large text often benefits from slightly reduced spacing (negative values) to look tighter and more cohesive.
+*   **Body Text**: Usually left at `normal` unless for a specific stylistic effect.
+
+### 2. Units
+Can use `px`, `em`, etc.
+*   **em**: Recommended, as it scales relative to the font size.
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Default */
+  letter-spacing: normal;
+
+  /* Increased spacing (Good for Uppercase) */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;  /* Slightly loose */
+  letter-spacing: 2px;     /* Fixed pixels */
+
+  /* Decreased spacing (Good for Large Headings) */
+  letter-spacing: -0.02em; /* Slightly tight */
+}
+```
+
+## Visual Examples
+
+*   **NORMAL**: Standard spacing
+*   **W I D E**: `letter-spacing: 0.3em`
+*   **TIGHT**: `letter-spacing: -0.05em`

@@ -1,0 +1,51 @@
+---
+title: "Intersection Observer"
+subtitle: "交叉观察者"
+category: "Animation"
+difficulty: "Hard"
+tags: ["API", "Performance", "Scroll"]
+description: "一个浏览器 API，允许你检测元素何时进入或离开视口。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 一个浏览器 API，允许你检测元素何时进入或离开视口。
+
+## 用法
+
+交叉观察者是实现基于滚动的交互、懒加载和无限滚动的最高效方式。
+
+## 示例
+
+### 基本用法
+
+```javascript
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+  observer.observe(el);
+});
+```
+
+```css
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+}
+```
+
+## 最佳实践
+
+- **清理**：当不再需要元素时（例如，组件卸载），始终停止观察它们。
+- **阈值**：使用 `threshold` 选项在合适的时刻触发动画（例如，当 50% 的元素可见时）。
+- **根边距**：使用 `rootMargin` 在元素进入视口之前稍早触发动画。

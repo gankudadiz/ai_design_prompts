@@ -1,0 +1,65 @@
+---
+title: "Loading Animation"
+subtitle: "加载动画"
+category: "Animation"
+difficulty: "Medium"
+tags: ["Animation", "Feedback", "Loading"]
+description: "Animations used to indicate that a process is in progress."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> Animations used to indicate that a process is in progress.
+
+## Usage
+
+Loading animations provide essential feedback to the user, reassuring them that the system is working. They are used for:
+
+- Page loads
+- Data fetching
+- File uploads
+- Processing actions
+
+## Examples
+
+### Simple Spinner
+
+```css
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+```
+
+### Pulse Effect
+
+```css
+.pulse {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+```
+
+## Best Practices
+
+- **Context**: Use appropriate loaders (e.g., skeleton screens for content, spinners for small actions).
+- **Time**: Only show loaders for processes that take longer than a perceptible amount of time (e.g., > 1 second).
+- **Entertainment**: Creative loaders can make the wait feel shorter.

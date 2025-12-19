@@ -1,0 +1,92 @@
+---
+title: "Neumorphism"
+description: "A design trend that combines flat design with skeuomorphism, creating soft, extruded plastic-like shapes."
+tags: ["soft-ui", "extruded", "shadows", "minimal"]
+preview:
+  backgroundColor: "#e0e5ec"
+  textColor: "#4a4a4a"
+  fontFamily: "'Nunito', sans-serif"
+  accentColor: "#e0e5ec"
+  secondaryColor: "#e0e5ec"
+  borderColor: "transparent"
+  borderRadius: "30px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #e0e5ec;
+    }
+    .style-preview-wrapper h1 {
+      color: #4a4a4a;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: #e0e5ec;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
+    .style-preview-wrapper button {
+      background: #e0e5ec !important;
+      color: #4a4a4a !important;
+      border: none !important;
+      box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    }
+    .style-preview-wrapper button:hover {
+      box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    }
+prompt: |
+  Create a web interface with a "Neumorphism" (Soft UI) theme.
+
+  **Visual Style**:
+  - Background: Light grey (#e0e5ec) or cream.
+  - Shapes: Elements appear to be extruded from the background (convex) or pressed into it (concave).
+  - Shadows: Two shadows are used: a light shadow on the top-left and a dark shadow on the bottom-right.
+    - Light: -20px -20px 60px #ffffff
+    - Dark: 20px 20px 60px #bebebe
+  - Borders: None or very subtle.
+  
+  **Typography**:
+  - Font: Rounded sans-serif (Nunito, Quicksand).
+  - Color: Dark grey (#4a4a4a) for soft contrast.
+  
+  **Components**:
+  - Buttons: Extruded circles or rounded rectangles. Hover/Active states simulate being pressed (inset shadows).
+  - Cards: Soft, rounded containers blending with the background.
+
+  **Vibe**:
+  - Soft, tactile, futuristic, clean.
+---
+
+# Neumorphism
+
+Neumorphism (New Skeuomorphism) is a visual style that uses highlights and shadows to make elements appear as if they are floating above or pressed into the surface.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#e0e5ec` | Main background |
+| `--shadow-light` | `#ffffff` | Top-left highlight |
+| `--shadow-dark` | `#bebebe` | Bottom-right shadow |
+| `--text-color` | `#4a4a4a` | Primary text |
+
+### Effects
+*   **Box Shadow (Flat)**: `20px 20px 60px #bebebe, -20px -20px 60px #ffffff`
+*   **Box Shadow (Pressed)**: `inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff`
+*   **Border Radius**: `50px` (Soft shapes require high border radius)
+
+## Usage Example
+
+```css
+.neumorphic-btn {
+  border-radius: 50px;
+  background: #e0e5ec;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+  border: none;
+  color: #4a4a4a;
+}
+
+.neumorphic-btn:active {
+  box-shadow: inset 20px 20px 60px #bebebe,
+              inset -20px -20px 60px #ffffff;
+}
+```

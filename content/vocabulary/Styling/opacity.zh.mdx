@@ -1,0 +1,28 @@
+---
+title: "opacity"
+subtitle: "不透明度"
+category: "Styling"
+difficulty: "Easy"
+tags: ["CSS", "Visibility", "Styling"]
+description: "设置元素的不透明度。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`opacity`** CSS 属性设置元素的不透明度。不透明度是隐藏元素后面内容的程度，与透明度相反。
+
+## 语法
+```css
+opacity: 1;   /* 完全不透明（可见） */
+opacity: 0.5; /* 50% 透明 */
+opacity: 0;   /* 完全透明（不可见） */
+```
+
+## 行为
+-   **继承**：不透明度应用于元素及其*所有*子元素。你不能使用此属性使子元素比其父元素更不透明。
+-   **事件**：`opacity: 0` 的元素仍在布局中占据空间，并且仍可以接收用户交互（点击等），这与 `visibility: hidden` 或 `display: none` 不同。
+
+## 用例
+-   淡入或淡出元素（动画）。
+-   创建幽灵按钮或禁用状态。
+-   在图像上叠加文本。

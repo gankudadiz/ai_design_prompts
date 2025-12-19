@@ -1,0 +1,27 @@
+---
+title: "mask"
+subtitle: "遮罩"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Masking"]
+description: "通过在特定点遮罩或裁剪图像来隐藏元素（部分或全部）。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`mask`** CSS 属性通过在特定点遮罩或裁剪图像来隐藏元素（部分或全部）。
+
+## 语法
+```css
+mask: url(mask.png);
+mask: linear-gradient(black, transparent);
+```
+
+## 工作原理
+-   **亮度遮罩**：白色区域可见，黑色区域隐藏，灰色区域半透明。
+-   **Alpha 遮罩**：不透明区域可见，透明区域隐藏。
+
+## 用例
+-   在边缘淡出图像。
+-   应用纹理覆盖。
+-   使用渐变实现复杂的揭示效果。

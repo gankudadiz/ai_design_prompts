@@ -1,0 +1,49 @@
+---
+title: "text-align"
+subtitle: "文本对齐"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Alignment"]
+description: "定义行内内容（如文本）如何相对于其块级父元素对齐。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-align (文本对齐)
+
+`text-align` 属性控制块级元素内部的行内内容（如文字、图片）的水平对齐方式。
+
+## 核心概念
+
+### 1. 常用值
+*   **left**: 左对齐（默认值，在 LTR 语言中）。
+*   **right**: 右对齐。
+*   **center**: 居中对齐。
+*   **justify**: 两端对齐。文本会被拉伸以填满行的宽度，除了最后一行。
+
+### 2. start 和 end (推荐)
+为了更好的国际化支持（如从右到左的语言 RTL），建议使用逻辑属性：
+*   **start**: 在 LTR 中等同于 left，在 RTL 中等同于 right。
+*   **end**: 在 LTR 中等同于 right，在 RTL 中等同于 left。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 基础对齐 */
+  text-align: left;
+  text-align: center;
+  text-align: right;
+
+  /* 两端对齐 (常用于报刊排版) */
+  text-align: justify;
+  
+  /* 国际化友好 (推荐) */
+  text-align: start;
+  text-align: end;
+}
+```
+
+## 注意事项
+*   `text-align` 是继承属性，设置在父元素上会影响所有子元素。
+*   它只影响行内内容（inline-level content），不会影响块级子元素本身的布局（除非块级子元素变成了 `inline-block`）。

@@ -1,0 +1,48 @@
+---
+title: "accessibility"
+subtitle: "Color Accessibility"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "Accessibility", "Design"]
+description: "Ensuring that users with color vision deficiencies can distinguish and understand content."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Accessibility (Color)
+
+Color accessibility ensures that all users, including those with color blindness or low vision, can perceive and understand information in the interface.
+
+## Core Principles
+
+### 1. Don't rely on color alone
+Never use color as the only visual cue to convey information.
+*   **Bad**: Only turning a border red for an error.
+*   **Good**: Turning the border red **AND** adding an icon or text label ("Invalid input").
+
+### 2. Avoid common color blind clashes
+*   Red / Green (Most common)
+*   Blue / Purple
+*   Light Green / Yellow
+
+### 3. Support High Contrast Mode
+Some users enable High Contrast Mode at the OS level. Use system color keywords (like `CanvasText`, `LinkText`) or media queries to adapt.
+
+## CSS Implementation
+
+```css
+/* 1. Dual Coding (Color + Shape/Pattern) */
+.error-message {
+  color: red;
+  /* Add underline or icon as secondary cue */
+  text-decoration: underline wavy red; 
+}
+
+/* 2. Forced Colors Mode Support */
+@media (forced-colors: active) {
+  .button {
+    /* Ensure border is visible in high contrast mode */
+    border: 1px solid ButtonText;
+  }
+}
+```

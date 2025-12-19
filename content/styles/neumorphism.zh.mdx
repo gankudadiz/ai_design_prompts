@@ -1,0 +1,92 @@
+---
+title: "Neumorphism"
+description: "一种结合扁平化设计与拟物化设计的趋势，创造柔和、挤压质感的塑料状形状。"
+tags: ["soft-ui", "extruded", "shadows", "minimal"]
+preview:
+  backgroundColor: "#e0e5ec"
+  textColor: "#4a4a4a"
+  fontFamily: "'Nunito', sans-serif"
+  accentColor: "#e0e5ec"
+  secondaryColor: "#e0e5ec"
+  borderColor: "transparent"
+  borderRadius: "30px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #e0e5ec;
+    }
+    .style-preview-wrapper h1 {
+      color: #4a4a4a;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: #e0e5ec;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
+    .style-preview-wrapper button {
+      background: #e0e5ec !important;
+      color: #4a4a4a !important;
+      border: none !important;
+      box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    }
+    .style-preview-wrapper button:hover {
+      box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    }
+prompt: |
+  创建一个具有“新拟态 (Neumorphism / Soft UI)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：浅灰色 (#e0e5ec) 或奶油色。
+  - 形状：元素看起来像是从背景中挤压出来的（凸起）或压入背景中的（凹陷）。
+  - 阴影：使用两个阴影：左上角的亮阴影和右下角的暗阴影。
+    - 亮: -20px -20px 60px #ffffff
+    - 暗: 20px 20px 60px #bebebe
+  - 边框：无或非常微妙。
+  
+  **排版**:
+  - 字体：圆润的无衬线字体 (Nunito, Quicksand)。
+  - 颜色：深灰色 (#4a4a4a) 以实现柔和对比。
+  
+  **组件**:
+  - 按钮：挤压的圆形或圆角矩形。悬停/激活状态模拟被按下（内阴影）。
+  - 卡片：柔和的圆角容器，与背景融合。
+
+  **氛围**:
+  - 柔和，触感，未来感，干净。
+---
+
+# 新拟态 (Neumorphism)
+
+新拟态（新拟物化）是一种视觉风格，利用高光和阴影使元素看起来像是漂浮在表面之上或被压入表面之中。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-color` | `#e0e5ec` | 主要背景 |
+| `--shadow-light` | `#ffffff` | 左上角高光 |
+| `--shadow-dark` | `#bebebe` | 右下角阴影 |
+| `--text-color` | `#4a4a4a` | 主要文本 |
+
+### 效果
+*   **盒阴影 (平坦)**: `20px 20px 60px #bebebe, -20px -20px 60px #ffffff`
+*   **盒阴影 (按下)**: `inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff`
+*   **圆角半径**: `50px` (柔和的形状需要大圆角半径)
+
+## 使用示例
+
+```css
+.neumorphic-btn {
+  border-radius: 50px;
+  background: #e0e5ec;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+  border: none;
+  color: #4a4a4a;
+}
+
+.neumorphic-btn:active {
+  box-shadow: inset 20px 20px 60px #bebebe,
+              inset -20px -20px 60px #ffffff;
+}
+```

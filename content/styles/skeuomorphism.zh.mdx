@@ -1,0 +1,93 @@
+---
+title: "Skeuomorphism"
+description: "一种模仿现实世界物体和纹理的设计风格，旨在创造熟悉的用户界面。"
+tags: ["skeuomorphism", "realistic", "texture", "retro"]
+preview:
+  backgroundColor: "#e0e0e0"
+  textColor: "#333333"
+  fontFamily: "'Georgia', serif"
+  accentColor: "#8b4513"
+  secondaryColor: "#d2691e"
+  borderColor: "#a0a0a0"
+  borderRadius: "8px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #dcdcdc;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 2px, transparent 2px, transparent 4px);
+    }
+    .style-preview-wrapper h1 {
+      color: #333;
+      text-shadow: 1px 1px 0px white;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #999;
+      background: linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,1);
+      border-radius: 5px;
+    }
+    .style-preview-wrapper button {
+      background: linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%) !important;
+      color: white !important;
+      border: 1px solid #105cb6 !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+      border-radius: 4px;
+    }
+    .style-preview-wrapper button:active {
+      background: linear-gradient(to bottom, #187bf2 0%, #4c9eff 100%) !important;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3) !important;
+    }
+prompt: |
+  创建一个具有“拟物化 (Skeuomorphism)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：纹理，如皮革、木材、亚麻或拉丝金属。
+  - 深度：大量使用渐变、投影和内阴影来创造体积感。
+  - 边框：斜边、缝线、金属边缘。
+  
+  **排版**:
+  - 字体：衬线字体或带有文本阴影（蚀刻或浮雕外观）的精致无衬线字体。
+  
+  **组件**:
+  - 按钮：有光泽的凸起形状，看起来像物理按钮。按下它们会反转渐变/阴影。
+  - 输入框：深内阴影，看起来像凹槽。
+  - 开关：逼真的拨动开关或旋钮。
+
+  **氛围**:
+  - 复古（早期 iOS），细节丰富，温暖，物理感。
+---
+
+# 拟物化 (Skeuomorphism)
+
+拟物化是一种设计概念，其中物品模仿其现实世界的对应物。在 UI 设计中，这意味着使用纹理、阴影和高光来模仿玻璃、木材或金属等物理材料。
+
+## 设计变量
+
+### 颜色 & 渐变
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--metal-gradient` | `linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%)` | 表面 |
+| `--glossy-btn` | `linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%)` | 按钮 |
+
+### 效果
+*   **浮雕**: `box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 1px 2px rgba(0,0,0,0.3)`
+*   **凹陷**: `box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.5)`
+*   **文本阴影**: `0 -1px 0 rgba(0,0,0,0.5)` (蚀刻效果)
+
+## 使用示例
+
+```css
+.skeuo-button {
+  background: linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%);
+  border: 1px solid #105cb6;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.3);
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+.skeuo-button:active {
+  background: linear-gradient(to bottom, #187bf2 0%, #4c9eff 100%);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "Blend Modes"
+subtitle: "混合模式"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Colors"]
+description: "Methods for defining how elements should blend with each other or with their backgrounds."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **Blend Modes** define how the colors of an element interact with the colors of the content behind it.
+
+## Key Properties
+-   **`mix-blend-mode`**: Blends an element with its parent/backdrop.
+-   **`background-blend-mode`**: Blends a background image with the background color or other background images of the same element.
+
+## Common Modes
+-   `multiply`: Multiplies the numbers for each pixel (always darker).
+-   `screen`: Multiplies the inverse of the numbers (always lighter).
+-   `overlay`: Combines Multiply and Screen.
+-   `darken`: Selects the darker of the two colors.
+-   `lighten`: Selects the lighter of the two colors.
+-   `difference`: Subtracts the darker color from the lighter color.
+
+## Use Cases
+-   Colorizing black and white images.
+-   Creating text effects where text takes on the texture of the background.
+-   Complex visual overlays.

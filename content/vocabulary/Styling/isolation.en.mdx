@@ -1,0 +1,25 @@
+---
+title: "isolation"
+subtitle: "隔离"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Context", "Blending"]
+description: "Determines whether an element must create a new stacking context."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`isolation`** CSS property determines whether an element must create a new stacking context.
+
+## Syntax
+```css
+isolation: auto;
+isolation: isolate;
+```
+
+## Key Value
+-   **`isolate`**: Creates a new stacking context. This is particularly useful in conjunction with `mix-blend-mode` and `z-index`. It prevents an element's blend mode from affecting the background behind the element's parent.
+
+## Use Cases
+-   **Containing Blends**: Preventing a `mix-blend-mode` effect from bleeding into the background of the entire page.
+-   **Stacking Contexts**: Forcing a new stacking context to manage z-index issues.

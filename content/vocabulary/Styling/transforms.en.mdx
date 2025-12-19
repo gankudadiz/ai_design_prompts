@@ -1,0 +1,35 @@
+---
+title: "Transforms"
+subtitle: "变换"
+category: "Styling"
+difficulty: "Medium"
+tags: ["CSS", "Animation", "Geometry"]
+description: "Lets you rotate, scale, skew, or translate an element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
+
+## Syntax
+```css
+transform: translate(10px, 20px);
+transform: scale(1.5);
+transform: rotate(45deg);
+transform: skew(10deg);
+transform: translate(10px, 20px) rotate(45deg); /* Multiple transforms */
+```
+
+## Functions
+-   `translate(x, y)`: Moves the element.
+-   `scale(x, y)`: Resizes the element.
+-   `rotate(angle)`: Rotates the element (2D or 3D).
+-   `skew(x-angle, y-angle)`: Distorts the element.
+
+## Performance
+Transforms are generally hardware-accelerated (run on the GPU), making them ideal for animations as they don't trigger expensive layout recalculations (reflows).
+
+## Use Cases
+-   Centering elements (`translate(-50%, -50%)`).
+-   Zoom effects on hover.
+-   Creating 3D card flips.

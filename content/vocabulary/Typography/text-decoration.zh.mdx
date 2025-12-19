@@ -1,0 +1,48 @@
+---
+title: "text-decoration"
+subtitle: "文本装饰"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Style"]
+description: "设置文本的装饰线，如下划线、删除线等。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-decoration (文本装饰)
+
+`text-decoration` 是一个简写属性，用于设置文本上的装饰线。它最常用于链接的下划线。
+
+## 核心概念
+
+### 1. 装饰线类型 (Line)
+*   **none**: 无装饰（常用于去除链接默认的下划线）。
+*   **underline**: 下划线。
+*   **line-through**: 删除线（常用于表示已完成的任务或原价）。
+*   **overline**: 上划线。
+
+### 2. 样式与颜色 (Style & Color)
+现代 CSS 允许分别设置线条的样式（实线、虚线、波浪线）和颜色。
+*   `text-decoration-style`: solid, double, dotted, dashed, wavy.
+*   `text-decoration-color`: 颜色值。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 基础用法 */
+  text-decoration: underline;
+  text-decoration: line-through;
+  
+  /* 去除链接下划线 */
+  text-decoration: none;
+
+  /* 高级用法 (简写) */
+  /* line | style | color */
+  text-decoration: underline wavy red;
+}
+```
+
+## 提示
+*   建议仅对链接使用下划线，以免用户混淆。
+*   `line-through` 在电商网站中常用于显示折扣前的原价。

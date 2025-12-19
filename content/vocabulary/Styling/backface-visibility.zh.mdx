@@ -1,0 +1,29 @@
+---
+title: "backface-visibility"
+subtitle: "背面可见性"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "3D", "Visibility"]
+description: "设置当元素背面朝向用户时是否可见。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`backface-visibility`** CSS 属性设置当元素背面朝向用户时是否可见。
+
+## 语法
+```css
+backface-visibility: visible;
+backface-visibility: hidden;
+```
+
+## 用例
+-   **卡片翻转**：在创建双面卡片（正面和背面）时，在两侧都设置 `backface-visibility: hidden`，这样当“正面”旋转 180 度时，你可以透过它看到“背面”元素（或者隐藏它以便可以看到背面元素）。
+-   **隐藏内容**：当元素旋转背离观察者时隐藏其背面。
+
+## 示例场景
+对于卡片翻转效果：
+1.  具有 `perspective` 的容器。
+2.  具有 `transform-style: preserve-3d` 的内部包装器。
+3.  正面和背面，均具有 `backface-visibility: hidden`。
+4.  背面初始旋转 `rotateY(180deg)`。

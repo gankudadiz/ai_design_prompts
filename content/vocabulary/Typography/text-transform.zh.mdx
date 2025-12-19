@@ -1,0 +1,42 @@
+---
+title: "text-transform"
+subtitle: "文本转换"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Style"]
+description: "控制文本的大小写转换，如全大写、全小写或首字母大写。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-transform (文本转换)
+
+`text-transform` 属性允许你在不修改 HTML原始内容的情况下，改变文本的大小写形式。这对于保持数据的一致性非常有帮助。
+
+## 核心概念
+
+### 1. 常用值
+*   **uppercase**: 将所有字符转换为大写。常用于按钮标签或简短的标题。
+*   **lowercase**: 将所有字符转换为小写。
+*   **capitalize**: 将每个单词的首字母转换为大写。
+*   **none**: 防止继承的大小写转换，保持原样。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 全大写 - 常配合 letter-spacing 使用 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  /* 全小写 */
+  text-transform: lowercase;
+
+  /* 首字母大写 */
+  text-transform: capitalize;
+}
+```
+
+## 最佳实践
+*   **辅助功能 (Accessibility)**: 屏幕阅读器通常会根据标点符号朗读，而不是根据大小写。但在某些情况下（如全大写单词），屏幕阅读器可能会将其拼读出来。
+*   使用 CSS 进行样式转换优于直接在 HTML 或数据库中修改文本，这样保留了原始数据的语义。

@@ -1,0 +1,26 @@
+---
+title: "transform-style"
+subtitle: "变换样式"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "3D", "Transforms"]
+description: "设置元素的子元素是定位在 3D 空间中，还是在元素平面中展平。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`transform-style`** CSS 属性设置元素的子元素是定位在 3D 空间中，还是在元素平面中展平。
+
+## 语法
+```css
+transform-style: flat;
+transform-style: preserve-3d;
+```
+
+## 关键值
+-   **`flat`** (默认): 子元素展平到元素的 2D 平面中。子元素的 3D 旋转相对于彼此将无法按预期工作。
+-   **`preserve-3d`**: 子元素保持其自己的 3D 位置。对于构建立方体等 3D 对象至关重要。
+
+## 用例
+-   构建复杂的 3D 场景或对象（立方体、四面体）。
+-   嵌套的 3D 动画。

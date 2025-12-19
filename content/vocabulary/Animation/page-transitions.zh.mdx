@@ -1,0 +1,50 @@
+---
+title: "Page Transitions"
+subtitle: "页面过渡"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Navigation", "UX"]
+description: "在页面或视图之间导航时发生的动画。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 在页面或视图之间导航时发生的动画。
+
+## 用法
+
+页面过渡平滑了在应用程序不同部分之间移动的体验。它们有助于保持上下文并减少认知负荷。
+
+## 示例
+
+### 淡入淡出过渡
+
+```css
+/* 使用像 Framer Motion 或 Vue Transitions 这样的库 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+```
+
+### 滑动过渡
+
+```css
+.slide-enter-active {
+  transition: transform 0.3s ease-out;
+}
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-enter-to {
+  transform: translateX(0);
+}
+```
+
+## 最佳实践
+
+- **持续时间**：保持过渡简短（例如，< 0.5s），以避免减慢导航速度。
+- **一致性**：在整个应用程序中使用一致的过渡。
+- **性能**：优化至 60fps 以确保流畅度。

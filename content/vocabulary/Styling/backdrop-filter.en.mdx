@@ -1,0 +1,28 @@
+---
+title: "backdrop-filter"
+subtitle: "背景滤镜"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Glassmorphism"]
+description: "Lets you apply graphical effects such as blurring or color shifting to the area behind an element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything *behind* the element, to see the effect you must make the element or its background at least partially transparent.
+
+## Syntax
+```css
+backdrop-filter: blur(10px);
+backdrop-filter: brightness(60%);
+backdrop-filter: contrast(40%);
+backdrop-filter: drop-shadow(4px 4px 10px blue);
+backdrop-filter: grayscale(30%);
+```
+
+## Browser Support Note
+Requires vendor prefixes (`-webkit-backdrop-filter`) on some older Safari versions.
+
+## Use Cases
+-   **Glassmorphism**: Creating the popular "frosted glass" effect on cards or sidebars.
+-   **Overlay Readability**: Dimming or blurring the background behind a modal or text to make it more readable.

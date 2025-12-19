@@ -1,0 +1,29 @@
+---
+title: "Blend Modes"
+subtitle: "混合模式"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Colors"]
+description: "定义元素如何与彼此或其背景混合的方法。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **混合模式** 定义了元素的颜色如何与其后面内容的颜色相互作用。
+
+## 关键属性
+-   **`mix-blend-mode`**: 将元素与其父元素/背景混合。
+-   **`background-blend-mode`**: 将背景图像与同一元素的背景颜色或其他背景图像混合。
+
+## 常见模式
+-   `multiply` (正片叠底): 将每个像素的数字相乘（总是更暗）。
+-   `screen` (滤色): 将数字的倒数相乘（总是更亮）。
+-   `overlay` (叠加): 结合正片叠底和滤色。
+-   `darken` (变暗): 选择两种颜色中较暗的一种。
+-   `lighten` (变亮): 选择两种颜色中较亮的一种。
+-   `difference` (差值): 从较浅的颜色中减去较深的颜色。
+
+## 用例
+-   为黑白图像着色。
+-   创建文本效果，使文本采用背景的纹理。
+-   复杂的视觉覆盖层。

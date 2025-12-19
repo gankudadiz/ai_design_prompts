@@ -1,0 +1,93 @@
+---
+title: "Skeuomorphism"
+description: "A design style that mimics real-world objects and textures to create a familiar interface."
+tags: ["skeuomorphism", "realistic", "texture", "retro"]
+preview:
+  backgroundColor: "#e0e0e0"
+  textColor: "#333333"
+  fontFamily: "'Georgia', serif"
+  accentColor: "#8b4513"
+  secondaryColor: "#d2691e"
+  borderColor: "#a0a0a0"
+  borderRadius: "8px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #dcdcdc;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 2px, transparent 2px, transparent 4px);
+    }
+    .style-preview-wrapper h1 {
+      color: #333;
+      text-shadow: 1px 1px 0px white;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #999;
+      background: linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,1);
+      border-radius: 5px;
+    }
+    .style-preview-wrapper button {
+      background: linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%) !important;
+      color: white !important;
+      border: 1px solid #105cb6 !important;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+      border-radius: 4px;
+    }
+    .style-preview-wrapper button:active {
+      background: linear-gradient(to bottom, #187bf2 0%, #4c9eff 100%) !important;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3) !important;
+    }
+prompt: |
+  Create a web interface with a "Skeuomorphism" theme.
+
+  **Visual Style**:
+  - Background: Textures like leather, wood, linen, or brushed metal.
+  - Depth: Heavy use of gradients, drop shadows, and inner shadows to create volume.
+  - Borders: Beveled edges, stitched lines, metallic rims.
+  
+  **Typography**:
+  - Font: Serif or detailed sans-serif with text-shadows (etched or embossed look).
+  
+  **Components**:
+  - Buttons: Glossy, convex shapes that look like physical buttons. Pressing them inverts the gradient/shadow.
+  - Inputs: Deep inner shadows to look like recessed slots.
+  - Switches: Realistic toggle switches or dials.
+
+  **Vibe**:
+  - Retro (early iOS), detailed, warm, physical.
+---
+
+# Skeuomorphism
+
+Skeuomorphism is a design concept where items resemble their real-world counterparts. In UI design, this means using textures, shadows, and highlights to mimic physical materials like glass, wood, or metal.
+
+## Design Tokens
+
+### Colors & Gradients
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--metal-gradient` | `linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%)` | Surfaces |
+| `--glossy-btn` | `linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%)` | Buttons |
+
+### Effects
+*   **Emboss**: `box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 1px 2px rgba(0,0,0,0.3)`
+*   **Deboss**: `box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.5)`
+*   **Text Shadow**: `0 -1px 0 rgba(0,0,0,0.5)` (Etched effect)
+
+## Usage Example
+
+```css
+.skeuo-button {
+  background: linear-gradient(to bottom, #4c9eff 0%, #187bf2 100%);
+  border: 1px solid #105cb6;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.3);
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+.skeuo-button:active {
+  background: linear-gradient(to bottom, #187bf2 0%, #4c9eff 100%);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+```

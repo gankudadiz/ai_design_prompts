@@ -1,0 +1,94 @@
+---
+title: "Isomorphic 3D"
+description: "A design style featuring 3D elements rendered in an isometric projection, often with soft lighting and playful textures."
+tags: ["3d", "isometric", "illustration", "playful"]
+preview:
+  backgroundColor: "#f0f2f5"
+  textColor: "#333333"
+  fontFamily: "'Poppins', sans-serif"
+  accentColor: "#6c63ff"
+  secondaryColor: "#ff6584"
+  borderColor: "transparent"
+  borderRadius: "20px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #eef2f6;
+      perspective: 1000px;
+    }
+    .style-preview-wrapper h1 {
+      color: #333;
+      transform: rotateX(10deg);
+    }
+    .style-preview-wrapper > div {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 20px 20px 60px #cad4e0, -20px -20px 60px #ffffff;
+      transform: rotateY(-10deg) rotateX(10deg);
+      transition: transform 0.5s;
+    }
+    .style-preview-wrapper > div:hover {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    .style-preview-wrapper button {
+      background: linear-gradient(145deg, #6c63ff, #5a52d5) !important;
+      color: white !important;
+      border: none !important;
+      box-shadow: 5px 5px 10px #b8b2e6, -5px -5px 10px #ffffff !important;
+      border-radius: 50px !important;
+    }
+prompt: |
+  Create a web interface with an "Isomorphic 3D" theme.
+
+  **Visual Style**:
+  - Perspective: Isometric (orthographic) projection.
+  - Illustrations: 3D objects that look like toys, clay (Claymorphism), or polished plastic.
+  - Colors: Soft pastels, bright and cheerful.
+  - Lighting: Soft, diffuse lighting creating smooth gradients and shadows.
+  
+  **Typography**:
+  - Font: Rounded sans-serif (Poppins, Quicksand).
+  - Style: Bold, playful.
+  
+  **Components**:
+  - Cards: Floating 3D planes with depth.
+  - Icons: 3D rendered icons instead of flat vectors.
+
+  **Vibe**:
+  - Playful, modern, engaging, creative.
+---
+
+# Isomorphic 3D
+
+Isomorphic 3D (often just called 3D illustration) brings depth and dimension to web design. It often uses an isometric perspective where the x, y, and z axes are 120 degrees apart.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#f0f2f5` | Soft background |
+| `--primary` | `#6c63ff` | Vibrant accent |
+| `--shadow` | `#cad4e0` | Soft shadow |
+
+### Principles
+*   **Projection**: Use isometric projection to display 3D objects on a 2D screen without perspective distortion.
+*   **Materiality**: Mimic materials like clay, plastic, or glass.
+*   **Softness**: Use rounded shapes and soft lighting.
+
+## Usage Example
+
+```css
+.iso-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px #cad4e0, 
+              -20px -20px 60px #ffffff;
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  transition: transform 0.3s ease;
+}
+
+.iso-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+```

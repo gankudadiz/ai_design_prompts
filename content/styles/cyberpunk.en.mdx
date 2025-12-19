@@ -1,0 +1,104 @@
+---
+title: "Cyberpunk"
+description: "A futuristic style featuring neon colors, glitch effects, and high-tech interfaces set against dark backgrounds."
+tags: ["cyberpunk", "neon", "futuristic", "glitch"]
+preview:
+  backgroundColor: "#050505"
+  textColor: "#00ffea"
+  fontFamily: "'Orbitron', sans-serif"
+  accentColor: "#ff00ff"
+  secondaryColor: "#fcee0a"
+  borderColor: "#00ffea"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0b0b0b;
+      background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent);
+      background-size: 50px 50px;
+    }
+    .style-preview-wrapper h1 {
+      color: #fcee0a;
+      text-shadow: 2px 2px 0px #ff00ff;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #00ffea;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px #00ffea;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+    }
+    .style-preview-wrapper button {
+      background: transparent !important;
+      color: #ff00ff !important;
+      border: 1px solid #ff00ff !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    .style-preview-wrapper button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 0, 255, 0.2);
+      transition: all 0.3s;
+    }
+    .style-preview-wrapper button:hover::before {
+      left: 0;
+    }
+prompt: |
+  Create a web interface with a "Cyberpunk" theme.
+
+  **Visual Style**:
+  - Background: Dark (Black #050505), often with grid lines or circuitry patterns.
+  - Colors: Neon Cyan (#00ffea), Neon Pink (#ff00ff), Neon Yellow (#fcee0a).
+  - Borders: Glowing borders, sometimes glitchy.
+  - Shapes: Angular, chamfered corners (clip-path), not rounded.
+  
+  **Typography**:
+  - Font: Futuristic, tech-inspired (Orbitron, Rajdhani).
+  - Effects: Text glow, chromatic aberration (glitch text).
+  
+  **Components**:
+  - Buttons: Holographic look, glowing edges, angular shapes.
+  - Cards: Semi-transparent dark panels with neon outlines.
+
+  **Vibe**:
+  - High tech, dystopian, energetic, chaotic.
+---
+
+# Cyberpunk
+
+Cyberpunk style draws inspiration from sci-fi and dystopian futures. It is characterized by dark backgrounds, bright neon colors, and glitch effects.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-dark` | `#050505` | Main background |
+| `--neon-cyan` | `#00ffea` | Primary accent |
+| `--neon-pink` | `#ff00ff` | Secondary accent |
+| `--neon-yellow` | `#fcee0a` | Warning/Highlight |
+
+### Effects
+*   **Glow**: `box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea`
+*   **Clip Path**: `polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%)` (Chamfered corner)
+*   **Glitch**: Animation mimicking signal distortion.
+
+## Usage Example
+
+```css
+.cyber-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ffea;
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+  color: #00ffea;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+  padding: 20px;
+}
+```

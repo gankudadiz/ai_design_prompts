@@ -19,11 +19,14 @@ export interface VocabularyMeta {
 
 const CATEGORY_PRIORITY: Record<string, number> = {
   'Layout': 1,
-  'Components': 2,
-  'Typography': 3,
-  'Color': 4,
-  'Animation': 5,
-  'Responsive': 6
+  'Typography': 2,
+  'Color': 3,
+  'Components': 4,
+  'Styling': 5,
+  'Responsive': 6,
+  'Animation': 7,
+  'LayoutPatterns': 8,
+  'Others': 9
 };
 
 export interface VocabularyPost {

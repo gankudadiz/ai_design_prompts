@@ -1,0 +1,87 @@
+---
+title: "Glassmorphism"
+description: "一种强调半透明和模糊以创造毛玻璃效果的现代 UI 趋势。"
+tags: ["modern", "glass", "blur", "transparency"]
+preview:
+  backgroundColor: "#e0e5ec"
+  textColor: "#333333"
+  fontFamily: "'Inter', sans-serif"
+  accentColor: "rgba(255, 255, 255, 0.4)"
+  secondaryColor: "rgba(255, 255, 255, 0.2)"
+  borderColor: "rgba(255, 255, 255, 0.5)"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .style-preview-wrapper h1 {
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .style-preview-wrapper > div {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+    .style-preview-wrapper button {
+      background: rgba(255, 255, 255, 0.3) !important;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+    }
+    .style-preview-wrapper button:hover {
+      background: rgba(255, 255, 255, 0.4) !important;
+    }
+prompt: |
+  创建一个具有“玻璃拟态 (Glassmorphism)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：多彩渐变或抽象形状。
+  - 卡片/容器：半透明白色 (rgba(255, 255, 255, 0.25))，带有 backdrop-filter: blur(10px)。
+  - 边框：细微的半透明白色边框 (1px solid rgba(255, 255, 255, 0.18))。
+  - 阴影：柔和的阴影以创造深度 (box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37))。
+  
+  **排版**:
+  - 字体：干净的无衬线字体 (Inter, Roboto)。
+  - 颜色：白色或深灰色，取决于对比度。
+  
+  **组件**:
+  - 按钮：玻璃外观，悬停效果增加不透明度。
+  - 图标：简单，细线条。
+
+  **氛围**:
+  - 现代，干净，通透，高级。
+---
+
+# 玻璃拟态 (Glassmorphism)
+
+玻璃拟态是一种流行的设计趋势，利用玻璃的特性（透明度和模糊）来创造层级感和深度。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--glass-bg` | `rgba(255, 255, 255, 0.25)` | 卡片背景 |
+| `--glass-border` | `rgba(255, 255, 255, 0.18)` | 边框颜色 |
+| `--glass-shadow` | `0 8px 32px 0 rgba(31, 38, 135, 0.37)` | 深度阴影 |
+| `--text-color` | `#ffffff` | 主要文本（在深色渐变上） |
+
+### 效果
+*   **背景模糊**: `blur(10px)`
+*   **圆角半径**: `16px` (圆角增强玻璃效果)
+
+## 使用示例
+
+```css
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+```

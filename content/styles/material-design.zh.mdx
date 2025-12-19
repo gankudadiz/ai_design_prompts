@@ -1,0 +1,93 @@
+---
+title: "Material Design"
+description: "Google 的设计语言，使用基于网格的布局、响应式动画和过渡、填充和深度效果。"
+tags: ["material", "google", "shadows", "clean"]
+preview:
+  backgroundColor: "#f5f5f5"
+  textColor: "#212121"
+  fontFamily: "'Roboto', sans-serif"
+  accentColor: "#6200ee"
+  secondaryColor: "#03dac6"
+  borderColor: "transparent"
+  borderRadius: "4px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f5f5f5;
+    }
+    .style-preview-wrapper h1 {
+      color: #212121;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    .style-preview-wrapper > div:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    .style-preview-wrapper button {
+      background: #6200ee !important;
+      color: white !important;
+      border: none !important;
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1.25px;
+    }
+prompt: |
+  创建一个具有“Material Design”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：浅灰色 (#f5f5f5) 或白色。
+  - 纸张：白色表面，带有逼真的阴影以指示高度（z 轴）。
+  - 颜色：主要品牌颜色（例如紫色 #6200ee）和次要强调色（例如蓝绿色 #03dac6）。
+  - 墨水：纸上的内容。
+  
+  **排版**:
+  - 字体：Roboto 或 Product Sans。
+  - 比例：清晰的层级（H1, H2, Body1, Caption）。
+  
+  **组件**:
+  - 按钮：凸起（阴影）、扁平（仅文本）或浮动操作按钮 (FAB)。点击时有涟漪效果。
+  - 卡片：相关信息的容器，悬停时高度变化。
+  - 输入框：填充或轮廓文本字段，带有浮动标签。
+
+  **氛围**:
+  - 干净，有条理，熟悉，触感。
+---
+
+# Material Design
+
+Material Design 是 Google 开发的一种设计语言。它将优秀设计的经典原则与技术和科学的创新及可能性相结合。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--primary` | `#6200ee` | 品牌色 |
+| `--secondary` | `#03dac6` | 强调色 |
+| `--surface` | `#ffffff` | 卡片背景 |
+| `--background` | `#f5f5f5` | 应用背景 |
+
+### 效果
+*   **阴影 (层级 1)**: `0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)`
+*   **阴影 (层级 5)**: `0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)`
+*   **涟漪**: 用户交互时的视觉反馈。
+
+## 使用示例
+
+```css
+.material-card {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 16px;
+  transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.material-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+```

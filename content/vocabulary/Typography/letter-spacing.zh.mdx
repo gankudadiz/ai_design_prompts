@@ -1,0 +1,48 @@
+---
+title: "letter-spacing"
+subtitle: "字间距"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Spacing"]
+description: "设置文本字符之间的水平间距（也称为追踪 Tracking）。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# letter-spacing (字间距)
+
+`letter-spacing` 属性用于增加或减少字符间的空白。它可以用来微调排版的密度和质感。
+
+## 核心概念
+
+### 1. 用途
+*   **大写字母**: 全大写文本通常难以阅读，增加字间距可以显著提升可读性。
+*   **大标题**: 巨大的标题有时需要稍微减少字间距（负值）使其看起来更紧凑有力。
+*   **正文**: 一般保持默认 (`normal`)，除非是为了特殊的艺术效果。
+
+### 2. 单位
+可以使用 `px`, `em` 等单位。
+*   **em**: 推荐使用，因为它是相对于当前字号的，调整字号时比例保持不变。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 默认值 */
+  letter-spacing: normal;
+
+  /* 增加间距 (适用于全大写) */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;  /* 稍微宽松 */
+  letter-spacing: 2px;     /* 固定像素 */
+
+  /* 减少间距 (适用于大标题) */
+  letter-spacing: -0.02em; /* 稍微紧凑 */
+}
+```
+
+## 视觉示例
+
+*   **NORMAL**: Standard spacing
+*   **W I D E**: `letter-spacing: 0.3em`
+*   **TIGHT**: `letter-spacing: -0.05em`

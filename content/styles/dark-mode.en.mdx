@@ -1,0 +1,88 @@
+---
+title: "Dark Mode"
+description: "A dark-themed interface designed to reduce eye strain and save battery life on OLED screens."
+tags: ["dark-mode", "accessibility", "modern"]
+preview:
+  backgroundColor: "#121212"
+  textColor: "#e0e0e0"
+  fontFamily: "'Roboto', sans-serif"
+  accentColor: "#bb86fc"
+  secondaryColor: "#03dac6"
+  borderColor: "#333333"
+  borderRadius: "8px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #121212;
+    }
+    .style-preview-wrapper h1 {
+      color: #e0e0e0;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #333333;
+      background: #1e1e1e;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .style-preview-wrapper button {
+      background: #bb86fc !important;
+      color: #000000 !important;
+      border: none !important;
+      font-weight: 500;
+    }
+    .style-preview-wrapper button:hover {
+      background: #9965f4 !important;
+    }
+prompt: |
+  Create a web interface with a "Dark Mode" theme.
+
+  **Visual Style**:
+  - Background: Very dark grey (#121212), not pure black, to reduce smearing on OLEDs.
+  - Surface: Slightly lighter grey (#1e1e1e) for cards and modals.
+  - Text: Light grey (#e0e0e0) for primary text, medium grey (#b0b0b0) for secondary. Avoid pure white.
+  - Accents: Desaturated colors (e.g., #bb86fc) to ensure readability against dark backgrounds.
+  
+  **Typography**:
+  - Font: Standard sans-serif.
+  - Weight: Slightly lighter weights may look thicker on dark backgrounds.
+  
+  **Components**:
+  - Elevation: Use lighter overlays or shadows to indicate depth.
+  - Borders: Subtle dark borders (#333333).
+
+  **Vibe**:
+  - Professional, sleek, comfortable, battery-saving.
+---
+
+# Dark Mode
+
+Dark Mode is a color scheme that uses light-colored text, icons, and graphical user interface elements on a dark background.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-root` | `#121212` | Main background |
+| `--bg-surface` | `#1e1e1e` | Card/Modal background |
+| `--text-primary` | `#e0e0e0` | Main text (87% opacity) |
+| `--text-secondary` | `#b0b0b0` | Secondary text (60% opacity) |
+| `--accent` | `#bb86fc` | Primary action |
+
+### Principles
+*   **Elevation**: In dark mode, elevation is often expressed by lighter surface colors rather than shadows.
+*   **Contrast**: Ensure text has a contrast ratio of at least 15.8:1 against the background.
+
+## Usage Example
+
+```css
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 16px;
+}
+```

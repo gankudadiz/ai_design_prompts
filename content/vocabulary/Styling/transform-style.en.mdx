@@ -1,0 +1,26 @@
+---
+title: "transform-style"
+subtitle: "变换样式"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "3D", "Transforms"]
+description: "Sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`transform-style`** CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
+
+## Syntax
+```css
+transform-style: flat;
+transform-style: preserve-3d;
+```
+
+## Key Values
+-   **`flat`** (Default): Children are flattened into the element's 2D plane. 3D rotations of children won't work as expected relative to each other.
+-   **`preserve-3d`**: Children maintain their own 3D position. Essential for building 3D objects like cubes.
+
+## Use Cases
+-   Building complex 3D scenes or objects (cubes, tetrahedrons).
+-   Nested 3D animations.

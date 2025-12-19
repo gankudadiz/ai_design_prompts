@@ -1,0 +1,43 @@
+---
+title: "oklch"
+subtitle: "OKLCH Color Space"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "CSS", "Modern"]
+description: "The next generation of web color. Perceptually uniform and access to P3 wide gamut colors."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# OKLCH
+
+OKLCH is the most advanced color function in CSS today. It solves the inconsistent perceptual lightness of HSL and can define wide-gamut colors (like neons) outside the sRGB space.
+
+## Syntax
+`oklch(lightness chroma hue)`
+
+### Parameters
+1.  **Lightness (L)**: 0% (Black) - 100% (White). **Advantage**: The same L value means the same perceived brightness to the human eye, regardless of color.
+2.  **Chroma (C)**: Purity/Vividness. 0 is gray, around 0.4 is usually extreme saturation (theoretically unbounded, but limited by screens).
+3.  **Hue (H)**: Hue angle (0-360).
+
+## Why OKLCH?
+
+### 1. Perceptual Uniformity
+In HSL, Yellow (`hsl(60, 100%, 50%)`) looks much brighter than Blue (`hsl(240, 100%, 50%)`) even though they share the same Lightness value.
+In OKLCH, if you set the same L value, they are visually equally bright. This is crucial for accessibility and auto-generating palettes.
+
+### 2. Wide Gamut
+OKLCH can access vivid colors in the P3 gamut that traditional Hex and RGB cannot reach.
+
+## Example
+
+```css
+.neon-element {
+  /* A very vivid P3 wide-gamut pink */
+  color: oklch(60% 0.25 340);
+  
+  /* Gray with the exact same perceptual lightness */
+  background-color: oklch(60% 0 0);
+}
+```

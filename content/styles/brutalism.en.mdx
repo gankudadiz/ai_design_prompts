@@ -1,0 +1,100 @@
+---
+title: "Brutalism"
+description: "A raw, unpolished aesthetic characterized by bold typography, high contrast, and a lack of decoration."
+tags: ["brutalism", "neo-brutalism", "bold", "raw"]
+preview:
+  backgroundColor: "#f0f0f0"
+  textColor: "#000000"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff0000"
+  secondaryColor: "#0000ff"
+  borderColor: "#000000"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ffde00;
+      border: 4px solid black;
+    }
+    .style-preview-wrapper h1 {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      border-bottom: 4px solid black;
+    }
+    .style-preview-wrapper > div {
+      border: 4px solid black;
+      background: white;
+      box-shadow: 8px 8px 0px 0px black;
+      border-radius: 0;
+    }
+    .style-preview-wrapper button {
+      background: #ff00ff !important;
+      color: black !important;
+      border: 4px solid black !important;
+      border-radius: 0 !important;
+      font-weight: bold;
+      box-shadow: 4px 4px 0px 0px black;
+      text-transform: uppercase;
+    }
+    .style-preview-wrapper button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px black;
+    }
+prompt: |
+  Create a web interface with a "Neo-Brutalism" theme.
+
+  **Visual Style**:
+  - Background: Bright, clashing colors (Yellow, Pink, Blue) or stark white/grey.
+  - Borders: Thick, solid black borders (3px - 5px).
+  - Shadows: Hard, solid black shadows (no blur), offset by a few pixels.
+  - Layout: Grid-based, sometimes breaking the grid, overlapping elements.
+  
+  **Typography**:
+  - Font: Monospaced or quirky serif/sans-serif.
+  - Style: Large, uppercase, bold, high contrast.
+  
+  **Components**:
+  - Buttons: Rectangular, thick borders, hard shadow. Hover effect reduces shadow offset (press down).
+  - Cards: Simple boxes with thick outlines and hard shadows.
+
+  **Vibe**:
+  - Raw, playful, bold, anti-design, functional.
+---
+
+# Brutalism
+
+Neo-Brutalism is a contemporary take on the architectural style of Brutalism. In web design, it rejects standard UI patterns in favor of raw, bold, and sometimes "ugly" aesthetics.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ffde00` | Bright background |
+| `--border-color` | `#000000` | Thick borders |
+| `--accent-color` | `#ff00ff` | Buttons/Highlights |
+| `--text-color` | `#000000` | High contrast text |
+
+### Effects
+*   **Border**: `3px solid black`
+*   **Box Shadow**: `5px 5px 0px 0px black` (Hard shadow)
+*   **Border Radius**: `0px` (Sharp corners)
+
+## Usage Example
+
+```css
+.brutalist-btn {
+  background-color: #ff00ff;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px 0px black;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px 0px black;
+}
+```

@@ -1,0 +1,33 @@
+---
+title: "contain"
+subtitle: "内容隔离"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Performance", "Layout"]
+description: "Indicates that an element and its contents are, as much as possible, independent of the rest of the document tree."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`contain`** CSS property allows an author to indicate that an element and its contents are, as much as possible, independent of the rest of the document tree.
+
+## Syntax
+```css
+contain: none;
+contain: strict;
+contain: content;
+contain: size;
+contain: layout;
+contain: style;
+contain: paint;
+```
+
+## Key Values
+-   **`strict`**: Applies all containment rules (layout, style, paint, size).
+-   **`content`**: Applies layout, style, and paint containment (but not size).
+-   **`layout`**: Isolates the internal layout from the rest of the page.
+-   **`paint`**: Ensures the element doesn't paint outside its bounds.
+
+## Use Cases
+-   **Widgets**: Ensuring a third-party widget doesn't affect the page layout.
+-   **Performance**: Optimizing rendering for large lists or complex UIs by limiting the scope of recalculations.

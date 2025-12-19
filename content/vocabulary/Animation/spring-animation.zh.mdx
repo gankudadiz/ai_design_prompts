@@ -1,0 +1,51 @@
+---
+title: "Spring Animation"
+subtitle: "弹簧动画"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Physics", "Natural"]
+description: "基于弹簧物理学的动画，创造自然流畅的运动。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 基于弹簧物理学的动画，创造自然流畅的运动。
+
+## 用法
+
+弹簧动画模仿现实世界的物理学，使界面感觉更具响应性和活力。它们通常用于：
+
+- 拖放交互
+- 模态框和弹出窗口
+- 切换开关
+
+## 示例
+
+### 概念 (React Spring / Framer Motion)
+
+```javascript
+// 使用像 React Spring 这样的库
+useSpring({
+  to: { opacity: 1, y: 0 },
+  from: { opacity: 0, y: 100 },
+  config: { tension: 170, friction: 26 }
+})
+```
+
+### CSS 近似 (贝塞尔曲线)
+
+```css
+.bounce {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce:hover {
+  transform: scale(1.2);
+}
+```
+
+## 最佳实践
+
+- **真实感**：调整张力和摩擦力以匹配 UI 元素的“重量”。
+- **过冲**：轻微的过冲会增加个性，但过多会让人感觉松散。
+- **一致性**：在整个应用程序中使用一致的物理参数。

@@ -1,0 +1,56 @@
+---
+title: "text-overflow"
+subtitle: "Text Overflow"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Layout"]
+description: "Specifies how overflowed content that is not displayed should be signaled to the user."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-overflow
+
+The `text-overflow` property specifies how to signal to the user that content has been clipped. It is typically used to truncate long text with an ellipsis.
+
+## Key Concepts
+
+### 1. Common Values
+*   **clip**: Default. Truncates the text at the limit of the content area.
+*   **ellipsis**: Renders an ellipsis (...) to represent the clipped text.
+
+## CSS Implementation
+
+### Single Line Truncation
+This is the most common pattern and requires three properties to work:
+
+```css
+.truncate-single {
+  /* 1. Force text to a single line */
+  white-space: nowrap;
+  
+  /* 2. Hide overflow */
+  overflow: hidden;
+  
+  /* 3. Show ellipsis */
+  text-overflow: ellipsis;
+  
+  /* Must have a width or max-width */
+  width: 200px; 
+}
+```
+
+### Multi-line Truncation
+Truncating after multiple lines requires older Webkit properties (widely supported):
+
+```css
+.truncate-multi {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+```
+
+## Tips
+*   Ensure the element has a defined width (or max-width), otherwise, the text might not overflow.

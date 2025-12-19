@@ -1,0 +1,51 @@
+---
+title: "contrast"
+subtitle: "色彩对比度"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "Accessibility", "Design"]
+description: "对比度是指两种颜色之间亮度的差异。良好的对比度对于确保内容的可读性和可访问性至关重要。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Contrast (色彩对比度)
+
+对比度是文本（前景色）与其背景之间亮度的差异。低对比度会导致文本难以阅读，特别是对于视力受损的用户或在强光环境下。
+
+## WCAG 标准
+
+Web 内容无障碍指南 (WCAG) 定义了最低对比度要求：
+
+### 1. AA 级 (最低标准)
+*   **普通文本**: 4.5:1
+*   **大号文本**: 3:1 (大于 18pt 或 14pt 粗体)
+*   **UI 组件/图形**: 3:1
+
+### 2. AAA 级 (增强标准)
+*   **普通文本**: 7:1
+*   **大号文本**: 4.5:1
+
+## 如何检查
+*   **浏览器开发工具**: Chrome 和 Firefox 的拾色器都会显示当前颜色组合的对比度比率。
+*   **在线工具**: WebAIM Contrast Checker。
+
+## CSS 实现技巧
+
+使用 CSS 变量和 `color-mix()` 或 `hsl()` 调整颜色亮度以确保对比度。
+
+```css
+.card {
+  background-color: var(--bg-color);
+  /* 确保文本颜色与背景有足够对比 */
+  color: var(--text-color); 
+}
+
+/* 深色模式下的调整 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000000;
+    --text-color: #ffffff; /* 21:1 最高对比度 */
+  }
+}
+```

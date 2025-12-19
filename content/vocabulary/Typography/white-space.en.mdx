@@ -1,0 +1,44 @@
+---
+title: "white-space"
+subtitle: "White Space"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Layout"]
+description: "Sets how white space inside an element is handled."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# white-space
+
+The `white-space` property controls how white space (spaces, tabs) and line breaks within an element are handled.
+
+## Key Concepts
+
+### 1. Common Values
+*   **normal**: Default. Sequences of white space are collapsed. Text wraps when necessary.
+*   **nowrap**: Sequences of white space are collapsed. Text does **not** wrap (unless `<br>` is present) and may overflow.
+*   **pre**: White space is preserved (like the `<pre>` tag). Text only wraps at line breaks in the source.
+*   **pre-wrap**: White space is preserved. Text wraps at line breaks and when necessary.
+*   **pre-line**: Sequences of white space are collapsed. Text wraps at line breaks and when necessary.
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Default behavior */
+  white-space: normal;
+
+  /* Single line text (Often used for truncation) */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Preserve formatting (e.g., code blocks or poetry) */
+  white-space: pre-wrap;
+}
+```
+
+## Use Cases
+*   **nowrap**: Used for buttons or single-line headings to prevent awkward breaks.
+*   **pre-wrap**: Used for displaying user-generated content (like comments or code snippets) where line breaks matter.

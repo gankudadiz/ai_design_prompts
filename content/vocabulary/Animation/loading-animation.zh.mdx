@@ -1,0 +1,65 @@
+---
+title: "Loading Animation"
+subtitle: "加载动画"
+category: "Animation"
+difficulty: "Medium"
+tags: ["Animation", "Feedback", "Loading"]
+description: "用于指示过程正在进行的动画。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 用于指示过程正在进行的动画。
+
+## 用法
+
+加载动画为用户提供必要的反馈，向他们保证系统正在工作。它们用于：
+
+- 页面加载
+- 数据获取
+- 文件上传
+- 处理操作
+
+## 示例
+
+### 简单旋转器
+
+```css
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+```
+
+### 脉冲效果
+
+```css
+.pulse {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+```
+
+## 最佳实践
+
+- **语境**：使用合适的加载器（例如，用于内容的骨架屏，用于小操作的旋转器）。
+- **时间**：仅对耗时超过可感知时间（例如 > 1 秒）的过程显示加载器。
+- **娱乐性**：有创意的加载器可以让等待感觉更短。

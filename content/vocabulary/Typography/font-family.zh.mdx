@@ -1,0 +1,49 @@
+---
+title: "font-family"
+subtitle: "字体系列"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Fonts"]
+description: "定义元素中文本的字体系列。可以指定一个或多个字体名称作为后备机制。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-family (字体系列)
+
+`font-family` 属性允许你通过给定一个有先后顺序的，由字体名或者字体族名组成的列表来为选定的元素设置字体。
+
+## 核心概念
+
+### 1. 字体族名 (Generic Families)
+当指定的特定字体不可用时，浏览器使用的通用后备字体。
+*   **serif**: 衬线体 (如 Times New Roman, Georgia)。
+*   **sans-serif**: 无衬线体 (如 Arial, Helvetica, Inter)。
+*   **monospace**: 等宽字体 (如 Courier New, Consolas)。
+*   **cursive**: 手写体。
+*   **fantasy**: 装饰体。
+
+### 2. 字体栈 (Font Stack)
+为了保证在不同操作系统上都有较好的显示效果，通常会定义一个字体列表。
+浏览器会从左到右查找，使用第一个在用户电脑上安装的字体。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 基础用法 */
+  font-family: "Inter", sans-serif;
+
+  /* 常用字体栈 */
+  /* 系统默认无衬线字体 */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+  /* 代码字体 */
+  font-family: "Fira Code", "Menlo", "Monaco", "Courier New", monospace;
+}
+```
+
+## 最佳实践
+
+1.  **始终提供通用族名**: 总是以 `serif` 或 `sans-serif` 等通用族名结束字体列表，以防备选字体都不可用。
+2.  **使用引号**: 如果字体名称包含空格（如 "Times New Roman"），必须使用引号包裹。

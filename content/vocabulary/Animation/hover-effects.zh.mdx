@@ -1,0 +1,52 @@
+---
+title: "Hover Effects"
+subtitle: "悬停效果"
+category: "Animation"
+difficulty: "Medium"
+tags: ["Animation", "Interaction", "States"]
+description: "当用户将光标移动到元素上时发生的视觉变化。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 当用户将光标移动到元素上时发生的视觉变化。
+
+## 用法
+
+悬停效果对于指示桌面设备上的交互性至关重要。它们告诉用户元素是可点击的或活动的。
+
+## 示例
+
+### 悬停缩放
+
+```css
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+```
+
+### 颜色变化和下划线
+
+```css
+.link {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+```
+
+## 最佳实践
+
+- **速度**：保持过渡迅速（例如，0.2s - 0.4s）。
+- **反馈**：确保变化足够明显以产生效果。
+- **移动端**：请记住，悬停效果在触摸设备上不起作用；不要依赖它们来实现关键功能。

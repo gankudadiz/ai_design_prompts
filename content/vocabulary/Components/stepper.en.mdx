@@ -1,0 +1,71 @@
+---
+title: "Stepper"
+subtitle: "步骤条"
+category: "Components"
+difficulty: "Hard"
+tags: ["UI Components", "Navigation", "Process"]
+description: "A navigation element that guides users through a multi-step process."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A navigation element that guides users through a multi-step process.
+
+## Usage
+
+Steppers are used to break down complex tasks into smaller, manageable steps. They are commonly used in:
+
+- Registration forms
+- Checkout processes
+- Setup wizards
+- Surveys
+
+## Examples
+
+### Horizontal Stepper
+
+```html
+<div class="stepper">
+  <div class="step completed">
+    <div class="circle">1</div>
+    <div class="label">Cart</div>
+  </div>
+  <div class="line completed"></div>
+  <div class="step active">
+    <div class="circle">2</div>
+    <div class="label">Shipping</div>
+  </div>
+  <div class="line"></div>
+  <div class="step">
+    <div class="circle">3</div>
+    <div class="label">Payment</div>
+  </div>
+</div>
+```
+
+### Vertical Stepper
+
+```html
+<div class="stepper-vertical">
+  <div class="step-item">
+    <div class="step-indicator">1</div>
+    <div class="step-content">
+      <h3>Personal Info</h3>
+      <p>Enter your details...</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-indicator">2</div>
+    <div class="step-content">
+      <h3>Account Setup</h3>
+      <p>Choose a password...</p>
+    </div>
+  </div>
+</div>
+```
+
+## Best Practices
+
+- **Feedback**: Clearly indicate the current step, completed steps, and pending steps.
+- **Navigation**: Allow users to navigate back to previous steps if possible.
+- **Validation**: Validate input before allowing users to proceed to the next step.

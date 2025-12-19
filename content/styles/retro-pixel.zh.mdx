@@ -1,0 +1,92 @@
+---
+title: "Retro Pixel"
+description: "一种受早期视频游戏和计算机界面启发的怀旧风格，以像素化图形和有限的调色板为特色。"
+tags: ["retro", "pixel-art", "8-bit", "nostalgia"]
+preview:
+  backgroundColor: "#222034"
+  textColor: "#5ac54f"
+  fontFamily: "'Press Start 2P', cursive"
+  accentColor: "#d95763"
+  secondaryColor: "#fbf236"
+  borderColor: "#ffffff"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #222034;
+      image-rendering: pixelated;
+    }
+    .style-preview-wrapper h1 {
+      color: #5ac54f;
+      text-shadow: 4px 4px #000000;
+      line-height: 1.5;
+    }
+    .style-preview-wrapper > div {
+      border: 4px solid #ffffff;
+      background: #000000;
+      box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.5);
+    }
+    .style-preview-wrapper button {
+      background: #d95763 !important;
+      color: white !important;
+      border: 4px solid white !important;
+      box-shadow: inset -4px -4px rgba(0,0,0,0.2) !important;
+      font-size: 10px;
+    }
+    .style-preview-wrapper button:active {
+      box-shadow: inset 4px 4px rgba(0,0,0,0.2) !important;
+      transform: translate(2px, 2px);
+    }
+prompt: |
+  创建一个具有“复古像素艺术 (Retro Pixel Art)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：深色（像街机屏幕）或明亮的 8 位颜色。
+  - 图形：像素化图标和图像（最近邻缩放）。
+  - 颜色：有限的调色板（例如 CGA, EGA 或 Gameboy 颜色）。
+  
+  **排版**:
+  - 字体：位图字体或像素化 Google 字体，如 'Press Start 2P' 或 'VT323'。
+  - 大小：8px 或 16px 的倍数。
+  
+  **组件**:
+  - 边框：块状，由实心正方形组成。
+  - 阴影：实心块，无模糊。
+
+  **氛围**:
+  - 怀旧，有趣，街机，游戏。
+---
+
+# 复古像素 (Retro Pixel)
+
+复古像素风格模仿早期计算机系统和视频游戏机（8 位和 16 位时代）的图形。
+
+## 设计变量
+
+### 颜色 (Pico-8 调色板)
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-dark` | `#1d2b53` | 背景 |
+| `--accent-red` | `#ff004d` | 危险/动作 |
+| `--accent-green` | `#00e436` | 成功 |
+| `--text-light` | `#fff1e8` | 文本 |
+
+### 效果
+*   **字体**: `'Press Start 2P', cursive`
+*   **边框**: `4px solid white`
+*   **阴影**: `4px 4px 0px black`
+
+## 使用示例
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.retro-container {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1d2b53;
+  color: #fff1e8;
+  border: 4px solid white;
+  box-shadow: 8px 8px 0px black;
+  padding: 20px;
+  image-rendering: pixelated;
+}
+```

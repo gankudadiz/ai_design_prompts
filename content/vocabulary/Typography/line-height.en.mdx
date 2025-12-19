@@ -1,0 +1,46 @@
+---
+title: "line-height"
+subtitle: "Line Height"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Spacing"]
+description: "Sets the height of a line box. Commonly used to set the distance between lines of text."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# line-height
+
+The `line-height` property defines the amount of space above and below inline elements. Proper line height is essential for readability, especially in blocks of text.
+
+## Key Concepts
+
+### 1. Unitless Number (Recommended)
+Using a number without a unit (e.g., `1.5`) is the best practice. It acts as a multiplier of the current font size.
+E.g., `font-size: 16px` and `line-height: 1.5` results in a line height of `24px`.
+**Benefit**: Child elements inherit the multiplier, not the computed pixel value, avoiding layout issues when font sizes change.
+
+### 2. Absolute Units (px, rem)
+Sets a fixed line height.
+**Drawback**: If a child element changes its font size, a fixed line height might cause lines to overlap or look too cramped.
+
+### 3. Percentage (%)
+Similar to unitless, but inheritance behavior can differ (often inherits the computed value).
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Best Practice: Unitless */
+  line-height: 1.5;   /* Standard for body text */
+  line-height: 1.2;   /* Headings are usually tighter */
+  line-height: 1.6;   /* Relaxed reading experience */
+
+  /* Not Recommended */
+  line-height: 24px;
+}
+```
+
+## Design Tips
+*   **Body Text**: Usually set between `1.4` and `1.6` for optimal readability.
+*   **Headings**: Larger text usually needs a tighter line height, often between `1.1` and `1.3`.

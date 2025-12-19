@@ -1,0 +1,41 @@
+---
+title: "Form"
+subtitle: "表单"
+category: "Components"
+difficulty: "Medium"
+tags: ["UI Components", "Data Entry", "Layout"]
+description: "A collection of input controls that allows users to submit data."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A collection of input controls that allows users to submit data.
+
+## Usage
+
+Forms are the primary way users interact with and submit data to an application. They combine various inputs like text fields, checkboxes, and buttons.
+
+## Examples
+
+### Login Form
+
+```html
+<form action="/login" method="post">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit">Log In</button>
+</form>
+```
+
+## Best Practices
+
+- **Layout**: Group related fields logically.
+- **Labels**: Always use clear labels for inputs.
+- **Validation**: Provide real-time validation feedback.
+- **Accessibility**: Ensure all form controls are accessible via keyboard and screen readers.

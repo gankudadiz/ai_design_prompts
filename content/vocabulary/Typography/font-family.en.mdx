@@ -1,0 +1,49 @@
+---
+title: "font-family"
+subtitle: "Font Family"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Fonts"]
+description: "Specifies the font family for text within an element. Allows defining a prioritized list of fonts."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-family
+
+The `font-family` property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+
+## Key Concepts
+
+### 1. Generic Families
+Fallback mechanisms used by the browser if the specific font is not available.
+*   **serif**: Fonts with finishing strokes (e.g., Times New Roman, Georgia).
+*   **sans-serif**: Fonts without finishing strokes (e.g., Arial, Helvetica, Inter).
+*   **monospace**: Fonts where all characters have the same width (e.g., Courier New, Consolas).
+*   **cursive**: Fonts that emulate handwriting.
+*   **fantasy**: Decorative fonts.
+
+### 2. Font Stack
+To ensure consistent display across different operating systems, a list of fonts is usually defined.
+The browser looks for fonts from left to right and uses the first one installed on the user's system.
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Basic usage */
+  font-family: "Inter", sans-serif;
+
+  /* Common Font Stack */
+  /* System UI Sans-Serif */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+  /* Monospace/Code */
+  font-family: "Fira Code", "Menlo", "Monaco", "Courier New", monospace;
+}
+```
+
+## Best Practices
+
+1.  **Always include a generic family**: Always end your font list with a generic family name like `serif` or `sans-serif` as a safety net.
+2.  **Use quotes**: If a font name contains spaces (e.g., "Times New Roman"), it must be enclosed in quotes.

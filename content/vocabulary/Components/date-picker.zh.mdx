@@ -1,0 +1,50 @@
+---
+title: "Date Picker"
+subtitle: "日期选择器"
+category: "Components"
+difficulty: "Hard"
+tags: ["UI Components", "Data Entry", "Forms"]
+description: "允许用户从日历界面选择日期或日期范围的组件。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 允许用户从日历界面选择日期或日期范围的组件。
+
+## 用法
+
+日期选择器提供了一种可视化的日期选择方式，确保使用正确的格式。它们对于以下情况至关重要：
+
+- 预约安排
+- 预订航班或酒店
+- 按日期范围过滤数据
+- 输入出生日期
+
+## 示例
+
+### 基础日期选择器
+
+```html
+<label for="start">开始日期：</label>
+<input type="date" id="start" name="trip-start"
+       value="2024-07-22"
+       min="2024-01-01" max="2024-12-31">
+```
+
+### 范围选择器概念
+
+```javascript
+// 范围选择器组件用法的伪代码
+<DateRangePicker
+  startDate={startDate}
+  endDate={endDate}
+  onChange={handleDateChange}
+/>
+```
+
+## 最佳实践
+
+- **默认值**：提供合理的默认值（例如，今天的日期）。
+- **约束**：禁用无效日期（例如，未来预约的过去日期）。
+- **格式**：以清晰、本地化的格式显示所选日期。
+- **键盘支持**：允许用户手动输入日期（如果他们更喜欢这样做）。

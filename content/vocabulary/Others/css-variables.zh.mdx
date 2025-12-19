@@ -1,0 +1,26 @@
+---
+title: "CSS Variables"
+subtitle: "自定义属性"
+category: "Others"
+difficulty: "Medium"
+tags: ["CSS", "Variables", "Theming"]
+description: "包含特定值的实体，可以在整个文档中重复使用。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **CSS 变量**（自定义属性）是由 CSS 作者定义的实体，包含可以在整个文档中重复使用的特定值。
+
+## 用法
+- **声明**：使用 `--*` 符号定义（例如 `--main-color: black;`）。
+- **访问**：使用 `var()` 函数访问（例如 `color: var(--main-color);`）。
+
+## 主要优势
+1.  **可重用性**：定义一次值，在多处重复使用。
+2.  **可维护性**：在一处更新值即可全局更新。
+3.  **动态性**：可以通过 JavaScript 更新，或根据媒体查询进行更改。
+
+## 常见用例
+-   颜色主题（明/暗模式）。
+-   一致的间距和尺寸单位。
+-   存储计算结果。

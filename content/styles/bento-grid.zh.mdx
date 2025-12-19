@@ -1,0 +1,110 @@
+---
+title: "Bento Grid"
+description: "一种受日本便当盒启发的模块化布局风格，将内容组织成矩形格子的网格。"
+tags: ["bento", "grid", "layout", "apple-style"]
+preview:
+  backgroundColor: "#f5f5f7"
+  textColor: "#1d1d1f"
+  fontFamily: "'SF Pro Display', sans-serif"
+  accentColor: "#0071e3"
+  secondaryColor: "#86868b"
+  borderColor: "transparent"
+  borderRadius: "24px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f5f5f7;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+    .style-preview-wrapper h1 {
+      display: none;
+    }
+    .style-preview-wrapper > div {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: none;
+    }
+    .style-preview-wrapper > div:first-child {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #0071e3 0%, #42a1ff 100%);
+      color: white;
+    }
+    .style-preview-wrapper button {
+      background: rgba(255, 255, 255, 0.2) !important;
+      backdrop-filter: blur(10px);
+      color: inherit !important;
+      border-radius: 99px !important;
+      border: 1px solid rgba(255,255,255,0.3) !important;
+    }
+prompt: |
+  创建一个具有“Bento Grid (便当盒网格)”布局的 Web 界面。
+
+  **视觉风格**:
+  - 布局：基于 CSS Grid，由不同大小的矩形卡片组成 (1x1, 2x1, 2x2)。
+  - 背景：浅灰色 (#f5f5f7) 或深色模式背景。
+  - 卡片：白色（或深灰色）卡片，带有大圆角半径 (20px-30px)。
+  - 内容：每张卡片都是一个独立的模块（小部件），具有明确的用途。
+  
+  **排版**:
+  - 字体：现代无衬线字体 (SF Pro, Inter)。
+  - 层级：卡片内的大标题，视觉重点放在媒体上。
+  
+  **组件**:
+  - 媒体：卡片内的全出血图像或视频。
+  - 交互：悬停效果轻微缩放卡片或播放视频。
+
+  **氛围**:
+  - 有条理，现代，模块化，信息密集但干净。
+---
+
+# Bento Grid (便当盒网格)
+
+Bento Grid 是一种由 Apple（宣传材料）和 Microsoft (Metro UI) 推广的布局趋势。它将内容组织成独特的矩形隔间，就像日本的便当盒一样。
+
+## 设计变量
+
+### 布局
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--grid-gap` | `24px` | 卡片间距 |
+| `--card-radius` | `32px` | 卡片圆角半径 |
+| `--card-bg` | `#ffffff` | 卡片背景 |
+
+### 原则
+*   **模块化**: 一切都是盒子。盒子可以跨越多列或多行。
+*   **层级**: 大小表示重要性。较大的盒子用于主要内容。
+*   **视觉趣味**: 混合使用文字密集的卡片和图片密集的卡片。
+
+## 使用示例
+
+```css
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  gap: 24px;
+}
+
+.bento-card {
+  background: white;
+  border-radius: 32px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.bento-card.wide {
+  grid-column: span 2;
+}
+
+.bento-card.tall {
+  grid-row: span 2;
+}
+```

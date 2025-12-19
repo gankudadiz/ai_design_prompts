@@ -64,12 +64,12 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
   const filteredPosts = (currentCategory && currentCategory !== 'All'
     ? posts.filter(post => post.category === currentCategory)
     : posts).sort((a, b) => {
-      // 1. Sort by Priority (if available, descending: higher number = higher priority)
-      // Note: Assuming priority 999 > 900. If undefined, treat as low priority (0).
-      const priorityA = a.priority || 0;
-      const priorityB = b.priority || 0;
+      // 1. Sort by Priority (if available, ascending: lower number = higher priority)
+      // Note: Assuming priority 1 > 10. If undefined, treat as low priority (9999).
+      const priorityA = a.priority !== undefined ? a.priority : 9999;
+      const priorityB = b.priority !== undefined ? b.priority : 9999;
       if (priorityA !== priorityB) {
-        return priorityB - priorityA; // Descending
+        return priorityA - priorityB; // Ascending
       }
 
       // 2. Sort by Difficulty (Easy < Medium < Hard)

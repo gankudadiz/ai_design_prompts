@@ -1,0 +1,90 @@
+---
+title: "Flat Design"
+description: "A minimalist user interface design style that uses simple, two-dimensional elements and bright colors."
+tags: ["flat", "2d", "minimalist", "bright"]
+preview:
+  backgroundColor: "#ecf0f1"
+  textColor: "#2c3e50"
+  fontFamily: "'Open Sans', sans-serif"
+  accentColor: "#e74c3c"
+  secondaryColor: "#3498db"
+  borderColor: "transparent"
+  borderRadius: "4px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ecf0f1;
+    }
+    .style-preview-wrapper h1 {
+      color: #2c3e50;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    .style-preview-wrapper button {
+      background: #e74c3c !important;
+      color: white !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 4px;
+    }
+    .style-preview-wrapper button:hover {
+      background: #c0392b !important;
+    }
+prompt: |
+  Create a web interface with a "Flat Design" theme.
+
+  **Visual Style**:
+  - Background: Clean, solid colors (e.g., #ecf0f1).
+  - Depth: None. No shadows, bevels, embossing, or gradients.
+  - Colors: Bright, saturated, and vibrant (e.g., Flat UI Colors like #e74c3c, #3498db).
+  - Iconography: Simple, 2D icons.
+  
+  **Typography**:
+  - Font: Clean sans-serif (Open Sans, Lato).
+  - Style: Simple, readable, crisp.
+  
+  **Components**:
+  - Buttons: Solid color rectangles with slightly rounded corners. No 3D effects.
+  - Layout: Grid-based, whitespace-heavy.
+
+  **Vibe**:
+  - Simple, modern, efficient, readable.
+---
+
+# Flat Design
+
+Flat design is a style of interface design emphasizing minimum use of stylistic elements that give the illusion of three dimensions (such as the use of drop shadows, gradients or textures) and is focused on a minimalist use of simple elements, typography and flat colors.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ecf0f1` | Background |
+| `--primary` | `#3498db` | Action Blue |
+| `--danger` | `#e74c3c` | Alert Red |
+| `--text` | `#2c3e50` | Main Text |
+
+### Principles
+*   **No Depth**: Eliminate shadows, bevels, and gradients.
+*   **Typography**: Use sans-serif fonts to promote readability.
+*   **Color**: Use a distinct color palette to guide the user.
+
+## Usage Example
+
+```css
+.flat-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  /* No box-shadow */
+}
+
+.flat-btn:hover {
+  background-color: #c0392b; /* Slightly darker shade for hover */
+}
+```

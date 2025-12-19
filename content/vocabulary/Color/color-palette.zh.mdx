@@ -1,0 +1,58 @@
+---
+title: "color-palette"
+subtitle: "调色板"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "Design", "System"]
+description: "一组预定义的颜色集合，用于确保整个应用程序的视觉一致性。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Color Palette (调色板)
+
+在现代 Web 开发中，我们通常不会随意使用颜色值，而是定义一个受限的“调色板”。这通常通过 CSS 变量来实现。
+
+## 结构化调色板
+
+一个好的调色板通常包含以下几类：
+
+### 1. 品牌色 (Brand Colors)
+产品的主色调。通常包含主色、深色变体和浅色变体。
+*   `--primary`
+*   `--primary-hover`
+*   `--secondary`
+
+### 2. 功能色 (Functional Colors)
+用于传达状态。
+*   `--success`: 绿色 (成功)
+*   `--warning`: 黄色/橙色 (警告)
+*   `--danger`: 红色 (错误/删除)
+*   `--info`: 蓝色 (信息)
+
+### 3. 中性色 (Neutral Colors)
+用于文本、背景和边框。通常是一系列不同深浅的灰色。
+*   `--gray-50` 到 `--gray-900`
+
+## CSS 变量实现示例
+
+```css
+:root {
+  /* Primitive Tokens (原始值) */
+  --blue-500: #3b82f6;
+  --green-500: #22c55e;
+  --red-500: #ef4444;
+  
+  /* Semantic Tokens (语义值 - 推荐使用) */
+  --primary: var(--blue-500);
+  --success: var(--green-500);
+  --error: var(--red-500);
+  
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+}
+
+.button-primary {
+  background-color: var(--primary); /* 如果以后想换品牌色，只需改变量 */
+}
+```

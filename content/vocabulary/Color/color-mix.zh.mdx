@@ -1,0 +1,52 @@
+---
+title: "color-mix"
+subtitle: "Color Mix Function"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "CSS", "Modern"]
+description: "CSS 原生函数，用于在指定的色彩空间中混合两种颜色。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# color-mix()
+
+`color-mix()` 是现代 CSS 的一项强大功能，允许你在浏览器中直接混合颜色，而不再依赖 Sass 或预处理器。
+
+## 语法
+`color-mix(in <color-space>, <color1> <percentage>, <color2> <percentage>)`
+
+*   **color-space**: 指定混合发生的色彩空间 (如 `srgb`, `hsl`, `oklch`)。
+*   **percentage**: 混合比例。
+
+## 示例
+
+### 1. 创建透明度变体 (无需改变 hex 为 rgba)
+在 srgb 空间中将颜色与 `transparent` 混合。
+
+```css
+.element {
+  --primary: #3b82f6;
+  
+  /* 相当于 50% 透明度的 primary */
+  background-color: color-mix(in srgb, var(--primary), transparent 50%);
+}
+```
+
+### 2. 创建深色/浅色变体
+将颜色与黑色或白色混合。
+
+```css
+.button:hover {
+  /* 悬停时加深 10% (混入 10% 黑色) */
+  background-color: color-mix(in srgb, var(--primary), black 10%);
+}
+
+.button:active {
+  /* 点击时加深 20% */
+  background-color: color-mix(in srgb, var(--primary), black 20%);
+}
+```
+
+## 注意事项
+不同的色彩空间会产生不同的混合结果。例如，在 `hsl` 空间混合蓝色和黄色可能会产生绿色，而在 `srgb` 空间可能会产生灰色。

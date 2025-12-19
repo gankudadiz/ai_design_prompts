@@ -1,0 +1,51 @@
+---
+title: "contrast"
+subtitle: "Color Contrast"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "Accessibility", "Design"]
+description: "The difference in luminance or color that makes an object distinguishable. Essential for readability and accessibility."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Contrast
+
+Contrast is the difference in brightness between the text (foreground) and its background. Low contrast makes text hard to read, especially for users with visual impairments or in bright sunlight.
+
+## WCAG Standards
+
+The Web Content Accessibility Guidelines (WCAG) define minimum contrast ratios:
+
+### 1. Level AA (Minimum)
+*   **Normal Text**: 4.5:1
+*   **Large Text**: 3:1 (Larger than 18pt or 14pt bold)
+*   **UI Components/Graphics**: 3:1
+
+### 2. Level AAA (Enhanced)
+*   **Normal Text**: 7:1
+*   **Large Text**: 4.5:1
+
+## How to Check
+*   **Browser DevTools**: Chrome and Firefox color pickers display the contrast ratio.
+*   **Online Tools**: WebAIM Contrast Checker.
+
+## CSS Implementation Tips
+
+Use CSS variables and functions like `color-mix()` or `hsl()` to adjust lightness for better contrast.
+
+```css
+.card {
+  background-color: var(--bg-color);
+  /* Ensure text color has enough contrast against background */
+  color: var(--text-color); 
+}
+
+/* Dark Mode Adjustment */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000000;
+    --text-color: #ffffff; /* 21:1 Maximum Contrast */
+  }
+}
+```

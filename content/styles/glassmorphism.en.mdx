@@ -1,0 +1,87 @@
+---
+title: "Glassmorphism"
+description: "A modern UI trend emphasizing translucency and blur to create a frosted glass effect."
+tags: ["modern", "glass", "blur", "transparency"]
+preview:
+  backgroundColor: "#e0e5ec"
+  textColor: "#333333"
+  fontFamily: "'Inter', sans-serif"
+  accentColor: "rgba(255, 255, 255, 0.4)"
+  secondaryColor: "rgba(255, 255, 255, 0.2)"
+  borderColor: "rgba(255, 255, 255, 0.5)"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .style-preview-wrapper h1 {
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .style-preview-wrapper > div {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+    .style-preview-wrapper button {
+      background: rgba(255, 255, 255, 0.3) !important;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+    }
+    .style-preview-wrapper button:hover {
+      background: rgba(255, 255, 255, 0.4) !important;
+    }
+prompt: |
+  Create a web interface with a "Glassmorphism" theme.
+
+  **Visual Style**:
+  - Background: Colorful gradients or abstract shapes.
+  - Cards/Containers: Translucent white (rgba(255, 255, 255, 0.25)) with backdrop-filter: blur(10px).
+  - Borders: Thin, semi-transparent white borders (1px solid rgba(255, 255, 255, 0.18)).
+  - Shadows: Soft shadows to create depth (box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)).
+  
+  **Typography**:
+  - Font: Clean sans-serif (Inter, Roboto).
+  - Color: White or Dark Grey depending on contrast.
+  
+  **Components**:
+  - Buttons: Glassy look with hover effects increasing opacity.
+  - Icons: Simple, thin strokes.
+
+  **Vibe**:
+  - Modern, clean, airy, premium.
+---
+
+# Glassmorphism
+
+Glassmorphism is a popular design trend that uses the properties of glass (transparency and blur) to create a sense of hierarchy and depth.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--glass-bg` | `rgba(255, 255, 255, 0.25)` | Card background |
+| `--glass-border` | `rgba(255, 255, 255, 0.18)` | Border color |
+| `--glass-shadow` | `0 8px 32px 0 rgba(31, 38, 135, 0.37)` | Depth shadow |
+| `--text-color` | `#ffffff` | Primary text (on dark gradients) |
+
+### Effects
+*   **Backdrop Filter**: `blur(10px)`
+*   **Border Radius**: `16px` (Rounded corners enhance the glass effect)
+
+## Usage Example
+
+```css
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+```

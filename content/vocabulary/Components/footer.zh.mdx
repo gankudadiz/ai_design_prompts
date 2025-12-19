@@ -1,0 +1,66 @@
+---
+title: "Footer"
+subtitle: "页脚"
+category: "Components"
+difficulty: "Easy"
+tags: ["UI Components", "Layout", "Navigation"]
+description: "位于页面底部的区域，包含版权、链接和其他次要信息。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 位于页面底部的区域，包含版权、链接和其他次要信息。
+
+## 用法
+
+页脚用于在每个页面末尾提供一致的导航和信息。它们通常包含：
+
+- 版权声明
+- 联系信息
+- 网站地图链接
+- 社交媒体图标
+- 隐私政策和服务条款链接
+
+## 示例
+
+### 基础页脚
+
+```html
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 我的公司. 保留所有权利。</p>
+    <nav>
+      <a href="/privacy">隐私政策</a>
+      <a href="/terms">服务条款</a>
+    </nav>
+  </div>
+</footer>
+```
+
+### 多列页脚
+
+```html
+<footer class="footer-grid">
+  <div class="column">
+    <h4>产品</h4>
+    <a href="#">功能</a>
+    <a href="#">价格</a>
+  </div>
+  <div class="column">
+    <h4>公司</h4>
+    <a href="#">关于我们</a>
+    <a href="#">招聘</a>
+  </div>
+  <div class="column">
+    <h4>连接</h4>
+    <a href="#">Twitter</a>
+    <a href="#">GitHub</a>
+  </div>
+</footer>
+```
+
+## 最佳实践
+
+- **一致性**：在所有页面上保持页脚一致。
+- **层级**：为链接组使用清晰的标题。
+- **响应式**：确保页脚在移动设备上垂直堆叠。

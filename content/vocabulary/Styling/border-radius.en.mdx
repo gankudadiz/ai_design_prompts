@@ -1,0 +1,29 @@
+---
+title: "border-radius"
+subtitle: "圆角"
+category: "Styling"
+difficulty: "Easy"
+tags: ["CSS", "Styling", "Shapes"]
+description: "Rounds the corners of an element's outer border edge."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`border-radius`** CSS property rounds the corners of an element's outer border edge.
+
+## Syntax
+```css
+border-radius: 10px;        /* All 4 corners */
+border-radius: 50%;         /* Creates a circle if the element is square */
+border-radius: 10px 20px;   /* Top-left/Bottom-right, Top-right/Bottom-left */
+```
+
+## Key Concepts
+-   **Units**: Can use pixels (`px`), percentages (`%`), or other units.
+-   **Circle/Ellipse**: Setting `border-radius: 50%` on a square element creates a perfect circle; on a rectangle, it creates an ellipse.
+-   **Individual Corners**: Can target specific corners (e.g., `border-top-left-radius`).
+
+## Use Cases
+-   Creating rounded buttons and cards (modern, friendly look).
+-   Creating circular avatars.
+-   Softening the edges of images.

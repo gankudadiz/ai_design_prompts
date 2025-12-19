@@ -1,0 +1,31 @@
+---
+title: "perspective"
+subtitle: "透视"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "3D", "Transforms"]
+description: "确定 z=0 平面与用户之间的距离，以便为 3D 定位的元素提供透视效果。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`perspective`** CSS 属性确定 z=0 平面与用户之间的距离，以便为 3D 定位的元素提供透视效果。
+
+## 语法
+```css
+/* 应用于父容器 */
+perspective: 1000px;
+```
+
+## 工作原理
+-   **较小的值**：更强的透视（更多变形），离观察者更近。
+-   **较大的值**：更弱的透视（更平坦），离观察者更远。
+-   **无**：无 3D 效果（正交投影）。
+
+## 相关属性
+-   `perspective-origin`: 确定观察者正在观看的位置。
+
+## 用例
+-   3D 立方体动画。
+-   视差滚动效果。
+-   卡片翻转交互。

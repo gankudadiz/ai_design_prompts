@@ -1,0 +1,90 @@
+---
+title: "Flat Design"
+description: "一种极简主义的用户界面设计风格，使用简单的二维元素和明亮的颜色。"
+tags: ["flat", "2d", "minimalist", "bright"]
+preview:
+  backgroundColor: "#ecf0f1"
+  textColor: "#2c3e50"
+  fontFamily: "'Open Sans', sans-serif"
+  accentColor: "#e74c3c"
+  secondaryColor: "#3498db"
+  borderColor: "transparent"
+  borderRadius: "4px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ecf0f1;
+    }
+    .style-preview-wrapper h1 {
+      color: #2c3e50;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    .style-preview-wrapper button {
+      background: #e74c3c !important;
+      color: white !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 4px;
+    }
+    .style-preview-wrapper button:hover {
+      background: #c0392b !important;
+    }
+prompt: |
+  创建一个具有“扁平化设计 (Flat Design)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：干净、纯色（例如 #ecf0f1）。
+  - 深度：无。没有阴影、斜面、浮雕或渐变。
+  - 颜色：明亮、饱和且充满活力（例如 Flat UI 颜色，如 #e74c3c, #3498db）。
+  - 图标：简单的二维图标。
+  
+  **排版**:
+  - 字体：干净的无衬线字体 (Open Sans, Lato)。
+  - 风格：简单，易读，清晰。
+  
+  **组件**:
+  - 按钮：纯色矩形，圆角略圆。无 3D 效果。
+  - 布局：基于网格，大量留白。
+
+  **氛围**:
+  - 简单，现代，高效，易读。
+---
+
+# 扁平化设计 (Flat Design)
+
+扁平化设计是一种界面设计风格，强调尽量少地使用产生三维错觉的风格元素（如阴影、渐变或纹理），专注于极简主义地使用简单元素、排版和扁平颜色。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ecf0f1` | 背景 |
+| `--primary` | `#3498db` | 动作蓝 |
+| `--danger` | `#e74c3c` | 警告红 |
+| `--text` | `#2c3e50` | 主要文本 |
+
+### 原则
+*   **无深度**: 消除阴影、斜面和渐变。
+*   **排版**: 使用无衬线字体以提高可读性。
+*   **颜色**: 使用独特的调色板来引导用户。
+
+## 使用示例
+
+```css
+.flat-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  /* 无 box-shadow */
+}
+
+.flat-btn:hover {
+  background-color: #c0392b; /* 悬停时稍暗的阴影 */
+}
+```

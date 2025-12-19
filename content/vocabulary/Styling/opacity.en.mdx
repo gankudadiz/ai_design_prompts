@@ -1,0 +1,28 @@
+---
+title: "opacity"
+subtitle: "不透明度"
+category: "Styling"
+difficulty: "Easy"
+tags: ["CSS", "Visibility", "Styling"]
+description: "Sets the opacity of an element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`opacity`** CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
+
+## Syntax
+```css
+opacity: 1;   /* Fully opaque (visible) */
+opacity: 0.5; /* 50% transparent */
+opacity: 0;   /* Fully transparent (invisible) */
+```
+
+## Behavior
+-   **Inheritance**: Opacity applies to the element and *all* of its children. You cannot make a child more opaque than its parent using this property.
+-   **Events**: Elements with `opacity: 0` still occupy space in the layout and can still receive user interactions (clicks, etc.), unlike `visibility: hidden` or `display: none`.
+
+## Use Cases
+-   Fading elements in or out (animations).
+-   Creating ghost buttons or disabled states.
+-   Overlaying text on images.

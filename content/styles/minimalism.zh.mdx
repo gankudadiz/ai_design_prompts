@@ -1,0 +1,103 @@
+---
+title: "Minimalism"
+description: "一种强调简洁的设计理念，专注于基本元素并去除不必要的装饰。"
+tags: ["minimalism", "clean", "whitespace", "simple"]
+preview:
+  backgroundColor: "#ffffff"
+  textColor: "#000000"
+  fontFamily: "'Helvetica Neue', sans-serif"
+  accentColor: "#000000"
+  secondaryColor: "#cccccc"
+  borderColor: "#000000"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ffffff;
+    }
+    .style-preview-wrapper h1 {
+      color: #000000;
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #eee;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    .style-preview-wrapper button {
+      background: #000000 !important;
+      color: white !important;
+      border: 1px solid #000000 !important;
+      border-radius: 0 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+    .style-preview-wrapper button:hover {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+prompt: |
+  创建一个具有“极简主义 (Minimalism)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：白色 (#ffffff) 或非常浅的灰色。
+  - 留白：大量的负空间（边距/填充），让内容呼吸。
+  - 颜色：单色（黑/白/灰），可能有一种微妙的强调色。
+  - 图像：高质量、相关的摄影或简单的线条图标。
+  
+  **排版**:
+  - 字体：干净的无衬线字体 (Helvetica, Inter) 或精致的衬线字体。
+  - 层级：通过大小和字重来实现，而不是颜色。
+  
+  **组件**:
+  - 按钮：简单的轮廓（幽灵按钮）或实心黑色块。
+  - 分隔线：细线或仅留白。
+
+  **氛围**:
+  - 优雅，精致，清晰，专注。
+---
+
+# 极简主义 (Minimalism)
+
+极简主义是一种始于 20 世纪并延续至今的设计趋势。其特点是简单、清晰和“少即是多”。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ffffff` | 背景 |
+| `--text-color` | `#000000` | 文本/边框 |
+| `--accent` | `#cccccc` | 微妙高光 |
+
+### 原则
+*   **留白**: 最关键的元素。用它来分隔组并集中注意力。
+*   **排版**: 使用数量有限的字体和字重。
+*   **网格**: 坚持严格的网格系统进行对齐。
+
+## 使用示例
+
+```css
+.minimal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.minimal-btn {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.minimal-btn:hover {
+  background: black;
+  color: white;
+}
+```

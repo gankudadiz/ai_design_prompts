@@ -1,0 +1,29 @@
+---
+title: "Skeleton"
+subtitle: "骨架屏"
+category: "Components"
+difficulty: "Medium"
+tags: ["UI Components", "Loading", "Feedback"]
+description: "A placeholder used to display the layout of content while the actual data is loading."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A **Skeleton** (or Skeleton Screen) is a placeholder used to display the layout of content while the actual data is loading. It mimics the shape of the content (text, images, avatars).
+
+## Benefits
+-   **Perceived Performance**: Makes the app feel faster than a blank screen or a spinner.
+-   **Visual Stability**: Prevents large layout shifts (CLS) when content loads.
+
+## Usage
+-   **Lists**: Showing skeleton rows in a table.
+-   **Cards**: Showing skeleton boxes for images and lines for text.
+-   **Profiles**: Showing a circle for the avatar and rectangles for details.
+
+## Animation
+-   **Pulse**: The skeleton gently fades in and out.
+-   **Wave**: A gradient moves across the skeleton to indicate activity.
+
+## Best Practices
+-   **Match Layout**: The skeleton should closely match the final layout to avoid layout shifts.
+-   **Short Duration**: Use for short loading times (< 3s). For longer waits, a progress bar might be better.

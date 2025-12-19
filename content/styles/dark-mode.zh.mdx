@@ -1,0 +1,88 @@
+---
+title: "Dark Mode"
+description: "旨在减少眼睛疲劳并在 OLED 屏幕上节省电池寿命的深色主题界面。"
+tags: ["dark-mode", "accessibility", "modern"]
+preview:
+  backgroundColor: "#121212"
+  textColor: "#e0e0e0"
+  fontFamily: "'Roboto', sans-serif"
+  accentColor: "#bb86fc"
+  secondaryColor: "#03dac6"
+  borderColor: "#333333"
+  borderRadius: "8px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #121212;
+    }
+    .style-preview-wrapper h1 {
+      color: #e0e0e0;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #333333;
+      background: #1e1e1e;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .style-preview-wrapper button {
+      background: #bb86fc !important;
+      color: #000000 !important;
+      border: none !important;
+      font-weight: 500;
+    }
+    .style-preview-wrapper button:hover {
+      background: #9965f4 !important;
+    }
+prompt: |
+  创建一个具有“深色模式 (Dark Mode)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：极深灰色 (#121212)，不是纯黑，以减少 OLED 上的拖影。
+  - 表面：稍浅的灰色 (#1e1e1e)，用于卡片和模态框。
+  - 文本：浅灰色 (#e0e0e0) 用于主要文本，中灰色 (#b0b0b0) 用于次要文本。避免纯白。
+  - 强调色：低饱和度颜色（例如 #bb86fc），以确保在深色背景上的可读性。
+  
+  **排版**:
+  - 字体：标准无衬线字体。
+  - 字重：在深色背景上，稍轻的字重可能看起来更粗。
+  
+  **组件**:
+  - 层级：使用较浅的覆盖层或阴影来指示深度。
+  - 边框：微妙的深色边框 (#333333)。
+
+  **氛围**:
+  - 专业，时尚，舒适，省电。
+---
+
+# 深色模式 (Dark Mode)
+
+深色模式是一种配色方案，它在深色背景上使用浅色文本、图标和图形用户界面元素。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-root` | `#121212` | 主要背景 |
+| `--bg-surface` | `#1e1e1e` | 卡片/模态框背景 |
+| `--text-primary` | `#e0e0e0` | 主要文本 (87% 不透明度) |
+| `--text-secondary` | `#b0b0b0` | 次要文本 (60% 不透明度) |
+| `--accent` | `#bb86fc` | 主要操作 |
+
+### 原则
+*   **层级**: 在深色模式下，层级通常通过较浅的表面颜色而不是阴影来表达。
+*   **对比度**: 确保文本与背景的对比度至少为 15.8:1。
+
+## 使用示例
+
+```css
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 16px;
+}
+```

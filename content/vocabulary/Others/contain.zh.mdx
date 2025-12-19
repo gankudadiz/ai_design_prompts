@@ -1,0 +1,33 @@
+---
+title: "contain"
+subtitle: "内容隔离"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Performance", "Layout"]
+description: "指示元素及其内容尽可能独立于文档树的其余部分。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`contain`** CSS 属性允许作者指示元素及其内容尽可能独立于文档树的其余部分。
+
+## 语法
+```css
+contain: none;
+contain: strict;
+contain: content;
+contain: size;
+contain: layout;
+contain: style;
+contain: paint;
+```
+
+## 关键值
+-   **`strict`**: 应用所有隔离规则（布局、样式、绘制、尺寸）。
+-   **`content`**: 应用布局、样式和绘制隔离（但不包括尺寸）。
+-   **`layout`**: 将内部布局与页面其余部分隔离。
+-   **`paint`**: 确保元素不会在其边界之外绘制。
+
+## 用例
+-   **小部件**：确保第三方小部件不会影响页面布局。
+-   **性能**：通过限制重新计算的范围，优化大型列表或复杂 UI 的渲染。

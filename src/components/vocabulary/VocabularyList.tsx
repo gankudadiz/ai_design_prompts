@@ -4,20 +4,85 @@ import { Link } from '@/i18n/routing';
 import { clsx } from 'clsx';
 import { useSearchParams } from 'next/navigation';
 import type { VocabularyMeta } from '@/lib/mdx';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
   const searchParams = useSearchParams();
   const currentCategory = searchParams.get('category');
   const t = useTranslations('Vocabulary');
+  const locale = useLocale();
+
+  const formatCategory = (cat: string) => {
+    if (cat === 'All') return t('all');
+    // Fallback for unknown categories to avoid crashing if key is missing
+    const key = `categories.${cat}`;
+    const translated = t(key); // This will return the key if missing, or we can handle it
+    
+    // If translation is missing (returns key prefix), just return cat
+    if (translated === key) return cat;
+
+    if (locale === 'zh') {
+      return `${cat} (${translated})`;
+    }
+    return translated;
+  };
   
-  // Get unique categories and filter out undefined/null
-  const categories = ['All', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
+  // Define preferred category order
+  const CATEGORY_ORDER = [
+    'Layout',
+    'Typography',
+    'Color',
+    'Components',
+    'Styling',
+    'Responsive',
+    'Animation',
+    'LayoutPatterns',
+    'Others'
+  ];
+  
+  // Get unique categories present in posts
+  const availableCategories = Array.from(new Set(posts.map(p => p.category).filter(Boolean) as string[]));
+  
+  // Sort categories based on defined order, appending any unknown categories at the end
+  const sortedCategories = availableCategories.sort((a, b) => {
+    const indexA = CATEGORY_ORDER.indexOf(a);
+    const indexB = CATEGORY_ORDER.indexOf(b);
+    
+    // If both are in the list, sort by index
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    // If only a is in the list, it comes first
+    if (indexA !== -1) return -1;
+    // If only b is in the list, it comes first
+    if (indexB !== -1) return 1;
+    // If neither, sort alphabetically
+    return a.localeCompare(b);
+  });
+
+  const categories = ['All', ...sortedCategories];
 
   // Filter posts
-  const filteredPosts = currentCategory && currentCategory !== 'All'
+  const filteredPosts = (currentCategory && currentCategory !== 'All'
     ? posts.filter(post => post.category === currentCategory)
-    : posts;
+    : posts).sort((a, b) => {
+      // 1. Sort by Priority (if available, descending: higher number = higher priority)
+      // Note: Assuming priority 999 > 900. If undefined, treat as low priority (0).
+      const priorityA = a.priority || 0;
+      const priorityB = b.priority || 0;
+      if (priorityA !== priorityB) {
+        return priorityB - priorityA; // Descending
+      }
+
+      // 2. Sort by Difficulty (Easy < Medium < Hard)
+      const difficultyOrder = { 'Easy': 1, 'Medium': 2, 'Hard': 3 };
+      const diffA = difficultyOrder[a.difficulty || 'Medium'] || 2;
+      const diffB = difficultyOrder[b.difficulty || 'Medium'] || 2;
+      if (diffA !== diffB) {
+        return diffA - diffB; // Ascending: Easy first
+      }
+
+      // 3. Sort by Title
+      return a.title.localeCompare(b.title);
+    });
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -59,7 +124,7 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border-medium pb-4 mb-6">
           <h1 className="text-2xl font-bold text-text-primary">
-            {currentCategory && currentCategory !== 'All' ? t(`categories.${currentCategory}`) : t('search').replace('ls ./', '')}
+            {currentCategory && currentCategory !== 'All' ? formatCategory(currentCategory) : t('search').replace('ls ./', '')}
           </h1>
           <span className="text-xs text-text-muted font-mono">
             {filteredPosts.length} {t('itemsFound')}
@@ -90,7 +155,7 @@ export default function VocabularyList({ posts }: { posts: VocabularyMeta[] }) {
                 {/* Content */}
                 <h2 className="text-lg font-bold text-text-primary mb-1 group-hover:text-mint-500 transition-colors flex items-center gap-2">
                   <span className="text-mint-500 opacity-0 group-hover:opacity-100 transition-opacity -ml-4 group-hover:ml-0 duration-300 text-sm">➜</span>
-                  {post.title}
+                  {locale === 'zh' && post.subtitle && !post.title.includes('(') ? `${post.title} (${post.subtitle})` : post.title}
                 </h2>
                 {post.subtitle && (
                   <p className="text-xs text-text-muted mb-3 font-mono">{post.subtitle}</p>

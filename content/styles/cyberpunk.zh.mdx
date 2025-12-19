@@ -1,0 +1,104 @@
+---
+title: "Cyberpunk"
+description: "一种未来主义风格，以黑色背景下的霓虹色、故障效果和高科技界面为特色。"
+tags: ["cyberpunk", "neon", "futuristic", "glitch"]
+preview:
+  backgroundColor: "#050505"
+  textColor: "#00ffea"
+  fontFamily: "'Orbitron', sans-serif"
+  accentColor: "#ff00ff"
+  secondaryColor: "#fcee0a"
+  borderColor: "#00ffea"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0b0b0b;
+      background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent);
+      background-size: 50px 50px;
+    }
+    .style-preview-wrapper h1 {
+      color: #fcee0a;
+      text-shadow: 2px 2px 0px #ff00ff;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #00ffea;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px #00ffea;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+    }
+    .style-preview-wrapper button {
+      background: transparent !important;
+      color: #ff00ff !important;
+      border: 1px solid #ff00ff !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    .style-preview-wrapper button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 0, 255, 0.2);
+      transition: all 0.3s;
+    }
+    .style-preview-wrapper button:hover::before {
+      left: 0;
+    }
+prompt: |
+  创建一个具有“赛博朋克 (Cyberpunk)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：深色 (黑色 #050505)，通常带有网格线或电路图案。
+  - 颜色：霓虹青 (#00ffea)，霓虹粉 (#ff00ff)，霓虹黄 (#fcee0a)。
+  - 边框：发光边框，有时带有故障效果。
+  - 形状：有棱角，切角 (clip-path)，不是圆角。
+  
+  **排版**:
+  - 字体：未来感，科技感 (Orbitron, Rajdhani)。
+  - 效果：文本发光，色差 (故障文本)。
+  
+  **组件**:
+  - 按钮：全息外观，发光边缘，有棱角的形状。
+  - 卡片：带有霓虹轮廓的半透明深色面板。
+
+  **氛围**:
+  - 高科技，反乌托邦，充满活力，混乱。
+---
+
+# 赛博朋克 (Cyberpunk)
+
+赛博朋克风格从科幻和反乌托邦未来中汲取灵感。它的特点是深色背景、明亮的霓虹色和故障效果。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-dark` | `#050505` | 主要背景 |
+| `--neon-cyan` | `#00ffea` | 主要强调色 |
+| `--neon-pink` | `#ff00ff` | 次要强调色 |
+| `--neon-yellow` | `#fcee0a` | 警告/高光 |
+
+### 效果
+*   **发光**: `box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea`
+*   **剪切路径**: `polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%)` (切角)
+*   **故障**: 模仿信号失真的动画。
+
+## 使用示例
+
+```css
+.cyber-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ffea;
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+  color: #00ffea;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+  padding: 20px;
+}
+```

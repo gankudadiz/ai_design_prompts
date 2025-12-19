@@ -1,0 +1,33 @@
+---
+title: "Pseudo-elements"
+subtitle: "伪元素"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Selectors", "Styling"]
+description: "添加到选择器的关键字，允许你为所选元素的特定部分设置样式。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **伪元素** 是添加到选择器的关键字，允许你为所选元素的特定部分设置样式。
+
+## 语法
+```css
+selector::pseudo-element {
+  property: value;
+}
+```
+*注意：双冒号 (`::`) 是现代语法，尽管为了向后兼容，某些伪元素支持单冒号 (`:`)。*
+
+## 常见伪元素
+-   `::before`：创建一个作为所选元素第一个子元素的伪元素。
+-   `::after`：创建一个作为所选元素最后一个子元素的伪元素。
+-   `::first-line`：为块级元素的第一行设置样式。
+-   `::first-letter`：为块级元素第一行的第一个字母设置样式。
+-   `::selection`：为用户高亮的文档部分设置样式。
+-   `::placeholder`：为输入元素的占位符文本设置样式。
+
+## 用例
+-   添加装饰性内容（图标、形状）而不更改 HTML。
+-   设置首字下沉样式。
+-   自定义文本选择颜色。

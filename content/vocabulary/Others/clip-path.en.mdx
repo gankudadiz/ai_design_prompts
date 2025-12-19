@@ -1,0 +1,29 @@
+---
+title: "clip-path"
+subtitle: "裁剪路径"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Masking"]
+description: "Creates a clipping region that sets what part of an element should be shown."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
+
+## Syntax
+```css
+clip-path: circle(50%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: path('M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z');
+```
+
+## Key Shapes
+-   **Basic Shapes**: `circle()`, `ellipse()`, `polygon()`, `inset()`.
+-   **SVG Paths**: `path()` for complex custom shapes.
+-   **Geometry Box**: Uses the element's box model (e.g., `padding-box`).
+
+## Use Cases
+-   Creating non-rectangular images (hexagons, stars).
+-   Creative reveal animations.
+-   Removing backgrounds visually without editing the image file.

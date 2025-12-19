@@ -1,0 +1,45 @@
+---
+title: "font-size"
+subtitle: "Font Size"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Size"]
+description: "Sets the size of the font. Can use absolute units (like px) or relative units (like rem, em)."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-size
+
+The `font-size` property sets the size of the font. Choosing the right unit is crucial for responsive design and accessibility.
+
+## Key Concepts
+
+### 1. Relative Units - Recommended
+*   **rem**: Relative to the font-size of the root element (`html`). Default is usually 16px. Best for responsive layouts.
+*   **em**: Relative to the font-size of the parent element. Can become complex with nesting.
+*   **%**: Percentage relative to the parent element.
+
+### 2. Absolute Units
+*   **px**: Pixels. Precise but inflexible; may not scale if user changes browser default font size.
+
+## CSS Implementation
+
+```css
+html {
+  font-size: 16px; /* Browser default */
+}
+
+.text-element {
+  /* Using rem (Recommended) */
+  font-size: 1rem;    /* = 16px */
+  font-size: 1.5rem;  /* = 24px */
+  font-size: 0.875rem;/* = 14px */
+
+  /* Using px */
+  font-size: 16px;
+}
+```
+
+## Tips
+*   For accessibility, prefer `rem` over `px` so that text scales correctly if the user adjusts their browser's font size settings.

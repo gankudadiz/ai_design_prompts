@@ -1,0 +1,44 @@
+---
+title: "white-space"
+subtitle: "空白处理"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Layout"]
+description: "设置如何处理元素中的空白字符（空格、换行符等）。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# white-space (空白处理)
+
+`white-space` 属性控制元素内的空白字符（空格、制表符）和换行符的处理方式。
+
+## 核心概念
+
+### 1. 常用值
+*   **normal**: 默认值。连续的空白会被合并为一个空格。文本在必要时会自动换行。
+*   **nowrap**: 连续的空白合并。文本**不会**换行（除非遇到 `<br>`），可能会溢出容器。
+*   **pre**: 空白会被保留（像 `<pre>` 标签一样）。文本仅在换行符处换行，**不会**自动换行。
+*   **pre-wrap**: 空白会被保留。文本在换行符处换行，**并且**在必要时自动换行。
+*   **pre-line**: 连续空白合并。文本在换行符处换行，**并且**在必要时自动换行。
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 默认行为 */
+  white-space: normal;
+
+  /* 单行文本 (常用于截断效果) */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* 保留格式 (如代码块或诗歌) */
+  white-space: pre-wrap;
+}
+```
+
+## 场景示例
+*   **nowrap**: 用于按钮文本或单行标题，防止意外折行。
+*   **pre-wrap**: 用于显示用户输入的内容（如评论或代码片段），保留用户的换行和空格意图。

@@ -1,0 +1,100 @@
+---
+title: "Brutalism"
+description: "一种原始、未加修饰的美学，以大胆的排版、高对比度和缺乏装饰为特征。"
+tags: ["brutalism", "neo-brutalism", "bold", "raw"]
+preview:
+  backgroundColor: "#f0f0f0"
+  textColor: "#000000"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff0000"
+  secondaryColor: "#0000ff"
+  borderColor: "#000000"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ffde00;
+      border: 4px solid black;
+    }
+    .style-preview-wrapper h1 {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      border-bottom: 4px solid black;
+    }
+    .style-preview-wrapper > div {
+      border: 4px solid black;
+      background: white;
+      box-shadow: 8px 8px 0px 0px black;
+      border-radius: 0;
+    }
+    .style-preview-wrapper button {
+      background: #ff00ff !important;
+      color: black !important;
+      border: 4px solid black !important;
+      border-radius: 0 !important;
+      font-weight: bold;
+      box-shadow: 4px 4px 0px 0px black;
+      text-transform: uppercase;
+    }
+    .style-preview-wrapper button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px black;
+    }
+prompt: |
+  创建一个具有“新野兽派 (Neo-Brutalism)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：明亮、冲突的颜色（黄色、粉色、蓝色）或纯白/灰色。
+  - 边框：粗而实心的黑色边框 (3px - 5px)。
+  - 阴影：硬朗、实心的黑色阴影（无模糊），偏移几个像素。
+  - 布局：基于网格，有时打破网格，重叠元素。
+  
+  **排版**:
+  - 字体：等宽字体或古怪的衬线/无衬线字体。
+  - 风格：大写，粗体，高对比度。
+  
+  **组件**:
+  - 按钮：矩形，粗边框，硬阴影。悬停效果减少阴影偏移（按下）。
+  - 卡片：带有粗轮廓和硬阴影的简单盒子。
+
+  **氛围**:
+  - 原始，俏皮，大胆，反设计，功能性。
+---
+
+# 野兽派 (Brutalism)
+
+新野兽派是对野兽派建筑风格的一种当代诠释。在网页设计中，它拒绝标准的 UI 模式，转而采用原始、大胆，有时甚至是“丑陋”的美学。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ffde00` | 明亮的背景 |
+| `--border-color` | `#000000` | 粗边框 |
+| `--accent-color` | `#ff00ff` | 按钮/高光 |
+| `--text-color` | `#000000` | 高对比度文本 |
+
+### 效果
+*   **边框**: `3px solid black`
+*   **盒阴影**: `5px 5px 0px 0px black` (硬阴影)
+*   **圆角半径**: `0px` (尖角)
+
+## 使用示例
+
+```css
+.brutalist-btn {
+  background-color: #ff00ff;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px 0px black;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px 0px black;
+}
+```

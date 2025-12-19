@@ -1,0 +1,51 @@
+---
+title: "Spring Animation"
+subtitle: "弹簧动画"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Physics", "Natural"]
+description: "Animations based on spring physics, creating natural and fluid motion."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> Animations based on spring physics, creating natural and fluid motion.
+
+## Usage
+
+Spring animations mimic real-world physics, making interfaces feel more responsive and alive. They are often used for:
+
+- Drag and drop interactions
+- Modals and popups
+- Toggle switches
+
+## Examples
+
+### Concept (React Spring / Framer Motion)
+
+```javascript
+// Using a library like React Spring
+useSpring({
+  to: { opacity: 1, y: 0 },
+  from: { opacity: 0, y: 100 },
+  config: { tension: 170, friction: 26 }
+})
+```
+
+### CSS Approximation (Cubic Bezier)
+
+```css
+.bounce {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce:hover {
+  transform: scale(1.2);
+}
+```
+
+## Best Practices
+
+- **Realism**: Adjust tension and friction to match the "weight" of the UI element.
+- **Overshoot**: A slight overshoot adds character, but too much can feel sloppy.
+- **Consistency**: Use consistent physics parameters across the application.

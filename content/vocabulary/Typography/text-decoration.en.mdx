@@ -1,0 +1,48 @@
+---
+title: "text-decoration"
+subtitle: "Text Decoration"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Style"]
+description: "Sets the appearance of decorative lines on text, such as underlines or strikethroughs."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-decoration
+
+`text-decoration` is a shorthand property for setting decorative lines on text. It is most commonly used for underlining links.
+
+## Key Concepts
+
+### 1. Line Types
+*   **none**: No decoration (often used to remove default underlines from links).
+*   **underline**: Adds a line below the text.
+*   **line-through**: Adds a line through the text (strikethrough).
+*   **overline**: Adds a line above the text.
+
+### 2. Style & Color
+Modern CSS allows separate control over the line style (solid, dashed, wavy) and color.
+*   `text-decoration-style`: solid, double, dotted, dashed, wavy.
+*   `text-decoration-color`: Color value.
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Basic usage */
+  text-decoration: underline;
+  text-decoration: line-through;
+  
+  /* Remove link underline */
+  text-decoration: none;
+
+  /* Advanced usage (shorthand) */
+  /* line | style | color */
+  text-decoration: underline wavy red;
+}
+```
+
+## Tips
+*   Avoid using underlines for non-link text to prevent confusing users.
+*   `line-through` is commonly used in e-commerce to show original prices before a discount.

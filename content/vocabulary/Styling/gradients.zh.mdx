@@ -1,0 +1,29 @@
+---
+title: "Gradients"
+subtitle: "渐变"
+category: "Styling"
+difficulty: "Medium"
+tags: ["CSS", "Backgrounds", "Colors"]
+description: "两种或多种颜色之间的平滑过渡。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **渐变** 允许你显示两种或多种指定颜色之间的平滑过渡。
+
+## 类型
+-   **线性渐变** (`linear-gradient()`): 颜色沿直线过渡（向下、向上、向左、向右或对角线）。
+-   **径向渐变** (`radial-gradient()`): 颜色从中心点向外辐射。
+-   **圆锥渐变** (`conic-gradient()`): 颜色围绕中心点过渡（像色轮一样）。
+
+## 语法
+```css
+background: linear-gradient(90deg, red, blue);
+background: radial-gradient(circle, red, blue);
+background: conic-gradient(red, blue, green);
+```
+
+## 用例
+-   按钮或区块的背景。
+-   创建金属或光泽效果。
+-   进度条或饼图（使用圆锥渐变）。

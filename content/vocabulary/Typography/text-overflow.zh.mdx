@@ -1,0 +1,56 @@
+---
+title: "text-overflow"
+subtitle: "文本溢出"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Layout"]
+description: "确定如何向用户发出未显示的溢出内容信号。通常用于截断过长的文本。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-overflow (文本溢出)
+
+`text-overflow` 属性指定当文本溢出其包含元素时发生的情况。它通常与 `white-space: nowrap` 和 `overflow: hidden` 一起使用来实现单行文本截断。
+
+## 核心概念
+
+### 1. 常用值
+*   **clip**: 默认值。在内容区域的极限处截断文本，不显示省略号。
+*   **ellipsis**: 显示省略号 (...) 来代表被修剪的文本。
+
+## CSS 实现
+
+### 单行截断 (Single Line Truncation)
+这是最常见的用法，需要三个属性配合：
+
+```css
+.truncate-single {
+  /* 1. 强制在一行显示 */
+  white-space: nowrap;
+  
+  /* 2. 隐藏溢出内容 */
+  overflow: hidden;
+  
+  /* 3. 显示省略号 */
+  text-overflow: ellipsis;
+  
+  /* 需要指定宽度或最大宽度 */
+  width: 200px; 
+}
+```
+
+### 多行截断 (Multi-line Truncation)
+多行截断需要使用旧版的 Webkit Flexbox 属性（但在现代浏览器中支持良好）：
+
+```css
+.truncate-multi {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 显示行数 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+```
+
+## 提示
+*   确保元素具有定义的宽度（或最大宽度），否则文本可能不会溢出。

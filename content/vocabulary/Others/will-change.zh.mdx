@@ -1,0 +1,30 @@
+---
+title: "will-change"
+subtitle: "性能优化提示"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Performance", "Rendering"]
+description: "向浏览器提示元素预期将如何变化。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`will-change`** CSS 属性向浏览器提示元素预期将如何变化。这允许浏览器在元素实际发生变化之前设置优化。
+
+## 语法
+```css
+will-change: auto;
+will-change: scroll-position;
+will-change: contents;
+will-change: transform;
+will-change: opacity;
+```
+
+## 最佳实践
+-   **谨慎使用**：过度使用会导致浏览器浪费资源，实际上会降低性能。
+-   **完成后移除**：在变化发生前不久应用它，并在变化完成后移除它（通过 JavaScript）。
+-   **不要过早优化**：仅在遇到性能问题（如卡顿）时使用。
+
+## 用例
+-   复杂元素的平滑动画（例如 `transform`, `opacity`）。
+-   提高固定元素的滚动性能。

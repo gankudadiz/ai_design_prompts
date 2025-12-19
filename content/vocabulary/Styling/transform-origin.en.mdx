@@ -1,0 +1,30 @@
+---
+title: "transform-origin"
+subtitle: "变换原点"
+category: "Styling"
+difficulty: "Medium"
+tags: ["CSS", "Animation", "Geometry"]
+description: "Sets the origin for an element's transformations."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`transform-origin`** CSS property sets the origin for an element's transformations.
+
+## Syntax
+```css
+/* x-offset | y-offset */
+transform-origin: center;
+transform-origin: top left;
+transform-origin: 50% 50%;
+transform-origin: 0px 0px;
+```
+
+## How it Works
+-   By default, the origin is at the center of the element (`50% 50%`).
+-   Changing the origin affects how `rotate()`, `scale()`, and `skew()` behave. For example, rotating from the `top left` corner looks very different from rotating from the `center`.
+
+## Use Cases
+-   Swinging a sign (origin at top center).
+-   Opening a door (origin at left or right edge).
+-   Scaling an element up from a specific point.

@@ -1,0 +1,51 @@
+---
+title: "Intersection Observer"
+subtitle: "交叉观察者"
+category: "Animation"
+difficulty: "Hard"
+tags: ["API", "Performance", "Scroll"]
+description: "A browser API that allows you to detect when an element enters or leaves the viewport."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A browser API that allows you to detect when an element enters or leaves the viewport.
+
+## Usage
+
+Intersection Observer is the most performant way to implement scroll-based interactions, lazy loading, and infinite scrolling.
+
+## Examples
+
+### Basic Usage
+
+```javascript
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+  observer.observe(el);
+});
+```
+
+```css
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+}
+```
+
+## Best Practices
+
+- **Cleanup**: Always unobserve elements when they are no longer needed (e.g., component unmount).
+- **Threshold**: Use the `threshold` option to trigger animations at the right moment (e.g., when 50% of the element is visible).
+- **Root Margin**: Use `rootMargin` to trigger animations slightly before the element enters the viewport.

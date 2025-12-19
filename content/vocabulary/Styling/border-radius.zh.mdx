@@ -1,0 +1,29 @@
+---
+title: "border-radius"
+subtitle: "圆角"
+category: "Styling"
+difficulty: "Easy"
+tags: ["CSS", "Styling", "Shapes"]
+description: "使元素外边框边缘的角变圆。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`border-radius`** CSS 属性使元素外边框边缘的角变圆。
+
+## 语法
+```css
+border-radius: 10px;        /* 所有 4 个角 */
+border-radius: 50%;         /* 如果元素是正方形，则创建一个圆 */
+border-radius: 10px 20px;   /* 左上/右下，右上/左下 */
+```
+
+## 关键概念
+-   **单位**：可以使用像素 (`px`)、百分比 (`%`) 或其他单位。
+-   **圆形/椭圆**：在正方形元素上设置 `border-radius: 50%` 会创建一个完美的圆形；在矩形上，会创建一个椭圆。
+-   **单独的角**：可以针对特定的角（例如 `border-top-left-radius`）。
+
+## 用例
+-   创建圆角按钮和卡片（现代、友好的外观）。
+-   创建圆形头像。
+-   柔化图像的边缘。

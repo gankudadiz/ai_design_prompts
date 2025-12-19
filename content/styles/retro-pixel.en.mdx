@@ -1,0 +1,92 @@
+---
+title: "Retro Pixel"
+description: "A nostalgic style inspired by early video games and computer interfaces, featuring pixelated graphics and limited color palettes."
+tags: ["retro", "pixel-art", "8-bit", "nostalgia"]
+preview:
+  backgroundColor: "#222034"
+  textColor: "#5ac54f"
+  fontFamily: "'Press Start 2P', cursive"
+  accentColor: "#d95763"
+  secondaryColor: "#fbf236"
+  borderColor: "#ffffff"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #222034;
+      image-rendering: pixelated;
+    }
+    .style-preview-wrapper h1 {
+      color: #5ac54f;
+      text-shadow: 4px 4px #000000;
+      line-height: 1.5;
+    }
+    .style-preview-wrapper > div {
+      border: 4px solid #ffffff;
+      background: #000000;
+      box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.5);
+    }
+    .style-preview-wrapper button {
+      background: #d95763 !important;
+      color: white !important;
+      border: 4px solid white !important;
+      box-shadow: inset -4px -4px rgba(0,0,0,0.2) !important;
+      font-size: 10px;
+    }
+    .style-preview-wrapper button:active {
+      box-shadow: inset 4px 4px rgba(0,0,0,0.2) !important;
+      transform: translate(2px, 2px);
+    }
+prompt: |
+  Create a web interface with a "Retro Pixel Art" theme.
+
+  **Visual Style**:
+  - Background: Dark (like an arcade screen) or bright 8-bit colors.
+  - Graphics: Pixelated icons and images (nearest-neighbor scaling).
+  - Colors: Limited palette (e.g., CGA, EGA, or Gameboy colors).
+  
+  **Typography**:
+  - Font: Bitmap fonts or pixelated Google Fonts like 'Press Start 2P' or 'VT323'.
+  - Size: Multiples of 8px or 16px.
+  
+  **Components**:
+  - Borders: Blocky, comprised of solid squares.
+  - Shadows: Solid blocks, no blur.
+
+  **Vibe**:
+  - Nostalgic, fun, arcade, gaming.
+---
+
+# Retro Pixel
+
+Retro Pixel style mimics the graphics of early computer systems and video game consoles (8-bit and 16-bit eras).
+
+## Design Tokens
+
+### Colors (Pico-8 Palette)
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-dark` | `#1d2b53` | Background |
+| `--accent-red` | `#ff004d` | Danger/Action |
+| `--accent-green` | `#00e436` | Success |
+| `--text-light` | `#fff1e8` | Text |
+
+### Effects
+*   **Font**: `'Press Start 2P', cursive`
+*   **Border**: `4px solid white`
+*   **Shadow**: `4px 4px 0px black`
+
+## Usage Example
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.retro-container {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1d2b53;
+  color: #fff1e8;
+  border: 4px solid white;
+  box-shadow: 8px 8px 0px black;
+  padding: 20px;
+  image-rendering: pixelated;
+}
+```

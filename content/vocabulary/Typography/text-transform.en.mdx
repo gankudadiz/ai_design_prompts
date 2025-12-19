@@ -1,0 +1,42 @@
+---
+title: "text-transform"
+subtitle: "Text Transform"
+category: "Typography"
+difficulty: "Medium"
+tags: ["Typography", "CSS", "Style"]
+description: "Specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# text-transform
+
+The `text-transform` property allows you to change the capitalization of text without altering the original HTML content. This is useful for maintaining visual consistency.
+
+## Key Concepts
+
+### 1. Common Values
+*   **uppercase**: Transforms all characters to uppercase. Often used for buttons or short headings.
+*   **lowercase**: Transforms all characters to lowercase.
+*   **capitalize**: Transforms the first character of each word to uppercase.
+*   **none**: Prevents any case conversion (useful for resetting inherited values).
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Uppercase - Often paired with letter-spacing */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  /* Lowercase */
+  text-transform: lowercase;
+
+  /* Capitalize */
+  text-transform: capitalize;
+}
+```
+
+## Best Practices
+*   **Accessibility**: Screen readers generally pronounce text based on punctuation, not case. However, in some cases (like all-caps acronyms), they might spell out the word.
+*   Using CSS for text transformation is better than modifying the actual data, as it preserves the original semantic meaning.

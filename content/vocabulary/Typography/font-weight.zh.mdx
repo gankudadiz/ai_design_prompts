@@ -1,0 +1,50 @@
+---
+title: "font-weight"
+subtitle: "字重"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Style"]
+description: "设置字体的粗细程度。从极细到极粗。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-weight (字重)
+
+`font-weight` 属性设置文本的粗细。字体的实际表现取决于选用的字体系列是否包含对应的字重变体。
+
+## 核心概念
+
+### 1. 关键字值
+*   **normal**: 标准字体，等同于 400。
+*   **bold**: 粗体，等同于 700。
+*   **lighter**: 比父元素更细。
+*   **bolder**: 比父元素更粗。
+
+### 2. 数值 (100 - 900)
+*   **100**: Thin (极细)
+*   **300**: Light (细体)
+*   **400**: Regular (标准)
+*   **500**: Medium (中等)
+*   **600**: Semi-Bold (半粗)
+*   **700**: Bold (粗体)
+*   **800**: Extra-Bold (特粗)
+*   **900**: Black (极粗)
+
+## CSS 实现
+
+```css
+.text-element {
+  /* 关键字 */
+  font-weight: normal;
+  font-weight: bold;
+
+  /* 数值 */
+  font-weight: 400; /* Regular */
+  font-weight: 500; /* Medium - 常用于小标题 */
+  font-weight: 700; /* Bold - 常用于重要标题 */
+}
+```
+
+## 注意事项
+*   并非所有字体都支持所有数值的字重。如果指定了字体不支持的字重（例如指定 500 但字体只有 400 和 700），浏览器会选择最接近的可用字重。

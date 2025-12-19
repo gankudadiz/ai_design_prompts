@@ -1,0 +1,52 @@
+---
+title: "Hover Effects"
+subtitle: "悬停效果"
+category: "Animation"
+difficulty: "Medium"
+tags: ["Animation", "Interaction", "States"]
+description: "Visual changes that occur when a user moves their cursor over an element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> Visual changes that occur when a user moves their cursor over an element.
+
+## Usage
+
+Hover effects are crucial for indicating interactivity on desktop devices. They tell the user that an element is clickable or active.
+
+## Examples
+
+### Scale on Hover
+
+```css
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+```
+
+### Color Change and Underline
+
+```css
+.link {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+```
+
+## Best Practices
+
+- **Speed**: Keep transitions snappy (e.g., 0.2s - 0.4s).
+- **Feedback**: Ensure the change is noticeable enough to be effective.
+- **Mobile**: Remember that hover effects don't work on touch devices; don't rely on them for critical functionality.

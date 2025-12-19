@@ -1,0 +1,34 @@
+---
+title: "filters"
+subtitle: "滤镜"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Images"]
+description: "Applies graphical effects like blur or color shift to an element."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+
+## Syntax
+```css
+filter: blur(5px);
+filter: brightness(150%);
+filter: contrast(200%);
+filter: drop-shadow(4px 4px 10px black);
+filter: grayscale(100%);
+filter: hue-rotate(90deg);
+```
+
+## Common Functions
+-   `blur()`: Applies a Gaussian blur.
+-   `brightness()`: Adjusts the brightness.
+-   `contrast()`: Adjusts the contrast.
+-   `grayscale()`: Converts the input image to grayscale.
+-   `drop-shadow()`: Applies a drop shadow (follows the image's outline, unlike `box-shadow`).
+
+## Use Cases
+-   Blurring backgrounds for modal overlays.
+-   Changing image tones on hover.
+-   Creating "frosted glass" effects (often used with `backdrop-filter`).

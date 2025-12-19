@@ -1,0 +1,41 @@
+---
+title: "color-models"
+subtitle: "Color Models"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "Theory", "Design"]
+description: "Mathematical systems used to describe colors. Web design primarily uses RGB, HSL, and the emerging OKLCH."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Color Models
+
+Color models define how colors are represented in a computer. Understanding different models helps developers choose the best representation for their specific use case.
+
+## Core Models
+
+### 1. RGB (Red, Green, Blue)
+*   **Basis**: Additive color mixing of light.
+*   **Use Case**: Hardware displays (screens).
+*   **Drawback**: Not intuitive; it's hard to adjust values to make a color "a bit brighter" or "more vivid".
+
+### 2. HSL (Hue, Saturation, Lightness)
+*   **Basis**: Human perception of color.
+    *   **Hue**: The type of color (0-360 degrees).
+    *   **Saturation**: The purity of the color.
+    *   **Lightness**: How bright or dark the color is.
+*   **Use Case**: Design systems, dynamic color adjustment.
+
+### 3. LCH / OKLCH (Lightness, Chroma, Hue)
+*   **Basis**: Perceptually uniform color space.
+*   **Advantage**: Solves the issue where HSL colors have inconsistent visual lightness (e.g., pure yellow looks much brighter than pure blue in HSL, but OKLCH values reflect this human perception).
+*   **Use Case**: Modern web design, accessible design.
+
+## Comparison
+
+| Model | Intuitiveness | Perceptual Uniformity | Browser Support |
+| :--- | :--- | :--- | :--- |
+| **RGB** | Low | Low | Excellent |
+| **HSL** | High | Medium | Excellent |
+| **OKLCH**| High | High | Good (Modern) |

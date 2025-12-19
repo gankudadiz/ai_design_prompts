@@ -1,0 +1,45 @@
+---
+title: "rgb"
+subtitle: "Red Green Blue"
+category: "Color"
+difficulty: "Easy"
+tags: ["Color", "CSS", "Functions"]
+description: "Defines color by mixing the intensity of red, green, and blue primary colors."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# RGB (Red, Green, Blue)
+
+RGB is the standard way screens display color. CSS provides the `rgb()` function to define these colors.
+
+## Syntax
+`rgb(red, green, blue)`
+Modern syntax supports alpha (transparency):
+`rgb(red green blue / alpha)`
+
+## Parameters
+Values for each channel can be:
+*   **Number**: 0 - 255 (integer).
+*   **Percentage**: 0% - 100%.
+
+## Examples
+
+```css
+.element {
+  /* Pure Red */
+  color: rgb(255, 0, 0);
+  
+  /* Black */
+  color: rgb(0, 0, 0);
+  
+  /* White */
+  color: rgb(255, 255, 255);
+  
+  /* Semi-transparent Blue (Modern syntax) */
+  background-color: rgb(0 0 255 / 0.5);
+}
+```
+
+## When to use?
+While HSL is more human-friendly, RGB is the foundation of image processing and hardware interaction. When copying colors from design tools (like Figma), RGB (or its Hex format) is often the most universal format.

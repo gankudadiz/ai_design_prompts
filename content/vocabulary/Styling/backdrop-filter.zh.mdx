@@ -1,0 +1,28 @@
+---
+title: "backdrop-filter"
+subtitle: "背景滤镜"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Glassmorphism"]
+description: "允许你将图形效果（如模糊或颜色偏移）应用于元素后面的区域。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`backdrop-filter`** CSS 属性允许你将图形效果（如模糊或颜色偏移）应用于元素后面的区域。因为它应用于元素*后面*的所有内容，所以要看到效果，必须使元素或其背景至少部分透明。
+
+## 语法
+```css
+backdrop-filter: blur(10px);
+backdrop-filter: brightness(60%);
+backdrop-filter: contrast(40%);
+backdrop-filter: drop-shadow(4px 4px 10px blue);
+backdrop-filter: grayscale(30%);
+```
+
+## 浏览器支持说明
+在某些旧版 Safari 上需要供应商前缀 (`-webkit-backdrop-filter`)。
+
+## 用例
+-   **玻璃拟态 (Glassmorphism)**：在卡片或侧边栏上创建流行的“毛玻璃”效果。
+-   **覆盖层可读性**：变暗或模糊模态框或文本后面的背景，使其更易于阅读。

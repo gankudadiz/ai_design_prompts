@@ -1,0 +1,52 @@
+---
+title: "color-mix"
+subtitle: "Color Mix Function"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "CSS", "Modern"]
+description: "Native CSS function for mixing two colors in a specified color space."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# color-mix()
+
+`color-mix()` is a powerful modern CSS feature that allows you to mix colors directly in the browser, removing the dependency on Sass or preprocessors for this task.
+
+## Syntax
+`color-mix(in <color-space>, <color1> <percentage>, <color2> <percentage>)`
+
+*   **color-space**: The space where the mixing happens (e.g., `srgb`, `hsl`, `oklch`).
+*   **percentage**: The ratio of the mix.
+
+## Examples
+
+### 1. Creating Opacity Variants (No hex-to-rgba needed)
+Mix a color with `transparent` in srgb space.
+
+```css
+.element {
+  --primary: #3b82f6;
+  
+  /* Equivalent to 50% opacity of primary */
+  background-color: color-mix(in srgb, var(--primary), transparent 50%);
+}
+```
+
+### 2. Creating Shades and Tints
+Mix with black or white.
+
+```css
+.button:hover {
+  /* Darken by 10% on hover (mix in 10% black) */
+  background-color: color-mix(in srgb, var(--primary), black 10%);
+}
+
+.button:active {
+  /* Darken by 20% on active */
+  background-color: color-mix(in srgb, var(--primary), black 20%);
+}
+```
+
+## Note
+Different color spaces yield different results. Mixing blue and yellow in `hsl` might create green, while in `srgb` it might look muddy or gray.

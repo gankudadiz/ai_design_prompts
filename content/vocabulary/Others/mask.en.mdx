@@ -1,0 +1,27 @@
+---
+title: "mask"
+subtitle: "遮罩"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Effects", "Masking"]
+description: "Hides an element (partially or fully) by masking or clipping the image at specific points."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`mask`** CSS property hides an element (partially or fully) by masking or clipping the image at specific points.
+
+## Syntax
+```css
+mask: url(mask.png);
+mask: linear-gradient(black, transparent);
+```
+
+## How it Works
+-   **Luminance Mask**: White areas are visible, black areas are hidden, and gray areas are semi-transparent.
+-   **Alpha Mask**: Opaque areas are visible, transparent areas are hidden.
+
+## Use Cases
+-   Fading out images at the edges.
+-   Applying texture overlays.
+-   Complex reveal effects using gradients.

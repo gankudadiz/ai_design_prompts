@@ -1,0 +1,43 @@
+---
+title: "oklch"
+subtitle: "OKLCH Color Space"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "CSS", "Modern"]
+description: "下一代 Web 色彩标准。具有感知均匀性，并能访问 P3 广色域。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# OKLCH
+
+OKLCH 是目前最先进的 CSS 颜色函数。它解决了 HSL 的感知亮度不一致问题，并且能够定义 sRGB 之外的广色域颜色（如霓虹色）。
+
+## 语法
+`oklch(lightness chroma hue)`
+
+### 参数
+1.  **Lightness (L)**: 0% (黑) - 100% (白)。**优势**: 同样的 L 值，无论什么颜色，人眼感觉到的亮度是一样的。
+2.  **Chroma (C)**: 颜色的纯度/彩度。0 是灰色，0.4 左右通常是极限高饱和度（理论无上限，但受屏幕限制）。
+3.  **Hue (H)**: 色相角度 (0-360)。
+
+## 为什么选择 OKLCH？
+
+### 1. 感知均匀性 (Perceptual Uniformity)
+在 HSL 中，黄色 (`hsl(60, 100%, 50%)`) 看起来比蓝色 (`hsl(240, 100%, 50%)`) 亮得多，尽管它们的亮度参数都是 50%。
+在 OKLCH 中，如果你设置相同的 L 值，它们在视觉上就是一样亮的。这对于无障碍设计和自动生成调色板至关重要。
+
+### 2. 广色域 (Wide Gamut)
+OKLCH 可以访问 P3 色域中的鲜艳颜色，这是传统的 Hex 和 RGB 无法做到的。
+
+## 示例
+
+```css
+.neon-element {
+  /* 一个非常鲜艳的 P3 广色域粉色 */
+  color: oklch(60% 0.25 340);
+  
+  /* 同样亮度的灰色 */
+  background-color: oklch(60% 0 0);
+}
+```

@@ -1,0 +1,63 @@
+---
+title: "Scroll Animation"
+subtitle: "滚动动画"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Interaction", "Scroll"]
+description: "由滚动位置触发或控制的动画。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 由滚动位置触发或控制的动画。
+
+## 用法
+
+滚动动画可以为网站增加深度和吸引力。它们通常用于：
+
+- 视差效果
+- 元素进入视口时显示
+- 进度指示器
+- 叙事体验
+
+## 示例
+
+### 滚动触发淡入
+
+```css
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+```javascript
+// 滚动时切换类的 JavaScript
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+  var reveals = document.querySelectorAll('.reveal');
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add('active');
+    } else {
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+```
+
+## 最佳实践
+
+- **性能**：使用高效的属性（如 `transform` 和 `opacity`）以避免布局抖动。
+- **可访问性**：为偏好减少动画的用户提供禁用动画的选项。
+- **微妙**：不要过度；过多的运动可能会分散注意力或导致晕动症。

@@ -1,0 +1,45 @@
+---
+title: "font-size"
+subtitle: "字体大小"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Size"]
+description: "设置字体的大小。可以使用绝对单位（如 px）或相对单位（如 rem, em）。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-size (字体大小)
+
+`font-size` 属性用于指定文本的大小。选择合适的单位对于响应式设计和可访问性至关重要。
+
+## 核心概念
+
+### 1. 相对单位 (Relative Units) - 推荐
+*   **rem**: 相对于根元素 (`html`) 的字体大小。默认通常是 16px。推荐用于响应式布局。
+*   **em**: 相对于父元素的字体大小。嵌套使用时计算可能会变得复杂。
+*   **%**: 相对于父元素的百分比。
+
+### 2. 绝对单位 (Absolute Units)
+*   **px**: 像素。精确但缺乏灵活性，用户调整浏览器默认字号时可能不会缩放。
+
+## CSS 实现
+
+```css
+html {
+  font-size: 16px; /* 浏览器默认值 */
+}
+
+.text-element {
+  /* 使用 rem (推荐) */
+  font-size: 1rem;    /* = 16px */
+  font-size: 1.5rem;  /* = 24px */
+  font-size: 0.875rem;/* = 14px */
+
+  /* 使用 px */
+  font-size: 16px;
+}
+```
+
+## 提示
+*   为了确保可访问性，尽量使用 `rem` 而不是 `px`，这样当用户在浏览器设置中调整字体大小时，网站内容能正确缩放。

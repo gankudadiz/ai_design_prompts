@@ -1,0 +1,50 @@
+---
+title: "font-weight"
+subtitle: "Font Weight"
+category: "Typography"
+difficulty: "Easy"
+tags: ["Typography", "CSS", "Style"]
+description: "Sets the thickness or boldness of the font."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# font-weight
+
+The `font-weight` property sets how thick or thin characters in text should be displayed. The actual rendering depends on whether the chosen font family includes the specific weight variant.
+
+## Key Concepts
+
+### 1. Keyword Values
+*   **normal**: Standard weight, equivalent to 400.
+*   **bold**: Bold weight, equivalent to 700.
+*   **lighter**: One relative weight lighter than the parent.
+*   **bolder**: One relative weight bolder than the parent.
+
+### 2. Numeric Values (100 - 900)
+*   **100**: Thin
+*   **300**: Light
+*   **400**: Regular
+*   **500**: Medium
+*   **600**: Semi-Bold
+*   **700**: Bold
+*   **800**: Extra-Bold
+*   **900**: Black
+
+## CSS Implementation
+
+```css
+.text-element {
+  /* Keywords */
+  font-weight: normal;
+  font-weight: bold;
+
+  /* Numeric */
+  font-weight: 400; /* Regular */
+  font-weight: 500; /* Medium - Often used for subheadings */
+  font-weight: 700; /* Bold - Used for headings */
+}
+```
+
+## Notes
+*   Not all fonts support all numeric weights. If a weight is specified that the font doesn't support (e.g., requesting 500 when only 400 and 700 exist), the browser will choose the closest available match.

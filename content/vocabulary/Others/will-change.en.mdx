@@ -1,0 +1,30 @@
+---
+title: "will-change"
+subtitle: "性能优化提示"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Performance", "Rendering"]
+description: "Hints to the browser how an element is expected to change."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> The **`will-change`** CSS property hints to browsers how an element is expected to change. This allows the browser to set up optimizations before an element is actually changed.
+
+## Syntax
+```css
+will-change: auto;
+will-change: scroll-position;
+will-change: contents;
+will-change: transform;
+will-change: opacity;
+```
+
+## Best Practices
+-   **Use Sparingly**: Overuse can cause the browser to waste resources and actually degrade performance.
+-   **Remove When Done**: Apply it shortly before the change occurs and remove it after the change is complete (via JavaScript).
+-   **Don't Prematurely Optimize**: Only use it when you are experiencing performance issues (like jank).
+
+## Use Cases
+-   Smooth animations of complex elements (e.g., `transform`, `opacity`).
+-   Improving scrolling performance for fixed elements.

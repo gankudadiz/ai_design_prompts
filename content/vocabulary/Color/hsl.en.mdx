@@ -1,0 +1,55 @@
+---
+title: "hsl"
+subtitle: "Hue Saturation Lightness"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "CSS", "Functions"]
+description: "A color representation based on human perception, consisting of hue, saturation, and lightness."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# HSL (Hue, Saturation, Lightness)
+
+HSL is one of the most intuitive color models for web development, making it perfect for creating color schemes and hover effects.
+
+## Syntax
+`hsl(hue, saturation, lightness)`
+Or modern syntax (space-separated):
+`hsl(hue saturation lightness / alpha)`
+
+## Parameters
+
+### 1. Hue
+*   **Unit**: Degrees (deg) or unitless number (0-360).
+*   **Meaning**: 0=Red, 120=Green, 240=Blue.
+
+### 2. Saturation
+*   **Unit**: Percentage (%).
+*   **Meaning**: 0% = Gray (achromatic), 100% = Full Color (most vivid).
+
+### 3. Lightness
+*   **Unit**: Percentage (%).
+*   **Meaning**: 0% = Black, 50% = Normal, 100% = White.
+
+## Practical Tip: Monochromatic Schemes
+
+By keeping the Hue (H) constant and varying Saturation (S) and Lightness (L), you can easily generate harmonious color palettes.
+
+```css
+:root {
+  --brand-hue: 210; /* Blue */
+  
+  /* Base Color */
+  --brand-color: hsl(var(--brand-hue), 80%, 50%);
+  
+  /* Hover State (Lighter) */
+  --brand-hover: hsl(var(--brand-hue), 80%, 60%);
+  
+  /* Active State (Darker) */
+  --brand-active: hsl(var(--brand-hue), 80%, 40%);
+  
+  /* Light Background */
+  --brand-bg: hsl(var(--brand-hue), 30%, 95%);
+}
+```

@@ -1,0 +1,71 @@
+---
+title: "Stepper"
+subtitle: "步骤条"
+category: "Components"
+difficulty: "Hard"
+tags: ["UI Components", "Navigation", "Process"]
+description: "引导用户完成多步骤流程的导航元素。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> 引导用户完成多步骤流程的导航元素。
+
+## 用法
+
+步骤条用于将复杂的任务分解为更小、易于管理的步骤。它们通常用于：
+
+- 注册表单
+- 结账流程
+- 设置向导
+- 调查问卷
+
+## 示例
+
+### 水平步骤条
+
+```html
+<div class="stepper">
+  <div class="step completed">
+    <div class="circle">1</div>
+    <div class="label">购物车</div>
+  </div>
+  <div class="line completed"></div>
+  <div class="step active">
+    <div class="circle">2</div>
+    <div class="label">配送信息</div>
+  </div>
+  <div class="line"></div>
+  <div class="step">
+    <div class="circle">3</div>
+    <div class="label">支付</div>
+  </div>
+</div>
+```
+
+### 垂直步骤条
+
+```html
+<div class="stepper-vertical">
+  <div class="step-item">
+    <div class="step-indicator">1</div>
+    <div class="step-content">
+      <h3>个人信息</h3>
+      <p>输入您的详细信息...</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-indicator">2</div>
+    <div class="step-content">
+      <h3>账户设置</h3>
+      <p>选择一个密码...</p>
+    </div>
+  </div>
+</div>
+```
+
+## 最佳实践
+
+- **反馈**：清晰地指示当前步骤、已完成步骤和待处理步骤。
+- **导航**：如果可能，允许用户返回到上一步。
+- **验证**：在允许用户进入下一步之前验证输入。

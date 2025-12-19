@@ -1,0 +1,47 @@
+---
+title: "currentcolor"
+subtitle: "Current Color"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "CSS", "Keyword"]
+description: "The first variable in CSS. It represents the value of the element's `color` property."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# currentColor
+
+`currentColor` is a CSS keyword that resolves to the computed value of the element's (or inherited) `color` property. It's incredibly useful for making borders, shadows, or SVG icons automatically match the text color.
+
+## Key Use Cases
+
+### 1. Border matches Text
+Make a button's border automatically match its text color.
+
+```css
+.button {
+  color: blue;
+  border: 1px solid currentColor; /* Border is also blue */
+}
+.button:hover {
+  color: red; /* On hover, both text and border turn red */
+}
+```
+
+### 2. SVG Icon Fill
+This is the most powerful use case for `currentColor`.
+
+```css
+.icon {
+  fill: currentColor;
+}
+```
+```html
+<div style="color: green">
+  <!-- This icon automatically becomes green -->
+  <svg class="icon">...</svg>
+</div>
+```
+
+### 3. Inheritance & Components
+When building components, using `currentColor` allows them to adapt flexibly to different context colors without hardcoding.

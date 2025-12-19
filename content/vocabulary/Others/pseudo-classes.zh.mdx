@@ -1,0 +1,32 @@
+---
+title: "Pseudo-classes"
+subtitle: "伪类"
+category: "Others"
+difficulty: "Medium"
+tags: ["CSS", "Selectors", "States"]
+description: "添加到选择器的关键字，指定所选元素的特殊状态。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **伪类** 是添加到选择器的关键字，用于指定所选元素的特殊状态。
+
+## 语法
+```css
+selector:pseudo-class {
+  property: value;
+}
+```
+
+## 常见伪类
+-   `:hover`：当用户使用指点设备与元素交互时应用。
+-   `:active`：当元素被激活（例如点击）时应用。
+-   `:focus`：当元素获得焦点时应用。
+-   `:first-child`：匹配作为其父元素第一个子元素的元素。
+-   `:nth-child()`：根据元素在一组兄弟元素中的位置进行匹配。
+-   `:not()`：匹配不匹配选择器列表的元素。
+
+## 用例
+-   交互时链接和按钮的样式。
+-   表格中的交替行颜色。
+-   表单验证样式（`:valid`, `:invalid`）。

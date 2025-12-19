@@ -1,0 +1,30 @@
+---
+title: "transform-origin"
+subtitle: "变换原点"
+category: "Styling"
+difficulty: "Medium"
+tags: ["CSS", "Animation", "Geometry"]
+description: "设置元素变换的原点。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`transform-origin`** CSS 属性设置元素变换的原点。
+
+## 语法
+```css
+/* x 偏移 | y 偏移 */
+transform-origin: center;
+transform-origin: top left;
+transform-origin: 50% 50%;
+transform-origin: 0px 0px;
+```
+
+## 工作原理
+-   默认情况下，原点位于元素的中心 (`50% 50%`)。
+-   更改原点会影响 `rotate()`, `scale()`, 和 `skew()` 的行为。例如，从 `top left`（左上角）旋转与从 `center`（中心）旋转看起来非常不同。
+
+## 用例
+-   摇摆的标志（原点在顶部中心）。
+-   开门（原点在左边缘或右边缘）。
+-   从特定点放大元素。

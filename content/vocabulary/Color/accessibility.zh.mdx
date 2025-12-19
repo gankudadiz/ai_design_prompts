@@ -1,0 +1,48 @@
+---
+title: "accessibility"
+subtitle: "色彩无障碍"
+category: "Color"
+difficulty: "Hard"
+tags: ["Color", "Accessibility", "Design"]
+description: "设计不仅要美观，还要确保色盲和视障用户也能区分和理解内容。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Accessibility (色彩无障碍)
+
+色彩无障碍性 (Color Accessibility) 确保所有用户，包括色盲或色弱用户，都能感知和理解界面中的信息。
+
+## 核心原则
+
+### 1. 不要仅依靠颜色传达信息
+永远不要把颜色作为传达重要信息的唯一手段。
+*   **错误示例**: 仅将错误字段的边框变为红色。
+*   **正确示例**: 将边框变为红色，**并且**添加一个图标或文字说明（"输入无效"）。
+
+### 2. 避免常见的色盲冲突组合
+*   红/绿 (最常见)
+*   蓝/紫
+*   浅绿/黄
+
+### 3. 支持高对比度模式
+有些用户会在操作系统中开启高对比度模式。使用系统颜色关键字（如 `CanvasText`, `LinkText`）或媒体查询来适配。
+
+## CSS 实现
+
+```css
+/* 1. 双重编码 (颜色 + 形状/图案) */
+.error-message {
+  color: red;
+  /* 添加图标或下划线作为辅助 */
+  text-decoration: underline wavy red; 
+}
+
+/* 2. 强制颜色模式适配 */
+@media (forced-colors: active) {
+  .button {
+    /* 在高对比度模式下，强制使用系统边框色，否则按钮可能看不见 */
+    border: 1px solid ButtonText;
+  }
+}
+```

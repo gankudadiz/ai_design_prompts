@@ -1,0 +1,103 @@
+---
+title: "Minimalism"
+description: "A design philosophy that emphasizes simplicity, focusing on essential elements and removing unnecessary decoration."
+tags: ["minimalism", "clean", "whitespace", "simple"]
+preview:
+  backgroundColor: "#ffffff"
+  textColor: "#000000"
+  fontFamily: "'Helvetica Neue', sans-serif"
+  accentColor: "#000000"
+  secondaryColor: "#cccccc"
+  borderColor: "#000000"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #ffffff;
+    }
+    .style-preview-wrapper h1 {
+      color: #000000;
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+    .style-preview-wrapper > div {
+      border: 1px solid #eee;
+      background: #ffffff;
+      box-shadow: none;
+    }
+    .style-preview-wrapper button {
+      background: #000000 !important;
+      color: white !important;
+      border: 1px solid #000000 !important;
+      border-radius: 0 !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+    .style-preview-wrapper button:hover {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+prompt: |
+  Create a web interface with a "Minimalist" theme.
+
+  **Visual Style**:
+  - Background: White (#ffffff) or very light grey.
+  - Whitespace: Generous amounts of negative space (margins/padding) to let content breathe.
+  - Colors: Monochromatic (Black/White/Grey) with maybe one subtle accent color.
+  - Imagery: High-quality, relevant photography or simple line icons.
+  
+  **Typography**:
+  - Font: Clean sans-serif (Helvetica, Inter) or a sophisticated serif.
+  - Hierarchy: Achieved through size and weight, not color.
+  
+  **Components**:
+  - Buttons: Simple outlines (ghost buttons) or solid black blocks.
+  - Dividers: Fine lines or whitespace only.
+
+  **Vibe**:
+  - Elegant, sophisticated, clear, focused.
+---
+
+# Minimalism
+
+Minimalism is a design trend that started in the 20th century and continues today. It is characterized by simplicity, clarity, and "less is more".
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#ffffff` | Background |
+| `--text-color` | `#000000` | Text/Borders |
+| `--accent` | `#cccccc` | Subtle highlights |
+
+### Principles
+*   **Whitespace**: The most critical element. Use it to separate groups and focus attention.
+*   **Typography**: Use a limited number of typefaces and weights.
+*   **Grid**: Stick to a strict grid system for alignment.
+
+## Usage Example
+
+```css
+.minimal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.minimal-btn {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.minimal-btn:hover {
+  background: black;
+  color: white;
+}
+```

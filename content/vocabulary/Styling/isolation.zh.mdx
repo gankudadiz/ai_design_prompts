@@ -1,0 +1,25 @@
+---
+title: "isolation"
+subtitle: "隔离"
+category: "Styling"
+difficulty: "Hard"
+tags: ["CSS", "Context", "Blending"]
+description: "确定元素是否必须创建新的层叠上下文。"
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> **`isolation`** CSS 属性确定元素是否必须创建新的层叠上下文。
+
+## 语法
+```css
+isolation: auto;
+isolation: isolate;
+```
+
+## 关键值
+-   **`isolate`**: 创建一个新的层叠上下文。这在与 `mix-blend-mode` 和 `z-index` 结合使用时特别有用。它可以防止元素的混合模式影响元素父级后面的背景。
+
+## 用例
+-   **包含混合**：防止 `mix-blend-mode` 效果渗透到整个页面的背景中。
+-   **层叠上下文**：强制创建新的层叠上下文以管理 z-index 问题。

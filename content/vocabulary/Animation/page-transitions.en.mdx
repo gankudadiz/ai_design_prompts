@@ -1,0 +1,50 @@
+---
+title: "Page Transitions"
+subtitle: "页面过渡"
+category: "Animation"
+difficulty: "Hard"
+tags: ["Animation", "Navigation", "UX"]
+description: "Animations that occur when navigating between pages or views."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> Animations that occur when navigating between pages or views.
+
+## Usage
+
+Page transitions smooth out the experience of moving between different parts of an application. They help maintain context and reduce cognitive load.
+
+## Examples
+
+### Fade Transition
+
+```css
+/* Using a library like Framer Motion or Vue Transitions */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+```
+
+### Slide Transition
+
+```css
+.slide-enter-active {
+  transition: transform 0.3s ease-out;
+}
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-enter-to {
+  transform: translateX(0);
+}
+```
+
+## Best Practices
+
+- **Duration**: Keep transitions short (e.g., < 0.5s) to avoid slowing down navigation.
+- **Consistency**: Use consistent transitions throughout the application.
+- **Performance**: Optimize for 60fps to ensure smoothness.

@@ -1,0 +1,98 @@
+---
+title: "Corporate Memphis"
+description: "A flat, geometric art style widely used by tech companies, featuring disproportionate figures and bright, flat colors."
+tags: ["corporate", "memphis", "flat", "illustration"]
+preview:
+  backgroundColor: "#f2f6ff"
+  textColor: "#2d3748"
+  fontFamily: "'Work Sans', sans-serif"
+  accentColor: "#5850ec"
+  secondaryColor: "#ffadad"
+  borderColor: "transparent"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f2f6ff;
+    }
+    .style-preview-wrapper h1 {
+      color: #2d3748;
+      font-weight: 800;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-radius: 24px;
+    }
+    .style-preview-wrapper button {
+      background: #5850ec !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 12px !important;
+      font-weight: 600;
+      padding: 12px 24px;
+    }
+    .style-preview-wrapper button:hover {
+      background: #4338ca !important;
+    }
+prompt: |
+  Create a web interface with a "Corporate Memphis" (Big Tech) theme.
+
+  **Visual Style**:
+  - Background: Clean, light colors or soft geometric patterns.
+  - Illustrations: Flat, vector-style characters with exaggerated proportions (long arms, small heads) and joyful expressions.
+  - Colors: Bright, friendly, pastel palettes (Blue, Pink, Yellow, Purple).
+  - Shapes: Organic blobs, squiggles, and geometric primitives.
+  
+  **Typography**:
+  - Font: Friendly sans-serif (Work Sans, DM Sans).
+  - Weight: Bold headings, readable body text.
+  
+  **Components**:
+  - Buttons: Rounded pills or soft rectangles with bright colors.
+  - Cards: White cards with soft, large shadows and rounded corners.
+
+  **Vibe**:
+  - Friendly, approachable, safe, inclusive, tech-savvy.
+---
+
+# Corporate Memphis
+
+Corporate Memphis (also known as Alegria) is a flat geometric art style widely used in Big Tech illustrations. It is designed to look friendly, inclusive, and scalable.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-color` | `#f2f6ff` | Light Background |
+| `--primary` | `#5850ec` | Corporate Blue |
+| `--secondary` | `#ffadad` | Soft Pink |
+| `--text-color` | `#2d3748` | Dark Grey Text |
+
+### Principles
+*   **Flatness**: No gradients or textures in illustrations.
+*   **Geometry**: Use simple shapes (circles, squares) to construct complex scenes.
+*   **Softness**: Rounded corners (`border-radius: 16px+`) and soft shadows.
+
+## Usage Example
+
+```css
+.corp-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 32px;
+  text-align: center;
+}
+
+.corp-btn {
+  background-color: #5850ec;
+  border-radius: 50px; /* Pill shape */
+  color: white;
+  padding: 12px 32px;
+  font-weight: 600;
+  border: none;
+}
+```

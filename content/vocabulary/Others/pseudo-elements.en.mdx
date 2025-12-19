@@ -1,0 +1,33 @@
+---
+title: "Pseudo-elements"
+subtitle: "伪元素"
+category: "Others"
+difficulty: "Hard"
+tags: ["CSS", "Selectors", "Styling"]
+description: "Keywords added to a selector that let you style a specific part of the selected element(s)."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+> A **Pseudo-element** is a keyword added to a selector that lets you style a specific part of the selected element(s).
+
+## Syntax
+```css
+selector::pseudo-element {
+  property: value;
+}
+```
+*Note: Double colon (`::`) is the modern syntax, though single colon (`:`) is supported for backward compatibility for some.*
+
+## Common Pseudo-elements
+-   `::before`: Creates a pseudo-element that is the first child of the selected element.
+-   `::after`: Creates a pseudo-element that is the last child of the selected element.
+-   `::first-line`: Styles the first line of a block-level element.
+-   `::first-letter`: Styles the first letter of the first line of a block-level element.
+-   `::selection`: Styles the portion of a document that has been highlighted by the user.
+-   `::placeholder`: Styles the placeholder text of an input element.
+
+## Use Cases
+-   Adding decorative content (icons, shapes) without changing HTML.
+-   Styling drop caps.
+-   Customizing text selection colors.

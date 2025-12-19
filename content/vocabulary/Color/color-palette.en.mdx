@@ -1,0 +1,58 @@
+---
+title: "color-palette"
+subtitle: "Color Palette"
+category: "Color"
+difficulty: "Medium"
+tags: ["Color", "Design", "System"]
+description: "A predefined set of colors used to ensure visual consistency across an application."
+createdAt: "2025-12-19"
+updatedAt: "2025-12-19"
+---
+
+# Color Palette
+
+In modern web development, we avoid using random color values. Instead, we define a restricted "palette" of colors, typically implemented using CSS variables.
+
+## Structured Palette
+
+A good palette usually includes:
+
+### 1. Brand Colors
+The primary colors of the product. Usually includes main, dark, and light variants.
+*   `--primary`
+*   `--primary-hover`
+*   `--secondary`
+
+### 2. Functional Colors
+Used to communicate status.
+*   `--success`: Green (Success)
+*   `--warning`: Yellow/Orange (Warning)
+*   `--danger`: Red (Error/Delete)
+*   `--info`: Blue (Information)
+
+### 3. Neutral Colors
+Used for text, backgrounds, and borders. Usually a scale of grays.
+*   `--gray-50` to `--gray-900`
+
+## CSS Variables Example
+
+```css
+:root {
+  /* Primitive Tokens (Raw values) */
+  --blue-500: #3b82f6;
+  --green-500: #22c55e;
+  --red-500: #ef4444;
+  
+  /* Semantic Tokens (Usage-based - Recommended) */
+  --primary: var(--blue-500);
+  --success: var(--green-500);
+  --error: var(--red-500);
+  
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+}
+
+.button-primary {
+  background-color: var(--primary); /* Changing brand color is now easy */
+}
+```

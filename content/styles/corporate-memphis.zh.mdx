@@ -1,0 +1,98 @@
+---
+title: "Corporate Memphis"
+description: "一种被科技公司广泛使用的扁平几何艺术风格，以不成比例的人物和明亮的扁平色彩为特色。"
+tags: ["corporate", "memphis", "flat", "illustration"]
+preview:
+  backgroundColor: "#f2f6ff"
+  textColor: "#2d3748"
+  fontFamily: "'Work Sans', sans-serif"
+  accentColor: "#5850ec"
+  secondaryColor: "#ffadad"
+  borderColor: "transparent"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f2f6ff;
+    }
+    .style-preview-wrapper h1 {
+      color: #2d3748;
+      font-weight: 800;
+    }
+    .style-preview-wrapper > div {
+      border: none;
+      background: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-radius: 24px;
+    }
+    .style-preview-wrapper button {
+      background: #5850ec !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 12px !important;
+      font-weight: 600;
+      padding: 12px 24px;
+    }
+    .style-preview-wrapper button:hover {
+      background: #4338ca !important;
+    }
+prompt: |
+  创建一个具有“企业孟菲斯 (Corporate Memphis / Big Tech)”主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：干净、浅色或柔和的几何图案。
+  - 插图：扁平、矢量风格的人物，比例夸张（长手臂，小头）且表情愉悦。
+  - 颜色：明亮、友好、柔和的调色板（蓝色、粉色、黄色、紫色）。
+  - 形状：有机斑点、波浪线和几何图元。
+  
+  **排版**:
+  - 字体：友好的无衬线字体 (Work Sans, DM Sans)。
+  - 字重：粗体标题，易读的正文。
+  
+  **组件**:
+  - 按钮：圆角药丸形状或柔和的矩形，颜色鲜艳。
+  - 卡片：带有柔和、大阴影和圆角的白色卡片。
+
+  **氛围**:
+  - 友好，平易近人，安全，包容，精通技术。
+---
+
+# 企业孟菲斯 (Corporate Memphis)
+
+企业孟菲斯（也称为 Alegria）是一种在大型科技公司插图中广泛使用的扁平几何艺术风格。它的设计旨在看起来友好、包容且可扩展。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-color` | `#f2f6ff` | 浅色背景 |
+| `--primary` | `#5850ec` | 企业蓝 |
+| `--secondary` | `#ffadad` | 柔和粉 |
+| `--text-color` | `#2d3748` | 深灰色文本 |
+
+### 原则
+*   **扁平**: 插图中没有渐变或纹理。
+*   **几何**: 使用简单的形状（圆形、正方形）来构建复杂的场景。
+*   **柔和**: 圆角 (`border-radius: 16px+`) 和柔和的阴影。
+
+## 使用示例
+
+```css
+.corp-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 32px;
+  text-align: center;
+}
+
+.corp-btn {
+  background-color: #5850ec;
+  border-radius: 50px; /* 药丸形状 */
+  color: white;
+  padding: 12px 32px;
+  font-weight: 600;
+  border: none;
+}
+```

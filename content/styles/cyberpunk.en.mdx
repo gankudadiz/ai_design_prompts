@@ -7,48 +7,86 @@ preview:
   textColor: "#00ffea"
   fontFamily: "'Orbitron', sans-serif"
   accentColor: "#ff00ff"
-  secondaryColor: "#fcee0a"
+  secondaryColor: "#0d0d0d"
   borderColor: "#00ffea"
   borderRadius: "0px"
   css: |
     .style-preview-wrapper {
-      background-color: #0b0b0b;
-      background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 234, .05) 25%, rgba(0, 255, 234, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .05) 75%, rgba(0, 255, 234, .05) 76%, transparent 77%, transparent);
-      background-size: 50px 50px;
+      background-color: #050505;
+      background-image:
+        linear-gradient(0deg, transparent 24%, rgba(0, 255, 234, .03) 25%, rgba(0, 255, 234, .03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 234, .03) 75%, rgba(0, 255, 234, .03) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .02) 25%, rgba(255, 0, 255, .02) 26%, transparent 27%);
+      background-size: 40px 40px;
     }
     .style-preview-wrapper h1 {
-      color: #fcee0a;
-      text-shadow: 2px 2px 0px #ff00ff;
+      color: #00ffea;
+      text-shadow: 0 0 10px rgba(0, 255, 234, 0.8), 0 0 20px rgba(0, 255, 234, 0.5), 3px 3px 0 #ff00ff;
       text-transform: uppercase;
       font-style: italic;
+      letter-spacing: -1px;
     }
-    .style-preview-wrapper > div {
-      border: 1px solid #00ffea;
-      background: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 10px #00ffea;
+    .style-preview-wrapper h1 span {
+      color: #ff00ff;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+    .style-preview-wrapper .cyber-card {
+      background: linear-gradient(135deg, rgba(0, 255, 234, 0.05) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(255, 0, 255, 0.02) 100%);
+      border: 1px solid rgba(0, 255, 234, 0.5);
+      box-shadow: 0 0 15px rgba(0, 255, 234, 0.2), inset 0 0 20px rgba(0, 255, 234, 0.03);
       clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+      position: relative;
     }
-    .style-preview-wrapper button {
+    .style-preview-wrapper .cyber-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00ffea, #ff00ff, transparent);
+    }
+    .style-preview-wrapper .cyber-button-primary {
+      background: linear-gradient(90deg, rgba(0, 255, 234, 0.1), rgba(0, 255, 234, 0.2)) !important;
+      color: #00ffea !important;
+      border: 1px solid #00ffea !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    }
+    .style-preview-wrapper .cyber-button-secondary {
       background: transparent !important;
       color: #ff00ff !important;
       border: 1px solid #ff00ff !important;
       text-transform: uppercase;
       letter-spacing: 2px;
-      position: relative;
-      overflow: hidden;
+      clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
     }
-    .style-preview-wrapper button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 0, 255, 0.2);
-      transition: all 0.3s;
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid rgba(0, 255, 234, 0.3) !important;
+      color: #00ffea !important;
     }
-    .style-preview-wrapper button:hover::before {
-      left: 0;
+    .style-preview-wrapper input::placeholder {
+      color: rgba(0, 255, 234, 0.4) !important;
+    }
+    .style-preview-wrapper .cyber-badge {
+      background: rgba(255, 0, 255, 0.1);
+      border: 1px solid rgba(255, 0, 255, 0.5);
+      color: #ff00ff;
+    }
+    .style-preview-wrapper .stat-card {
+      background: linear-gradient(180deg, rgba(0, 255, 234, 0.03) 0%, rgba(0, 0, 0, 0.8) 100%);
+      border: 1px solid rgba(0, 255, 234, 0.3);
+      clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: rgba(0, 255, 234, 0.8);
+      box-shadow: 0 0 20px rgba(0, 255, 234, 0.3);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #ff00ff, #00ffea);
+      color: #000 !important;
+      clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
     }
 prompt: |
   Create a web interface with a "Cyberpunk" theme.

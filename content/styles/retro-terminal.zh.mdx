@@ -1,0 +1,227 @@
+---
+title: "Retro Terminal"
+description: "受经典命令行终端启发的风格，带有扫描线效果、绿色单色显示和复古计算机美学。"
+tags: ["retro", "terminal", "vintage", "monospace", "crt"]
+preview:
+  backgroundColor: "#0a0a0a"
+  textColor: "#33ff00"
+  fontFamily: "'Courier New', 'Fira Code', monospace"
+  accentColor: "#33ff00"
+  secondaryColor: "#1a1a1a"
+  borderColor: "#33ff00"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0a0a0a;
+      background-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 2px, 3px 100%;
+      text-shadow: 0 0 2px #33ff00, 0 0 10px #33ff00;
+    }
+    .style-preview-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+      pointer-events: none;
+      z-index: 5;
+    }
+    .style-preview-wrapper h1 {
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .style-preview-wrapper > div {
+      border: 2px solid #33ff00;
+      box-shadow: inset 0 0 20px rgba(51, 255, 0, 0.1);
+    }
+    .style-preview-wrapper button {
+      background: transparent !important;
+      color: #33ff00 !important;
+      border: 1px solid #33ff00 !important;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    .style-preview-wrapper button:hover {
+      background: rgba(51, 255, 0, 0.1) !important;
+      box-shadow: 0 0 15px rgba(51, 255, 0, 0.4);
+    }
+    .style-preview-wrapper input,
+    .style-preview-wrapper select {
+      background: #000 !important;
+      border: 1px solid #33ff00 !important;
+      color: #33ff00 !important;
+      font-family: 'Courier New', monospace;
+    }
+    .style-preview-wrapper input::placeholder {
+      color: rgba(51, 255, 0, 0.5);
+    }
+    .terminal-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: #33ff00;
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
+prompt: |
+  创建一个具有"复古终端 (Retro Terminal)"主题的 Web 界面。
+
+  **视觉风格**:
+  - 背景：深黑色 (#0a0a0a)，带有CRT扫描线效果
+  - 颜色：经典终端绿 (#33ff00) 单色显示
+  - 效果：文本发光 (text-shadow)，扫描线纹理，屏幕暗角
+  - 边框：简单的绿色单线边框
+
+  **排版**:
+  - 字体：等宽字体 (Courier New, Fira Code, monospace)
+  - 效果：绿色发光文本阴影
+
+  **组件**:
+  - 按钮：透明背景，绿色边框，悬停时发光
+  - 输入框：黑色背景，绿色边框和文字
+  - 卡片：绿色边框，淡淡的内部发光
+
+  **氛围**:
+  - 复古，计算机，怀旧，命令行界面
+  - 带有闪烁光标效果
+---
+
+# 复古终端 (Retro Terminal)
+
+复古终端风格从 1980 年代和 1990 年代的命令行界面中汲取灵感。它具有标志性的绿色发光文本、CRT 扫描线效果和经典的单色美学。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--terminal-black` | `#0a0a0a` | 主要背景 |
+| `--terminal-green` | `#33ff00` | 主要文字和强调色 |
+| `--terminal-dark` | `#1a1a1a` | 次要背景 |
+| `--terminal-glow` | `#33ff00` | 发光效果 |
+
+### 效果
+*   **发光**: `text-shadow: 0 0 2px #33ff00, 0 0 10px #33ff00`
+*   **扫描线**: `background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 51%)` + `background-size: 100% 4px`
+*   **光标闪烁**: `animation: blink 1s step-end infinite`
+
+## 使用示例
+
+```css
+.terminal-card {
+  background: #0a0a0a;
+  border: 1px solid #33ff00;
+  color: #33ff00;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 2px #33ff00;
+  padding: 20px;
+  box-shadow: inset 0 0 20px rgba(51, 255, 0, 0.1);
+}
+
+.terminal-button {
+  background: transparent;
+  border: 1px solid #33ff00;
+  color: #33ff00;
+  font-family: 'Courier New', monospace;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.terminal-button:hover {
+  background: rgba(51, 255, 0, 0.1);
+  box-shadow: 0 0 15px rgba(51, 255, 0, 0.4);
+}
+
+.terminal-input {
+  background: #000;
+  border: 1px solid #33ff00;
+  color: #33ff00;
+  font-family: 'Courier New', monospace;
+  padding: 8px 12px;
+}
+```
+
+## 完整页面示例
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background: #0a0a0a;
+      font-family: 'Courier New', monospace;
+      color: #33ff00;
+      margin: 0;
+      padding: 20px;
+    }
+    .terminal {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 2px solid #33ff00;
+      padding: 20px;
+      text-shadow: 0 0 2px #33ff00;
+    }
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #33ff00;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #33ff00;
+    }
+    .terminal-content {
+      min-height: 400px;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: #33ff00;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="terminal-content">
+      <p>> system_start<span class="cursor"></span></p>
+      <p>> loading modules...</p>
+      <p>> ready for input_</p>
+    </div>
+  </div>
+</body>
+</html>
+```

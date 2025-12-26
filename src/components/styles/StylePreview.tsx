@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, Search, Bell, User, ShoppingCart, ArrowRight } from 'lucide-react';
+import { Menu, Search, Bell, User, ShoppingCart, ArrowRight, Plus } from 'lucide-react';
 
 interface StylePreviewProps {
   preview: {
@@ -28,7 +28,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
     css,
   } = preview;
 
-  // Generate a unique class name for scoping custom CSS if needed, 
+  // Generate a unique class name for scoping custom CSS if needed,
   // but for now we'll just use a specific wrapper class.
   const wrapperClass = "style-preview-wrapper";
 
@@ -52,8 +52,16 @@ export default function StylePreview({ preview }: StylePreviewProps) {
     borderRadius: borderRadius,
   };
 
+  // Cyberpunk special classes - only used when CSS defines them
+  const cyberCardClass = 'cyber-card';
+  const cyberButtonPrimaryClass = 'cyber-button-primary';
+  const cyberButtonSecondaryClass = 'cyber-button-secondary';
+  const cyberBadgeClass = 'cyber-badge';
+  const statCardClass = 'stat-card';
+  const fabClass = 'fab';
+
   return (
-    <div 
+    <div
       className={`w-full rounded-md border border-border-medium relative overflow-hidden shadow-2xl transition-all duration-500 flex flex-col ${wrapperClass}`}
       style={{
         backgroundColor: backgroundColor,
@@ -63,8 +71,15 @@ export default function StylePreview({ preview }: StylePreviewProps) {
       }}
     >
       {css && <style dangerouslySetInnerHTML={{ __html: css }} />}
+      <style>{`
+        .block-hero-text {
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+        }
+      `}</style>
       {/* 1. Navbar Mock */}
-      <div 
+      <div
         className="h-14 border-b flex items-center justify-between px-6 sticky top-0 z-10"
         style={{ borderColor: borderColor, backgroundColor: backgroundColor }}
       >
@@ -79,7 +94,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
         </div>
         <div className="flex items-center gap-4">
           <Search className="w-4 h-4 opacity-70 cursor-pointer" />
-          <div 
+          <div
             className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
             style={{ backgroundColor: secondaryColor }}
           >
@@ -90,13 +105,13 @@ export default function StylePreview({ preview }: StylePreviewProps) {
 
       {/* Scrollable Content */}
       <div className="flex-1 overflow-y-auto custom-scrollbar">
-        
+
         {/* 2. Hero Section */}
         <div className="px-8 py-16 md:py-24 text-center border-b" style={{ borderColor: borderColor }}>
-          <div 
+          <div
             className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider mb-6"
-            style={{ 
-              backgroundColor: secondaryColor, 
+            style={{
+              backgroundColor: secondaryColor,
               color: accentColor,
               borderRadius: borderRadius,
               border: `1px solid ${borderColor}`
@@ -107,18 +122,18 @@ export default function StylePreview({ preview }: StylePreviewProps) {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Build Faster with <span style={{ color: accentColor }}>Style.</span>
           </h1>
-          <p className="text-lg opacity-70 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Create stunning interfaces with our comprehensive design system. 
+          <p className="text-lg opacity-70 max-w-2xl mx-auto mb-10 leading-relaxed text-center px-4">
+            Create stunning interfaces with our comprehensive design system.
             Optimized for speed, consistency, and scalability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <button
               className="px-8 py-3 font-bold transition-transform hover:scale-105 active:scale-95"
               style={buttonStyle}
             >
               Get Started
             </button>
-            <button 
+            <button
               className="px-8 py-3 font-bold transition-opacity hover:opacity-80"
               style={outlineButtonStyle}
             >
@@ -135,7 +150,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
               { title: 'Components', val: '50+', icon: '🧩' },
               { title: 'Users', val: '10k+', icon: '👥' },
             ].map((stat, i) => (
-              <div 
+              <div
                 key={i}
                 className="p-6 transition-transform hover:-translate-y-1"
                 style={cardStyle}
@@ -162,16 +177,16 @@ export default function StylePreview({ preview }: StylePreviewProps) {
                 ))}
               </ul>
             </div>
-            
+
             <div className="p-6" style={cardStyle}>
               <div className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold uppercase opacity-60 mb-1">Email Address</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="user@example.com"
                     className="w-full p-3 bg-transparent outline-none transition-all"
-                    style={{ 
+                    style={{
                       border: `1px solid ${borderColor}`,
                       borderRadius: borderRadius,
                       color: textColor
@@ -180,9 +195,9 @@ export default function StylePreview({ preview }: StylePreviewProps) {
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase opacity-60 mb-1">Interest</label>
-                  <select 
+                  <select
                     className="w-full p-3 bg-transparent outline-none appearance-none"
-                    style={{ 
+                    style={{
                       border: `1px solid ${borderColor}`,
                       borderRadius: borderRadius,
                       color: textColor,
@@ -193,7 +208,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
                     <option>Development</option>
                   </select>
                 </div>
-                <button 
+                <button
                   className="w-full p-3 font-bold mt-2"
                   style={buttonStyle}
                 >
@@ -204,6 +219,21 @@ export default function StylePreview({ preview }: StylePreviewProps) {
           </div>
         </div>
 
+      </div>
+
+      {/* FAB - Floating Action Button (Material Design 特色) */}
+      <div className="absolute bottom-6 right-6">
+        <button
+          className="w-14 h-14 flex items-center justify-center shadow-lg transition-shadow hover:shadow-xl"
+          style={{
+            backgroundColor: accentColor,
+            color: backgroundColor,
+            borderRadius: '50%',
+            border: 'none'
+          }}
+        >
+          <Plus className="w-6 h-6" />
+        </button>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ preview:
   textColor: "#000000"
   fontFamily: "'Courier New', monospace"
   accentColor: "#ff0000"
-  secondaryColor: "#0000ff"
+  secondaryColor: "#ffffff"
   borderColor: "#000000"
   borderRadius: "0px"
   css: |
@@ -24,7 +24,7 @@ preview:
     .style-preview-wrapper > div {
       border: 4px solid black;
       background: white;
-      box-shadow: 8px 8px 0px 0px black;
+      box-shadow: 12px 12px 0px 0px black;
       border-radius: 0;
     }
     .style-preview-wrapper button {
@@ -39,6 +39,15 @@ preview:
     .style-preview-wrapper button:hover {
       transform: translate(2px, 2px);
       box-shadow: 2px 2px 0px 0px black;
+    }
+    /* 统计卡片 */
+    .style-preview-wrapper .grid > div {
+      border: 3px solid black;
+      box-shadow: 6px 6px 0px 0px black;
+    }
+    .style-preview-wrapper .grid > div:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0px 0px black;
     }
 prompt: |
   创建一个具有“新野兽派 (Neo-Brutalism)”主题的 Web 界面。

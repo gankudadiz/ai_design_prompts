@@ -11,39 +11,137 @@ preview:
   borderColor: "transparent"
   borderRadius: "24px"
   css: |
+    /* Reset Wrapper */
     .style-preview-wrapper {
       background-color: #f5f5f7;
-      display: grid;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    /* Hide Navbar */
+    .style-preview-wrapper > div:nth-of-type(1) {
+      display: none !important;
+    }
+
+    /* Content Container as Grid */
+    .style-preview-wrapper > div:nth-of-type(2) {
+      display: grid !important;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 16px;
-      padding: 16px;
+      grid-template-rows: auto;
+      gap: 20px;
+      padding: 20px !important;
+      background-color: #f5f5f7;
+      align-content: start;
     }
-    .style-preview-wrapper h1 {
-      display: none;
+
+    /* Reset Styles for all Sections (Cards) */
+    .style-preview-wrapper > div:nth-of-type(2) > div {
+      border: none !important;
+      border-radius: 32px !important;
+      background: white !important;
+      padding: 32px !important;
+      margin: 0 !important;
+      max-width: none !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-    .style-preview-wrapper > div {
-      background: white;
-      border-radius: 24px;
-      padding: 20px;
+
+    /* 1. Hero Section -> Large Card (Span 2) */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #0071e3 0%, #42a1ff 100%) !important;
+      color: white !important;
+      text-align: left !important;
+      align-items: flex-start !important;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border: none;
+      justify-content: center;
+      min-height: 320px;
     }
-    .style-preview-wrapper > div:first-child {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #0071e3 0%, #42a1ff 100%);
-      color: white;
+    
+    /* Hero Content Overrides */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) h1 {
+      color: white !important;
+      font-size: 3.5rem !important;
+      margin-bottom: 0.5rem !important;
     }
-    .style-preview-wrapper button {
-      background: rgba(255, 255, 255, 0.2) !important;
-      backdrop-filter: blur(10px);
-      color: inherit !important;
-      border-radius: 99px !important;
-      border: 1px solid rgba(255,255,255,0.3) !important;
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) span {
+      color: rgba(255,255,255,0.9) !important;
     }
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) p {
+      color: rgba(255,255,255,0.8) !important;
+      text-align: center !important;
+      margin: 0 auto !important;
+      font-size: 1.1rem !important;
+      max-width: 600px;
+    }
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) > div:last-child {
+      justify-content: flex-start !important;
+    }
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(1) button {
+       background: rgba(255,255,255,0.2) !important;
+       backdrop-filter: blur(10px);
+       border: 1px solid rgba(255,255,255,0.3) !important;
+       color: white !important;
+       border-radius: 99px !important;
+       box-shadow: none !important;
+    }
+
+    /* 2. Stats Section -> Left Column */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(2) {
+      grid-column: span 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Stack stats vertically */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(2) > div {
+       display: flex !important;
+       flex-direction: column;
+       gap: 16px;
+    }
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(2) > div > div {
+       background: #f5f5f7 !important;
+       border: none !important;
+       border-radius: 20px !important;
+       padding: 20px !important;
+       display: flex;
+       align-items: center;
+       gap: 16px;
+       margin: 0 !important;
+       box-shadow: none !important;
+    }
+
+    /* 3. Form Section -> Right Column */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(3) {
+      grid-column: span 1;
+      padding: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      display: flex !important;
+    }
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(3) > div {
+      display: flex !important;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    /* Hide the Subscribe Text card */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1) {
+      display: none !important;
+    }
+    /* Show Form card */
+    .style-preview-wrapper > div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(2) {
+      background: white !important;
+      border-radius: 32px !important;
+      padding: 32px !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: none !important;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
 prompt: |
   创建一个具有“Bento Grid (便当盒网格)”布局的 Web 界面。
 

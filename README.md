@@ -1,11 +1,22 @@
-# AI Design Prompts
+# AI Design Prompts - Web UI/UX Design Learning Platform
+
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/gankudadiz/ai_design_prompts)](https://github.com/gankudadiz/ai_design_prompts/stargazers)
+[![GitHub license](https://img.shields.io/github/license/gankudadiz/ai_design_prompts)](https://github.com/gankudadiz/ai_design_prompts)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind CSS-4-38bdf8)](https://tailwindcss.com/)
+
+**Web UI Design Prompts** - An interactive learning platform for UI/UX design vocabulary, CSS components, and AI-generated design prompts.
 
 [English](#english) | [中文](#chinese)
+
+</div>
 
 <a name="english"></a>
 ## 🇬🇧 English
 
-**AI Design Prompts** is an interactive learning platform designed specifically for non-frontend programmers, product managers, and designers.
+**Web UI Design Prompts** (formerly AI Design Prompts) is an interactive learning platform designed specifically for web developers, non-frontend programmers, product managers, and design beginners to learn UI/UX concepts.
 
 ### 🎯 Mission
 
@@ -67,7 +78,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 <a name="chinese"></a>
 ## 🇨🇳 中文
 
-**AI Design Prompts** 是一个专为非前端程序员、产品经理和设计初学者打造的交互式 UI/UX 学习平台。
+**Web UI Design Prompts** (原 AI Design Prompts) 是一个专为 Web 开发者、非前端程序员、产品经理和设计初学者打造的交互式 UI/UX 学习平台。
 
 ### 🎯 使命
 

@@ -1,0 +1,122 @@
+---
+title: "Vaporwave"
+description: "一种受80-90年代科幻和流行文化启发的复古未来主义风格，以粉色、紫色渐变和古典雕塑为特色。"
+tags: ["vaporwave", "retro-futurism", "neon", "gradient"]
+preview:
+  backgroundColor: "#1a1a2e"
+  textColor: "#ffeef8"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff71ce"
+  secondaryColor: "#2d1b4e"
+  borderColor: "#01cdfe"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #1a1a2e;
+      background-image:
+        linear-gradient(180deg, transparent 0%, rgba(255, 113, 206, 0.03) 50%, transparent 100%),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 98px, rgba(1, 205, 254, 0.1) 98px, rgba(1, 205, 254, 0.1) 100px);
+    }
+    .style-preview-wrapper h1 {
+      background: linear-gradient(135deg, #ff71ce, #01cdfe, #05ffa1, #b967ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      font-style: italic;
+      animation: vapor-glow 3s ease-in-out infinite alternate;
+    }
+    .style-preview-wrapper .vapor-card {
+      background: linear-gradient(135deg, rgba(255, 113, 206, 0.1) 0%, rgba(45, 27, 78, 0.8) 50%, rgba(1, 205, 254, 0.1) 100%);
+      border: 1px solid rgba(1, 205, 254, 0.4);
+      box-shadow: 0 0 20px rgba(255, 113, 206, 0.2), inset 0 0 30px rgba(1, 205, 254, 0.05);
+    }
+    .style-preview-wrapper.vapor-button-primary {
+      background: linear-gradient(90deg, #ff71ce, #b967ff) !important;
+      color: #ffffff !important;
+      border: none !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 15px rgba(255, 113, 206, 0.4);
+    }
+    .style-preview-wrapper.vapor-button-secondary {
+      background: transparent !important;
+      color: #01cdfe !important;
+      border: 2px solid #01cdfe !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: rgba(26, 26, 46, 0.8) !important;
+      border: 1px solid rgba(1, 205, 254, 0.5) !important;
+      color: #ffeef8 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: linear-gradient(180deg, rgba(1, 205, 254, 0.1) 0%, rgba(45, 27, 78, 0.6) 100%);
+      border: 1px solid rgba(1, 205, 254, 0.3);
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: rgba(255, 113, 206, 0.6);
+      box-shadow: 0 0 25px rgba(255, 113, 206, 0.3);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #ff71ce, #01cdfe);
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(255, 113, 206, 0.5);
+    }
+    @keyframes vapor-glow {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 113, 206, 0.5)); }
+      100% { filter: drop-shadow(0 0 15px rgba(1, 205, 254, 0.8)); }
+    }
+prompt: |
+  创建一个具有"蒸汽波 (Vaporwave)"主题的网页界面。
+
+  **视觉风格**:
+  - 背景：深紫色 (#1a1a2e) 带有网格线和渐变。
+  - 颜色：荧光粉 (#ff71ce)、青色 (#01cdfe)、薄荷绿 (#05ffa1)、紫色 (#b967ff)。
+  - 边框：半透明渐变边框，带有柔和发光效果。
+  - 形状：直角方形，带有复古科技感。
+
+  **排版**:
+  - 字体：等宽字体 (Courier New) 或复古像素字体。
+  - 效果：标题使用渐变色文字，霓虹发光效果。
+
+  **组件**:
+  - 按钮：渐变色背景，柔和阴影。
+  - 卡片：半透明渐变背景，柔和发光边框。
+
+  **氛围**:
+  - 怀旧、梦幻、赛博复古、放松。
+---
+
+# 蒸汽波 (Vaporwave)
+
+蒸汽波风格从80-90年代的科幻电影、流行文化和早期互联网美学中汲取灵感。它代表了一种对未来的怀旧想象。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-deep` | `#1a1a2e` | 主背景 |
+| `--neon-pink` | `#ff71ce` | 主要强调色 |
+| `--neon-cyan` | `#01cdfe` | 次要强调色 |
+| `--neon-mint` | `#05ffa1` | 高亮色 |
+| `--neon-purple` | `#b967ff` | 装饰色 |
+| `--text-light` | `#ffeef8` | 正文文本 |
+
+### 效果
+*   **渐变文字**: `background-clip: text` + 渐变色背景
+*   **发光**: `box-shadow` 配合霓虹色
+*   **网格**: `repeating-linear-gradient` 创建复古网格
+
+## 使用示例
+
+```css
+.vapor-card {
+  background: linear-gradient(135deg, rgba(255, 113, 206, 0.1), rgba(45, 27, 78, 0.8));
+  border: 1px solid rgba(1, 205, 254, 0.4);
+  box-shadow: 0 0 20px rgba(255, 113, 206, 0.2);
+  color: #ffeef8;
+  padding: 20px;
+}
+```

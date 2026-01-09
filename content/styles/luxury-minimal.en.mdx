@@ -1,0 +1,154 @@
+---
+title: "Luxury Minimal"
+description: "A high-end minimalist style featuring black and gold, emphasizing refined, elegant, and timeless design."
+tags: ["luxury", "minimal", "gold", "elegant"]
+preview:
+  backgroundColor: "#0a0a0a"
+  textColor: "#f5f5f5"
+  fontFamily: "'Didot', 'Bodoni MT', serif"
+  accentColor: "#d4af37"
+  secondaryColor: "#141414"
+  borderColor: "#2a2a2a"
+  borderRadius: "2px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0a0a0a;
+      background-image:
+        linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+    }
+    .style-preview-wrapper h1 {
+      color: #f5f5f5;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .style-preview-wrapper h1 span {
+      color: #d4af37;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+    .style-preview-wrapper .luxury-card {
+      background: linear-gradient(145deg, #141414 0%, #0a0a0a 100%);
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    .style-preview-wrapper .luxury-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      opacity: 0.5;
+    }
+    .style-preview-wrapper.luxury-button-primary {
+      background: linear-gradient(135deg, #d4af37, #c9a227) !important;
+      color: #0a0a0a !important;
+      border: none !important;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+    .style-preview-wrapper.luxury-button-secondary {
+      background: transparent !important;
+      color: #d4af37 !important;
+      border: 1px solid #d4af37 !important;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+    .style-preview-wrapper .luxury-button-secondary:hover {
+      background: rgba(212, 175, 55, 0.1) !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: #0a0a0a !important;
+      border: 1px solid #2a2a2a !important;
+      border-bottom: 1px solid #d4af37 !important;
+      color: #f5f5f5 !important;
+      font-weight: 300;
+    }
+    .style-preview-wrapper input:focus, .style-preview-wrapper select:focus {
+      border-color: #d4af37 !important;
+      box-shadow: 0 1px 0 #d4af37 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-left: 2px solid #d4af37;
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #d4af37, #c9a227);
+      color: #0a0a0a !important;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+prompt: |
+  Create a web interface with a "Luxury Minimal" theme.
+
+  **Visual Style**:
+  - Background: Deep black (#0a0a0a) with subtle gradients.
+  - Colors: Champagne gold (#d4af37), charcoal (#2a2a2a), pure white (#f5f5f5).
+  - Borders: Ultra-thin borders with gold accents.
+  - Shapes: Sharp corners, minimalist geometric shapes.
+
+  **Typography**:
+  - Font: Premium serif fonts (Didot, Bodoni MT) or classic sans-serif.
+  - Effects: Gold text with shadow, uppercase, wide letter spacing.
+
+  **Components**:
+  - Buttons: Gold gradient background or gold border.
+  - Cards: Dark background with gold top border accent.
+
+  **Vibe**:
+  - High-end, elegant, refined, timeless.
+---
+
+# Luxury Minimal
+
+Luxury Minimal combines minimalist design principles with high-end luxury aesthetics. It emphasizes "less is more" through refined details and high-quality material feel.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-void` | `#0a0a0a` | Main background |
+| `--gold-champagne` | `#d4af37` | Primary accent |
+| `--gold-light` | `#c9a227` | Secondary accent |
+| `--charcoal` | `#2a2a2a` | Borders/Separators |
+| `--text-white` | `#f5f5f5` | Body text |
+
+### Effects
+*   **Gold Gradient**: `linear-gradient(135deg, #d4af37, #c9a227)`
+*   **Subtle Accent**: Gold border lines on bottom/left
+*   **Text Shadow**: Low opacity gold `text-shadow`
+
+## Usage Example
+
+```css
+.luxury-card {
+  background: linear-gradient(145deg, #141414, #0a0a0a);
+  border: 1px solid #2a2a2a;
+  border-left: 2px solid #d4af37;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: #f5f5f5;
+  padding: 24px;
+}
+
+.luxury-button {
+  background: linear-gradient(135deg, #d4af37, #c9a227);
+  color: #0a0a0a;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+}
+```

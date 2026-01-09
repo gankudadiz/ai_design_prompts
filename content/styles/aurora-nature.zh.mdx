@@ -1,0 +1,121 @@
+---
+title: "Aurora Nature"
+description: "一种受北极光和自然景观启发的清新风格，以绿色渐变、柔和光晕和有机形状为特色。"
+tags: ["aurora", "nature", "organic", "gradient"]
+preview:
+  backgroundColor: "#0d1f1a"
+  textColor: "#e8f5e9"
+  fontFamily: "'Segoe UI', 'Microsoft YaHei', sans-serif"
+  accentColor: "#4ade80"
+  secondaryColor: "#1a2e25"
+  borderColor: "#22d3a0"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0d1f1a;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(74, 222, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(34, 211, 160, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
+    }
+    .style-preview-wrapper h1 {
+      color: #4ade80;
+      text-shadow: 0 0 30px rgba(74, 222, 128, 0.4), 0 0 60px rgba(74, 222, 128, 0.2);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+    }
+    .style-preview-wrapper h1 span {
+      background: linear-gradient(135deg, #4ade80, #22d3a0, #2dd4bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .style-preview-wrapper .aurora-card {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, rgba(26, 46, 37, 0.9) 50%, rgba(34, 211, 160, 0.05) 100%);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.1);
+    }
+    .style-preview-wrapper.aurora-button-primary {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 211, 160, 0.3)) !important;
+      color: #4ade80 !important;
+      border: 1px solid rgba(74, 222, 128, 0.4) !important;
+    }
+    .style-preview-wrapper.aurora-button-primary:hover {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 211, 160, 0.4)) !important;
+      box-shadow: 0 0 20px rgba(74, 222, 128, 0.3) !important;
+    }
+    .style-preview-wrapper.aurora-button-secondary {
+      background: transparent !important;
+      color: #22d3a0 !important;
+      border: 1px solid rgba(34, 211, 160, 0.4) !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: rgba(13, 31, 26, 0.6) !important;
+      border: 1px solid rgba(74, 222, 128, 0.3) !important;
+      color: #e8f5e9 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: linear-gradient(180deg, rgba(74, 222, 128, 0.05) 0%, rgba(26, 46, 37, 0.8) 100%);
+      border: 1px solid rgba(74, 222, 128, 0.15);
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: rgba(74, 222, 128, 0.4);
+      box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #4ade80, #22d3a0);
+      color: #0d1f1a !important;
+      box-shadow: 0 4px 20px rgba(74, 222, 128, 0.4);
+    }
+prompt: |
+  创建一个具有"极光自然 (Aurora Nature)"主题的网页界面。
+
+  **视觉风格**:
+  - 背景：深绿色 (#0d1f1a) 带有柔和的极光渐变光晕。
+  - 颜色：森林绿 (#4ade80)、薄荷绿 (#22d3a0)、青色 (#2dd4bf)。
+  - 边框：柔和的半透明边框，带有微光效果。
+  - 形状：圆角卡片，有机曲线。
+
+  **排版**:
+  - 字体：现代无衬线字体 (Segoe UI, Microsoft YaHei)。
+  - 效果：柔和的文本发光，渐变文字。
+
+  **组件**:
+  - 按钮：半透明渐变背景，悬停时发光。
+  - 卡片：带有柔和光晕的深色半透明面板。
+
+  **氛围**:
+  - 自然、平静、清新、可持续。
+---
+
+# 极光自然 (Aurora Nature)
+
+极光自然风格从北极光、森林和自然景观中汲取灵感。它创造了一种宁静、可持续的视觉体验。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-forest` | `#0d1f1a` | 主背景 |
+| `--aurora-green` | `#4ade80` | 主要强调色 |
+| `--aurora-mint` | `#22d3a0` | 次要强调色 |
+| `--aurora-teal` | `#2dd4bf` | 装饰色 |
+| `--text-mist` | `#e8f5e9` | 正文文本 |
+
+### 效果
+*   **极光光晕**: 多层 `radial-gradient` 叠加
+*   **柔和发光**: `box-shadow` 配合低透明度
+*   **有机形状**: 大圆角 (`border-radius: 16px`)
+
+## 使用示例
+
+```css
+.aurora-card {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), rgba(26, 46, 37, 0.9));
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.1);
+  color: #e8f5e9;
+  border-radius: 16px;
+  padding: 20px;
+}
+```

@@ -119,6 +119,6 @@ pre > code {
 }
 
 /* Reset default margins for consistent spacing */
-p {
+/* p {
   margin: 0;
-}
+} */

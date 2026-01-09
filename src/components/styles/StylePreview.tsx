@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import { Menu, Search, Bell, User, ShoppingCart, ArrowRight, Plus } from 'lucide-react';
+import { Menu, Search, User, Plus } from 'lucide-react';
 
 interface StylePreviewProps {
   preview: {
@@ -12,7 +11,7 @@ interface StylePreviewProps {
     secondaryColor?: string;
     borderColor?: string;
     borderRadius?: string;
-    css?: string; // New: Allow custom CSS injection
+    css?: string;
   };
 }
 
@@ -28,9 +27,10 @@ export default function StylePreview({ preview }: StylePreviewProps) {
     css,
   } = preview;
 
-  // Generate a unique class name for scoping custom CSS if needed,
-  // but for now we'll just use a specific wrapper class.
   const wrapperClass = "style-preview-wrapper";
+
+  // 检测 CSS 中的风格前缀（如 cyber-、acid-、vapor- 等）
+  const stylePrefix = css?.match(/\.style-preview-wrapper\.([a-z]+)-/)?.[1] || '';
 
   const buttonStyle = {
     backgroundColor: accentColor,
@@ -52,13 +52,14 @@ export default function StylePreview({ preview }: StylePreviewProps) {
     borderRadius: borderRadius,
   };
 
-  // Cyberpunk special classes - only used when CSS defines them
-  const cyberCardClass = 'cyber-card';
-  const cyberButtonPrimaryClass = 'cyber-button-primary';
-  const cyberButtonSecondaryClass = 'cyber-button-secondary';
-  const cyberBadgeClass = 'cyber-badge';
-  const statCardClass = 'stat-card';
-  const fabClass = 'fab';
+  // 动态生成类名列表
+  const buttonPrimaryClass = stylePrefix ? `${wrapperClass} ${stylePrefix}-button-primary` : '';
+  const buttonSecondaryClass = stylePrefix ? `${wrapperClass} ${stylePrefix}-button-secondary` : '';
+  const cardClass = stylePrefix ? `${wrapperClass} ${stylePrefix}-card` : '';
+  const statCardClass = css?.includes('stat-card') ? 'stat-card' : '';
+  const fabClass = css?.includes('fab') ? 'fab' : '';
+
+  const hasCustomButtonStyles = !!stylePrefix;
 
   return (
     <div
@@ -122,20 +123,26 @@ export default function StylePreview({ preview }: StylePreviewProps) {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Build Faster with <span style={{ color: accentColor }}>Style.</span>
           </h1>
-          <p className="text-lg opacity-70 max-w-2xl mx-auto mb-10 leading-relaxed text-center px-4">
+          <p
+            className="text-lg opacity-70 max-w-2xl mx-auto mb-12 leading-relaxed text-center px-4 text-justify"
+            style={{ marginBottom: '3rem' }}
+          >
             Create stunning interfaces with our comprehensive design system.
             Optimized for speed, consistency, and scalability.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            style={{ marginTop: '-1.5rem' }}
+          >
             <button
-              className="px-8 py-3 font-bold transition-transform hover:scale-105 active:scale-95"
-              style={buttonStyle}
+              className={`px-8 py-3 font-bold transition-transform hover:scale-105 active:scale-95 ${buttonPrimaryClass}`}
+              style={hasCustomButtonStyles ? {} : buttonStyle}
             >
               Get Started
             </button>
             <button
-              className="px-8 py-3 font-bold transition-opacity hover:opacity-80"
-              style={outlineButtonStyle}
+              className={`px-8 py-3 font-bold transition-opacity hover:opacity-80 ${buttonSecondaryClass}`}
+              style={hasCustomButtonStyles ? {} : outlineButtonStyle}
             >
               Documentation
             </button>
@@ -152,8 +159,8 @@ export default function StylePreview({ preview }: StylePreviewProps) {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="p-6 transition-transform hover:-translate-y-1"
-                style={cardStyle}
+                className={`p-6 transition-transform hover:-translate-y-1 ${statCardClass || cardClass}`}
+                style={statCardClass || cardClass ? cardStyle : {}}
               >
                 <div className="text-3xl mb-2">{stat.icon}</div>
                 <div className="text-2xl font-bold mb-1">{stat.val}</div>
@@ -166,7 +173,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
         {/* 4. Content / Form Section */}
         <div className="px-8 py-16 border-t" style={{ borderColor: borderColor }}>
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-6" style={cardStyle}>
+            <div className={`p-6 ${cardClass}`} style={cardClass ? cardStyle : {}}>
               <h2 className="text-3xl font-bold mb-4">Subscribe to updates</h2>
               <p className="opacity-70 mb-6">Stay up to date with the latest releases and design tips.</p>
               <ul className="space-y-3 opacity-80 mb-8">
@@ -178,7 +185,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
               </ul>
             </div>
 
-            <div className="p-6" style={cardStyle}>
+            <div className={`p-6 ${cardClass}`} style={cardClass ? cardStyle : {}}>
               <div className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold uppercase opacity-60 mb-1">Email Address</label>
@@ -201,7 +208,7 @@ export default function StylePreview({ preview }: StylePreviewProps) {
                       border: `1px solid ${borderColor}`,
                       borderRadius: borderRadius,
                       color: textColor,
-                      backgroundImage: 'none' // remove default arrow for custom look if needed, but simple is fine
+                      backgroundImage: 'none'
                     }}
                   >
                     <option>Design Systems</option>
@@ -209,8 +216,8 @@ export default function StylePreview({ preview }: StylePreviewProps) {
                   </select>
                 </div>
                 <button
-                  className="w-full p-3 font-bold mt-2"
-                  style={buttonStyle}
+                  className={`w-full p-3 font-bold mt-2 ${buttonPrimaryClass}`}
+                  style={hasCustomButtonStyles ? {} : buttonStyle}
                 >
                   Subscribe
                 </button>
@@ -221,11 +228,11 @@ export default function StylePreview({ preview }: StylePreviewProps) {
 
       </div>
 
-      {/* FAB - Floating Action Button (Material Design 特色) */}
+      {/* FAB - Floating Action Button */}
       <div className="absolute bottom-6 right-6">
         <button
-          className="w-14 h-14 flex items-center justify-center shadow-lg transition-shadow hover:shadow-xl"
-          style={{
+          className={`w-14 h-14 flex items-center justify-center shadow-lg transition-shadow hover:shadow-xl ${fabClass}`}
+          style={fabClass ? {} : {
             backgroundColor: accentColor,
             color: backgroundColor,
             borderRadius: '50%',

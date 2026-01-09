@@ -1,0 +1,154 @@
+---
+title: "Luxury Minimal"
+description: "一种以黑色和金色为主的高端极简风格，强调精致、优雅和永恒的设计。"
+tags: ["luxury", "minimal", "gold", "elegant"]
+preview:
+  backgroundColor: "#0a0a0a"
+  textColor: "#f5f5f5"
+  fontFamily: "'Didot', 'Bodoni MT', serif"
+  accentColor: "#d4af37"
+  secondaryColor: "#141414"
+  borderColor: "#2a2a2a"
+  borderRadius: "2px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0a0a0a;
+      background-image:
+        linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+    }
+    .style-preview-wrapper h1 {
+      color: #f5f5f5;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .style-preview-wrapper h1 span {
+      color: #d4af37;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+    .style-preview-wrapper .luxury-card {
+      background: linear-gradient(145deg, #141414 0%, #0a0a0a 100%);
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    .style-preview-wrapper .luxury-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      opacity: 0.5;
+    }
+    .style-preview-wrapper.luxury-button-primary {
+      background: linear-gradient(135deg, #d4af37, #c9a227) !important;
+      color: #0a0a0a !important;
+      border: none !important;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+    .style-preview-wrapper.luxury-button-secondary {
+      background: transparent !important;
+      color: #d4af37 !important;
+      border: 1px solid #d4af37 !important;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+    .style-preview-wrapper .luxury-button-secondary:hover {
+      background: rgba(212, 175, 55, 0.1) !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: #0a0a0a !important;
+      border: 1px solid #2a2a2a !important;
+      border-bottom: 1px solid #d4af37 !important;
+      color: #f5f5f5 !important;
+      font-weight: 300;
+    }
+    .style-preview-wrapper input:focus, .style-preview-wrapper select:focus {
+      border-color: #d4af37 !important;
+      box-shadow: 0 1px 0 #d4af37 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-left: 2px solid #d4af37;
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: #d4af37;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #d4af37, #c9a227);
+      color: #0a0a0a !important;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+prompt: |
+  创建一个具有"奢华极简 (Luxury Minimal)"主题的网页界面。
+
+  **视觉风格**:
+  - 背景：深邃黑色 (#0a0a0a) 带有微妙渐变。
+  - 颜色：香槟金 (#d4af37)、炭黑 (#2a2a2a)、纯白 (#f5f5f5)。
+  - 边框：极细的边框，强调金色的点缀。
+  - 形状：锋利的直角，极简的几何形状。
+
+  **排版**:
+  - 字体：高级衬线字体 (Didot, Bodoni MT) 或经典无衬线。
+  - 效果：金色文字带阴影，大写字母，宽字间距。
+
+  **组件**:
+  - 按钮：金色渐变背景或金色边框线。
+  - 卡片：深色背景带金色顶部边框线。
+
+  **氛围**:
+  - 高端、优雅、精致、永恒。
+---
+
+# 奢华极简 (Luxury Minimal)
+
+奢华极简风格融合了极简主义的设计原则与高端奢侈品的美学。它强调"少即是多"的理念，通过精致的细节和高质量的材质感传达优雅。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-void` | `#0a0a0a` | 主背景 |
+| `--gold-champagne` | `#d4af37` | 主要强调色 |
+| `--gold-light` | `#c9a227` | 次要强调色 |
+| `--charcoal` | `#2a2a2a` | 边框/分隔 |
+| `--text-white` | `#f5f5f5` | 正文文本 |
+
+### 效果
+*   **金色渐变**: `linear-gradient(135deg, #d4af37, #c9a227)`
+*   **微光边框**: 底部/左侧金色边框线
+*   **文字阴影**: 低透明度金色 `text-shadow`
+
+## 使用示例
+
+```css
+.luxury-card {
+  background: linear-gradient(145deg, #141414, #0a0a0a);
+  border: 1px solid #2a2a2a;
+  border-left: 2px solid #d4af37;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: #f5f5f5;
+  padding: 24px;
+}
+
+.luxury-button {
+  background: linear-gradient(135deg, #d4af37, #c9a227);
+  color: #0a0a0a;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+}
+```

@@ -1,0 +1,121 @@
+---
+title: "Aurora Nature"
+description: "A fresh style inspired by the aurora borealis and natural landscapes, featuring green gradients, soft glows, and organic shapes."
+tags: ["aurora", "nature", "organic", "gradient"]
+preview:
+  backgroundColor: "#0d1f1a"
+  textColor: "#e8f5e9"
+  fontFamily: "'Segoe UI', sans-serif"
+  accentColor: "#4ade80"
+  secondaryColor: "#1a2e25"
+  borderColor: "#22d3a0"
+  borderRadius: "16px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #0d1f1a;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(74, 222, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(34, 211, 160, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
+    }
+    .style-preview-wrapper h1 {
+      color: #4ade80;
+      text-shadow: 0 0 30px rgba(74, 222, 128, 0.4), 0 0 60px rgba(74, 222, 128, 0.2);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+    }
+    .style-preview-wrapper h1 span {
+      background: linear-gradient(135deg, #4ade80, #22d3a0, #2dd4bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .style-preview-wrapper .aurora-card {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.08) 0%, rgba(26, 46, 37, 0.9) 50%, rgba(34, 211, 160, 0.05) 100%);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.1);
+    }
+    .style-preview-wrapper.aurora-button-primary {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 211, 160, 0.3)) !important;
+      color: #4ade80 !important;
+      border: 1px solid rgba(74, 222, 128, 0.4) !important;
+    }
+    .style-preview-wrapper.aurora-button-primary:hover {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 211, 160, 0.4)) !important;
+      box-shadow: 0 0 20px rgba(74, 222, 128, 0.3) !important;
+    }
+    .style-preview-wrapper.aurora-button-secondary {
+      background: transparent !important;
+      color: #22d3a0 !important;
+      border: 1px solid rgba(34, 211, 160, 0.4) !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: rgba(13, 31, 26, 0.6) !important;
+      border: 1px solid rgba(74, 222, 128, 0.3) !important;
+      color: #e8f5e9 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: linear-gradient(180deg, rgba(74, 222, 128, 0.05) 0%, rgba(26, 46, 37, 0.8) 100%);
+      border: 1px solid rgba(74, 222, 128, 0.15);
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: rgba(74, 222, 128, 0.4);
+      box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #4ade80, #22d3a0);
+      color: #0d1f1a !important;
+      box-shadow: 0 4px 20px rgba(74, 222, 128, 0.4);
+    }
+prompt: |
+  Create a web interface with an "Aurora Nature" theme.
+
+  **Visual Style**:
+  - Background: Deep green (#0d1f1a) with soft aurora gradient glows.
+  - Colors: Forest green (#4ade80), mint green (#22d3a0), teal (#2dd4bf).
+  - Borders: Soft semi-transparent borders with subtle glow.
+  - Shapes: Rounded cards with organic curves.
+
+  **Typography**:
+  - Font: Modern sans-serif fonts (Segoe UI).
+  - Effects: Soft text glow, gradient text on headings.
+
+  **Components**:
+  - Buttons: Semi-transparent gradient background, glow on hover.
+  - Cards: Dark semi-transparent panels with soft glow effects.
+
+  **Vibe**:
+  - Natural, calm, fresh, sustainable.
+---
+
+# Aurora Nature
+
+Aurora Nature draws inspiration from the aurora borealis, forests, and natural landscapes. It creates a tranquil and sustainable visual experience.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-forest` | `#0d1f1a` | Main background |
+| `--aurora-green` | `#4ade80` | Primary accent |
+| `--aurora-mint` | `#22d3a0` | Secondary accent |
+| `--aurora-teal` | `#2dd4bf` | Decorative |
+| `--text-mist` | `#e8f5e9` | Body text |
+
+### Effects
+*   **Aurora Glow**: Multiple `radial-gradient` layers
+*   **Soft Glow**: `box-shadow` with low opacity
+*   **Organic Shapes**: Large border radius (`border-radius: 16px`)
+
+## Usage Example
+
+```css
+.aurora-card {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), rgba(26, 46, 37, 0.9));
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 222, 128, 0.1);
+  color: #e8f5e9;
+  border-radius: 16px;
+  padding: 20px;
+}
+```

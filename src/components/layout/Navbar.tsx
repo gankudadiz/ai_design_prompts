@@ -1,10 +1,11 @@
 'use client';
 
 import { Link, usePathname } from '@/i18n/routing';
-import { Search, Github, Terminal } from 'lucide-react';
+import { Github, Terminal } from 'lucide-react';
 import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { SearchBar } from './SearchBar';
 
 const navItems = [
   { key: 'home', path: '/' },
@@ -64,19 +65,7 @@ export function Navbar() {
           {/* Right Section: Search & Actions */}
           <div className="flex items-center gap-4">
             {/* Search Box - Terminal Style */}
-            <div className="hidden sm:flex items-center relative group">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-mint-500 transition-colors">
-                <Search className="w-4 h-4" />
-              </div>
-              <input
-                type="text"
-                placeholder={t('searchPlaceholder')}
-                className="w-48 bg-bg-secondary border border-border-medium text-sm text-text-primary py-1.5 pl-9 pr-3 focus:outline-none focus:border-mint-500 focus:ring-1 focus:ring-mint-500/50 transition-all placeholder:text-text-muted/50"
-              />
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-text-muted border border-border-medium px-1.5 py-0.5 bg-bg-primary">
-                ⌘K
-              </div>
-            </div>
+            <SearchBar />
 
             <LanguageSwitcher />
 

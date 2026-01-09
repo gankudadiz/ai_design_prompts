@@ -1,0 +1,151 @@
+---
+title: "Acid Graphics"
+description: "一种高饱和、强对比的实验性风格，以酸性绿、荧光色和大胆的几何形状为特征。"
+tags: ["acid", "experimental", "high-contrast", "bold"]
+preview:
+  backgroundColor: "#f0f0e0"
+  textColor: "#1a1a1a"
+  fontFamily: "'Arial Black', 'Impact', sans-serif"
+  accentColor: "#ccff00"
+  secondaryColor: "#ff00ff"
+  borderColor: "#1a1a1a"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f0f0e0;
+      background-image:
+        repeating-linear-gradient(45deg, #f0f0e0 0px, #f0f0e0 10px, #e8e8d0 10px, #e8e8d0 20px);
+    }
+    .style-preview-wrapper h1 {
+      color: #1a1a1a;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: -2px;
+      text-shadow: 4px 4px 0 #ccff00, 8px 8px 0 #ff00ff;
+      transform: skewX(-5deg);
+    }
+    .style-preview-wrapper h1 span {
+      color: #ff00ff;
+      text-shadow: 4px 4px 0 #00ffff;
+    }
+    .style-preview-wrapper .acid-card {
+      background: #ffffff;
+      border: 3px solid #1a1a1a;
+      box-shadow: 8px 8px 0 #1a1a1a, 12px 12px 0 #ccff00;
+    }
+    .style-preview-wrapper.acid-button-primary {
+      background: #ccff00 !important;
+      color: #1a1a1a !important;
+      border: 3px solid #1a1a1a !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      font-style: italic;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+      transform: translate(-2px, -2px);
+    }
+    .style-preview-wrapper.acid-button-primary:hover {
+      transform: translate(0, 0) !important;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+    }
+    .style-preview-wrapper.acid-button-secondary {
+      background: #ff00ff !important;
+      color: #ffffff !important;
+      border: 3px solid #1a1a1a !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      font-style: italic;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: #ffffff !important;
+      border: 3px solid #1a1a1a !important;
+      color: #1a1a1a !important;
+      font-weight: 700;
+    }
+    .style-preview-wrapper input::placeholder {
+      color: #ccff00 !important;
+      font-weight: 900;
+    }
+    .style-preview-wrapper .stat-card {
+      background: #00ffff;
+      border: 3px solid #1a1a1a;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+    .style-preview-wrapper .stat-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #1a1a1a, 10px 10px 0 #ff00ff;
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #ccff00, #ff00ff);
+      color: #1a1a1a !important;
+      border: 3px solid #1a1a1a !important;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+prompt: |
+  创建一个具有"酸性设计 (Acid Graphics)"主题的网页界面。
+
+  **视觉风格**:
+  - 背景：米黄色/奶油色 (#f0f0e0) 带有条纹图案。
+  - 颜色：酸性绿 (#ccff00)、荧光粉 (#ff00ff)、青色 (#00ffff)、纯黑 (#1a1a1a)。
+  - 边框：粗黑边框，无圆角。
+  - 形状：倾斜、剪切、有冲击力的几何形状。
+
+  **排版**:
+  - 字体：粗黑体 (Arial Black, Impact)。
+  - 效果：文本阴影、倾斜、夸张的字母间距。
+
+  **组件**:
+  - 按钮：纯色背景、粗黑边框、硬阴影。
+  - 卡片：白色背景、粗黑边框、多层硬阴影。
+
+  **氛围**:
+  - 实验性、反叛、迷幻、高能量。
+---
+
+# 酸性设计 (Acid Graphics)
+
+酸性设计风格从90年代的锐舞文化和酸性摇滚中汲取灵感。它是一种反叛传统的设计语言，强调视觉冲击力和情感表达。
+
+## 设计变量
+
+### 颜色
+| 变量 | 值 | 用法 |
+| :--- | :--- | :--- |
+| `--bg-cream` | `#f0f0e0` | 主背景 |
+| `--acid-green` | `#ccff00` | 主要强调色 |
+| `--acid-pink` | `#ff00ff` | 次要强调色 |
+| `--acid-cyan` | `#00ffff` | 装饰色 |
+| `--ink-black` | `#1a1a1a` | 边框/文字 |
+
+### 效果
+*   **硬阴影**: `box-shadow: 8px 8px 0 #1a1a1a`
+*   **文本阴影**: 多层偏移阴影
+*   **倾斜**: `skewX(-5deg)` 创造动感
+*   **粗边框**: `3px solid #1a1a1a`
+
+## 使用示例
+
+```css
+.acid-card {
+  background: #ffffff;
+  border: 3px solid #1a1a1a;
+  box-shadow: 8px 8px 0 #1a1a1a, 12px 12px 0 #ccff00;
+  padding: 20px;
+}
+
+.acid-button {
+  background: #ccff00;
+  color: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  padding: 12px 24px;
+}
+
+.acid-button:hover {
+  transform: translate(0, 0);
+  box-shadow: 4px 4px 0 #1a1a1a;
+}
+```

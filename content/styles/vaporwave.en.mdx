@@ -1,0 +1,122 @@
+---
+title: "Vaporwave"
+description: "A retro-futuristic style inspired by 80s-90s sci-fi and pop culture, featuring pink, purple gradients and classical sculptures."
+tags: ["vaporwave", "retro-futurism", "neon", "gradient"]
+preview:
+  backgroundColor: "#1a1a2e"
+  textColor: "#ffeef8"
+  fontFamily: "'Courier New', monospace"
+  accentColor: "#ff71ce"
+  secondaryColor: "#2d1b4e"
+  borderColor: "#01cdfe"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #1a1a2e;
+      background-image:
+        linear-gradient(180deg, transparent 0%, rgba(255, 113, 206, 0.03) 50%, transparent 100%),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 98px, rgba(1, 205, 254, 0.1) 98px, rgba(1, 205, 254, 0.1) 100px);
+    }
+    .style-preview-wrapper h1 {
+      background: linear-gradient(135deg, #ff71ce, #01cdfe, #05ffa1, #b967ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      font-style: italic;
+      animation: vapor-glow 3s ease-in-out infinite alternate;
+    }
+    .style-preview-wrapper .vapor-card {
+      background: linear-gradient(135deg, rgba(255, 113, 206, 0.1) 0%, rgba(45, 27, 78, 0.8) 50%, rgba(1, 205, 254, 0.1) 100%);
+      border: 1px solid rgba(1, 205, 254, 0.4);
+      box-shadow: 0 0 20px rgba(255, 113, 206, 0.2), inset 0 0 30px rgba(1, 205, 254, 0.05);
+    }
+    .style-preview-wrapper.vapor-button-primary {
+      background: linear-gradient(90deg, #ff71ce, #b967ff) !important;
+      color: #ffffff !important;
+      border: none !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 15px rgba(255, 113, 206, 0.4);
+    }
+    .style-preview-wrapper.vapor-button-secondary {
+      background: transparent !important;
+      color: #01cdfe !important;
+      border: 2px solid #01cdfe !important;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: rgba(26, 26, 46, 0.8) !important;
+      border: 1px solid rgba(1, 205, 254, 0.5) !important;
+      color: #ffeef8 !important;
+    }
+    .style-preview-wrapper .stat-card {
+      background: linear-gradient(180deg, rgba(1, 205, 254, 0.1) 0%, rgba(45, 27, 78, 0.6) 100%);
+      border: 1px solid rgba(1, 205, 254, 0.3);
+    }
+    .style-preview-wrapper .stat-card:hover {
+      border-color: rgba(255, 113, 206, 0.6);
+      box-shadow: 0 0 25px rgba(255, 113, 206, 0.3);
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #ff71ce, #01cdfe);
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(255, 113, 206, 0.5);
+    }
+    @keyframes vapor-glow {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 113, 206, 0.5)); }
+      100% { filter: drop-shadow(0 0 15px rgba(1, 205, 254, 0.8)); }
+    }
+prompt: |
+  Create a web interface with a "Vaporwave" theme.
+
+  **Visual Style**:
+  - Background: Deep purple (#1a1a2e) with grid lines and gradients.
+  - Colors: Neon pink (#ff71ce), cyan (#01cdfe), mint green (#05ffa1), purple (#b967ff).
+  - Borders: Semi-transparent gradient borders with soft glow.
+  - Shapes: Square with sharp corners, retro tech feel.
+
+  **Typography**:
+  - Font: Monospace (Courier New) or retro pixel fonts.
+  - Effects: Gradient text, neon glow effects on headings.
+
+  **Components**:
+  - Buttons: Gradient background with soft shadows.
+  - Cards: Semi-transparent gradient backgrounds with soft glowing borders.
+
+  **Vibe**:
+  - Nostalgic, dreamy, cyber-retro, relaxing.
+---
+
+# Vaporwave
+
+Vaporwave draws inspiration from 80s-90s sci-fi movies, pop culture, and early internet aesthetics. It represents a nostalgic imagination of the future.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-deep` | `#1a1a2e` | Main background |
+| `--neon-pink` | `#ff71ce` | Primary accent |
+| `--neon-cyan` | `#01cdfe` | Secondary accent |
+| `--neon-mint` | `#05ffa1` | Highlight |
+| `--neon-purple` | `#b967ff` | Decorative |
+| `--text-light` | `#ffeef8` | Body text |
+
+### Effects
+*   **Gradient Text**: `background-clip: text` + gradient background
+*   **Glow**: `box-shadow` with neon colors
+*   **Grid**: `repeating-linear-gradient` for retro grid pattern
+
+## Usage Example
+
+```css
+.vapor-card {
+  background: linear-gradient(135deg, rgba(255, 113, 206, 0.1), rgba(45, 27, 78, 0.8));
+  border: 1px solid rgba(1, 205, 254, 0.4);
+  box-shadow: 0 0 20px rgba(255, 113, 206, 0.2);
+  color: #ffeef8;
+  padding: 20px;
+}
+```

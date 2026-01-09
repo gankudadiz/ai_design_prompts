@@ -1,0 +1,151 @@
+---
+title: "Acid Graphics"
+description: "A high-saturation, high-contrast experimental style featuring acid green, neon colors, and bold geometric shapes."
+tags: ["acid", "experimental", "high-contrast", "bold"]
+preview:
+  backgroundColor: "#f0f0e0"
+  textColor: "#1a1a1a"
+  fontFamily: "'Arial Black', 'Impact', sans-serif"
+  accentColor: "#ccff00"
+  secondaryColor: "#ff00ff"
+  borderColor: "#1a1a1a"
+  borderRadius: "0px"
+  css: |
+    .style-preview-wrapper {
+      background-color: #f0f0e0;
+      background-image:
+        repeating-linear-gradient(45deg, #f0f0e0 0px, #f0f0e0 10px, #e8e8d0 10px, #e8e8d0 20px);
+    }
+    .style-preview-wrapper h1 {
+      color: #1a1a1a;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: -2px;
+      text-shadow: 4px 4px 0 #ccff00, 8px 8px 0 #ff00ff;
+      transform: skewX(-5deg);
+    }
+    .style-preview-wrapper h1 span {
+      color: #ff00ff;
+      text-shadow: 4px 4px 0 #00ffff;
+    }
+    .style-preview-wrapper .acid-card {
+      background: #ffffff;
+      border: 3px solid #1a1a1a;
+      box-shadow: 8px 8px 0 #1a1a1a, 12px 12px 0 #ccff00;
+    }
+    .style-preview-wrapper.acid-button-primary {
+      background: #ccff00 !important;
+      color: #1a1a1a !important;
+      border: 3px solid #1a1a1a !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      font-style: italic;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+      transform: translate(-2px, -2px);
+    }
+    .style-preview-wrapper.acid-button-primary:hover {
+      transform: translate(0, 0) !important;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+    }
+    .style-preview-wrapper.acid-button-secondary {
+      background: #ff00ff !important;
+      color: #ffffff !important;
+      border: 3px solid #1a1a1a !important;
+      font-weight: 900 !important;
+      text-transform: uppercase;
+      font-style: italic;
+      box-shadow: 4px 4px 0 #1a1a1a !important;
+    }
+    .style-preview-wrapper input, .style-preview-wrapper select {
+      background: #ffffff !important;
+      border: 3px solid #1a1a1a !important;
+      color: #1a1a1a !important;
+      font-weight: 700;
+    }
+    .style-preview-wrapper input::placeholder {
+      color: #ccff00 !important;
+      font-weight: 900;
+    }
+    .style-preview-wrapper .stat-card {
+      background: #00ffff;
+      border: 3px solid #1a1a1a;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+    .style-preview-wrapper .stat-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #1a1a1a, 10px 10px 0 #ff00ff;
+    }
+    .style-preview-wrapper .fab {
+      background: linear-gradient(135deg, #ccff00, #ff00ff);
+      color: #1a1a1a !important;
+      border: 3px solid #1a1a1a !important;
+      box-shadow: 6px 6px 0 #1a1a1a;
+    }
+prompt: |
+  Create a web interface with an "Acid Graphics" theme.
+
+  **Visual Style**:
+  - Background: Cream/beige (#f0f0e0) with striped patterns.
+  - Colors: Acid green (#ccff00), neon pink (#ff00ff), cyan (#00ffff), pure black (#1a1a1a).
+  - Borders: Thick black borders, no rounded corners.
+  - Shapes: Skewed, clipped, impactful geometric shapes.
+
+  **Typography**:
+  - Font: Bold black fonts (Arial Black, Impact).
+  - Effects: Text shadows, slanted, exaggerated letter spacing.
+
+  **Components**:
+  - Buttons: Solid color background, thick black borders, hard shadows.
+  - Cards: White background, thick black borders, multi-layer hard shadows.
+
+  **Vibe**:
+  - Experimental, rebellious, psychedelic, high energy.
+---
+
+# Acid Graphics
+
+Acid Graphics draws inspiration from 90s rave culture and acid rock. It's a rebellious design language that emphasizes visual impact and emotional expression.
+
+## Design Tokens
+
+### Colors
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `--bg-cream` | `#f0f0e0` | Main background |
+| `--acid-green` | `#ccff00` | Primary accent |
+| `--acid-pink` | `#ff00ff` | Secondary accent |
+| `--acid-cyan` | `#00ffff` | Decorative |
+| `--ink-black` | `#1a1a1a` | Borders/Text |
+
+### Effects
+*   **Hard Shadow**: `box-shadow: 8px 8px 0 #1a1a1a`
+*   **Text Shadow**: Multi-layer offset shadows
+*   **Skew**: `skewX(-5deg)` for dynamic feel
+*   **Thick Border**: `3px solid #1a1a1a`
+
+## Usage Example
+
+```css
+.acid-card {
+  background: #ffffff;
+  border: 3px solid #1a1a1a;
+  box-shadow: 8px 8px 0 #1a1a1a, 12px 12px 0 #ccff00;
+  padding: 20px;
+}
+
+.acid-button {
+  background: #ccff00;
+  color: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  padding: 12px 24px;
+}
+
+.acid-button:hover {
+  transform: translate(0, 0);
+  box-shadow: 4px 4px 0 #1a1a1a;
+}
+```
